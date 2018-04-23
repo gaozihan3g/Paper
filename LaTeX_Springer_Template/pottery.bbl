@@ -1,0 +1,20 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{website:unity3d}
+Unity.
+\newblock \urlprefix\url{https://unity3d.com/}
+
+\bibitem{Jacob2008Reality}
+Jacob, R.J.K., Girouard, A., Hirshfield, L.M., Horn, M.S., Shaer, O., Solovey,
+  E.T., Zigelbaum, J.: Reality-based interaction:a framework for post-wimp
+  interfaces.
+\newblock In: Proceeding of the Twenty-Sixth Sigchi Conference on Human Factors
+  in Computing Systems, pp. 201--210 (2008)
+
+\end{thebibliography}

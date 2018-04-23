@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: pottery.aux
+The style file: spmpsci.bst
+Database file #1: pottery.bib
+Warning--to sort, need author or key in website:unity3d
+You've used 2 entries,
+            2945 wiz_defined-function locations,
+            608 strings with 4934 characters,
+and the built_in function-call counts, 1015 in all, are:
+= -- 74
+> -- 38
+< -- 1
++ -- 16
+- -- 14
+* -- 58
+:= -- 125
+add.period$ -- 2
+call.type$ -- 2
+change.case$ -- 15
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 83
+empty$ -- 92
+format.name$ -- 15
+if$ -- 220
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 18
+newline$ -- 16
+num.names$ -- 2
+pop$ -- 46
+preamble$ -- 1
+purify$ -- 11
+quote$ -- 0
+skip$ -- 38
+stack$ -- 0
+substring$ -- 38
+swap$ -- 44
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 8
+warning$ -- 1
+while$ -- 4
+width$ -- 3
+write$ -- 24
+(There was 1 warning)
