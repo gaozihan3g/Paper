@@ -61,11 +61,11 @@ grestore
 %
 \begin{document}
 
-\title{DigiClay: a Realtime Virtual Pottery Tool%\thanks{Grants or other notes
+\title{PotteryVR: a Realtime Virtual Pottery Tool%\thanks{Grants or other notes
 %about the article that should go on the front page should be
 %placed here. General acknowledgments should be placed at the end of the article.}
 }
-\subtitle{Do you have a subtitle?\cite{Jacob2008Reality}  \\ If so, write it here \cite{website:unity3d}}
+%\subtitle{Do you have a subtitle?\cite{Jacob2008Reality}  \\ If so, write it here \cite{website:unity3d}}
 
 %\titlerunning{Short form of title}        % if too long for running head
 
@@ -97,7 +97,7 @@ We present DigiClay, an interactive virtual reality (VR) modeling system that al
 Our system consists of two major components: a mesh generator and an interactive pottery model editor.
 The mesh generator can procedurally generate a realistic clay mesh. With the interactive pottery model editor, the user can shape the clay mesh in realtime intuitively to create a virtual pottery work.
 The virtual pottery created by our system can be exported as an obj file and used for 3D printing.
-The results of our user study have shown that our system is easier to use compared with traditional modeling systems. Users without real life pottery making experience and 3D modeling knowledge can easily create pottery works with our system.
+The results of our user study have shown that our system is easier to use compared with traditional modeling systems. Users without real life pottery making experience and 3D modeling knowledge can easily create pottery works with our system.\cite{website:letspottery}
 
 
 Insert your abstract here. Include keywords, PACS and mathematical
@@ -107,156 +107,73 @@ subject classification numbers as needed.
 % \subclass{MSC code1 \and MSC code2 \and more}
 \end{abstract}
 
+%%% Introduction
+
 \section{Introduction}
-\label{intro}
-
-Pottery is one of the oldest human inventions, which has been playing an important role in heterogeneous civilizations in human history for thousands of years.
-In recent years, emerging technologies introduces virtual pottery, which extends the experience of traditional pottery craft, enabling more people to experience the pottery making process.
-There are several systems either from academic or industry, such as Let'€™s create! Pottery[ ], Virtual Pottery[ ], Handy Potter[ ] and CHINA[ ].
-These systems can process the user input and apply the deformation on 3D pottery mesh based on user input.
-However, these systems did not consider some key realistic factors in real life pottery making process, such as the the randomness of clay shape and haptic feedback.
-This kind of systems fail to make the novice users to understand pottery making process in a natural way, since some realistic details have been removed in these systems.
-
-For novice users who are not professional 3D artists, traditional computer aided design tools, such as Maya and 3ds Max, are formidable to learn due to complex user interfaces.
-To address this situation, some programs such as 123D Design[ ] and Let'€™s Pottery[ ] have been developed, which provide much simpler user interface.
-These works indeed provide a gentle learning curve, however, they have some common limitations.
-
-TODO
-1 interaction is not closely related intuitive 
-2 missing realistic experiences, not immersive
-3 the boundary. lacks 3d printing
-
-In this paper, we present DigiClay, a virtual reality system that allows users to create virtual pottery models from their hand movement, and the models can be interactively painted in real time.
-
-There are two major design goals for DigiClay:
-
-1 Design a system on virtual reality devices that can generate digital pottery models by bimanual manipulation from users
-
-2 Provide an intuitive and simple approach for novice users to understand and learn basic pottery workflow and skills.
-
-[design considerations]
-1. minimize usersâ€™ cognitive load => close to real life
-
-2. keep it simple
-
-
-
-The main contributions of our works are:
-1 Present a real-time virtual pottery creator which can generate 3D printing-ready pottery models via user bimanual manipulation.
-
-2 Propose a virtual pottery workflow by introducing simple and intuitive user interfaces for modeling and color painting, enabling novice users to understand and learn pottery production pipeline.
-
-3 Conduct a user study showing the comparison results among three interaction systems. The results have shown that our system is easier to use compared with traditional 3D modeling tools and is more intuitive and immersive than touchscreen-based interfaces.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Your text comes here. Separate text sections with
-
-
-
-
-\section{Related Works}
 \label{sec:1}
+%[CAD tools - hard to use]
+Pottery is one of the oldest inventions in heterogeneous civilizations in human history for thousands of years, in which the traditional creation process is called "throwing", where a ball of clay is placed on a pottery wheel and shaped by hands. In recent years, emerging technologies such as 3D printing introduces a new way of pottery design, enabling people to fabricate pots in a digital manner with the help of Computer Aided Design (CAD) software and 3D printers. There are several desktop CAD systems either from academic or industry, some of them are developed specifically for pottery design[a, b], which can generate 3D meshes based on the values from user keyboard and mouse input. However, for novice users who are not professional 3D artists, these systems are formidable to learn due to complex user interfaces. This kind of systems limits the creativity of novice users, since it is quite challenging for them to master the tool in a short period of time. In addition, the experience of creating potteries using CAD tools is far different from in reality.
 
-\subsection{Bimanual 3D Manipulation}
+%[in-air interaction system - freehand, lacks robustness, feedback and reality]
+Traditional CAD tools, such as Maya[] and 3ds Max[], are formidable to learn due to complex user interfaces. To address this situation, some camera-based virtual pottery systems such as [a, b, c] have been developed, which provides much simpler user interfaces, allowing users to design pots using freehand. These works indeed provide a gentle learning curve, however, they have some common limitations. First, freehand interactions from depth cameras lacks robustness due to jittering, whose inaccuracy hinders user experience severely. Second, freehand interaction lacks haptic feedback, making it difficult for users to perceive if they have touched anything in VR environments. In addition, some realistic features of clay, namely shape irregularity, thickness and etc., are missing from these systems, undermining the look and feel in the pot design process.
+
+%[design goals: 1. simple 2. robust/realistic]
+In this paper, we present PotteryVR, a VR system that allows users to design virtual pottery models from their hand movement using hand-held motion controllers. There are two major design goals for PotteryVR:
+%[easy]
+1 Provide a simple and intuitive interface for novice users to learn virtual pottery skills with minimum cognitive load.
+%[robust realistic]
+2 Design a robust virtual pottery system on VR devices that can generate realistic clay meshes and provide refined haptic feedbacks based on bimanual spatial interactions.
+
+%[design considerations: 1.HCD 2. RBI]
+Oviatt \cite{oviatt2006human} concluded that human-centered design can minimize usersâ€™ cognitive load, which effectively frees up mental resources for performing better while also remaining more attuned to the world around them. So we take the human-centered design approach, which models usersâ€™ natural behavior to begin with so that interfaces can be designed that are more intuitive, easier to learn, and freer of performance errors. In addition, Jacob et al. \cite{Jacob2008Reality} summarized that the designer's goal should be to allow the user to perform realistic tasks realistically, to provide additional non real-world functionality, and to use analogies for these commands whenever possible. Hence,while we design our system based on pottery creation process in reality to minimize the effort, we should provide convenient functionality in our system for efficiency.
+
+%[contributions]
+The main contributions of our works are:
+
+1 Present a virtual pottery system which can generate pot models from user spatial interaction for 3D printing.
+
+2 Propose a virtual pottery workflow by introducing simple and intuitive user interfaces for modeling, enabling novice users to understand and learn pottery production pipeline.
+
+3 Conduct an user study showing the comparison results among three interaction systems. The results have shown that our system is easier to use compared with traditional 3D modeling tools and is more intuitive and immersive than touchscreen based interfaces.
+
+
+%%%
+
+
+\section{Related Work}
 \label{sec:2}
 
-Bimanual 3D manipulation is a fundamental task in both physical and virtual environments [vr interaction], which has been a popular research field. In terms of mechanisms, 3D manipulation can be classified into two categories: bare-hand based interactions and instrument based interactions.
+\subsection{Bimanual Interaction}
+\label{sec:2.1}
+Bimanual interaction has been a popular research field, which can accomplish a variety of tasks in both physical and virtual environments. In terms of mechanisms, bimanual interaction can be classified into two categories: bare-hand based interactions and instrument based interactions. There are a great number of research efforts \cite{walter2014cuenesics,cui2016exploration,ramani2015gesture,murugappan2013handy,han2014virtual} on bare-hand based interactions using depth camera such as Kinect, Leap Motion etc. Cuenestics \cite{walter2014cuenesics} is a design space for hand-gesture based mid-air selection techniques using a depth camera Kinect, where users can select contents on interactive public displays with their gesture input. Cui et al. \cite{cui2016exploration} proposed a modeling system with natural free-hand interaction using a Leap Motion controller, allowing users to grab and manipulate objects with one or two hands intuitively. While these works provided accessibility to users, the limitations are obvious as well: The input is not always accurate due to many factors such as lighting condition and occlusion, which might cause user frustration. In addition, these methods do not provide haptic feedbacks, which hinders the realistic feel for users. Unlike bare-hand based interactions, instrument based interactions provide more control precision, haptic feedback and unambiguity. Surface Drawing \cite{schkolne2001surface} is a system for creating organic 3D shapes using tangible tools such as gloves, where users can define strokes with the path of hands wearing gloves. Hinckley et al. \cite{hinckley1998two} did a research on two-handed virtual manipulation with a point design of a prop-based system, which allows users to view a cross section of a brain with interface props. These works have a common problem that the usage of these instruments are limited to a lab context that very few users can access. There are a number of motion controllers such as Wii Remote \cite{wingcrave2010wii} and HTC Vive \cite{niehorster2017accuracy} that become widely commercialized products and accessible to consumers, as well as used in scientific research. In our project, HTC Vive system is used in our system, which provides precision, haptic feedback and well accessed by consumers.
 
-There are a great number of research efforts [ â€¦ ] on bare-hand based interactions using depth camera such as Kinect and Leap Motion.
+\subsection{Artistic Tools in VR}
+\label{sec:2.2}
+Virtual Reality has shown great potential for art and design, which not only provides immersive and intuitive interfaces for user, but also creates new art medium, new art form and novel experience\cite{laviola20113d}. CavePainting \cite{keefe2001cavepainting} is a 3D artistic medium in a fully immersive environment, which enables artists to create spatial paintings with physical props and gestures. Agrawala et al.\cite{agrawala19953d} developed an interface for painting on polygon meshes using a 6DOF space tracker, which provides a natural force-feedback for painting, allowing users to place colors on meshes intuitively. MAI Painting Brush++ \cite{otsuki2017brush} is a brush device for virtual painting of 3D virtual objects, where users could take a physical object in the real world and apply virtual paint to it with visual and haptic feedback. Virtual Clay \cite{mcdonnell2001virtual} is a sculpture framework based on subdivision solids and physics-based modeling, which is equipped with natural, haptic based interaction, providing users with a realistic sculpting experience. Sheng et al. \cite{sheng2006interface} proposed an interface for virtual 3D sculpting, which uses camera-based motion tracking technology to track passive markers on the fingers and prop, enabling users to apply operations such as deforming, smoothing, pasting and extruding.
 
-Cuenestics [Cuenesics] is a design space for hand-gesture based mid-air selection techniques using a depth camera Kinect, where users can select contents on interactive public displays with their gesture input.
-
-Cui et al. \cite{cui2016exploration} proposed a modeling system with natural free-hand interaction using a Leap Motion controller, allowing users to grab and manipulate objects with one or two hands intuitively.
-
-While these works provided accessibility to users, the limitations are obvious as well: The input is not always accurate due to many factors such as lighting condition and occlusion, which might cause user frustration. In addition, these methods do not provide haptic feedbacks, which hinders the realistic feel for users.
-
-Unlike bare-hand based interactions, instrument based interactions provide more control precision, haptic feedback and unambiguity.
-
-Surface Drawing [surface drawing] is a system for creating organic 3D shapes using tangible tools such as gloves, where users can define strokes with the path of hands wearing gloves.
-
-Hinckley et al. [Hinckley] did a research on two-handed virtual manipulation with a point design of a prop-based system, which allows users to view a cross section of a brain with interface props.
-
-These works have a common problem that the usage of these instruments are limited to a lab context that very few users can access.
-
-There are a number of motion controllers such as Wii Remote ( ), Playstation Move ( ) and HTC Vive ( ) that become widely commercialized products and accessible to consumers. In our project, HTC Vive system is used in our system, which provides precision, haptic feedback and well accessed by consumers.
+\subsection{Virtual Pottery Systems}
+\label{sec:2.3}
 
 
+Several systems have been developed for virtual pottery, unlike other sculpting systems mentioned above, v
 
+Qp \cite{koutsoudis2009qp} was a tool for generating 3D pottery models, which can produce a collection of random 3D ancient greek vessels.
 
-
-\subsection{Artistic Tools in Virtual Reality}
-\label{sec:2}
-
-
-Virtual Reality has shown great potential for art and design, which not only provides immersive and intuitive interfaces for user, but also creates new art medium, new art form and experience.
-
-CavePainting [keefe2001cavepainting] is a 3D artistic medium in a fully immersive environment, which enables artists to create spatial paintings with physical props and gestures.
-
-[DAB] intuitive realistic
-
-Limited space Installation, not accessible 
-
-Agrawala et al. [agrawala19953d] developed an interface for painting on polygon meshes using a 6DOF space tracker, which provides a natural force-feedback for painting, allowing users to place colors on meshes intuitively.
-
-MAI Painting Brush++ [otsuki2017brush] is a brush device for virtual painting of 3D virtual objects, where users could take a physical object in the real world and apply virtual paint to it with visual and haptic feedback.
-
-sculpting
-
-Virtual Clay [mcdonnell2001virtual] is a sculpture framework based on subdivision solids and physics-based modeling, which is equipped with natural, haptic based interaction, providing users with a realistic sculpting experience.
-
-Sheng et al. [sheng2006interface] proposed an interface for virtual 3D sculpting, which uses camera-based motion tracking technology to track passive markers on the fingers and prop, enabling users to apply operations such as deforming, smoothing, pasting and extruding.
-
--	Google Blocks
--	Oculus Medium
-
-
-
-
-
-
-\subsection{3D Virtual Pottery}
-\label{sec:2}
-
-
-
-
-
-
-
-
-
-Several applications have been developed to create virtual potteries.
-
-Qp [koutsoudis2009qp] was a tool for generating 3D pottery models, which can produce a collection of random 3D ancient greek vessels.
-
-Based on number-theoretic techniques, Kumar et al. [kumar2011wheel] presented a system for creating digital potteries including thick-walled potteries as well, which resembles pottery works in real life.
+Based on number-theoretic techniques, Kumar et al. \cite{kumar2011wheel} presented a system for creating digital potteries including thick-walled potteries as well, which resembles pottery works in real life.
 
 While these systems can generate heterogeneous pottery models efficiently, their user interfaces are limited to traditional keyboard and mouse input, which are not helpful for users to understand the pottery creation process.
 
-Handy-Potter [murugappan2013handy] was a rapid 3D creation tool, which tracks user skeletons with depth sensing camera Kinect, enabling users to create potteries using hands and arms.
+%%CHINA korida1997interactive
 
-Han et al. [han] presented an audiovisual interface, where hand motions are translated into musical sound.
+Handy-Potter \cite{murugappan2013handy} was a rapid 3D creation tool, which tracks user skeletons with depth sensing camera Kinect, enabling users to create potteries using hands and arms.
 
-In AR Pottery [ar pottery], augmented reality has been applied to pottery design, with which users can deform a virtual pottery using a marker held by hand.
+%%CAD ramani2015gesture
+
+Han et al. \cite{han2014virtual} presented an audiovisual interface, where hand motions are translated into musical sound.
+
+In AR Pottery \cite{han2007ar}, augmented reality has been applied to pottery design, with which users can deform a virtual pottery using a marker held by hand.
 
 Although with these systems users could create some virtual pottery works, the actions applied are quite different from real life pottery making process. Thus, users cannot learn the actual pottery process from using these systems.
-
-[china]
-no coloring, and have no export
 
 [design consideration - EDUCATION!!!]
 
@@ -264,14 +181,8 @@ In contrast to existing works, our system provides a novel pottery creation work
 
 
 
-
-
-
-
-
-
-
-
+\section{Workflow}
+\label{sec:1}
 
 %Text with citations \cite{RefB} and \cite{RefJ}.
 \subsection{Subsection title}
@@ -282,20 +193,6 @@ and subsection a unique label (see Sect.~\ref{sec:1}).
 \begin{equation}
 a^2+b^2=c^2
 \end{equation}
-
-
-
-
-
-
-
-
-
-
-\section{Workflow}
-\label{sec:1}
-
-
 
 
 
