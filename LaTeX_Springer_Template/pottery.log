@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  22 APR 2018 10:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  24 APR 2018 20:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -117,16 +117,10 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 (./pottery.aux
 
-LaTeX Warning: Label `sec:2' multiply defined.
-
-
-LaTeX Warning: Label `sec:2' multiply defined.
-
-
-LaTeX Warning: Label `sec:2' multiply defined.
-
-
 LaTeX Warning: Label `sec:1' multiply defined.
+
+
+LaTeX Warning: Label `sec:2' multiply defined.
 
 
 LaTeX Warning: Label `sec:1' multiply defined.
@@ -267,9 +261,6 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 93.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 93.
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
 [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
@@ -278,26 +269,10 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
 
-[2]
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¦ in font cmr10!
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-LaTeX Warning: Citation `cui2016exploration' on page 3 undefined on input line 
-183.
-
-[3]
-Overfull \hbox (1.88838pt too wide) in paragraph at lines 221--222
-[]\OT1/cmr/m/n/10 Sheng et al. [sheng2006interface] pro-posed an in-ter-face fo
-r vir-tual 3D sculpt-
- []
-
-
-Underfull \vbox (badness 1028) has occurred while \output is active []
-
- [4]
-[5]
+ [2]
+[3] [4] [5]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
@@ -328,13 +303,13 @@ Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    size: 2431 bytes
 (epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
 df example.eps>
-(epstopdf)             \includegraphics on input line 484.
+(epstopdf)             \includegraphics on input line 383.
 Package epstopdf Info: Output file is already uptodate.
  <example-eps-converted-to.pdf, id=30, 202.7575pt x 202.7575pt>
 File: example-eps-converted-to.pdf Graphic file (type pdf)
 
 <use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 484.
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 383.
 (pdftex.def)             Requested size: 202.757pt x 202.757pt.
 Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    date: 2018-03-29 09:17:38
@@ -344,26 +319,26 @@ Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    size: 2431 bytes
 (epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
 df example.eps>
-(epstopdf)             \includegraphics on input line 494.
+(epstopdf)             \includegraphics on input line 393.
 Package epstopdf Info: Output file is already uptodate.
 File: example-eps-converted-to.pdf Graphic file (type pdf)
  <use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 494.
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 393.
 (pdftex.def)             Requested size: 253.5pt x 253.50812pt.
 
-(./pottery.bbl) [7] [8 <./example-eps-converted-to.pdf>] (./pottery.aux)
+(./pottery.bbl [7] [8 <./example-eps-converted-to.pdf>]) [9] (./pottery.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2208 strings out of 492995
- 33255 string characters out of 6132704
- 90311 words of memory out of 5000000
- 5752 multiletter control sequences out of 15000+600000
- 10088 words of font info for 35 fonts, out of 8000000 for 9000
+ 2228 strings out of 492995
+ 33592 string characters out of 6132704
+ 93402 words of memory out of 5000000
+ 5772 multiletter control sequences out of 15000+600000
+ 9480 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,8n,25p,450b,216s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,8n,25p,2347b,295s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pf
 b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
@@ -374,10 +349,10 @@ sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
 cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
 /texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
 texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on pottery.pdf (8 pages, 145298 bytes).
+Output written on pottery.pdf (9 pages, 152117 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
- 52 compressed objects within 1 object stream
+ 77 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

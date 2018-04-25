@@ -112,10 +112,20 @@ subject classification numbers as needed.
 \section{Introduction}
 \label{sec:1}
 %[CAD tools - hard to use]
-Pottery is one of the oldest inventions in heterogeneous civilizations in human history for thousands of years, in which the traditional creation process is called "throwing", where a ball of clay is placed on a pottery wheel and shaped by hands. In recent years, emerging technologies such as 3D printing introduces a new way of pottery design, enabling people to fabricate pots in a digital manner with the help of Computer Aided Design (CAD) software and 3D printers. There are several desktop CAD systems either from academic or industry, some of them are developed specifically for pottery design[a, b], which can generate 3D meshes based on the values from user keyboard and mouse input. However, for novice users who are not professional 3D artists, these systems are formidable to learn due to complex user interfaces. This kind of systems limits the creativity of novice users, since it is quite challenging for them to master the tool in a short period of time. In addition, the experience of creating potteries using CAD tools is far different from in reality.
+Pottery is one of the oldest inventions in heterogeneous civilizations in human history for thousands of years, in which the traditional creation process is called "throwing", where a ball of clay is placed on a pottery wheel and shaped by hands. 
+In recent years, emerging technologies such as 3D printing introduces a new way of pottery design, enabling people to fabricate pots in a digital manner with the help of Computer Aided Design (CAD) software and 3D printers.
+There are several desktop CAD systems either from academic or industry, some of them are developed specifically for pottery design[a, b], which can generate 3D meshes based on the values from user keyboard and mouse input.
+However, for novice users who are not professional 3D artists, these systems are formidable to learn due to complex user interfaces. 
+This kind of systems limits the creativity of novice users, since it is quite challenging for them to master the tool in a short period of time.
+In addition, the experience of creating potteries using CAD tools is far different from in reality.
 
 %[in-air interaction system - freehand, lacks robustness, feedback and reality]
-Traditional CAD tools, such as Maya[] and 3ds Max[], are formidable to learn due to complex user interfaces. To address this situation, some camera-based virtual pottery systems such as [a, b, c] have been developed, which provides much simpler user interfaces, allowing users to design pots using freehand. These works indeed provide a gentle learning curve, however, they have some common limitations. First, freehand interactions from depth cameras lacks robustness due to jittering, whose inaccuracy hinders user experience severely. Second, freehand interaction lacks haptic feedback, making it difficult for users to perceive if they have touched anything in VR environments. In addition, some realistic features of clay, namely shape irregularity, thickness and etc., are missing from these systems, undermining the look and feel in the pot design process.
+Traditional CAD tools, such as Maya[] and 3ds Max[], are formidable to learn due to complex user interfaces.
+To address this situation, some camera-based virtual pottery systems such as [a, b, c] have been developed, which provides much simpler user interfaces, allowing users to design pots using freehand.
+These works indeed provide a gentle learning curve, however, they have some common limitations.
+First, freehand interactions from depth cameras lacks robustness due to jittering, whose inaccuracy hinders user experience severely.
+Second, freehand interaction lacks haptic feedback, making it difficult for users to perceive if they have touched anything in VR environments.
+In addition, some features of clay, namely shape irregularity, thickness etc., are missing from these systems, undermining realistic look and feel in the pot design process.
 
 %[design goals: 1. simple 2. robust/realistic]
 In this paper, we present PotteryVR, a VR system that allows users to design virtual pottery models from their hand movement using hand-held motion controllers. There are two major design goals for PotteryVR:
@@ -125,7 +135,11 @@ In this paper, we present PotteryVR, a VR system that allows users to design vir
 2 Design a robust virtual pottery system on VR devices that can generate realistic clay meshes and provide refined haptic feedbacks based on bimanual spatial interactions.
 
 %[design considerations: 1.HCD 2. RBI]
-Oviatt \cite{oviatt2006human} concluded that human-centered design can minimize users’ cognitive load, which effectively frees up mental resources for performing better while also remaining more attuned to the world around them. So we take the human-centered design approach, which models users’ natural behavior to begin with so that interfaces can be designed that are more intuitive, easier to learn, and freer of performance errors. In addition, Jacob et al. \cite{Jacob2008Reality} summarized that the designer's goal should be to allow the user to perform realistic tasks realistically, to provide additional non real-world functionality, and to use analogies for these commands whenever possible. Hence,while we design our system based on pottery creation process in reality to minimize the effort, we should provide convenient functionality in our system for efficiency.
+Oviatt \cite{oviatt2006human} concluded that human-centered design can minimize users’ cognitive load, which effectively frees up mental resources for performing better while also remaining more attuned to the world around them.
+%% TODO
+So we take the human-centered design approach, which models users’ natural behavior to begin with so that interfaces can be designed that are more intuitive, easier to learn, and freer of performance errors.
+In addition, Jacob et al. \cite{Jacob2008Reality} summarized that the designer's goal should be to allow the user to perform realistic tasks realistically, to provide additional non real-world functionality, and to use analogies for these commands whenever possible.
+Hence, while we design our system based on pottery creation process in reality to minimize the effort, we should provide convenient functionality in our system for efficiency.
 
 %[contributions]
 The main contributions of our works are:
@@ -136,16 +150,28 @@ The main contributions of our works are:
 
 3 Conduct an user study showing the comparison results among three interaction systems. The results have shown that our system is easier to use compared with traditional 3D modeling tools and is more intuitive and immersive than touchscreen based interfaces.
 
-
 %%%
-
 
 \section{Related Work}
 \label{sec:2}
 
 \subsection{Bimanual Interaction}
 \label{sec:2.1}
-Bimanual interaction has been a popular research field, which can accomplish a variety of tasks in both physical and virtual environments. In terms of mechanisms, bimanual interaction can be classified into two categories: bare-hand based interactions and instrument based interactions. There are a great number of research efforts \cite{walter2014cuenesics,cui2016exploration,ramani2015gesture,murugappan2013handy,han2014virtual} on bare-hand based interactions using depth camera such as Kinect, Leap Motion etc. Cuenestics \cite{walter2014cuenesics} is a design space for hand-gesture based mid-air selection techniques using a depth camera Kinect, where users can select contents on interactive public displays with their gesture input. Cui et al. \cite{cui2016exploration} proposed a modeling system with natural free-hand interaction using a Leap Motion controller, allowing users to grab and manipulate objects with one or two hands intuitively. While these works provided accessibility to users, the limitations are obvious as well: The input is not always accurate due to many factors such as lighting condition and occlusion, which might cause user frustration. In addition, these methods do not provide haptic feedbacks, which hinders the realistic feel for users. Unlike bare-hand based interactions, instrument based interactions provide more control precision, haptic feedback and unambiguity. Surface Drawing \cite{schkolne2001surface} is a system for creating organic 3D shapes using tangible tools such as gloves, where users can define strokes with the path of hands wearing gloves. Hinckley et al. \cite{hinckley1998two} did a research on two-handed virtual manipulation with a point design of a prop-based system, which allows users to view a cross section of a brain with interface props. These works have a common problem that the usage of these instruments are limited to a lab context that very few users can access. There are a number of motion controllers such as Wii Remote \cite{wingcrave2010wii} and HTC Vive \cite{niehorster2017accuracy} that become widely commercialized products and accessible to consumers, as well as used in scientific research. In our project, HTC Vive system is used in our system, which provides precision, haptic feedback and well accessed by consumers.
+Bimanual interaction has been a popular research field, which can accomplish a variety of tasks in both physical and virtual environments.
+In terms of mechanisms, bimanual interaction can be classified into two categories: bare-hand based interactions and instrument based interactions.
+
+There are a great number of research efforts \cite{walter2014cuenesics,cui2016exploration,ramani2015gesture,murugappan2013handy,han2014virtual} on bare-hand based interactions using depth camera such as Kinect, Leap Motion etc.
+Cuenestics \cite{walter2014cuenesics} is a design space for hand-gesture based mid-air selection techniques using a depth camera Kinect, where users can select contents on interactive public displays with their gesture input.
+Cui et al. \cite{cui2016exploration} proposed a modeling system with natural free-hand interaction using a Leap Motion controller, allowing users to grab and manipulate objects with one or two hands intuitively.
+While these works provided accessibility to users, the limitations are obvious as well: The input is not always accurate due to many factors such as lighting condition and occlusion, which might cause user frustration.
+In addition, these methods do not provide haptic feedbacks, which hinders the realistic feel for users.
+
+Unlike bare-hand based interactions, instrument based interactions provide more control precision, haptic feedback and unambiguity.
+Surface Drawing \cite{schkolne2001surface} is a system for creating organic 3D shapes using tangible tools such as gloves, where users can define strokes with the path of hands wearing gloves.
+Hinckley et al. \cite{hinckley1998two} did a research on two-handed virtual manipulation with a point design of a prop-based system, which allows users to view a cross section of a brain with interface props.
+These works have a common problem that the usage of these instruments are limited to a lab context that very few users can access.
+There are a number of motion controllers such as Wii Remote \cite{wingcrave2010wii} and HTC Vive \cite{niehorster2017accuracy} that become widely commercialized products and accessible to consumers, as well as used in scientific research.
+In our project, HTC Vive system is used in our system, which provides precision, haptic feedback and well accessed by consumers.
 
 \subsection{Artistic Tools in VR}
 \label{sec:2.2}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\url}[1]{{#1}}
 \providecommand{\urlprefix}{URL }
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -6,9 +6,37 @@
   \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
   \urlstyle{rm}\Url}\fi
 
-\bibitem{website:unity3d}
-Unity.
-\newblock \urlprefix\url{https://unity3d.com/}
+\bibitem{website:letspottery}
+Let's create! pottery.
+\newblock \urlprefix\url{http://www.potterygame.com/}
+
+\bibitem{agrawala19953d}
+Agrawala, M., Beers, A.C., Levoy, M.: 3d painting on scanned surfaces.
+\newblock In: Proceedings of the 1995 symposium on Interactive 3D graphics, pp.
+  145--ff. ACM (1995)
+
+\bibitem{cui2016exploration}
+Cui, J., Kuijper, A., Sourin, A.: Exploration of natural free-hand interaction
+  for shape modeling using leap motion controller.
+\newblock In: Cyberworlds (CW), 2016 International Conference on, pp. 41--48.
+  IEEE (2016)
+
+\bibitem{han2007ar}
+Han, G., Hwang, J., Choi, S., Kim, G.J.: Ar pottery: experiencing pottery
+  making in the augmented space.
+\newblock In: International Conference on Virtual Reality, pp. 642--650.
+  Springer (2007)
+
+\bibitem{han2014virtual}
+Han, Y.C., Han, B.j.: Virtual pottery: a virtual 3d audiovisual interface using
+  natural hand motions.
+\newblock Multimedia tools and applications \textbf{73}(2), 917--933 (2014)
+
+\bibitem{hinckley1998two}
+Hinckley, K., Pausch, R., Proffitt, D., Kassell, N.F.: Two-handed virtual
+  manipulation.
+\newblock ACM Transactions on Computer-Human Interaction (TOCHI) \textbf{5}(3),
+  260--302 (1998)
 
 \bibitem{Jacob2008Reality}
 Jacob, R.J.K., Girouard, A., Hirshfield, L.M., Horn, M.S., Shaer, O., Solovey,
@@ -16,5 +44,86 @@ Jacob, R.J.K., Girouard, A., Hirshfield, L.M., Horn, M.S., Shaer, O., Solovey,
   interfaces.
 \newblock In: Proceeding of the Twenty-Sixth Sigchi Conference on Human Factors
   in Computing Systems, pp. 201--210 (2008)
+
+\bibitem{keefe2001cavepainting}
+Keefe, D.F., Feliz, D.A., Moscovich, T., Laidlaw, D.H., LaViola~Jr, J.J.:
+  Cavepainting: a fully immersive 3d artistic medium and interactive
+  experience.
+\newblock In: Proceedings of the 2001 symposium on Interactive 3D graphics, pp.
+  85--93. ACM (2001)
+
+\bibitem{koutsoudis2009qp}
+Koutsoudis, A., Pavlidis, G., Arnaoutoglou, F., Tsiafakis, D., Chamzas, C.: Qp:
+  A tool for generating 3d models of ancient greek pottery.
+\newblock Journal of Cultural Heritage \textbf{10}(2), 281--295 (2009)
+
+\bibitem{kumar2011wheel}
+Kumar, G., Sharma, N.K., Bhowmick, P.: Wheel-throwing in digital space using
+  number-theoretic approach.
+\newblock International Journal of Arts and Technology \textbf{4}(2), 196--215
+  (2011)
+
+\bibitem{laviola20113d}
+LaViola, J.J., Keefe, D.F.: 3d spatial interaction: applications for art,
+  design, and science.
+\newblock In: ACM Siggraph 2011 Courses, p.~1. ACM (2011)
+
+\bibitem{mcdonnell2001virtual}
+McDonnell, K.T., Qin, H., Wlodarczyk, R.A.: Virtual clay: A real-time sculpting
+  system with haptic toolkits.
+\newblock In: Proceedings of the 2001 symposium on Interactive 3D graphics, pp.
+  179--190. ACM (2001)
+
+\bibitem{murugappan2013handy}
+Murugappan, S., Piya, C., Ramani, K., et~al.: Handy-potter: Rapid exploration
+  of rotationally symmetric shapes through natural hand motions.
+\newblock Journal of Computing and Information Science in Engineering
+  \textbf{13}(2), 021008 (2013)
+
+\bibitem{niehorster2017accuracy}
+Niehorster, D.C., Li, L., Lappe, M.: The accuracy and precision of position and
+  orientation tracking in the htc vive virtual reality system for scientific
+  research.
+\newblock i-Perception \textbf{8}(3), 2041669517708205 (2017)
+
+\bibitem{otsuki2017brush}
+Otsuki, M., Sugihara, K., Toda, A., Shibata, F., Kimura, A.: A brush device
+  with visual and haptic feedback for virtual painting of 3d virtual objects.
+\newblock Virtual Reality pp. 1--15 (2017)
+
+\bibitem{oviatt2006human}
+Oviatt, S.: Human-centered design meets cognitive load theory: designing
+  interfaces that help people think.
+\newblock In: Proceedings of the 14th ACM international conference on
+  Multimedia, pp. 871--880. ACM (2006)
+
+\bibitem{ramani2015gesture}
+Ramani, K., et~al.: A gesture-free geometric approach for mid-air expression of
+  design intent in 3d virtual pottery.
+\newblock Computer-Aided Design \textbf{69}, 11--24 (2015)
+
+\bibitem{schkolne2001surface}
+Schkolne, S., Pruett, M., Schr{\"o}der, P.: Surface drawing: creating organic
+  3d shapes with the hand and tangible tools.
+\newblock In: Proceedings of the SIGCHI conference on Human factors in
+  computing systems, pp. 261--268. ACM (2001)
+
+\bibitem{sheng2006interface}
+Sheng, J., Balakrishnan, R., Singh, K.: An interface for virtual 3d sculpting
+  via physical proxy.
+\newblock In: GRAPHITE, vol.~6, pp. 213--220 (2006)
+
+\bibitem{walter2014cuenesics}
+Walter, R., Bailly, G., Valkanova, N., M{\"u}ller, J.: Cuenesics: using mid-air
+  gestures to select items on interactive public displays.
+\newblock In: Proceedings of the 16th international conference on
+  Human-computer interaction with mobile devices \& services, pp. 299--308. ACM
+  (2014)
+
+\bibitem{wingcrave2010wii}
+Wingcrave, C., Williamson, B., Varcholik, P., Rose, J., Miller, A.,
+  Charbonneau, E., Bott, J., Laviola, J.: Wii remote and beyond: Using
+  spatially convenient devices for 3d uis.
+\newblock IEEE Computer Graphics and Applications \textbf{30}(2), 71--85 (2010)
 
 \end{thebibliography}
