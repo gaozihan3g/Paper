@@ -46,6 +46,7 @@ grestore
 \smartqed  % flush right qed marks, e.g. at end of proof
 %
 \usepackage{graphicx}
+\usepackage{amsmath}
 %
 % \usepackage{mathptmx}      % use Times fonts if available on your TeX system
 %
@@ -69,8 +70,8 @@ grestore
 
 %\titlerunning{Short form of title}        % if too long for running head
 
-\author{Zihan Gao         \and
-        Guangsheng Feng %etc.
+\author{Zihan Gao         %\and
+        %Guangsheng Feng %etc.
 }
 
 %\authorrunning{Short form of author list} % if too long for running head
@@ -93,11 +94,11 @@ grestore
 \maketitle
 
 \begin{abstract}
-We present DigiClay, an interactive virtual reality (VR) modeling system that allows novice users to create virtual pottery works with their bimanual movement using hand-held motion controllers.
+We present PotteryVR, an interactive virtual reality (VR) modeling system that allows novice users to create virtual pottery works with their bimanual movement using hand-held motion controllers.
 Our system consists of two major components: a mesh generator and an interactive pottery model editor.
 The mesh generator can procedurally generate a realistic clay mesh. With the interactive pottery model editor, the user can shape the clay mesh in realtime intuitively to create a virtual pottery work.
 The virtual pottery created by our system can be exported as an obj file and used for 3D printing.
-The results of our user study have shown that our system is easier to use compared with traditional modeling systems. Users without real life pottery making experience and 3D modeling knowledge can easily create pottery works with our system.\cite{website:letspottery}
+The results of our user study have shown that our system is easier to use compared with traditional modeling systems. Users without real life pottery making experience and 3D modeling knowledge can easily create pottery works with our system.
 
 
 Insert your abstract here. Include keywords, PACS and mathematical
@@ -112,7 +113,7 @@ subject classification numbers as needed.
 \section{Introduction}
 \label{sec:1}
 %[CAD tools - hard to use]
-Pottery is one of the oldest inventions in heterogeneous civilizations in human history for thousands of years, in which the traditional creation process is called "throwing", where a ball of clay is placed on a pottery wheel and shaped by hands. 
+Pottery is one of the oldest inventions in heterogeneous civilizations in human history for thousands of years, 
 In recent years, emerging technologies such as 3D printing introduces a new way of pottery design, enabling people to fabricate pots in a digital manner with the help of Computer Aided Design (CAD) software and 3D printers.
 There are several desktop CAD systems either from academic or industry, some of them are developed specifically for pottery design[a, b], which can generate 3D meshes based on the values from user keyboard and mouse input.
 However, for novice users who are not professional 3D artists, these systems are formidable to learn due to complex user interfaces. 
@@ -182,163 +183,261 @@ Virtual Reality has shown great potential for art and design, which not only pro
 
 
 Several systems have been developed for virtual pottery, unlike other sculpting systems mentioned above, v
-
 Qp \cite{koutsoudis2009qp} was a tool for generating 3D pottery models, which can produce a collection of random 3D ancient greek vessels.
-
 Based on number-theoretic techniques, Kumar et al. \cite{kumar2011wheel} presented a system for creating digital potteries including thick-walled potteries as well, which resembles pottery works in real life.
-
 While these systems can generate heterogeneous pottery models efficiently, their user interfaces are limited to traditional keyboard and mouse input, which are not helpful for users to understand the pottery creation process.
-
 %%CHINA korida1997interactive
-
 Handy-Potter \cite{murugappan2013handy} was a rapid 3D creation tool, which tracks user skeletons with depth sensing camera Kinect, enabling users to create potteries using hands and arms.
-
 %%CAD ramani2015gesture
-
 Han et al. \cite{han2014virtual} presented an audiovisual interface, where hand motions are translated into musical sound.
-
 In AR Pottery \cite{han2007ar}, augmented reality has been applied to pottery design, with which users can deform a virtual pottery using a marker held by hand.
-
 Although with these systems users could create some virtual pottery works, the actions applied are quite different from real life pottery making process. Thus, users cannot learn the actual pottery process from using these systems.
 
 [design consideration - EDUCATION!!!]
-
 In contrast to existing works, our system provides a novel pottery creation workflow in virtual reality which lets user shape and color pottery through two-handed spatial interactions, helping novice users to understand and learn real life pottery.
 
 
 
 \section{Workflow}
-\label{sec:1}
+\label{sec:3}
 
-%Text with citations \cite{RefB} and \cite{RefJ}.
-\subsection{Subsection title}
-\label{sec:2}
-as required. Don't forget to give each section
-and subsection a unique label (see Sect.~\ref{sec:1}).
-\paragraph{Paragraph headings} Use paragraph headings as needed.
-\begin{equation}
-a^2+b^2=c^2
-\end{equation}
+The pottery creation process on a pottery wheel is called "throwing", where a ball of clay is placed in the centre of a turntable, called the wheel-head, which the potter rotates with a stick, with foot power or with a variable-speed electric motor.
+To illustrate the pipeline of pottery creation in our system, an example workflow using PotteryVR is described as follows.
 
-
+When a user starts to use PotteryVR, a realistic clay mesh is automatically generated with Perlin noise. (Figure 2a, Section 4.1)
+Similar to the pottery operation in reality, the user first need to use both hand to make the irregular clay shape into perfect rotational symmetry, which is called \textit{centring}. (Figure 2b, Section 4.2)
+In order to control the thickness of the clay (i.e. \textit{opening}), the user need to press down the clay to create a hollow in the clay. (Figure 2c, Section 4.3)
+Then the user can draw up the walls (i.e. \textit{pulling}) with two hands moving up together, controlling the height of the clay. (Figure 2d, Section 4.4)
+The system supports mesh deformation (\textit{throwing}) and smoothing, where the user can adjust related parameters to get ideal pot.
+After the creation is done, the user can save the screenshot and save the pottery model as an OBJ file, which can be used for 3D printing.
 
 
-
-
-
-
-
-To illustrate the pipeline of pottery creation in our system, an example workflow using DigiClay is described as follows.
-
-When a user starts to use DigiClay, a realistic clay mesh is generated with Perlin noise. In order to control the height of the clay, the user can use both of her hands to move up or down together. With one hand or both hands, the user can deform the clay symmetrically with some tunable parameters. The user can also smooth the clay during the process to get rid of sharp features.
-
-The clay can be baked into a pottery when the user chooses to do so. Then the user can apply color painting on the pottery model. While the non-dominant hand of the user can manipulate the model such as translation and rotation, the dominant hand can pick colors and apply painting on the pottery. After the creation is done, the user can save the screenshot and save the pottery model as an OBJ file, which can be used for 3D printing.
-
-
-
-
-
-
-
-
-
+%as required. Don't forget to give each section
+%and subsection a unique label (see Sect.~\ref{sec:1}).
+%\paragraph{Paragraph headings} Use paragraph headings as needed.
+%\begin{equation}
+%a^2+b^2=c^2
+%\end{equation}
 
 
 
 \section{Implementation}
-\label{sec:1}
+\label{sec:4}
 
 In this section, we will describe more details about the implementation. 
 
 
 
 \subsection{Mesh Generation}
-\label{sec:2}
+\label{sec:4.1}
 
-In the initialization phase, our system procedurally generates a mesh for the clay. In our approach, we approximate the initial shape of the clay on the pottery wheel as a frustum, then adding Perlin noises to make the clay realistic. The basic parameters of the frustum is described in Table [1].
+Most of Virtual Pottery systems approximate the initial shape of pottery clay as a primitive cylinder shape[a, b, c]. While this approach is simple to implement, it ignores subtle details of clay in real life, whose irregularity needs to deal with during the creation process. Unlike the existing systems, we approximate the initial shape of the clay on the pottery wheel as a blend of cylinder and semi-ellipsoid, then adding Perlin noises to mimic the clay in reality.
+
+%Cylindrical coordinate system
+
+\paragraph{Basic clay} We describe the clay mesh as a series of circular sections in different heights, whose resolution can be defined by radial sections $s_{r}$ and vertical sections $s_{v}$. Given radius $r$ and height $h$, our system can generate primitive mesh of cylinder and semi-ellipsoid respectively (Fig 1a, 1b).
+For each vertex in the mesh, we use a $m \times n$ matrix $M$ to store radius values, where number of row $m = s_{v} + 1$ and the number of column $n = s_{r}$ respectively. The base radius $r_{base_{i}}$ of each vertex $v_{ij}$ in row $i$ can be written as: 
+\begin{equation}
+\begin{split}
+a^2+b^2=c^2 \\
+a^2+b^2=c^2
+\end{split}
+\end{equation}
+where  is a factor controls the shape blending between a  cylinder (when ) and a semi-ellipsoid (when ) (Fig 2).
+While the shape of clay can be roughly approximated like this, in real life the actual clay shape is not regular, whose irregular features needs to be handled during the pottery creation process.
+
+\paragraph{Adding noise} To address this issue, we add some randomness to the vertices to mimic the realistic clay using Perlin Noise [..], which is a smooth random method proposed by Ken Perlin in 1985. We randomize the centre and radius for each circle, then add noise to individual vertices.
+To add noise to the centre, we use random  and  to present the centre . Then we sum the values for each radius , where  is the radius for each circle, and  is individual radius for each vertex.(Fig 3) We can get the radius value  in the matrix  for each vertex, and calculate the vertex position based on the radius values in the matrix:
+\begin{equation}
+\begin{split}
+a^2+b^2=c^2 \\
+a^2+b^2=c^2
+\end{split}
+\end{equation}
+Unlike other virtual pottery creation system, we aim to create 3D printing oriented pottery models. To accomplish that we need to generate watertight 3D models. Hence, our system generate inner and bottom sides based on the outer side mesh. The vertices on inner side can be denoted as:
+\begin{equation}
+\begin{split}
+a^2+b^2=c^2 \\
+a^2+b^2=c^2
+\end{split}
+\end{equation}
+where  is the thickness value of the clay mesh. In mesh generation phase, the initial value of  is 1; in mesh deformation phase, the value of  can be adjusted by user.
+We then generate vertices for both inner-bottom and outer-bottom sides according to inner-side and outer-side vertices respectively. Finally, a mesh can be generated by constructing triangle faces based on the vertex indices. (Fig)
 
 
 \subsection{Mesh Editing}
-\label{sec:2}
-After observing and analyzing several real-life pottery-making videos, we put mesh editing operation into four categories: height control, thickness control, mesh deformation and mesh smoothing. These operations will be discussed in detail in the following sections.
+\label{sec:4.2}
+After observing and analyzing several real life pottery-making videos, we put mesh editing operation into 3 categories: height/thickness control, mesh deformation and mesh smoothing. These operations will be discussed in detail in the following sections.
 
-\subsubsection{Height Control}
-\label{sec:3}
+//deformation strategy: modify the feature variables, then update the mesh in realtime
 
-\subsubsection{Thickness Control}
-\label{sec:3}
+\subsubsection{Symmetric Control}
+\label{sec:4.2.1}
+In real life, clay on pottery wheel can swing around vertical axis due to asymmetry. 
 
-\subsubsection{Mesh Shaping}
-\label{sec:3}
+// so, radial smoothing is needed to make the clay symmetric.(Fig)
+In our implementation, average radius for each row is calculated and each radius in matrix  needs updated:
+\begin{equation}
+\begin{split}
+a^2+b^2=c^2 \\
+a^2+b^2=c^2
+\end{split}
+\end{equation}
+where  is a damping factor controlling the radial smoothing effect.
+
+\subsubsection{Thickness/Height Control}
+\label{sec:4.2.2}
+Height and thickness control are  basic clay manipulations in pottery creation process which are done by applying force to clay with two hands. The height can be adjusted by hands vertical movement while holding the clay, while the thickness can be adjusted by pushing down the top centre part of the clay with fingers. Let  be the vertical hand movement distance, we have:
+\begin{equation}
+\begin{split}
+a^2+b^2=c^2 \\
+a^2+b^2=c^2
+\end{split}
+\end{equation}
+where  and  are previous height and thickness values before every deformation respectively;  is a damping factor for height.
+
+
+\subsubsection{Mesh Deformation}
+\label{sec:4.2.3}
+In this section we talk about interactively deforming. This topic is challenging since complex mathematical formulations (1) have to be hidden behind an intuitive user interface and (2) have to be implemented in a sufficiently efficient and robust manner to allow for interactive applications.[Polygon Mesh Processing] 
+
+a set of handle points
+fixed points
+due to rotational symmetry in pottery vessels, the deformation problem is turned into how to get the new radius Matrix 
+
+We calculate weights based on hand initial position p0 [FIG]
+\begin{equation}
+\begin{split}
+a^2+b^2=c^2 \\
+a^2+b^2=c^2
+\end{split}
+\end{equation}
+where  is the vertical distance between the handle and ;  and  are inner and outer handle radius respectively. 
+
+(ρ, φ, z) 
+The radial distance ρ is the Euclidean distance from the z-axis to the point P.
+The azimuth φ is the angle between the reference direction on the chosen plane and the line from the origin to the projection of P on the plane.
+The height z is the signed distance from the chosen plane to the point P.
+
 
 \subsubsection{Mesh Smoothing}
-\label{sec:3}
+\label{sec:4.2.4}
+As mentioned above, it is possible to create sharp features upon the clay mesh when  is large. Hence, we use Laplacian smoothing in our system to smooth sharp features: 
+\begin{equation}
+\begin{split}
+a^2+b^2=c^2 \\
+a^2+b^2=c^2
+\end{split}
+\end{equation}
+where  is the number of adjacent vertices of ;  is a factor controlling the radial smoothing effect.
 
-\paragraph{Radial Smoothing}
+\subsection{Interactions}
+\label{sec:4.3}
 
-\paragraph{Laplacian Smoothing}
+the system in a virtual studio - pottery wheel
 
+In our implementation, we use HTC Vive headset and hand-held controllers (Fig) to track user movements and inputs.
+
+The goal of our system is not only to provide realistic experience in pottery creation, but also to provide convenient operations to improve the efficiency of pottery design. 
+[reality based interaction - superpowers]
+As a result, our system offers several operations in VR to support the design.
+
+[descriptions]
+buttons on the side of the pottery wheel
+
+There are three main operations supported by our system:
+
+Undo/Redo
+Our system provides  capturing the state of the program before user actions.
+
+New Mesh
+
+Export Mesh
+
+Radius adjustment
 
 \subsection{Haptic Feedback}
-\label{sec:2}
+\label{sec:4.4}
 
+on touch feedback
 
+range of area
 
-
-
+movement resistance
 
 
 \section{Results}
-\label{sec:1}
+\label{sec:5}
+We have implemented DigiClay using Unity3D and HTC Vive virtual reality system. 
+Based on the common size of clay placed on pottery wheels, we set the height 0.2 units with the radius 0.15 units. Moreover, we assign 60 and 59 to radial segments and vertical segments respectively, thus we get m = 60 and n = 10 as the resolution of the clay. The parameters for Perlin noise generation are listed in Table 1.
+%[noise parameters]
+% For tables use
+\begin{table}
+% table caption is above the table
+\caption{Please write your table caption here}
+\label{tab:1}       % Give a unique label
+% For LaTeX tables use
+\begin{tabular}{lll}
+\hline\noalign{\smallskip}
+name & value & meaning  \\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+$s_{Center}$ & 0.1 & Noise Scale of Center Distance \\
+$s_{Angle}$ & 0.1 & Noise Span of Center Angle \\
+$s_{Radius}$ & 0.1 & Noise Scale of Radius \\
+$s_{Radius}$ & 0.1 & Noise Span of Radius \\
+$s_{Vertex}$ & 0.1 & Noise Scale of Individual Vertex \\
+$s_{Vertex}$ & 0.1 & Noise Span of Individual Vertex \\
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
 
-Unity3D and HTC Vive
-Windows 10
+[deform parameters]
+We set the outer radius of handle 0.2 units, and the inner ratio of handle 0\% to get smooth deformation effect as the process begins. The centring parameter $\lambda$ and smoothing parameter $\mu$ are set 0.5 and 0.7 respectively to damping the deformation.
 
-Mesh Generation Parameters
+[performance]
+m, n, vertices, faces
 
-
-
+\begin{table}
+% table caption is above the table
+\caption{Please write your table caption here}
+\label{tab:1}       % Give a unique label
+% For LaTeX tables use
+\begin{tabular}{llll}
+\hline\noalign{\smallskip}
+radius segment & vertical segment & vertex number & face number \\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+100 & 100 & 10000 & 10000 \\
+100 & 100 & 10000 & 10000 \\
+100 & 100 & 10000 & 10000 \\
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
 
 \section{User Study}
-\label{sec:1}
+\label{sec:6}
+In order to compare our system with prior modeling systems and tablet apps, we set up a comparative user study. We chose Autodesk Maya[] as the representative of traditional desktop modeling systems and Let's Create Pottery as the representative of tablet pottery creation systems.
 
 \subsection{Evaluated Systems}
-\label{sec:2}
+\label{sec:6.1}
+The three evaluated systems were as follows:
 
-(description of each system)
-DigiClay – a pottery tool in VR
+\paragraph{PotteryVR}: our interactive pottery creation tool on virtual reality systems. The user can shape the virtual clay with bimanual spatial interaction.
+\paragraph{Let’s Create! Pottery}: a touch-based pottery creation tool on mobile devices. Users can interactively create pottery models by fingers swiping on screens.\cite{website:letspottery}
+\paragraph{Autodesk Maya}: a traditional desktop modeling system, which provides a set of powerful tools for professional 3D artists. The user can edit vertex, edge, face etc with mouse and keyboard.
 
-Let’s Create Pottery – a pottery tool on mobile devices
-
-Maya – traditional modeling tool
-
-Reasons – why choosing these three?
-
+Although the three systems are different, we focus on comparing them based on their similarities and workflows.
+To investigate the influence of modeling process, we compare DigiClay and Autodesk Maya since they both support 3D modeling. They differ in workflow to create a pottery mesh. While DigiClay can automatically generate a clay mesh for deformation with motion controllers, Maya needs to create the mesh from a primitive cylinder in order to edit in vertex mode, edge mode or face mode with mouse and keyboard. 
 
 
 \subsection{Participants}
-\label{sec:2}
-
-15-20
-
-Male Female
-
-Age range
-
-Familiarity with VR systems
-
-Traditional CAD tools 
-
-Real pottery experience
-
-
+\label{sec:6.2}
+15-20 participants were participated in our user study, 9 male and 10 female, whose age ranged from 22 to 40 years. 10 of the subjects are familiar with VR systems (50\%); 5 of the subjects have experience with 3D modeling tools (20\%); 8 of the subjects have amateur pottery throwing experience in real life.
+Figure 11 shows two subjects using our system to throw pottery. Figure 12 shows more results created by the subjects.
 
 \subsection{Experimental Design and Procedure}
-\label{sec:2}
+\label{sec:6.3}
 
-10 min training
-
-3 tasks
+After a 15 min training of the three systems, each subject had to accomplish 3 tasks:
 
 Task\textsubscript{DigiClay}
 
@@ -346,58 +445,74 @@ Task\textsubscript{LetsPottery}
 
 Task\textsubscript{Maya}
 
-Task details
+[Task details]
 
-NASA-TLX
+%[NASA-TLX]
+After accomplishing each task, the subjects were asked to answer a questionnaire with six questions to measure the six dimensions of NASA-TLX, which includes physical demand, mental demand, temporal demand, effort, performance and frustration. 5 additional questions were asked after they finished all tasks.
 
 Questions
 
-Q1
-…
-Q5
+\paragraph{Q1} Which one do you prefer to use to design a pottery, Maya or DigiClay?
+\paragraph{Q2} Which experience do you prefer, the touchscreen based Let's Create Pottery or virtual reality based DigiClay?
+\paragraph{Q3} Rank the three systems according to their supports for your imagination and creativity from high to low.
+\paragraph{Q4} Rank the three systems according to your preference from high to low.
 
-Some explanations
+%[Some explanations]
+NASA-TLX has been chosen in our research because it is widely used in human factor studies which addressed questions about interface design and evaluation.[NASA-TLX] We selected NASA-TLX as a part of our questionnaire to assess user workload in the three systems. Since the functionalities are different among the three systems, it is impossible and unfair to compare the interactions. We intended to allow our subjects to experience those differences and similarities through these tasks and analyze which types of interactions and results were more attractive to them through our user study questions.
+
 
 
 
 
 \subsection{Study Results}
-\label{sec:2}
+\label{sec:6.4}
 
-Figure - NASA-TLX
-
-Figure - Questions
-
-Findings from figures
-
+%[basic introduction]
+Figure A shows mean values of the six dimensions of NASA-TLX for all the tasks. For the questions of ranking, we count a score of 3 for the system in the highest ranking and 1 for the system in the lowest ranking. Figure B shows the vote results of the last two of the additional questions. Figure C shows the percentages of the first ranking frequencies of the three systems in the last two additional questions, in other words, how many female/male gave the highest rankings to the system.
+%[DC - less time and mental demand]
+According to Figure A, we can get some findings. 
+Firstly, the mental demand value of Tmaya (M = 9.9) is much higher than the values of Tdigi (M = 0.1) and Tlcp (M = 0.2). Similarly, the temporal demand value of Tmaya (M = 9.9) is much higher than the values of Tdigi (M = 0.1) and Tlcp (M = 0.2). This indicated that DigiClay was less time-consuming and easier to use than Maya and LCP.
+%[DC - easy to use, natural interaction]
+Compared with the formidable interfaces and the modeling operations heavily rely on mouse and keyboard in Maya, DigiClay provides simple interfaces with intuitive bimanual interactions to deform the mesh. In our experiments, we found that it is not difficult for the subjects to understand how to deform the mesh in DigiClay compared with the difficulties of selecting and editing vertices and faces in Maya. Since the natural interactions in DigiClay are closely related to the operations in reality, the subjects can learn our system with ease.
+%[LCP - limitation] [thickness smooth sharpness]
+We also found that it was not as easy as we predicted for the subjects to design potteries when using the Let's Create Pottery app. There are some limitations in the throwing process in LCP, where subjects cannot modify the thickness of the clay. Moreover, subjects found it is impossible to create sharp features on the clay in LCP. 
+%[Maya - hard]
+Maya showed much higher values in mental demand (M = 0.2), effort (M = 0.2) and frustration (M = 0.2) and lower value in performance (M = 0.2) compared with DigiClay and LCP. Although mouse and keyboard based interaction allows precise controls, many subjects struggled with selecting and manipulating vertices and faces accurately.
+%[user preference][enjoyable and intuitive]
+The results also showed that a majority subjects preferred the experience of designing pottery in DigiClay than those of Maya, as shown in Figure C. In addition, more than 50\% subjects considered DigiClay stimulate their creativity the most and chose it as their favorite system among the three systems. From their feedbacks, we found that immersive interactions in virtual reality context gave them a novel and realistic way to interact with virtual pottery models when using DigiClay.
+%[sex preference difference]
 
 \subsection{User Feedbacks}
-\label{sec:2}
+\label{sec:6.5}
 
-Positive
+%[Positive]
+We also collected user feedbacks after the subjects had used our system. In summary, subjects gave many positive feedbacks when using our system to design pottery models. They spoke highly of the immersive pottery creation experience with intuitive interaction and haptic feedback that motivated them to design potteries just like working on real clay. In addition, the undo/redo are quite convenient according to the subjects, which enhances the efficiency during the creation process. For those who have no real life pottery creation experience enjoyed our system very much and would like to try real pottery someday. 
 
-Suggestions
+%[Suggestions]
+During our user study, we found that...
+We also asked their suggestions for the future features they wanted to see in DigiClay.
+One suggested ...
+A few subjects expressed their wishes to add ...
+At the end of our user study, many subjects said they would like to try DigiClay one more time.
 
+\section{Limitations}
+\label{sec:7}
 
+Our system still has its limitations. First, the physical size of the motion controllers sometimes influence the deformation in bimanual mode, especially when the part of the clay is narrow that two controllers may collide with each other. For example, when subjects working on the neck of clay, it will be difficult to edit with two controllers. This problem can be easily solved by providing user one-hand deformation mode. We plan to use data gloves to avoid these situations in the future.
 
-\section{Discussions}
-\label{sec:1}
+Second, the potteries designed by our systems lack colors and textures. Although we focus on deformation in our study, several subjects stated that they wish to paint the pottery after designing the shape of the clay. We intend to add new features related to interactive painting on 3D objects.
 
-Limitations
-
-External 
-
-Internal
-
-Other…
-
-
+Another limitation of our system is that it cannot adding handles to the pottery. We will introduce more tools that allow users to modify the topology of the mesh in order to create more personalized pottery works.
 
 
 \section{Conclusions}
-\label{sec:1}
+\label{sec:8}
 
-
+We present PotteryVR, a realtime pottery modeling system in Virtual Reality.
+Closely linked to the pottery creation experience real life, our system enables users to manipulate the mesh in realtime with two hands, allowing them creating a variety of pottery models from realistic generated clay meshes.
+As an educational tool, PotteryVR can help novice users to learn real life pottery creation process in virtual environment, who can fabricate their works using our system with a 3D printer.
+Our results have shown that PotteryVR has relative advantage compared with a traditional desktop 3D tool (Maya) and a mobile app (Let's Create! Pottery).
+A possible extension of our system is to support interactive coloring functionalities in the future, which can enhance the artistry of user generated pottery works.
 
 
 % For one-column wide figures use
@@ -420,21 +535,6 @@ Other…
 \label{fig:2}       % Give a unique label
 \end{figure*}
 %
-% For tables use
-\begin{table}
-% table caption is above the table
-\caption{Please write your table caption here}
-\label{tab:1}       % Give a unique label
-% For LaTeX tables use
-\begin{tabular}{lll}
-\hline\noalign{\smallskip}
-first & second & third  \\
-\noalign{\smallskip}\hline\noalign{\smallskip}
-number & number & number \\
-number & number & number \\
-\noalign{\smallskip}\hline
-\end{tabular}
-\end{table}
 
 
 \begin{acknowledgements}
@@ -458,7 +558,7 @@ number & number & number \\
 % Format for Journal Reference
 %Author, Article title, Journal, Volume, page numbers (year)
 % Format for books
-%\bibitem{RefB}
+%\bibitem{RefB
 %Author, Book title, page numbers. Publisher, place (year)
 % etc
 %\end{thebibliography}
