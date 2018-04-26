@@ -210,15 +210,15 @@ In order to control the thickness of the clay (i.e. \textit{opening}), the user 
 Then the user can draw up the walls (i.e. \textit{pulling}) with two hands moving up together, controlling the height of the clay. (Figure 2d, Section 4.4)
 The system supports mesh deformation (\textit{throwing}) and smoothing, where the user can adjust related parameters to get ideal pot.
 After the creation is done, the user can save the screenshot and save the pottery model as an OBJ file, which can be used for 3D printing.
-
-
-%as required. Don't forget to give each section
-%and subsection a unique label (see Sect.~\ref{sec:1}).
-%\paragraph{Paragraph headings} Use paragraph headings as needed.
-%\begin{equation}
-%a^2+b^2=c^2
-%\end{equation}
-
+% For one-column wide figures use
+\begin{figure}
+% Use the relevant command to insert your figure file.
+% For example, with the graphicx package use
+  \includegraphics{example.eps}
+% figure caption is below the figure
+\caption{Please write your figure caption here}
+\label{fig:1}       % Give a unique label
+\end{figure}
 
 
 \section{Implementation}
@@ -236,32 +236,69 @@ Most of Virtual Pottery systems approximate the initial shape of pottery clay as
 %Cylindrical coordinate system
 
 \paragraph{Basic clay} We describe the clay mesh as a series of circular sections in different heights, whose resolution can be defined by radial sections $s_{r}$ and vertical sections $s_{v}$. Given radius $r$ and height $h$, our system can generate primitive mesh of cylinder and semi-ellipsoid respectively (Fig 1a, 1b).
-For each vertex in the mesh, we use a $m \times n$ matrix $M$ to store radius values, where number of row $m = s_{v} + 1$ and the number of column $n = s_{r}$ respectively. The base radius $r_{base_{i}}$ of each vertex $v_{ij}$ in row $i$ can be written as: 
+For each vertex in the mesh, we use a $m \times n$ matrix $M$ to store radius values, where number of row $m = s_{v} + 1$ and the number of column $n = s_{r}$ respectively. The base radius $r_{base_{i}}$ of each vertex $\mathbf{v}_{ij}$ in row $i$ can be written as: 
 \begin{equation}
 \begin{split}
-a^2+b^2=c^2 \\
-a^2+b^2=c^2
+r_{base_{i}} = \alpha \cdot \frac{r}{h} \sqrt{h^2 -  h_{i}^2} + (1 - \alpha) \cdot r \\
+h_{i} = i \cdot \frac{h}{m-1}
 \end{split}
 \end{equation}
-where  is a factor controls the shape blending between a  cylinder (when ) and a semi-ellipsoid (when ) (Fig 2).
+where $\alpha$ is a factor controls the shape blending between a  cylinder (when $\alpha=0$) and a semi-ellipsoid (when $\alpha=1$) (Fig 2).
 While the shape of clay can be roughly approximated like this, in real life the actual clay shape is not regular, whose irregular features needs to be handled during the pottery creation process.
 
+\begin{figure*}
+% Use the relevant command to insert your figure file.
+% For example, with the graphicx package use
+  \includegraphics[width=0.75\textwidth]{f1.pdf}
+% figure caption is below the figure
+\caption{Please write your figure caption here}
+\label{fig:1}       % Give a unique label
+\end{figure*}
+
 \paragraph{Adding noise} To address this issue, we add some randomness to the vertices to mimic the realistic clay using Perlin Noise [..], which is a smooth random method proposed by Ken Perlin in 1985. We randomize the centre and radius for each circle, then add noise to individual vertices.
-To add noise to the centre, we use random  and  to present the centre . Then we sum the values for each radius , where  is the radius for each circle, and  is individual radius for each vertex.(Fig 3) We can get the radius value  in the matrix  for each vertex, and calculate the vertex position based on the radius values in the matrix:
+To add noise to the centre, we use random $\phi_{i} \in [0, 2\pi]$ and $r_{c_{i}}$ to present the centre
+$\mathbf{O}_{i} = \left[r_{c_{i}}cos\phi_{i}, 0, r_{c_{i}}sin\phi_{i}\right]^T$
+. Then we sum the values for each radius
+$r_{total_{i,j}} = r_{base_{i}} + r_{row_{i}} + r_{indv_{i,j}}$
+, where $r_{row_{i}}$ is the radius for each circle, and $r_{indv_{i,j}}$ is individual radius for each vertex.(Fig 3) We can get the radius value $r_{i,j}$ in the matrix $M$ for each vertex, and calculate the vertex position $\mathbf{v}_{ij}$ based on the radius values in the matrix:
 \begin{equation}
 \begin{split}
-a^2+b^2=c^2 \\
-a^2+b^2=c^2
+r_{i,j} = \left\|
+\mathbf{O}_{i} + \left[ r_{total_{i,j}} cos \theta_{j},
+h_{i},
+r_{total_{i,j}} sin \theta_{j}
+\right]^T
+\right\| \\
+\mathbf{v}_{i,j} =
+\left[r_{i,j}  cos \theta_{j},
+h_{i},
+r_{i,j} sin \theta_{j}\right]^T \\
+\theta_{j} = j \cdot \frac{2\pi}{n}
 \end{split}
 \end{equation}
+
+\begin{figure*}
+% Use the relevant command to insert your figure file.
+% For example, with the graphicx package use
+  \includegraphics[width=0.75\textwidth]{f2.pdf}
+% figure caption is below the figure
+\caption{Please write your figure caption here}
+\label{fig:1}       % Give a unique label
+\end{figure*}
+
 Unlike other virtual pottery creation system, we aim to create 3D printing oriented pottery models. To accomplish that we need to generate watertight 3D models. Hence, our system generate inner and bottom sides based on the outer side mesh. The vertices on inner side can be denoted as:
 \begin{equation}
 \begin{split}
-a^2+b^2=c^2 \\
-a^2+b^2=c^2
+\mathbf{v'}_{i,j} = 
+\begin{bmatrix}
+1 - \beta & 0 & 0 \\
+0 & 1 & 0 \\ 
+0 & 0 & 1 - \beta 
+\end{bmatrix}
+\mathbf{v}_{i,j}
 \end{split}
 \end{equation}
-where  is the thickness value of the clay mesh. In mesh generation phase, the initial value of  is 1; in mesh deformation phase, the value of  can be adjusted by user.
+where $\beta$ is the thickness value of the clay mesh. In mesh generation phase, the initial value of $\beta$ is 1; in mesh deformation phase, the value of $\beta$ can be adjusted by user.
 We then generate vertices for both inner-bottom and outer-bottom sides according to inner-side and outer-side vertices respectively. Finally, a mesh can be generated by constructing triangle faces based on the vertex indices. (Fig)
 
 
@@ -279,23 +316,44 @@ In real life, clay on pottery wheel can swing around vertical axis due to asymme
 In our implementation, average radius for each row is calculated and each radius in matrix  needs updated:
 \begin{equation}
 \begin{split}
-a^2+b^2=c^2 \\
-a^2+b^2=c^2
+r'_{i,j} = 
+\lambda \cdot \frac{1}{n}\sum_{k=1}^{n} r_{i,k}
++ (1 - \lambda) \cdot r_{i,j}
 \end{split}
 \end{equation}
-where  is a damping factor controlling the radial smoothing effect.
+where $\lambda \in [0,1]$ is a damping factor controlling the radial smoothing effect.
+
+% For one-column wide figures use
+\begin{figure}
+% Use the relevant command to insert your figure file.
+% For example, with the graphicx package use
+  \includegraphics{example.eps}
+% figure caption is below the figure
+\caption{Please write your figure caption here}
+\label{fig:1}       % Give a unique label
+\end{figure}
 
 \subsubsection{Thickness/Height Control}
 \label{sec:4.2.2}
 Height and thickness control are  basic clay manipulations in pottery creation process which are done by applying force to clay with two hands. The height can be adjusted by hands vertical movement while holding the clay, while the thickness can be adjusted by pushing down the top centre part of the clay with fingers. Let  be the vertical hand movement distance, we have:
 \begin{equation}
 \begin{split}
-a^2+b^2=c^2 \\
-a^2+b^2=c^2
+\Delta y = (\Delta y_{l} + \Delta y_{r})/2 \\
+h' = h_{0} + \Delta y * \gamma \\
+\beta' = \beta_{0} + \Delta y/ h
 \end{split}
 \end{equation}
-where  and  are previous height and thickness values before every deformation respectively;  is a damping factor for height.
+where $h_{0}$ and $\beta_{0}$ are previous height and thickness values before every deformation respectively; $\gamma$ is a damping factor for height.
 
+% For one-column wide figures use
+\begin{figure}
+% Use the relevant command to insert your figure file.
+% For example, with the graphicx package use
+  \includegraphics{example.eps}
+% figure caption is below the figure
+\caption{Please write your figure caption here}
+\label{fig:1}       % Give a unique label
+\end{figure}
 
 \subsubsection{Mesh Deformation}
 \label{sec:4.2.3}
@@ -303,33 +361,47 @@ In this section we talk about interactively deforming. This topic is challenging
 
 a set of handle points
 fixed points
-due to rotational symmetry in pottery vessels, the deformation problem is turned into how to get the new radius Matrix 
+due to rotational symmetry in pottery vessels, the deformation problem is turned into how to get the new radius Matrix
 
 We calculate weights based on hand initial position p0 [FIG]
 \begin{equation}
 \begin{split}
-a^2+b^2=c^2 \\
-a^2+b^2=c^2
+r'_{ij} = r_{ij} + s \cdot l \cdot w_{ij} \\
+d(r_{i,j}) = \begin{cases}
+\rho' - \rho_{0} &  d < r_{i} \\
+0 &  d > r_{o} \\
+s(\frac{d}{r_{o}-r_{i}}) (\rho' - \rho_{0}) &  r_{i} < d < r_{o}
+\end{cases}
 \end{split}
 \end{equation}
-where  is the vertical distance between the handle and ;  and  are inner and outer handle radius respectively. 
+where $d$ is the vertical distance between the handle and $\mathbf{v}_{i,j}$; $r_{i}$ and $r_{o}$ are inner and outer handle radius respectively. 
 
 (ρ, φ, z) 
 The radial distance ρ is the Euclidean distance from the z-axis to the point P.
 The azimuth φ is the angle between the reference direction on the chosen plane and the line from the origin to the projection of P on the plane.
 The height z is the signed distance from the chosen plane to the point P.
 
+\begin{figure*}
+% Use the relevant command to insert your figure file.
+% For example, with the graphicx package use
+  \includegraphics[width=0.75\textwidth]{f4.pdf}
+% figure caption is below the figure
+\caption{Please write your figure caption here}
+\label{fig:1}       % Give a unique label
+\end{figure*}
 
 \subsubsection{Mesh Smoothing}
 \label{sec:4.2.4}
 As mentioned above, it is possible to create sharp features upon the clay mesh when  is large. Hence, we use Laplacian smoothing in our system to smooth sharp features: 
 \begin{equation}
 \begin{split}
-a^2+b^2=c^2 \\
-a^2+b^2=c^2
+r'_{i,j} = 
+\mu  \frac{1}{N} 
+\sum_{k=1}^N r_{k}
++ (1 - \mu)  r_{i,j}
 \end{split}
 \end{equation}
-where  is the number of adjacent vertices of ;  is a factor controlling the radial smoothing effect.
+where $N$ is the number of adjacent vertices of $\mathbf{v}_{i,j}$; $\mu \in [0,1]$ is a factor controlling the radial smoothing effect.
 
 \subsection{Interactions}
 \label{sec:4.3}
@@ -481,6 +553,32 @@ Maya showed much higher values in mental demand (M = 0.2), effort (M = 0.2) and 
 %[user preference][enjoyable and intuitive]
 The results also showed that a majority subjects preferred the experience of designing pottery in DigiClay than those of Maya, as shown in Figure C. In addition, more than 50\% subjects considered DigiClay stimulate their creativity the most and chose it as their favorite system among the three systems. From their feedbacks, we found that immersive interactions in virtual reality context gave them a novel and realistic way to interact with virtual pottery models when using DigiClay.
 %[sex preference difference]
+\begin{figure*}
+% Use the relevant command to insert your figure file.
+% For example, with the graphicx package use
+  \includegraphics[width=0.75\textwidth]{f7.pdf}
+% figure caption is below the figure
+\caption{Please write your figure caption here}
+\label{fig:1}       % Give a unique label
+\end{figure*}
+
+\begin{figure*}
+% Use the relevant command to insert your figure file.
+% For example, with the graphicx package use
+  \includegraphics[width=0.75\textwidth]{f8.pdf}
+% figure caption is below the figure
+\caption{Please write your figure caption here}
+\label{fig:1}       % Give a unique label
+\end{figure*}
+
+\begin{figure*}
+% Use the relevant command to insert your figure file.
+% For example, with the graphicx package use
+  \includegraphics[width=0.75\textwidth]{f9.pdf}
+% figure caption is below the figure
+\caption{Please write your figure caption here}
+\label{fig:1}       % Give a unique label
+\end{figure*}
 
 \subsection{User Feedbacks}
 \label{sec:6.5}

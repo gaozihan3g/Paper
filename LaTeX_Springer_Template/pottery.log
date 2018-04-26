@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  24 APR 2018 20:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  26 APR 2018 14:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -115,94 +115,131 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen114
 \Gin@req@width=\dimen115
 )
-(./pottery.aux
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/11/05 v2.16a AMS math features
+\@mathmargin=\skip43
 
-LaTeX Warning: Label `sec:1' multiply defined.
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
 
-
-LaTeX Warning: Label `sec:2' multiply defined.
-
-
-LaTeX Warning: Label `sec:1' multiply defined.
-
-
-LaTeX Warning: Label `sec:2' multiply defined.
-
-
-LaTeX Warning: Label `sec:2' multiply defined.
-
-
-LaTeX Warning: Label `sec:3' multiply defined.
-
-
-LaTeX Warning: Label `sec:3' multiply defined.
-
-
-LaTeX Warning: Label `sec:3' multiply defined.
-
-
-LaTeX Warning: Label `sec:2' multiply defined.
-
-
-LaTeX Warning: Label `sec:1' multiply defined.
-
-
-LaTeX Warning: Label `sec:1' multiply defined.
-
-
-LaTeX Warning: Label `sec:2' multiply defined.
-
-
-LaTeX Warning: Label `sec:2' multiply defined.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen116
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen117
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count106
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count107
+\leftroot@=\count108
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count109
+\DOTSCASE@=\count110
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box29
+\strutbox@=\box30
+\big@size=\dimen118
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 
 
-LaTeX Warning: Label `sec:2' multiply defined.
+Package amsmath Warning: Unable to redefine math accent \vec.
+
+\macc@depth=\count111
+\c@MaxMatrixCols=\count112
+\dotsspace@=\muskip10
+\c@parentequation=\count113
+\dspbrk@lvl=\count114
+\tag@help=\toks18
+\row@=\count115
+\column@=\count116
+\maxfields@=\count117
+\andhelp@=\toks19
+\eqnshift@=\dimen119
+\alignsep@=\dimen120
+\tagshift@=\dimen121
+\tagwidth@=\dimen122
+\totwidth@=\dimen123
+\lineht@=\dimen124
+\@envbody=\toks20
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+) (./pottery.aux
+
+LaTeX Warning: Label `fig:1' multiply defined.
 
 
-LaTeX Warning: Label `sec:2' multiply defined.
+LaTeX Warning: Label `fig:1' multiply defined.
 
 
-LaTeX Warning: Label `sec:2' multiply defined.
+LaTeX Warning: Label `fig:1' multiply defined.
 
 
-LaTeX Warning: Label `sec:1' multiply defined.
+LaTeX Warning: Label `fig:1' multiply defined.
 
 
-LaTeX Warning: Label `sec:1' multiply defined.
+LaTeX Warning: Label `fig:1' multiply defined.
+
+
+LaTeX Warning: Label `tab:1' multiply defined.
+
+
+LaTeX Warning: Label `fig:1' multiply defined.
+
+
+LaTeX Warning: Label `fig:1' multiply defined.
+
+
+LaTeX Warning: Label `fig:1' multiply defined.
+
+
+LaTeX Warning: Label `fig:1' multiply defined.
 
 )
 \openout1 = `pottery.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
 
 Unknown journal: specify \journalname{<name of your journal>} in preambel
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count106
-\scratchdimen=\dimen116
-\scratchbox=\box29
-\nofMPsegments=\count107
-\nofMParguments=\count108
-\everyMPshowfont=\toks17
-\MPscratchCnt=\count109
-\MPscratchDim=\dimen117
-\MPnumerator=\count110
-\makeMPintoPDFobject=\count111
-\everyMPtoPDFconversion=\toks18
+\scratchcounter=\count118
+\scratchdimen=\dimen125
+\scratchbox=\box31
+\nofMPsegments=\count119
+\nofMParguments=\count120
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count121
+\MPscratchDim=\dimen126
+\MPnumerator=\count122
+\makeMPintoPDFobject=\count123
+\everyMPtoPDFconversion=\toks23
 ) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -253,14 +290,6 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 SVJour3 warning: Missing \journalname
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 93.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 93.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 93.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 93.
 [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
@@ -269,32 +298,10 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1264) has occurred while \output is active []
 
  [2]
-[3] [4] [5]
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ì in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ì in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ì in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ì in font cmr10!
- [6]
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ¶ in font cmr10!
+[3]
 Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    date: 2018-03-29 09:17:38
 (epstopdf)                    size: 286 bytes
@@ -303,13 +310,108 @@ Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    size: 2431 bytes
 (epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
 df example.eps>
-(epstopdf)             \includegraphics on input line 383.
+(epstopdf)             \includegraphics on input line 217.
 Package epstopdf Info: Output file is already uptodate.
- <example-eps-converted-to.pdf, id=30, 202.7575pt x 202.7575pt>
+ <example-eps-converted-to.pdf, id=17, 202.7575pt x 202.7575pt>
 File: example-eps-converted-to.pdf Graphic file (type pdf)
 
 <use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 383.
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 217.
+(pdftex.def)             Requested size: 202.757pt x 202.757pt.
+ [4] [5 <./example-eps-converted-to.pdf>]
+<f1.pdf, id=28, 284.52759pt x 284.52759pt>
+File: f1.pdf Graphic file (type pdf)
+ <use f1.pdf>
+Package pdftex.def Info: f1.pdf used on input line 252.
+(pdftex.def)             Requested size: 253.5pt x 253.5066pt.
+ [6 <./f1.pdf>]
+<f2.pdf, id=59, 845.1575pt x 597.23125pt>
+File: f2.pdf Graphic file (type pdf)
+ <use f2.pdf>
+Package pdftex.def Info: f2.pdf used on input line 283.
+(pdftex.def)             Requested size: 253.5pt x 179.1343pt.
+ [7 <./f2.pdf>]
+Package epstopdf Info: Source file: <example.eps>
+(epstopdf)                    date: 2018-03-29 09:17:38
+(epstopdf)                    size: 286 bytes
+(epstopdf)             Output file: <example-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-03-29 09:17:39
+(epstopdf)                    size: 2431 bytes
+(epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
+df example.eps>
+(epstopdf)             \includegraphics on input line 330.
+Package epstopdf Info: Output file is already uptodate.
+File: example-eps-converted-to.pdf Graphic file (type pdf)
+
+<use example-eps-converted-to.pdf>
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 330.
+(pdftex.def)             Requested size: 202.757pt x 202.757pt.
+ [8]
+Package epstopdf Info: Source file: <example.eps>
+(epstopdf)                    date: 2018-03-29 09:17:38
+(epstopdf)                    size: 286 bytes
+(epstopdf)             Output file: <example-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-03-29 09:17:39
+(epstopdf)                    size: 2431 bytes
+(epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
+df example.eps>
+(epstopdf)             \includegraphics on input line 352.
+Package epstopdf Info: Output file is already uptodate.
+File: example-eps-converted-to.pdf Graphic file (type pdf)
+ <use example-eps-converted-to.pdf>
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 352.
+(pdftex.def)             Requested size: 202.757pt x 202.757pt.
+
+[9]
+Missing character: There is no œ in font cmr10!
+Missing character: There is no Å in font cmr10!
+Missing character: There is no œ in font cmr10!
+Missing character: There is no Ü in font cmr10!
+Missing character: There is no œ in font cmr10!
+Missing character: There is no Å in font cmr10!
+Missing character: There is no œ in font cmr10!
+Missing character: There is no Ü in font cmr10!
+ <f4.pdf, id=111, 614.295pt x 794.97pt>
+File: f4.pdf Graphic file (type pdf)
+ <use f4.pdf>
+Package pdftex.def Info: f4.pdf used on input line 387.
+(pdftex.def)             Requested size: 253.5pt x 328.0626pt.
+ [10 <./f4.pdf>]
+[11]
+Missing character: There is no ‚ in font cmti10!
+Missing character: There is no Ä in font cmti10!
+Missing character: There is no ô in font cmti10!
+ [12] <f7.pdf, id=135, 845.1575pt x 597.23125pt>
+File: f7.pdf Graphic file (type pdf)
+ <use f7.pdf>
+Package pdftex.def Info: f7.pdf used on input line 559.
+(pdftex.def)             Requested size: 253.5pt x 179.1343pt.
+ [13]
+<f8.pdf, id=140, 614.295pt x 794.97pt>
+File: f8.pdf Graphic file (type pdf)
+ <use f8.pdf>
+Package pdftex.def Info: f8.pdf used on input line 568.
+(pdftex.def)             Requested size: 253.5pt x 328.0626pt.
+
+<f9.pdf, id=141, 614.295pt x 794.97pt>
+File: f9.pdf Graphic file (type pdf)
+ <use f9.pdf>
+Package pdftex.def Info: f9.pdf used on input line 577.
+(pdftex.def)             Requested size: 253.5pt x 328.0626pt.
+ [14] [15 <./f7.pdf> <./f8.pdf>] [16 <./f9.pdf>]
+Package epstopdf Info: Source file: <example.eps>
+(epstopdf)                    date: 2018-03-29 09:17:38
+(epstopdf)                    size: 286 bytes
+(epstopdf)             Output file: <example-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-03-29 09:17:39
+(epstopdf)                    size: 2431 bytes
+(epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
+df example.eps>
+(epstopdf)             \includegraphics on input line 620.
+Package epstopdf Info: Output file is already uptodate.
+File: example-eps-converted-to.pdf Graphic file (type pdf)
+ <use example-eps-converted-to.pdf>
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 620.
 (pdftex.def)             Requested size: 202.757pt x 202.757pt.
 Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    date: 2018-03-29 09:17:38
@@ -319,40 +421,48 @@ Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    size: 2431 bytes
 (epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
 df example.eps>
-(epstopdf)             \includegraphics on input line 393.
+(epstopdf)             \includegraphics on input line 630.
 Package epstopdf Info: Output file is already uptodate.
 File: example-eps-converted-to.pdf Graphic file (type pdf)
- <use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 393.
-(pdftex.def)             Requested size: 253.5pt x 253.50812pt.
 
-(./pottery.bbl [7] [8 <./example-eps-converted-to.pdf>]) [9] (./pottery.aux)
+<use example-eps-converted-to.pdf>
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 630.
+(pdftex.def)             Requested size: 253.5pt x 253.50812pt.
+ (./pottery.bbl [17] [18]) [19]
+(./pottery.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2228 strings out of 492995
- 33592 string characters out of 6132704
- 93402 words of memory out of 5000000
- 5772 multiletter control sequences out of 15000+600000
- 9480 words of font info for 33 fonts, out of 8000000 for 9000
+ 2875 strings out of 492995
+ 40910 string characters out of 6132704
+ 104054 words of memory out of 5000000
+ 6400 multiletter control sequences out of 15000+600000
+ 8866 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,8n,25p,2347b,295s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pf
-b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+ 39i,22n,25p,1406b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/STIXGeneral-Itali
+c.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/STIXGeneral-R
+egular.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+x8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex1
+0.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.p
+fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
 sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
 /local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
 cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
 /texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
-texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on pottery.pdf (9 pages, 152117 bytes).
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on pottery.pdf (19 pages, 1009582 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 229 PDF objects out of 1000 (max. 8388607)
+ 178 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
