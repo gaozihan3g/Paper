@@ -6,14 +6,23 @@
   \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
   \urlstyle{rm}\Url}\fi
 
-\bibitem{website:letspottery}
-Let's create! pottery.
-\newblock \urlprefix\url{http://www.potterygame.com/}
-
 \bibitem{agrawala19953d}
 Agrawala, M., Beers, A.C., Levoy, M.: 3d painting on scanned surfaces.
 \newblock In: Proceedings of the 1995 symposium on Interactive 3D graphics, pp.
   145--ff. ACM (1995)
+
+\bibitem{website:3dmax}
+Autodesk 3ds max.
+\newblock \urlprefix\url{https://www.autodesk.com/products/3ds-max/overview}
+
+\bibitem{website:maya}
+Autodesk maya.
+\newblock \urlprefix\url{https://www.autodesk.com/products/maya/overview}
+
+\bibitem{choudhary1995general}
+Choudhary, R., Dewan, P.: A general multi-user undo/redo model.
+\newblock In: Proceedings of the Fourth European Conference on
+  Computer-Supported Cooperative Work ECSCW’95, pp. 231--246. Springer (1995)
 
 \bibitem{cui2016exploration}
 Cui, J., Kuijper, A., Sourin, A.: Exploration of natural free-hand interaction
@@ -68,6 +77,10 @@ LaViola, J.J., Keefe, D.F.: 3d spatial interaction: applications for art,
   design, and science.
 \newblock In: ACM Siggraph 2011 Courses, p.~1. ACM (2011)
 
+\bibitem{website:letspottery}
+Let's create! pottery.
+\newblock \urlprefix\url{http://www.potterygame.com/}
+
 \bibitem{mcdonnell2001virtual}
 McDonnell, K.T., Qin, H., Wlodarczyk, R.A.: Virtual clay: A real-time sculpting
   system with haptic toolkits.
@@ -112,6 +125,10 @@ Schkolne, S., Pruett, M., Schr{\"o}der, P.: Surface drawing: creating organic
 Sheng, J., Balakrishnan, R., Singh, K.: An interface for virtual 3d sculpting
   via physical proxy.
 \newblock In: GRAPHITE, vol.~6, pp. 213--220 (2006)
+
+\bibitem{website:unity}
+Unity3d.
+\newblock \urlprefix\url{http://www.unity3d.com}
 
 \bibitem{walter2014cuenesics}
 Walter, R., Bailly, G., Valkanova, N., M{\"u}ller, J.: Cuenesics: using mid-air

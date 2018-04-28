@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  26 APR 2018 14:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  27 APR 2018 21:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -176,7 +176,18 @@ Package amsmath Warning: Unable to redefine math accent \vec.
 \mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
-) (./pottery.aux
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip46
+\enit@outerparindent=\dimen125
+\enit@toks=\toks22
+\enit@inbox=\box31
+\enitdp@description=\count118
+)
+(./pottery.aux
+
+LaTeX Warning: Label `fig:1' multiply defined.
+
 
 LaTeX Warning: Label `fig:1' multiply defined.
 
@@ -210,36 +221,36 @@ LaTeX Warning: Label `fig:1' multiply defined.
 )
 \openout1 = `pottery.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
 
 Unknown journal: specify \journalname{<name of your journal>} in preambel
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count118
-\scratchdimen=\dimen125
-\scratchbox=\box31
-\nofMPsegments=\count119
-\nofMParguments=\count120
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count121
-\MPscratchDim=\dimen126
-\MPnumerator=\count122
-\makeMPintoPDFobject=\count123
-\everyMPtoPDFconversion=\toks23
+\scratchcounter=\count119
+\scratchdimen=\dimen126
+\scratchbox=\box32
+\nofMPsegments=\count120
+\nofMParguments=\count121
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count122
+\MPscratchDim=\dimen127
+\MPnumerator=\count123
+\makeMPintoPDFobject=\count124
+\everyMPtoPDFconversion=\toks24
 ) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -298,39 +309,29 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \vbox (badness 1264) has occurred while \output is active []
-
- [2]
-[3]
-Package epstopdf Info: Source file: <example.eps>
-(epstopdf)                    date: 2018-03-29 09:17:38
-(epstopdf)                    size: 286 bytes
-(epstopdf)             Output file: <example-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-29 09:17:39
-(epstopdf)                    size: 2431 bytes
-(epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
-df example.eps>
-(epstopdf)             \includegraphics on input line 217.
-Package epstopdf Info: Output file is already uptodate.
- <example-eps-converted-to.pdf, id=17, 202.7575pt x 202.7575pt>
-File: example-eps-converted-to.pdf Graphic file (type pdf)
-
-<use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 217.
-(pdftex.def)             Requested size: 202.757pt x 202.757pt.
- [4] [5 <./example-eps-converted-to.pdf>]
-<f1.pdf, id=28, 284.52759pt x 284.52759pt>
+[2] <f1.pdf, id=14, 284.52759pt x 284.52759pt>
 File: f1.pdf Graphic file (type pdf)
  <use f1.pdf>
-Package pdftex.def Info: f1.pdf used on input line 252.
+Package pdftex.def Info: f1.pdf used on input line 161.
+(pdftex.def)             Requested size: 284.52689pt x 284.52689pt.
+ [3 <./f1.pdf>]
+[4] <t2.pdf, id=44, 569.05505pt x 113.811pt>
+File: t2.pdf Graphic file (type pdf)
+ <use t2.pdf>
+Package pdftex.def Info: t2.pdf used on input line 235.
+(pdftex.def)             Requested size: 338.0pt x 67.60115pt.
+ [5]
+File: f1.pdf Graphic file (type pdf)
+ <use f1.pdf>
+Package pdftex.def Info: f1.pdf used on input line 270.
 (pdftex.def)             Requested size: 253.5pt x 253.5066pt.
- [6 <./f1.pdf>]
-<f2.pdf, id=59, 845.1575pt x 597.23125pt>
+
+[6 <./t2.pdf>] <f2.pdf, id=69, 845.1575pt x 597.23125pt>
 File: f2.pdf Graphic file (type pdf)
  <use f2.pdf>
-Package pdftex.def Info: f2.pdf used on input line 283.
+Package pdftex.def Info: f2.pdf used on input line 301.
 (pdftex.def)             Requested size: 253.5pt x 179.1343pt.
- [7 <./f2.pdf>]
+ [7]
 Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    date: 2018-03-29 09:17:38
 (epstopdf)                    size: 286 bytes
@@ -339,66 +340,80 @@ Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    size: 2431 bytes
 (epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
 df example.eps>
-(epstopdf)             \includegraphics on input line 330.
+(epstopdf)             \includegraphics on input line 349.
+Package epstopdf Info: Output file is already uptodate.
+
+<example-eps-converted-to.pdf, id=75, 202.7575pt x 202.7575pt>
+File: example-eps-converted-to.pdf Graphic file (type pdf)
+
+<use example-eps-converted-to.pdf>
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 349.
+(pdftex.def)             Requested size: 202.757pt x 202.757pt.
+ [8 <./f2.pdf>]
+Package epstopdf Info: Source file: <example.eps>
+(epstopdf)                    date: 2018-03-29 09:17:38
+(epstopdf)                    size: 286 bytes
+(epstopdf)             Output file: <example-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-03-29 09:17:39
+(epstopdf)                    size: 2431 bytes
+(epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
+df example.eps>
+(epstopdf)             \includegraphics on input line 371.
 Package epstopdf Info: Output file is already uptodate.
 File: example-eps-converted-to.pdf Graphic file (type pdf)
 
 <use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 330.
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 371.
 (pdftex.def)             Requested size: 202.757pt x 202.757pt.
- [8]
-Package epstopdf Info: Source file: <example.eps>
-(epstopdf)                    date: 2018-03-29 09:17:38
-(epstopdf)                    size: 286 bytes
-(epstopdf)             Output file: <example-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-29 09:17:39
-(epstopdf)                    size: 2431 bytes
-(epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
-df example.eps>
-(epstopdf)             \includegraphics on input line 352.
-Package epstopdf Info: Output file is already uptodate.
-File: example-eps-converted-to.pdf Graphic file (type pdf)
- <use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 352.
-(pdftex.def)             Requested size: 202.757pt x 202.757pt.
+ [9 <./example-eps-converted-to.pdf>]
+Missing character: There is no œ in font cmr10!
+Missing character: There is no Å in font cmr10!
+Missing character: There is no œ in font cmr10!
+Missing character: There is no Ü in font cmr10!
+Missing character: There is no œ in font cmr10!
+Missing character: There is no Å in font cmr10!
+Missing character: There is no œ in font cmr10!
+Missing character: There is no Ü in font cmr10!
 
-[9]
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Å in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Ü in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Å in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Ü in font cmr10!
- <f4.pdf, id=111, 614.295pt x 794.97pt>
+<f4.pdf, id=124, 614.295pt x 794.97pt>
 File: f4.pdf Graphic file (type pdf)
  <use f4.pdf>
-Package pdftex.def Info: f4.pdf used on input line 387.
+Package pdftex.def Info: f4.pdf used on input line 406.
 (pdftex.def)             Requested size: 253.5pt x 328.0626pt.
- [10 <./f4.pdf>]
-[11]
+ [10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11 <./f4.pdf>] [12]
 Missing character: There is no ‚ in font cmti10!
 Missing character: There is no Ä in font cmti10!
 Missing character: There is no ô in font cmti10!
- [12] <f7.pdf, id=135, 845.1575pt x 597.23125pt>
+ [13] <f7.pdf, id=153, 845.1575pt x 597.23125pt>
 File: f7.pdf Graphic file (type pdf)
  <use f7.pdf>
-Package pdftex.def Info: f7.pdf used on input line 559.
+Package pdftex.def Info: f7.pdf used on input line 584.
 (pdftex.def)             Requested size: 253.5pt x 179.1343pt.
- [13]
-<f8.pdf, id=140, 614.295pt x 794.97pt>
+
+[14] <f8.pdf, id=157, 614.295pt x 794.97pt>
 File: f8.pdf Graphic file (type pdf)
  <use f8.pdf>
-Package pdftex.def Info: f8.pdf used on input line 568.
+Package pdftex.def Info: f8.pdf used on input line 593.
 (pdftex.def)             Requested size: 253.5pt x 328.0626pt.
 
-<f9.pdf, id=141, 614.295pt x 794.97pt>
+<f9.pdf, id=158, 614.295pt x 794.97pt>
 File: f9.pdf Graphic file (type pdf)
  <use f9.pdf>
-Package pdftex.def Info: f9.pdf used on input line 577.
+Package pdftex.def Info: f9.pdf used on input line 602.
 (pdftex.def)             Requested size: 253.5pt x 328.0626pt.
- [14] [15 <./f7.pdf> <./f8.pdf>] [16 <./f9.pdf>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15 <./f7.pdf>]
+Underfull \vbox (badness 2150) has occurred while \output is active []
+
+ [16 <./f8.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17 <./f9.pdf>]
 Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    date: 2018-03-29 09:17:38
 (epstopdf)                    size: 286 bytes
@@ -407,11 +422,11 @@ Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    size: 2431 bytes
 (epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
 df example.eps>
-(epstopdf)             \includegraphics on input line 620.
+(epstopdf)             \includegraphics on input line 645.
 Package epstopdf Info: Output file is already uptodate.
 File: example-eps-converted-to.pdf Graphic file (type pdf)
  <use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 620.
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 645.
 (pdftex.def)             Requested size: 202.757pt x 202.757pt.
 Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    date: 2018-03-29 09:17:38
@@ -421,27 +436,30 @@ Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    size: 2431 bytes
 (epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
 df example.eps>
-(epstopdf)             \includegraphics on input line 630.
+(epstopdf)             \includegraphics on input line 655.
 Package epstopdf Info: Output file is already uptodate.
 File: example-eps-converted-to.pdf Graphic file (type pdf)
-
-<use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 630.
+ <use example-eps-converted-to.pdf>
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 655.
 (pdftex.def)             Requested size: 253.5pt x 253.50812pt.
- (./pottery.bbl [17] [18]) [19]
-(./pottery.aux)
+
+(./pottery.bbl
+Missing character: There is no ‚ in font cmr8!
+Missing character: There is no Ä in font cmr8!
+Missing character: There is no ô in font cmr8!
+ [18] [19]) [20] (./pottery.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2875 strings out of 492995
- 40910 string characters out of 6132704
- 104054 words of memory out of 5000000
- 6400 multiletter control sequences out of 15000+600000
+ 3161 strings out of 492995
+ 45701 string characters out of 6132704
+ 110168 words of memory out of 5000000
+ 6681 multiletter control sequences out of 15000+600000
  8866 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,22n,25p,1406b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,22n,25p,676b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/STIXGeneral-Itali
 c.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/STIXGeneral-R
 egular.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
@@ -459,10 +477,10 @@ cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
 /texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
 texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/te
 xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on pottery.pdf (19 pages, 1009582 bytes).
+Output written on pottery.pdf (20 pages, 1016568 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 178 compressed objects within 2 object streams
+ 245 PDF objects out of 1000 (max. 8388607)
+ 191 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
