@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  27 APR 2018 21:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  1 MAY 2018 22:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -204,6 +204,9 @@ LaTeX Warning: Label `fig:1' multiply defined.
 LaTeX Warning: Label `fig:1' multiply defined.
 
 
+LaTeX Warning: Label `fig:1' multiply defined.
+
+
 LaTeX Warning: Label `tab:1' multiply defined.
 
 
@@ -380,40 +383,49 @@ File: f4.pdf Graphic file (type pdf)
  <use f4.pdf>
 Package pdftex.def Info: f4.pdf used on input line 406.
 (pdftex.def)             Requested size: 253.5pt x 328.0626pt.
- [10]
+
+
+LaTeX Warning: Citation `website:vive' on page 10 undefined on input line 430.
+
+[10]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11 <./f4.pdf>] [12]
+ [11 <./f4.pdf>]
+
+LaTeX Warning: Citation `website:vive' on page 12 undefined on input line 472.
+
+<f7.pdf, id=144, 845.1575pt x 597.23125pt>
+File: f7.pdf Graphic file (type pdf)
+ <use f7.pdf>
+Package pdftex.def Info: f7.pdf used on input line 480.
+(pdftex.def)             Requested size: 253.5pt x 179.1343pt.
+ [12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13 <./f7.pdf>]
 Missing character: There is no â in font cmti10!
 Missing character: There is no € in font cmti10!
 Missing character: There is no ™ in font cmti10!
- [13] <f7.pdf, id=153, 845.1575pt x 597.23125pt>
+ [14] [15]
 File: f7.pdf Graphic file (type pdf)
  <use f7.pdf>
-Package pdftex.def Info: f7.pdf used on input line 584.
+Package pdftex.def Info: f7.pdf used on input line 602.
 (pdftex.def)             Requested size: 253.5pt x 179.1343pt.
-
-[14] <f8.pdf, id=157, 614.295pt x 794.97pt>
+ <f8.pdf, id=173, 614.295pt x 794.97pt>
 File: f8.pdf Graphic file (type pdf)
- <use f8.pdf>
-Package pdftex.def Info: f8.pdf used on input line 593.
-(pdftex.def)             Requested size: 253.5pt x 328.0626pt.
 
-<f9.pdf, id=158, 614.295pt x 794.97pt>
+<use f8.pdf>
+Package pdftex.def Info: f8.pdf used on input line 611.
+(pdftex.def)             Requested size: 253.5pt x 328.0626pt.
+ <f9.pdf, id=174, 614.295pt x 794.97pt>
 File: f9.pdf Graphic file (type pdf)
  <use f9.pdf>
-Package pdftex.def Info: f9.pdf used on input line 602.
+Package pdftex.def Info: f9.pdf used on input line 620.
 (pdftex.def)             Requested size: 253.5pt x 328.0626pt.
-
+ [16] [17 <./f8.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15 <./f7.pdf>]
-Underfull \vbox (badness 2150) has occurred while \output is active []
-
- [16 <./f8.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17 <./f9.pdf>]
+ [18 <./f9.pdf>]
 Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    date: 2018-03-29 09:17:38
 (epstopdf)                    size: 286 bytes
@@ -422,11 +434,11 @@ Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    size: 2431 bytes
 (epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
 df example.eps>
-(epstopdf)             \includegraphics on input line 645.
+(epstopdf)             \includegraphics on input line 663.
 Package epstopdf Info: Output file is already uptodate.
 File: example-eps-converted-to.pdf Graphic file (type pdf)
  <use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 645.
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 663.
 (pdftex.def)             Requested size: 202.757pt x 202.757pt.
 Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    date: 2018-03-29 09:17:38
@@ -436,30 +448,30 @@ Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    size: 2431 bytes
 (epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
 df example.eps>
-(epstopdf)             \includegraphics on input line 655.
+(epstopdf)             \includegraphics on input line 673.
 Package epstopdf Info: Output file is already uptodate.
 File: example-eps-converted-to.pdf Graphic file (type pdf)
  <use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 655.
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 673.
 (pdftex.def)             Requested size: 253.5pt x 253.50812pt.
 
 (./pottery.bbl
 Missing character: There is no â in font cmr8!
 Missing character: There is no € in font cmr8!
 Missing character: There is no ™ in font cmr8!
- [18] [19]) [20] (./pottery.aux)
+ [19] [20]) [21] (./pottery.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3161 strings out of 492995
- 45701 string characters out of 6132704
- 110168 words of memory out of 5000000
- 6681 multiletter control sequences out of 15000+600000
+ 3162 strings out of 492995
+ 45715 string characters out of 6132704
+ 109165 words of memory out of 5000000
+ 6682 multiletter control sequences out of 15000+600000
  8866 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,22n,25p,676b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,22n,25p,676b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/STIXGeneral-Itali
 c.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/STIXGeneral-R
 egular.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
@@ -477,10 +489,10 @@ cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
 /texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
 texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/te
 xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on pottery.pdf (20 pages, 1016568 bytes).
+Output written on pottery.pdf (21 pages, 1016603 bytes).
 PDF statistics:
- 245 PDF objects out of 1000 (max. 8388607)
- 191 compressed objects within 2 object streams
+ 248 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
