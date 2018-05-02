@@ -395,9 +395,9 @@ s(\frac{d}{r_{o}-r_{i}}) (\rho' - \rho_{0}) &  r_{i} < d < r_{o}
 \end{equation}
 where $d$ is the vertical distance between the handle and $\mathbf{v}_{i,j}$; $r_{i}$ and $r_{o}$ are inner and outer handle radius respectively. 
 
-(ρ, φ, z) 
-The radial distance ρ is the Euclidean distance from the z-axis to the point P.
-The azimuth φ is the angle between the reference direction on the chosen plane and the line from the origin to the projection of P on the plane.
+($\rho$, $\phi$, z) 
+The radial distance $\rho$ is the Euclidean distance from the z-axis to the point P.
+The azimuth $\phi$ is the angle between the reference direction on the chosen plane and the line from the origin to the projection of P on the plane.
 The height z is the signed distance from the chosen plane to the point P.
 
 \begin{figure*}
@@ -469,12 +469,12 @@ Unlike the bare hand experience, the instrument based interaction can provide ha
 \section{Results}
 \label{sec:5}
 %platform
-We have implemented PotteryVR using the game engine Unity3D\cite{website:unity} and VR system HTC Vive\cite{website:vive}. PotteryVR can run on Windows 10 platform.
+We have implemented PotteryVR using Unity3D\cite{website:unity} game engine. We built our system on a HTC Vive\cite{website:vive} VR system with a PC (2.10 GHz Dual Core CPU, 16 GB RAM and NVIDIA GeForce GTX 1080 graphics card) running 64 bit Windows 10 Professional.
 
-%figs
-In order to get performance statistics of the mesh generator, we tested PotteryVR on a PC () to generate 4 models with different resolutions.
-
-We set the outer radius of handle 0.2 units, and the inner ratio of handle 0\% to get smooth deformation effect as the process begins. The centring parameter $\lambda$ and smoothing parameter $\mu$ are set 0.5 and 0.7 respectively to damping the deformation.
+%fig
+In order to get performance statistics of the mesh generator, we tested PotteryVR to generate 4 models with different resolutions.(Fig) 
+Based on the common size of clay placed on pottery wheels, we set the height 0.2 units with the radius 0.15 units.
+We set the outer radius of handle 0.2 units, and the inner ratio of handle 0\% to get smooth deformation effect as the process begins. The centring parameter $\lambda$ and smoothing parameter $\mu$ are set 0.5 and 0.7 respectively to damping the deformation. The parameters for Perlin noise generation are listed in Table 1.
 
 \begin{figure*}
 % Use the relevant command to insert your figure file.
@@ -486,7 +486,8 @@ We set the outer radius of handle 0.2 units, and the inner ratio of handle 0\% t
 \end{figure*}
 
 %tables
-Based on the common size of clay placed on pottery wheels, we set the height 0.2 units with the radius 0.15 units. Moreover, we assign 60 and 59 to radial segments and vertical segments respectively, thus we get m = 60 and n = 10 as the resolution of the clay. The parameters for Perlin noise generation are listed in Table 1.
+Table 2 demonstrates statistics based on different mesh solutions. 
+
 %[noise parameters]
 % For tables use
 \begin{table}
@@ -554,18 +555,22 @@ Figure 11 shows two subjects using our system to throw pottery. Figure 12 shows 
 
 After a 15 min training of the three systems, each subject had to accomplish 3 tasks:
 
-Task\textsubscript{DigiClay}
+\textbf{T}\textsubscript{A-MY}: Given a photo of a pottery, use Maya to create a same one.
 
-Task\textsubscript{LetsPottery}
+\textbf{T}\textsubscript{A-PVR}: Using the same photo in \textbf{T}\textsubscript{Maya}, use PotteryVR to create a same one.
 
-Task\textsubscript{Maya}
+\textbf{T}\textsubscript{B-LCP}: Use let's Create! Pottery to model a creative pot.
 
-[Task details]
+\textbf{T}\textsubscript{B-PVR}: Use PotteryVR to model a creative pot.
+
+%[Task details]
+When doing tasks \textbf{T}\textsubscript{A-MY} and \textbf{T}\textsubscript{A-PVR}, subjects were provided with same pottery picture for reference. The duration of each task was planned as 5 minutes.
+For tasks \textbf{T}\textsubscript{B-LCP} and \textbf{T}\textsubscript{B-PVR}, subjectives can model any pots without any limitations.
 
 %[NASA-TLX]
 After accomplishing each task, the subjects were asked to answer a questionnaire with six questions to measure the six dimensions of NASA-TLX, which includes physical demand, mental demand, temporal demand, effort, performance and frustration. 5 additional questions were asked after they finished all tasks.
 
-Questions
+\paragraph{Questions}
 
 \paragraph{Q1} Which one do you prefer to use to design a pottery, Maya or DigiClay?
 \paragraph{Q2} Which experience do you prefer, the touchscreen based Let's Create Pottery or virtual reality based DigiClay?
