@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  1 MAY 2018 22:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  3 MAY 2018 09:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -184,44 +184,7 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box31
 \enitdp@description=\count118
 )
-(./pottery.aux
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `tab:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-)
+(./pottery.aux)
 \openout1 = `pottery.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
@@ -304,7 +267,37 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 SVJour3 warning: Missing \journalname
+
+LaTeX Warning: Citation `koutsoudis2009qp' on page 1 undefined on input line 11
+9.
+
+
+LaTeX Warning: Citation `kumar2011wheel' on page 1 undefined on input line 119.
+
+
 [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation `website:maya' on page 2 undefined on input line 125.
+
+
+LaTeX Warning: Citation `website:3dmax' on page 2 undefined on input line 125.
+
+
+LaTeX Warning: Citation `ramani2015gesture' on page 2 undefined on input line 1
+26.
+
+
+LaTeX Warning: Citation `murugappan2013handy' on page 2 undefined on input line
+ 126.
+
+
+LaTeX Warning: Citation `han2014virtual' on page 2 undefined on input line 126.
+
+
+
+LaTeX Warning: Citation `oviatt2006human' on page 2 undefined on input line 143
+.
+
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
@@ -312,13 +305,107 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
+LaTeX Warning: Citation `Jacob2008Reality' on page 2 undefined on input line 14
+6.
+
 [2] <f1.pdf, id=14, 284.52759pt x 284.52759pt>
 File: f1.pdf Graphic file (type pdf)
  <use f1.pdf>
 Package pdftex.def Info: f1.pdf used on input line 161.
 (pdftex.def)             Requested size: 284.52689pt x 284.52689pt.
- [3 <./f1.pdf>]
-[4] <t2.pdf, id=44, 569.05505pt x 113.811pt>
+
+
+LaTeX Warning: Citation `walter2014cuenesics' on page 3 undefined on input line
+ 177.
+
+
+LaTeX Warning: Citation `cui2016exploration' on page 3 undefined on input line 
+177.
+
+
+LaTeX Warning: Citation `ramani2015gesture' on page 3 undefined on input line 1
+77.
+
+
+LaTeX Warning: Citation `murugappan2013handy' on page 3 undefined on input line
+ 177.
+
+
+LaTeX Warning: Citation `han2014virtual' on page 3 undefined on input line 177.
+
+
+
+LaTeX Warning: Citation `walter2014cuenesics' on page 3 undefined on input line
+ 178.
+
+
+LaTeX Warning: Citation `cui2016exploration' on page 3 undefined on input line 
+179.
+
+[3 <./f1.pdf>]
+
+LaTeX Warning: Citation `schkolne2001surface' on page 4 undefined on input line
+ 184.
+
+
+LaTeX Warning: Citation `hinckley1998two' on page 4 undefined on input line 185
+.
+
+
+LaTeX Warning: Citation `wingcrave2010wii' on page 4 undefined on input line 18
+7.
+
+
+LaTeX Warning: Citation `niehorster2017accuracy' on page 4 undefined on input l
+ine 187.
+
+
+LaTeX Warning: Citation `laviola20113d' on page 4 undefined on input line 192.
+
+
+LaTeX Warning: Citation `keefe2001cavepainting' on page 4 undefined on input li
+ne 194.
+
+
+LaTeX Warning: Citation `agrawala19953d' on page 4 undefined on input line 194.
+
+
+
+LaTeX Warning: Citation `otsuki2017brush' on page 4 undefined on input line 194
+.
+
+
+LaTeX Warning: Citation `mcdonnell2001virtual' on page 4 undefined on input lin
+e 196.
+
+
+LaTeX Warning: Citation `sheng2006interface' on page 4 undefined on input line 
+196.
+
+
+Underfull \vbox (badness 1028) has occurred while \output is active []
+
+ [4]
+
+LaTeX Warning: Citation `koutsoudis2009qp' on page 5 undefined on input line 20
+4.
+
+
+LaTeX Warning: Citation `kumar2011wheel' on page 5 undefined on input line 205.
+
+
+
+LaTeX Warning: Citation `murugappan2013handy' on page 5 undefined on input line
+ 209.
+
+
+LaTeX Warning: Citation `han2014virtual' on page 5 undefined on input line 211.
+
+
+
+LaTeX Warning: Citation `han2007ar' on page 5 undefined on input line 212.
+
+<t2.pdf, id=44, 569.05505pt x 113.811pt>
 File: t2.pdf Graphic file (type pdf)
  <use t2.pdf>
 Package pdftex.def Info: t2.pdf used on input line 235.
@@ -328,8 +415,7 @@ File: f1.pdf Graphic file (type pdf)
  <use f1.pdf>
 Package pdftex.def Info: f1.pdf used on input line 270.
 (pdftex.def)             Requested size: 253.5pt x 253.5066pt.
-
-[6 <./t2.pdf>] <f2.pdf, id=69, 845.1575pt x 597.23125pt>
+ [6 <./t2.pdf>] <f2.pdf, id=69, 845.1575pt x 597.23125pt>
 File: f2.pdf Graphic file (type pdf)
  <use f2.pdf>
 Package pdftex.def Info: f2.pdf used on input line 301.
@@ -369,63 +455,66 @@ File: example-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: example-eps-converted-to.pdf used on input line 371.
 (pdftex.def)             Requested size: 202.757pt x 202.757pt.
  [9 <./example-eps-converted-to.pdf>]
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Å in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Ü in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Å in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Ü in font cmr10!
-
 <f4.pdf, id=124, 614.295pt x 794.97pt>
 File: f4.pdf Graphic file (type pdf)
  <use f4.pdf>
-Package pdftex.def Info: f4.pdf used on input line 406.
+Package pdftex.def Info: f4.pdf used on input line 426.
 (pdftex.def)             Requested size: 253.5pt x 328.0626pt.
+ [10]
+
+LaTeX Warning: Citation `website:vive' on page 11 undefined on input line 450.
 
 
-LaTeX Warning: Citation `website:vive' on page 10 undefined on input line 430.
+LaTeX Warning: Citation `Jacob2008Reality' on page 11 undefined on input line 4
+52.
 
-[10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[11 <./f4.pdf>]
 
- [11 <./f4.pdf>]
+LaTeX Warning: Citation `choudhary1995general' on page 12 undefined on input li
+ne 468.
 
-LaTeX Warning: Citation `website:vive' on page 12 undefined on input line 472.
 
-<f7.pdf, id=144, 845.1575pt x 597.23125pt>
+LaTeX Warning: Citation `website:unity' on page 12 undefined on input line 492.
+
+
+
+LaTeX Warning: Citation `website:vive' on page 12 undefined on input line 492.
+
+[12] <f7.pdf, id=147, 845.1575pt x 597.23125pt>
 File: f7.pdf Graphic file (type pdf)
  <use f7.pdf>
-Package pdftex.def Info: f7.pdf used on input line 480.
+Package pdftex.def Info: f7.pdf used on input line 502.
 (pdftex.def)             Requested size: 253.5pt x 179.1343pt.
- [12]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13 <./f7.pdf>]
 Missing character: There is no ‚ in font cmti10!
 Missing character: There is no Ä in font cmti10!
 Missing character: There is no ô in font cmti10!
- [14] [15]
+
+
+LaTeX Warning: Citation `website:letspottery' on page 14 undefined on input lin
+e 560.
+
+[14] [15]
 File: f7.pdf Graphic file (type pdf)
  <use f7.pdf>
-Package pdftex.def Info: f7.pdf used on input line 602.
+Package pdftex.def Info: f7.pdf used on input line 629.
 (pdftex.def)             Requested size: 253.5pt x 179.1343pt.
  <f8.pdf, id=173, 614.295pt x 794.97pt>
 File: f8.pdf Graphic file (type pdf)
-
-<use f8.pdf>
-Package pdftex.def Info: f8.pdf used on input line 611.
+ <use f8.pdf>
+Package pdftex.def Info: f8.pdf used on input line 638.
 (pdftex.def)             Requested size: 253.5pt x 328.0626pt.
- <f9.pdf, id=174, 614.295pt x 794.97pt>
+
+<f9.pdf, id=174, 614.295pt x 794.97pt>
 File: f9.pdf Graphic file (type pdf)
  <use f9.pdf>
-Package pdftex.def Info: f9.pdf used on input line 620.
+Package pdftex.def Info: f9.pdf used on input line 647.
 (pdftex.def)             Requested size: 253.5pt x 328.0626pt.
  [16] [17 <./f8.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [18 <./f9.pdf>]
+[18 <./f9.pdf>]
 Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    date: 2018-03-29 09:17:38
 (epstopdf)                    size: 286 bytes
@@ -434,11 +523,11 @@ Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    size: 2431 bytes
 (epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
 df example.eps>
-(epstopdf)             \includegraphics on input line 663.
+(epstopdf)             \includegraphics on input line 690.
 Package epstopdf Info: Output file is already uptodate.
 File: example-eps-converted-to.pdf Graphic file (type pdf)
  <use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 663.
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 690.
 (pdftex.def)             Requested size: 202.757pt x 202.757pt.
 Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    date: 2018-03-29 09:17:38
@@ -448,30 +537,31 @@ Package epstopdf Info: Source file: <example.eps>
 (epstopdf)                    size: 2431 bytes
 (epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
 df example.eps>
-(epstopdf)             \includegraphics on input line 673.
+(epstopdf)             \includegraphics on input line 700.
 Package epstopdf Info: Output file is already uptodate.
 File: example-eps-converted-to.pdf Graphic file (type pdf)
- <use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 673.
-(pdftex.def)             Requested size: 253.5pt x 253.50812pt.
 
-(./pottery.bbl
+<use example-eps-converted-to.pdf>
+Package pdftex.def Info: example-eps-converted-to.pdf used on input line 700.
+(pdftex.def)             Requested size: 253.5pt x 253.50812pt.
+ (./pottery.bbl [19]
 Missing character: There is no ‚ in font cmr8!
 Missing character: There is no Ä in font cmr8!
 Missing character: There is no ô in font cmr8!
- [19] [20]) [21] (./pottery.aux)
+ [20]) [21]
+(./pottery.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
  3162 strings out of 492995
  45715 string characters out of 6132704
- 109165 words of memory out of 5000000
+ 108762 words of memory out of 5000000
  6682 multiletter control sequences out of 15000+600000
  8866 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,22n,25p,676b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,22n,25p,676b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/STIXGeneral-Itali
 c.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/STIXGeneral-R
 egular.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
@@ -489,7 +579,7 @@ cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
 /texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
 texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/te
 xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on pottery.pdf (21 pages, 1016603 bytes).
+Output written on pottery.pdf (21 pages, 1019084 bytes).
 PDF statistics:
  248 PDF objects out of 1000 (max. 8388607)
  193 compressed objects within 2 object streams
