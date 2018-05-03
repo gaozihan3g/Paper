@@ -1,0 +1,56 @@
+a set of handle points
+fixed points
+
+
+We calculate weights based on hand initial position p0 [FIG]
+\begin{equation}
+\begin{split}
+r'_{i,j} = r_{i,j} + s \cdot l \cdot w_{i,j} \\
+d(r_{i,j}) = \begin{cases}
+\rho' - \rho_{0} &  d < r_{i} \\
+0 &  d > r_{o} \\
+s(\frac{d}{r_{o}-r_{i}}) (\rho' - \rho_{0}) &  r_{i} < d < r_{o}
+\end{cases}
+\end{split}
+\end{equation}
+where $d$ is the vertical distance between the handle and $\mathbf{v}_{i,j}$; $r_{i}$ and $r_{o}$ are inner and outer handle radius respectively. 
+
+($\rho$, $\phi$, z) 
+The radial distance $\rho$ is the Euclidean distance from the z-axis to the point P.
+The azimuth $\phi$ is the angle between the reference direction on the chosen plane and the line from the origin to the projection of P on the plane.
+The height z is the signed distance from the chosen plane to the point P.
+$r'_{i,j} = r_{i,j} + d(r_{i,j})$
+$(x_{0},y_{0},z_{0})$
+$(x_{1},y_{1},z_{1})$
+$\rho_{0} = \sqrt{x_{0}^2 + z_{0}^2}$
+$\rho_{t} = \sqrt{x_{t}^2 + z_{t}^2}$
+$d(r_{i,j}) = \begin{cases}
+
+\rho_{t} - \rho_{0} &  d < r_{i} \\
+0 &  d > r_{o} \\
+s(\frac{d}{r_{o}-r_{i}}) (\rho_{t} - \rho_{0}) &  r_{i} < d < r_{o}
+\end{cases}$
+smooth blending 
+
+\begin{equation}
+\begin{aligned}
+s(0) = 1 \\
+s(1) = 0 \\ 
+\Delta s(p) = 0
+\end{aligned}
+\end{equation}
+
+
+
+\begin{equation}
+\begin{aligned}
+f(0) = 1 \\
+f(1) = 0 \\ 
+f'(0) = f'(1) = 0
+\end{aligned}
+\end{equation}
+We choose a cubic polynomial function $f(t) = at^3 + bt^2 + ct + d$ as the falloff function, which is more efficient to compute comparing with other type of functions. From Equation (?) we can find the solution, which is 
+\begin{equation}
+f(t) = 2t^3 - 3t^2 + 1
+\end{equation}
+
