@@ -321,18 +321,15 @@ We then generate vertices for both inner-bottom and outer-bottom sides according
 
 
 
-\subsection{Mesh Editing}
+\subsection{Mesh Processing}
 \label{sec:4.2}
-After observing and analyzing several real life pottery-making videos, we put mesh editing operation into 3 categories: height/thickness control, mesh deformation and mesh smoothing. These operations will be discussed in detail in the following sections.
+After observing and analyzing several real life pottery-making videos, we put mesh editing operation into 4 categories: (i) symmetry control, (ii) height/thickness control, (iii) mesh deformation and (iv) mesh smoothing. These operations will be discussed in detail in the following sections.
+In our approach, we first modify feature parameters (i.e. thickness, height, radius matrix, etc) of the clay based on user interactions, then update the mesh based on these parameters in realtime.
 
-//deformation strategy: modify the feature variables, then update the mesh in realtime
-
-\subsubsection{Symmetric Control}
+\subsubsection{Symmetry Control}
 \label{sec:4.2.1}
-In real life, clay on pottery wheel can swing around vertical axis due to asymmetry. 
-
-// so, radial smoothing is needed to make the clay symmetric.(Fig)
-In our implementation, average radius for each row is calculated and each radius in matrix  needs updated:
+In real life, centring is the first important operation in pottery creation, making the irregular clay into perfect symmetry.
+In our implementation, the mean in each row of the radius matrix is calculated and then each value in matrix needs updating based on the mean values:
 \begin{equation}
 r'_{i,j} = 
 \lambda \cdot \frac{1}{n}\sum_{k=1}^{n} r_{i,k}
