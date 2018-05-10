@@ -96,10 +96,10 @@ grestore
 
 \begin{abstract}
 We present PotteryVR, an interactive virtual reality (VR) modeling system that allows novice users to create virtual pottery works by bimanual interactions via hand-held motion controllers.
-Our system consists of two major components: an automatic mesh generator and an interactive  model editor.
-The mesh generator can procedurally generate a realistic clay mesh by adding Perlin Noise. With the interactive pottery model editor, the user can shape the virtual clay in realtime intuitively to create a virtual pottery work.
-The virtual pots created by our system can be exported as an obj file and used for 3D printing.
-The results of our user study have shown that our system is easier to use compared with desktop modeling systems and touchscreen based systems. Users without real life pottery making experience and 3D modeling knowledge can easily create pottery works with our system.
+Our system consists of two major components: an automatic mesh generator and an interactive model editor.
+The mesh generator can procedurally generate a realistic clay mesh by adding Perlin Noise. With the interactive pottery model editor, the user can shape the virtual clay in realtime intuitively to design virtual pots.
+The virtual pots created by our system can be exported as OBJ files and used for 3D printing.
+The results of our user study have shown that our system is easier to use and allows more creativity compared with desktop modeling systems and touchscreen based systems. Users without real life pottery experience and 3D modeling knowledge can easily create pottery works with our system.
 
 Insert your abstract here. Include keywords, PACS and mathematical
 subject classification numbers as needed.
@@ -113,9 +113,9 @@ subject classification numbers as needed.
 \section{Introduction}
 \label{sec:1}
 %[CAD tools - hard to use]
-Pottery is one of the oldest inventions in heterogeneous civilizations in human history for thousands of years, 
-In recent years, emerging technologies such as 3D printing introduces a new way of pottery design, enabling people to fabricate pots in a digital manner with the help of Computer Aided Design (CAD) software and 3D printers.
-There are several desktop CAD systems either from academic or industry, some of them are developed specifically for pottery design \cite{koutsoudis2009qp,kumar2011wheel}, which can generate 3D meshes based on the values from user keyboard and mouse input.
+Pottery is one of the oldest inventions in heterogeneous civilizations in human history for thousands of years, whose utility, art and craftmanship still plays an important role today.
+In recent years, emerging technologies such as 3D printing introduces a new way of pottery design, enabling people to fabricate pots in a digital way with the help of Computer Aided Design (CAD) software and 3D printers.
+There are several CAD systems either from academic or industry, which are specifically developed for pottery design \cite{koutsoudis2009qp,kumar2011wheel}, which can generate 3D meshes based on the values from user keyboard and mouse input.
 However, for novice users who are not professional 3D artists, these systems are formidable to learn due to complex user interfaces. 
 This kind of systems limits the creativity of novice users, since it is quite challenging for them to master the tool in a short period of time.
 In addition, the experience of creating potteries using CAD tools is far different from in reality.
@@ -141,9 +141,9 @@ In this paper, we present PotteryVR, a VR system that allows users to design vir
 %[design considerations: 1.HCD 2. RBI]
 Oviatt \cite{oviatt2006human} concluded that human-centered design can minimize users’ cognitive load, which effectively frees up mental resources for performing better while also remaining more attuned to the world around them.
 %% TODO
-So we take the human-centered design approach, which models users’ natural behavior to begin with so that interfaces can be designed that are more intuitive, easier to learn, and freer of performance errors.
+So we take the human-centered design approach, which models users’ natural behavior so that interfaces can be designed that are more intuitive, easier to learn, and freer of performance errors.
 In addition, Jacob et al. \cite{Jacob2008Reality} summarized that the designer's goal should be to allow the user to perform realistic tasks realistically, to provide additional non real-world functionality, and to use analogies for these commands whenever possible.
-Hence, while we design our system based on pottery creation process in reality to minimize the effort, we should provide convenient functionality in our system for efficiency.
+Hence, while we design our system based on pottery creation process in reality to minimize the effort, we should provide convenient functionalities in our system for efficiency.
 
 %[contributions]
 The main contributions of our works are:
@@ -186,7 +186,7 @@ These works have a common problem that the usage of these instruments are limite
 There are a number of motion controllers such as Wii Remote \cite{wingcrave2010wii} and HTC Vive \cite{niehorster2017accuracy} that become widely commercialized products and accessible to consumers, as well as used in scientific research.
 In our project, HTC Vive system is used in our system, which provides precision, haptic feedback and well accessed by consumers.
 
-\subsection{Artistic Tools in VR}
+\subsection{Art and Design Tools in VR}
 \label{sec:2.2}
 Virtual Reality has shown great potential for art and design, which not only provides immersive and intuitive interfaces for user, but also creates new art medium, new art form and novel experience\cite{laviola20113d}.
 
@@ -222,19 +222,19 @@ In contrast to existing works, our system provides a novel pottery creation work
 The pottery creation process on a pottery wheel is called "throwing", where a ball of clay is placed in the centre of a turntable, called the wheel-head, which the potter rotates with a stick, with foot power or with a variable-speed electric motor.
 To illustrate the pipeline of pottery creation in our system, an example workflow using PotteryVR is described as follows.
 
-When a user starts to use PotteryVR, a realistic clay mesh is automatically generated with Perlin noise. (Figure 2a, Section 4.1)
-Similar to the pottery operation in reality, the user first need to use both hand to make the irregular clay shape into perfect rotational symmetry, which is called \textit{centring}. (Figure 2b, Section 4.2)
-In order to control the thickness of the clay (i.e. \textit{opening}), the user need to press down the clay to create a hollow in the clay. (Figure 2c, Section 4.3)
-Then the user can draw up the walls (i.e. \textit{pulling}) with two hands moving up together, controlling the height of the clay. (Figure 2d, Section 4.4)
-The system not only supports mesh deformation (\textit{throwing}) but also smoothing, where the user can adjust related parameters to get ideal pot.
-After the creation is done, the user can save the screenshot and save the pottery model as an OBJ file, which can be used for 3D printing.
+When a user starts to use PotteryVR, a realistic clay mesh is automatically generated with Perlin noise. (Figure \ref{fig:2}a, Section \ref{sec:4.1})
+Similar to the operation in reality, the user first need to use both hand to make the irregular clay shape into perfect rotational symmetry, which is called \textit{centring}. (Figure \ref{fig:2}b, Section \ref{sec:4.2.1})
+The user can control the thickness of the clay (i.e. \textit{opening}) by pressing down the clay to create a hollow in the clay (Figure \ref{fig:2}c), 
+and then draw up the walls with two hands moving up together (i.e. \textit{pulling}), controlling the height of the clay. (Figure \ref{fig:2}d, Section \ref{sec:4.2.2})
+The system not only allows mesh deformation ( Figure \ref{fig:2}e, Section \ref{sec:4.2.3}) with different deformation radius parameters but also mesh smoothing (Figure \ref{fig:2}f), Section \ref{sec:4.2.4}), where the user can remove sharp features in the pot to get ideal shape.
+After the creation is finished, the user can export the pottery model as an OBJ file, which can be used for 3D printing.
 \begin{figure*}
 % Use the relevant command to insert your figure file.
 % For example, with the graphicx package use
   \includegraphics[width=\textwidth]{fig2.pdf}
 % figure caption is below the figure
 \caption{workflow}
-\label{fig:1}       % Give a unique label
+\label{fig:2}       % Give a unique label
 \end{figure*}
 
 
@@ -246,20 +246,17 @@ In this section, we will describe more details about the implementation.
 \subsection{Mesh Generation}
 \label{sec:4.1}
 
-Most of Virtual Pottery systems approximate the initial shape of pottery clay as a primitive cylinder shape[a, b, c]. While this approach is simple to implement, it ignores subtle details of clay in real life, whose irregularity needs to deal with during the creation process. Unlike the existing systems, we approximate the initial shape of the clay on the pottery wheel as a blend of cylinder and semi-ellipsoid, then adding Perlin noises to mimic the clay in reality.
+Most of Virtual Pottery systems approximate the initial shape of pottery clay as a primitive cylinder shape \cite{han2007ar,ramani2015gesture,Vinayak2016Extracting}. While this approach is simple to implement, it ignores subtle details of clay in real life, whose irregularity needs to deal with during the creation process. Unlike the existing systems, we first approximate the initial clay on the pottery wheel as a blending shape of cylinder and semi-ellipsoid, then adding Perlin noises to mimic the irregular clay in reality.
 
-%Cylindrical coordinate system
-
-\paragraph{Basic clay} We describe the clay mesh as a series of circular sections in different heights, whose resolution can be defined by axis segments $s_{a}$ and height segments $s_{h}$. Given radius $r$ and height $h$, our system can generate primitive mesh of cylinder and semi-ellipsoid respectively (Fig 1a, 1b).
-For each vertex in the mesh, we use a $m \times n$ matrix $M$ to store radius values, where number of row $m = s_{h} + 1$ and the number of column $n = s_{a}$ respectively. The base radius $r_{base_{i}}$ of each vertex $\mathbf{v}_{i,j}$ in row $i$ can be written as: 
-\begin{equation}
-r_{base_{i}} = \alpha \cdot \frac{r}{h} \sqrt{h^2 -  h_{i}^2} + (1 - \alpha) \cdot r \\
-\end{equation}
+\paragraph{Basic clay} We describe the clay mesh as a series of circular sections in different heights, whose resolution can be defined by axis segments $s_{a}$ and height segments $s_{h}$. Given radius $r$ and height $h$, our system can generate primitive mesh of cylinder and semi-ellipsoid respectively (Figure \ref{fig:3}).
+For each vertex in the mesh, we use a $m \times n$ matrix $M$ to store radius values, where number of row $m = s_{h} + 1$ and the number of column $n = s_{a}$ respectively. The base radius $r_{base_{i}}$ of each vertex $\mathbf{v}_{i,j}$ in row $i$ can be calculated as: 
 \begin{equation}
 h_{i} = i \cdot \frac{h}{m-1}
 \end{equation}
-where $\alpha$ is a factor controls the shape blending between a  cylinder (when $\alpha=0$) and a semi-ellipsoid (when $\alpha=1$) (Fig 2).
-While the shape of clay can be roughly approximated like this, in real life the actual clay shape is not regular, whose irregular features needs to be handled during the pottery creation process.
+\begin{equation}
+r_{base_{i}} = \alpha \cdot \frac{r}{h} \sqrt{h^2 -  h_{i}^2} + (1 - \alpha) \cdot r
+\end{equation}
+where $\alpha$ is a factor controls the shape blending between a  cylinder (when $\alpha=0$) and a semi-ellipsoid (when $\alpha=1$) (Figure \ref{fig:3}).
 
 \begin{figure*}
 % Use the relevant command to insert your figure file.
@@ -267,15 +264,16 @@ While the shape of clay can be roughly approximated like this, in real life the 
   \includegraphics[width=\textwidth]{fig3.pdf}
 % figure caption is below the figure
 \caption{mesh generation}
-\label{fig:1}       % Give a unique label
+\label{fig:3}       % Give a unique label
 \end{figure*}
 
-\paragraph{Adding noise} To address this issue, we add some randomness to the vertices to mimic the realistic clay using Perlin Noise [..], which is a smooth random method proposed by Ken Perlin in 1985. We randomize the centre and radius for each circle, then add noise to individual vertices.
+\paragraph{Adding noise} Although the shape of clay can be roughly approximated like this, in real life the actual clay shape is not regular, whose irregular features needs to be handled during the pottery creation process. To address this issue, we add some randomness to the vertices to mimic the realistic clay using Perlin Noise \cite{Perlin1985An}, which is a smooth random method proposed by Ken Perlin in 1985.
+In our approach, we randomize the centre position and radius for each circular sections and individual vertex position by adding Perlin Noise.
 To add noise to the centre, we use random $\phi_{i} \in [0, 2\pi]$ and $r_{c_{i}}$ to present the centre
 $\mathbf{O}_{i} = \left[r_{c_{i}}cos\phi_{i}, 0, r_{c_{i}}sin\phi_{i}\right]^T$
 . Then we sum the values for each radius
 $r_{total_{i,j}} = r_{base_{i}} + r_{row_{i}} + r_{indv_{i,j}}$
-, where $r_{row_{i}}$ is the radius for each circle, and $r_{indv_{i,j}}$ is individual radius for each vertex.(Fig 3) We can get the radius value $r_{i,j}$ in the matrix $M$ for each vertex, and calculate the vertex position $\mathbf{v}_{i,j}$ based on the radius values in the matrix:
+, where $r_{row_{i}}$ is the radius noise for each circular section, and $r_{indv_{i,j}}$ is individual radius for each vertex.(Figure \ref{fig:4}) We can get the radius value $r_{i,j}$ in the matrix $M$ for each vertex, and calculate the vertex position $\mathbf{v}_{i,j}$ based on the radius values in the matrix:
 \begin{equation}
 r_{i,j} = \left\|
 \mathbf{O}_{i} + \left[ r_{total_{i,j}} cos \theta_{j},
@@ -303,10 +301,10 @@ r_{i,j} sin \theta_{j}\right]^T
 \label{fig:1}       % Give a unique label
 \end{figure*}
 
-Unlike other virtual pottery creation system, we aim to create 3D printing oriented pottery models. To accomplish that we need to generate watertight 3D models. Hence, our system generate inner and bottom sides based on the outer side mesh. The vertices on inner side can be denoted as:s
+Unlike other virtual pottery creation system, we aim to create 3D printing oriented pottery models. To accomplish that we need to generate watertight 3D models with thickness. Hence, our system generate inner and bottom sides based on the outer side mesh. The vertices on inner side can be denoted as:s
 \begin{equation}
 \begin{split}
-\mathbf{v'}_{i,j} = s
+\mathbf{v'}_{i,j} = 
 \begin{bmatrix}
 1 & 0 & 0 & t\cos\theta \\
 0 & 1 & 0 & 0\\ 
@@ -316,31 +314,35 @@ Unlike other virtual pottery creation system, we aim to create 3D printing orien
 \mathbf{v}_{i,j}
 \end{split}
 \end{equation}
-where $\beta$ is the thickness value of the clay mesh. In mesh generation phase, the initial value of $\beta$ is 1; in mesh deformation phase, the value of $\beta$ can be adjusted by user.
-We then generate vertices for both inner-bottom and outer-bottom sides according to inner-side and outer-side vertices respectively. Finally, a mesh can be generated by constructing triangle faces based on the vertex indices. (Fig)
+where $t$ is the thickness value of the clay mesh. In mesh generation phase, the initial value of $t$ is 1; in mesh deformation phase, the value of $t$ can be adjusted by user.
+We then generate vertices for both inner-bottom and outer-bottom sides according to inner-side and outer-side vertices respectively. Finally, a mesh can be generated by constructing triangle faces based on the vertex indices. (Figure ??)
 
 
 
 \subsection{Mesh Processing}
 \label{sec:4.2}
-After observing and analyzing several real life pottery-making videos, we put mesh editing operation into 4 categories: (i) symmetry control, (ii) height/thickness control, (iii) mesh deformation and (iv) mesh smoothing. These operations will be discussed in detail in the following sections.
-In our approach, we first modify feature parameters (i.e. thickness, height, radius matrix, etc) of the clay based on user interactions, then update the mesh based on these parameters in realtime.
+After observing and analyzing several real life pottery-making videos, we put mesh editing operation into 4 categories: (1) symmetry control, (2) height/thickness control, (3) mesh deformation and (4) mesh smoothing. These operations will be discussed in detail in the following sections.
+Since the clay mesh $C$ can be generated from feature parameters including height $h$, thickness $t$ and radius matrix $M$, we have $ C =  f(h, t, M) $.
+In our approach, we first modify feature parameters of the clay according to user interactions, then update mesh $C$  in realtime based on these parameters.
 
 \subsubsection{Symmetry Control}
 \label{sec:4.2.1}
-In real life, centring is the first important operation in pottery creation, making the irregular clay into perfect symmetry.
-In our implementation, the mean in each row of the radius matrix is calculated and then each value in matrix needs updating based on the mean values:
+\textit{Centring} is the first important operation in pottery creation in reality, where people press the ball of clay downward and inward, making the irregular clay into perfect rotational symmetry.
+In our system, user can place two hands close to the clay at the same time to achieve symmetry control.
+The mean in each row of the radius matrix is calculated and then each value in matrix needs updating based on the mean values:
 \begin{equation}
 r'_{i,j} = 
 \lambda \cdot \frac{1}{n}\sum_{k=1}^{n} r_{i,k}
 + (1 - \lambda) \cdot r_{i,j}
 \end{equation}
 
-where $\lambda \in [0,1]$ is a damping factor controlling the radial smoothing effect.
+where $\lambda \in [0,1]$ is a damping factor controlling the effect rate of symmetry control.
 
 \subsubsection{Thickness/Height Control}
 \label{sec:4.2.2}
-Height and thickness control are  basic clay manipulations in pottery creation process which are done by applying force to clay with two hands. The height can be adjusted by hands vertical movement while holding the clay, while the thickness can be adjusted by pushing down the top centre part of the clay with fingers. Let  be the vertical hand movement distance, we have:
+\textit{Opening} (thickness control) and \textit{pulling} (height control) are basic clay manipulations in pottery creation process which are done by applying force to clay with both hands. The thickness can be adjusted by pushing down the top centre part of the clay, making a centred hollow into the clay. The height can be adjusted by both hands drawing up and shaping the walls.
+%%%TODO
+ Let  be the vertical hand movement distance, we have:
 \begin{equation}
 \Delta y = (\Delta y_{l} + \Delta y_{r})/2
 \end{equation}
@@ -666,8 +668,8 @@ A possible extension of our system is to support interactive coloring functional
 \end{acknowledgements}
 
 % BibTeX users please use one of
-\bibliographystyle{spbasic}      % basic style, author-year citations
-%\bibliographystyle{spmpsci}      % mathematics and physical sciences
+%\bibliographystyle{spbasic}      % basic style, author-year citations
+\bibliographystyle{spmpsci}      % mathematics and physical sciences
 %\bibliographystyle{spphys}       % APS-like style for physics
 \bibliography{pottery}   % name your BibTeX data base
 
