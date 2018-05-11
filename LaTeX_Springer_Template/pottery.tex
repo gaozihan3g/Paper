@@ -342,7 +342,7 @@ where $\lambda \in [0,1]$ is a damping factor controlling the effect rate of sym
 \label{sec:4.2.2}
 \textit{Opening} (thickness control) and \textit{pulling} (height control) are basic clay manipulations in pottery creation process which are done by applying force to clay with both hands. The thickness can be adjusted by pushing down the top centre part of the clay, making a centred hollow into the clay. The height can be adjusted by both hands drawing up and shaping the walls.
 %%%TODO
- Let  be the vertical hand movement distance, we have:
+ Let $\Delta y$ be the vertical hand movement distance, we have:
 \begin{equation}
 \Delta y = (\Delta y_{l} + \Delta y_{r})/2
 \end{equation}
@@ -356,19 +356,24 @@ where $h_{0}$ and $\beta_{0}$ are previous height and thickness values before ev
 
 \subsubsection{Mesh Deformation}
 \label{sec:4.2.3}
-In this section we talk about interactively deforming. This topic is challenging since complex mathematical formulations (1) have to be hidden behind an intuitive user interface and (2) have to be implemented in a sufficiently efficient and robust manner to allow for interactive applications.\cite{botsch2010polygon}
+In this section we talk about interactive deformation. According to \cite{botsch2010polygon}, this topic is challenging since complex mathematical formulations (1) have to be hidden behind an intuitive user interface and (2) have to be implemented in a sufficiently efficient and robust manner to allow for interactive applications.
 
 % turn to radius
-Due to rotational symmetry in the pots, the deformation problem is turned into how to get the new radius Matrix based on hand movement. $r'_{i,j} = r_{i,j} + \Delta r_{i,j}$
+In our approach, we uses a cylindrical coordinate system to specify the position for each vertex, where y-axis is the reference axis. For any point $P$ in the coordinate system, we use$(\rho, \phi, y)$ to denote the position. The radial distance $\rho$ is the Euclidean distance from the y-axis to the point P; $\phi$ is the azimuth; $y$ is the height of point P from xz-plane.
+Due to rotational symmetry in virtual pottery, we modify $\rho$ value for each vertex while keep $\phi$ and $y$ constant. Thus, the deformation problem is turned into how to calculate the new radius matrix based on hand movement:
+\begin{equation}
+r'_{i,j} = r_{i,j} + \Delta r_{i,j}
+\end{equation}
 
 % base on handle radial dist
-Let $(x_{0},y_{0},z_{0})$ be the initial handle position at time $t_{0}$ when the deformation starts, and we can calculate the initial handle distance from Y-Axis: $\rho_{0} = \sqrt{x_{0}^2 + z_{0}^2}$. The new handle position at time $t_{1}$ is $(x_{1},y_{1},z_{1})$, and the new handle distance is $\rho_{t} = \sqrt{x_{t}^2 + z_{t}^2}$.
+Let $(x_{0},y_{0},z_{0})$ be the initial handle position at time $t_{0}$ when the deformation starts, and we can calculate the initial handle distance from y-axis: $\rho_{0} = \sqrt{x_{0}^2 + z_{0}^2}$. The new handle position at time $t_{1}$ is $(x_{1},y_{1},z_{1})$, and the new handle distance is $\rho_{t} = \sqrt{x_{1}^2 + z_{1}^2}$.
 
 % vertical dist
-We can get the vertical distance $d_{i,j}$ between the handle and each vertex:
+When a user pressed the trigger on the montion controller while the handle touched the mesh, the vertical distance $d_{i,j}$ between the handle and each vertex:
 \begin{equation}
 d_{i,j} = |y_{0} - y_{i,j}|
 \end{equation}
+In our system, outer radius $r_{o}$ and innner radius $r_{i}$ are two key parameters affecting deformation, which define the moving region and fixed region. The deformation region should deform in an intuitive and smooth manner. Note that when $r_{0} = r_{i}$, it is possible to create sharp features on the clay.
 \begin{equation}
 \Delta r_{i,j} = \begin{cases}
 \rho_{t} - \rho_{0} &  d_{i,j} < r_{i} \\
@@ -376,12 +381,8 @@ d_{i,j} = |y_{0} - y_{i,j}|
 (\rho_{t} - \rho_{0}) \cdot w_{i,j} &  r_{i} < d_{i,j} < r_{o}
 \end{cases}
 \end{equation}
-\begin{equation}
-w_{i,j} = f(t)
-\end{equation}
-
 %get weight from falloff curve
-A falloff curve is needed in order to get smooth defomation effect when calculating weights. We choose a cubic polynomial function $f(t) = at^3 + bt^2 + ct + d$ as the falloff function, since it is more efficient to compute the values comparing with other type of functions.
+A falloff curve is needed in order to get smooth defomation effect when calculating weights: $w_{i,j} = f(t)$. In order to efficiently calculate the weights, we choose a cubic polynomial function $f(t) = at^3 + bt^2 + ct + d$ as the falloff function, we have:
 \begin{equation}
 \begin{aligned}
 \label{equation:falloff}
@@ -397,19 +398,18 @@ $a = 2, b = -3, c = 0, d = 1$
 f(t) = 2t^3 - 3t^2 + 1
 \end{equation}
 
-
 \subsubsection{Mesh Smoothing}
 \label{sec:4.2.4}
-As mentioned above, it is possible to create sharp features upon the clay mesh when  is large. Hence, we use Laplacian smoothing in our system to smooth sharp features: 
+As mentioned above, it is possible to create sharp features upon the clay mesh when $r_{0} = r_{i}$. Hence, our system uses Laplacian smoothing to remove sharp features: 
 \begin{equation}
-\begin{split}
 r'_{i,j} = 
 \mu  \frac{1}{N} 
 \sum_{k=1}^N r_{k}
 + (1 - \mu)  r_{i,j}
-\end{split}
 \end{equation}
 where $N$ is the number of adjacent vertices of $\mathbf{v}_{i,j}$; $\mu \in [0,1]$ is a factor controlling the radial smoothing effect.
+
+Users can control the handle position and adjust the outer radius of the handle to apply smoothing interactively on the mesh.(Figure ??)
 
 % For one-column wide figures use
 \begin{figure}
@@ -439,7 +439,7 @@ There are four main operations supported by our system:
 \paragraph{New Mesh}
 Whenever a user touch this button, a new clay will be generated on the pottery wheel. Since the shape is randomized, the user can keep getting a new shape until she is satisfied with the shape.
 
-\paragraph{Radius adjustment}
+\paragraph{Radius Adjustment}
 The user can adjust the outer radius by pressing the upper and lower part of the pad on controller, which controls the influence area. The inner ratio can be adjusted by pressing left and right part of the pad controling the smoothness of deformation.
 
 
@@ -451,18 +451,15 @@ Our system can encode the mesh data into OBJ file, which is widely used in the f
 
 \subsection{System Feedback}
 \label{sec:4.4}
-Effective feedback can notify user the current state of the system. Feedbacks in our system can be classified into three categories: visual, audial and haptic.
-
+Effective feedback can notify user the current state of the system. Feedbacks in our system can be classified into two categories: visual feedback and haptic feedback.
 \paragraph{Visual Feedback}
 In a VR environment, it is not so easy for users to perceive if her hands have touched anything. Hence, our system adds visual feedback on both virtual hands, which will be highlighted when touching the clay. The Area of Effect on the clay is also highlighted, which can give user hint that which part of mesh will be influenced by user.
-
-\paragraph{Audial Feedback}
-...
-
-
-
 \paragraph{Haptic Feedback}
 Unlike the bare hand experience, the instrument based interaction can provide haptic feedbacks, adding realistic feel in VR environments. In our system, a haptic pulse has been added to a controller when that controller has touched the clay. During any mesh editing process, we add movement resistance feedback based on the movement speed of each hand.
+\begin{equation}
+k = k_{min} + f_{Clamp}(\frac{ \| \mathbf{p'} - \mathbf{p}_{0} \|}{d_{max}}) \cdot (k_{max} - k_{min})
+\end{equation}
+
 %equation
 
 \section{Results}
@@ -471,7 +468,7 @@ Unlike the bare hand experience, the instrument based interaction can provide ha
 We have implemented PotteryVR using Unity3D\cite{website:unity} game engine. We built our system on a HTC Vive\cite{website:vive} VR system with a PC (2.10 GHz Dual Core CPU, 16 GB RAM and NVIDIA GeForce GTX 1080 graphics card) running 64 bit Windows 10 Professional.
 
 %fig
-In order to get performance statistics of the mesh generator, we tested PotteryVR to generate 4 models with different resolutions.(Fig) 
+In order to get performance statistics of the mesh generator, we tested PotteryVR to generate 4 models with different resolutions.
 Based on the common size of clay placed on pottery wheels, we set the height 0.2 units with the radius 0.15 units.
 We set the outer radius of handle 0.2 units, and the inner ratio of handle 0\% to get smooth deformation effect as the process begins. The centring parameter $\lambda$ and smoothing parameter $\mu$ are set 0.5 and 0.7 respectively to damping the deformation. The parameters for Perlin noise generation are listed in Table 1.
 
@@ -519,10 +516,10 @@ $b_{a}$ & 3.75 & Angle Noise Span \\
 \hline\noalign{\smallskip}
 Axis Segments & Height Segments & Vertices & Triangles & Generation Time (ms)\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
-30 & 60 & 3722 & 7260 & 3.899 \\
-30 & 100 & 6122 & 12060 & 6.306 \\
-300 & 60 & 37202 & 72600 & 32.539 \\
-300 & 100 & 61202 & 120600 & 53.596 \\
+60 & 100 & 12242 & 24120 & 21.48 \\
+60 & 200 & 24242 & 48120 & 41.53 \\
+120 & 100 & 24482 & 48240 & 42.02 \\
+120 & 200 & 48482 & 96240 & 101.00 \\
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
