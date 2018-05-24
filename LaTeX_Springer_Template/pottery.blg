@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: pottery.aux
 The style file: spmpsci.bst
 Database file #1: pottery.bib
-You've used 25 entries,
+You've used 29 entries,
             2945 wiz_defined-function locations,
-            740 strings with 9395 characters,
-and the built_in function-call counts, 13372 in all, are:
-= -- 1105
-> -- 426
+            763 strings with 9931 characters,
+and the built_in function-call counts, 14945 in all, are:
+= -- 1221
+> -- 473
 < -- 14
-+ -- 182
-- -- 152
-* -- 795
-:= -- 1678
-add.period$ -- 35
-call.type$ -- 25
-change.case$ -- 177
++ -- 203
+- -- 168
+* -- 885
+:= -- 1879
+add.period$ -- 39
+call.type$ -- 29
+change.case$ -- 197
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 1159
-empty$ -- 1229
-format.name$ -- 172
-if$ -- 2929
+cite$ -- 29
+duplicate$ -- 1303
+empty$ -- 1391
+format.name$ -- 190
+if$ -- 3269
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 249
-newline$ -- 108
-num.names$ -- 42
-pop$ -- 497
+int.to.str$ -- 29
+missing$ -- 283
+newline$ -- 124
+num.names$ -- 48
+pop$ -- 563
 preamble$ -- 1
-purify$ -- 128
+purify$ -- 145
 quote$ -- 0
-skip$ -- 403
+skip$ -- 447
 stack$ -- 0
-substring$ -- 684
-swap$ -- 644
+substring$ -- 747
+swap$ -- 718
 text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 100
+type$ -- 114
 warning$ -- 0
-while$ -- 92
-width$ -- 27
-write$ -- 255
+while$ -- 100
+width$ -- 31
+write$ -- 291

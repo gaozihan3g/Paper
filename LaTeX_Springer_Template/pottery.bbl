@@ -19,6 +19,11 @@ Autodesk 3ds max.
 Autodesk maya.
 \newblock \urlprefix\url{https://www.autodesk.com/products/maya/overview}
 
+\bibitem{botsch2010polygon}
+Botsch, M., Kobbelt, L., Pauly, M., Alliez, P., L{\'e}vy, B.: Polygon mesh
+  processing.
+\newblock CRC press (2010)
+
 \bibitem{choudhary1995general}
 Choudhary, R., Dewan, P.: A general multi-user undo/redo model.
 \newblock In: Proceedings of the Fourth European Conference on
@@ -46,6 +51,10 @@ Hinckley, K., Pausch, R., Proffitt, D., Kassell, N.F.: Two-handed virtual
   manipulation.
 \newblock ACM Transactions on Computer-Human Interaction (TOCHI) \textbf{5}(3),
   260--302 (1998)
+
+\bibitem{website:vive}
+Htc vive.
+\newblock \urlprefix\url{https://www.vive.com/us/}
 
 \bibitem{Jacob2008Reality}
 Jacob, R.J.K., Girouard, A., Hirshfield, L.M., Horn, M.S., Shaer, O., Solovey,
@@ -110,6 +119,10 @@ Oviatt, S.: Human-centered design meets cognitive load theory: designing
 \newblock In: Proceedings of the 14th ACM international conference on
   Multimedia, pp. 871--880. ACM (2006)
 
+\bibitem{Perlin1985An}
+Perlin, K.: An image synthesizer.
+\newblock Acm Siggraph Computer Graphics \textbf{19}(3), 287--296 (1985)
+
 \bibitem{ramani2015gesture}
 Ramani, K., et~al.: A gesture-free geometric approach for mid-air expression of
   design intent in 3d virtual pottery.
@@ -129,6 +142,12 @@ Sheng, J., Balakrishnan, R., Singh, K.: An interface for virtual 3d sculpting
 \bibitem{website:unity}
 Unity3d.
 \newblock \urlprefix\url{http://www.unity3d.com}
+
+\bibitem{Vinayak2016Extracting}
+Vinayak, Ramani, K.: Extracting hand grasp and motion for intent expression in
+  mid-air shape deformation: A concrete and iterative exploration through a
+  virtual pottery application.
+\newblock Computers \& Graphics \textbf{55}(C), 143--156 (2016)
 
 \bibitem{walter2014cuenesics}
 Walter, R., Bailly, G., Valkanova, N., M{\"u}ller, J.: Cuenesics: using mid-air

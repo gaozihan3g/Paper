@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  9 MAY 2018 13:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  22 MAY 2018 22:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -186,31 +186,10 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 )
 (./pottery.aux
 
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
 LaTeX Warning: Label `tab:1' multiply defined.
 
 
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
-
-
-LaTeX Warning: Label `fig:1' multiply defined.
+LaTeX Warning: Label `fig:7' multiply defined.
 
 )
 \openout1 = `pottery.aux'.
@@ -295,138 +274,186 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 SVJour3 warning: Missing \journalname
-[1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
+LaTeX Font Info:    Calculating math sizes for size <9.5> on input line 94.
 
-[2] <0.PNG, id=14, 897.3525pt x 370.38374pt>
-File: 0.PNG Graphic file (type png)
- <use 0.PNG>
-Package pdftex.def Info: 0.PNG used on input line 160.
-(pdftex.def)             Requested size: 338.0pt x 139.50958pt.
- [3 <./0.PNG>] [4]
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <9.5> not available
+(Font)              size <9> substituted on input line 94.
+
+[1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Missing character: There is no â in font cmr9!
+Missing character: There is no € in font cmr9!
+Missing character: There is no ™ in font cmr9!
+Missing character: There is no â in font cmr9!
+Missing character: There is no € in font cmr9!
+Missing character: There is no ™ in font cmr9!
+
+<targets.png, id=11, 1084.05pt x 274.02374pt>
+File: targets.png Graphic file (type png)
+ <use targets.png>
+Package pdftex.def Info: targets.png used on input line 157.
+(pdftex.def)             Requested size: 347.0pt x 87.71446pt.
+ [2]
+
+LaTeX Warning: Citation ` niehorster2017accuracy' on page 3 undefined on input 
+line 183.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <./targets.png>]
+Underfull \vbox (badness 1226) has occurred while \output is active []
+
+ [4]
 <fig2.pdf, id=24, 845.1575pt x 597.23125pt>
 File: fig2.pdf Graphic file (type pdf)
  <use fig2.pdf>
-Package pdftex.def Info: fig2.pdf used on input line 234.
-(pdftex.def)             Requested size: 338.0pt x 238.8518pt.
- [5]
-<fig3.pdf, id=29, 845.1575pt x 597.23125pt>
+Package pdftex.def Info: fig2.pdf used on input line 232.
+(pdftex.def)             Requested size: 347.0pt x 245.21268pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5 <./fig2.pdf>] <fig3.pdf, id=69, 845.1575pt x 597.23125pt>
 File: fig3.pdf Graphic file (type pdf)
  <use fig3.pdf>
-Package pdftex.def Info: fig3.pdf used on input line 267.
-(pdftex.def)             Requested size: 338.0pt x 238.8518pt.
- [6 <./fig2.pdf>]
-<fig4.pdf, id=78, 845.1575pt x 597.23125pt>
+Package pdftex.def Info: fig3.pdf used on input line 261.
+(pdftex.def)             Requested size: 347.0pt x 245.21268pt.
+
+<fig4.pdf, id=70, 845.1575pt x 597.23125pt>
 File: fig4.pdf Graphic file (type pdf)
  <use fig4.pdf>
-Package pdftex.def Info: fig4.pdf used on input line 300.
-(pdftex.def)             Requested size: 338.0pt x 238.8518pt.
- [7 <./fig3.pdf>]
-Overfull \hbox (17.38956pt too wide) in paragraph at lines 326--328
-\OT1/cmr/m/n/10 mesh edit-ing op-er-a-tion into 4 cat-e-gories: (i) sym-me-try 
-con-trol, (ii) height/thickness
- []
+Package pdftex.def Info: fig4.pdf used on input line 287.
+(pdftex.def)             Requested size: 347.0pt x 245.21268pt.
+ [6] [7 <./fig3.pdf> <./fig4.pdf>] <fig5.pdf, id=173, 845.1575pt x 597.23125pt>
+File: fig5.pdf Graphic file (type pdf)
+ <use fig5.pdf>
+Package pdftex.def Info: fig5.pdf used on input line 340.
+(pdftex.def)             Requested size: 347.0pt x 245.21268pt.
 
-[8 <./fig4.pdf>]
+[8] [9 <./fig5.pdf>] <fig6.pdf, id=225, 845.1575pt x 597.23125pt>
+File: fig6.pdf Graphic file (type pdf)
 
-LaTeX Warning: Citation `botsch2010polygon' on page 9 undefined on input line 3
-57.
+<use fig6.pdf>
+Package pdftex.def Info: fig6.pdf used on input line 422.
+(pdftex.def)             Requested size: 347.0pt x 245.21268pt.
+ [10] [11 <./fig6.pdf>] [12]
+Missing character: There is no â in font cmti9!
+Missing character: There is no € in font cmti9!
+Missing character: There is no ™ in font cmti9!
 
-[9]
-Package epstopdf Info: Source file: <example.eps>
-(epstopdf)                    date: 2018-03-29 09:17:38
-(epstopdf)                    size: 286 bytes
-(epstopdf)             Output file: <example-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-29 09:17:39
-(epstopdf)                    size: 2431 bytes
-(epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
-df example.eps>
-(epstopdf)             \includegraphics on input line 416.
+
+LaTeX Warning: Reference `fig:11' on page 13 undefined on input line 544.
+
+
+LaTeX Warning: Reference `fig:12' on page 13 undefined on input line 544.
+
+[13]
+File: targets.png Graphic file (type png)
+ <use targets.png>
+Package pdftex.def Info: targets.png used on input line 550.
+(pdftex.def)             Requested size: 347.0pt x 87.71446pt.
+
+
+LaTeX Warning: Citation `hart2006nasa' on page 14 undefined on input line 574.
+
+[14]
+Package epstopdf Info: Source file: <fig7.eps>
+(epstopdf)                    date: 2018-05-14 10:32:10
+(epstopdf)                    size: 18168 bytes
+(epstopdf)             Output file: <fig7-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-14 10:34:21
+(epstopdf)                    size: 7596 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig7-eps-converted-to.pdf 
+fig7.eps>
+(epstopdf)             \includegraphics on input line 617.
 Package epstopdf Info: Output file is already uptodate.
- <example-eps-converted-to.pdf, id=159, 202.7575pt x 202.7575pt>
-File: example-eps-converted-to.pdf Graphic file (type pdf)
+ <fig7-eps-converted-to.pdf, id=273, 671.50874pt x 613.29124pt>
+File: fig7-eps-converted-to.pdf Graphic file (type pdf)
 
-<use example-eps-converted-to.pdf>
-Package pdftex.def Info: example-eps-converted-to.pdf used on input line 416.
-(pdftex.def)             Requested size: 202.757pt x 202.757pt.
+<use fig7-eps-converted-to.pdf>
+Package pdftex.def Info: fig7-eps-converted-to.pdf used on input line 617.
+(pdftex.def)             Requested size: 260.25pt x 237.68532pt.
+Package epstopdf Info: Source file: <cc.eps>
+(epstopdf)                    date: 2018-05-21 11:21:46
+(epstopdf)                    size: 15818 bytes
+(epstopdf)             Output file: <cc-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-21 11:24:34
+(epstopdf)                    size: 5010 bytes
+(epstopdf)             Command: <repstopdf --outfile=cc-eps-converted-to.pdf cc
+.eps>
+(epstopdf)             \includegraphics on input line 626.
+Package epstopdf Info: Output file is already uptodate.
 
+<cc-eps-converted-to.pdf, id=274, 562.1pt x 421.575pt>
+File: cc-eps-converted-to.pdf Graphic file (type pdf)
 
-LaTeX Warning: Citation `website:vive' on page 10 undefined on input line 427.
+<use cc-eps-converted-to.pdf>
+Package pdftex.def Info: cc-eps-converted-to.pdf used on input line 626.
+(pdftex.def)             Requested size: 260.25pt x 195.18765pt.
+Package epstopdf Info: Source file: <fig8.eps>
+(epstopdf)                    date: 2018-05-14 10:31:57
+(epstopdf)                    size: 14319 bytes
+(epstopdf)             Output file: <fig8-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-05-14 10:34:21
+(epstopdf)                    size: 6241 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig8-eps-converted-to.pdf 
+fig8.eps>
+(epstopdf)             \includegraphics on input line 635.
+Package epstopdf Info: Output file is already uptodate.
 
-[10] [11 <./example-eps-converted-to.pdf>]
+<fig8-eps-converted-to.pdf, id=275, 671.50874pt x 613.29124pt>
+File: fig8-eps-converted-to.pdf Graphic file (type pdf)
 
-LaTeX Warning: Citation `website:vive' on page 12 undefined on input line 469.
-
-<t2.pdf, id=168, 569.05505pt x 113.811pt>
-File: t2.pdf Graphic file (type pdf)
- <use t2.pdf>
-Package pdftex.def Info: t2.pdf used on input line 479.
-(pdftex.def)             Requested size: 253.5pt x 50.70042pt.
- [12 <./t2.pdf>]
-Missing character: There is no â in font cmti10!
-Missing character: There is no € in font cmti10!
-Missing character: There is no ™ in font cmti10!
- [13]
-[14] <f7.pdf, id=193, 845.1575pt x 597.23125pt>
-File: f7.pdf Graphic file (type pdf)
- <use f7.pdf>
-Package pdftex.def Info: f7.pdf used on input line 606.
-(pdftex.def)             Requested size: 253.5pt x 179.1343pt.
-
-<f8.pdf, id=194, 614.295pt x 794.97pt>
-File: f8.pdf Graphic file (type pdf)
- <use f8.pdf>
-Package pdftex.def Info: f8.pdf used on input line 615.
-(pdftex.def)             Requested size: 253.5pt x 328.0626pt.
-
-<f9.pdf, id=195, 614.295pt x 794.97pt>
-File: f9.pdf Graphic file (type pdf)
- <use f9.pdf>
-Package pdftex.def Info: f9.pdf used on input line 624.
-(pdftex.def)             Requested size: 253.5pt x 328.0626pt.
- [15] [16 <./f7.pdf> <./f8.pdf>] [17 <./f9.pdf>] (./pottery.bbl
+<use fig8-eps-converted-to.pdf>
+Package pdftex.def Info: fig8-eps-converted-to.pdf used on input line 635.
+(pdftex.def)             Requested size: 260.25pt x 237.68532pt.
+ [15] [16 <./fig7-eps-converted-to.pdf> <./cc-eps-converted-to.pdf>] [17 <./fig
+8-eps-converted-to.pdf>] (./pottery.bbl
 Missing character: There is no â in font cmr8!
 Missing character: There is no € in font cmr8!
 Missing character: There is no ™ in font cmr8!
- [18]) [19] (./pottery.aux)
+ [18])
+[19] (./pottery.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.5pt have occurred.
+
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3169 strings out of 492995
- 45823 string characters out of 6132704
- 109164 words of memory out of 5000000
- 6687 multiletter control sequences out of 15000+600000
- 8866 words of font info for 32 fonts, out of 8000000 for 9000
+ 3202 strings out of 492995
+ 46434 string characters out of 6132704
+ 111224 words of memory out of 5000000
+ 6717 multiletter control sequences out of 15000+600000
+ 12340 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,21n,25p,676b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/STIXGeneral-Itali
-c.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/STIXGeneral-R
-egular.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-bx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
-x8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex1
-0.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.p
-fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
-/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
-cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
-texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on pottery.pdf (19 pages, 2412198 bytes).
+ 39i,21n,25p,676b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/STIXGeneral-Bold.
+pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/STIXGeneral-Ita
+lic.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/STIXGeneral
+-Regular.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmbx8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra
+/cmex9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.p
+fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></u
+sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/lo
+cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on pottery.pdf (19 pages, 2818793 bytes).
 PDF statistics:
- 280 PDF objects out of 1000 (max. 8388607)
- 209 compressed objects within 3 object streams
+ 359 PDF objects out of 1000 (max. 8388607)
+ 274 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
