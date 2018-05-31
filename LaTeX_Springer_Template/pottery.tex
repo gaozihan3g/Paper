@@ -12,30 +12,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% First comes an example EPS file -- just ignore it and
-% proceed on the \documentclass line
-% your LaTeX will extract the file if required
-\begin{filecontents*}{example.eps}
-%!PS-Adobe-3.0 EPSF-3.0
-%%BoundingBox: 19 19 221 221
-%%CreationDate: Mon Sep 29 1997
-%%Creator: programmed by hand (JK)
-%%EndComments
-gsave
-newpath
-  20 20 moveto
-  20 220 lineto
-  220 220 lineto
-  220 20 lineto
-closepath
-2 setlinewidth
-gsave
-  .4 setgray fill
-grestore
-stroke
-grestore
-\end{filecontents*}
-%
+
 \RequirePackage{fix-cm}
 %
 \documentclass{svjour3}                     % onecolumn (standard format)
@@ -154,7 +131,7 @@ The main contributions of our works are:
 
 %%% Fig 1
 \begin{figure*}
-\includegraphics[width=\textwidth]{targets.png}
+\includegraphics[width=\textwidth]{pots.png}
 \caption{The virtual pots created by our system.}
 \label{fig:1}
 \end{figure*}
@@ -180,7 +157,7 @@ Surface Drawing \cite{schkolne2001surface} is a system for creating organic 3D s
 Hinckley et al. \cite{hinckley1998two} did a research on two-handed virtual manipulation with a point design of a prop-based system, which allows users to view a cross section of a brain with interface props.
 These works have a common problem that the usage of these instruments are limited to a lab context that very few users can access.
 
-With the commercialization of gaming devices, some motion controllers such as Wii Remote and HTC Vive have become accessible to consumers, which are also used in scientific studies for 3D user interfaces \cite{wingcrave2010wii, niehorster2017accuracy}.
+With the commercialization of gaming devices, some motion controllers such as Wii Remote and HTC Vive have become accessible to consumers, which are also used in scientific studies for 3D user interfaces \cite{wingcrave2010wii,niehorster2017accuracy}.
 
 In our project, HTC Vive system is used in our system, which provides precision, haptic feedback and well accessed by consumers.
 
@@ -547,20 +524,20 @@ Figure \ref{fig:11} shows two subjects using our system to throw pottery. Figure
 \label{sec:6.3}
 
 \begin{figure*}
-\includegraphics[width=\textwidth]{targets.png}
+\includegraphics[width=\textwidth]{target.pdf}
 \caption{The target shapes used in our user study.}
-\label{fig:7}
+\label{fig:target}
 \end{figure*}
 
-\paragraph{Practice} Each subject was given 15 minutes to get familiar with these system (5 minutes for each). Subjects can ask questions whenever they need help.
+\paragraph{Practice} Each subject was given 15 minutes to get familiar with these systems (5 minutes for each). Subjects can ask questions whenever they need help.
 
 \paragraph{Task 1} After the 15-minute practice of the three systems, each subject had to accomplish 3 tasks:
 
-\textbf{T}\textsubscript{1}: Given a pot model as the target shape, the subjects were asked to create a same pot from a irregular generated mesh using PotteryVR. 
+\textbf{T}\textsubscript{1}: Given a random sequence of reference pot models as target shapes, the subjects were asked to create same pots from irregular generated meshes using PotteryVR. 
 
-\textbf{T}\textsubscript{2}: Given a reference image of the same pot model in \textbf{T}\textsubscript{1}, the subjects need to model a pot using Let's Create! Pottery on a iPad Pro.
+\textbf{T}\textsubscript{2}: Given reference pot models of the same order in \textbf{T}\textsubscript{1}, the subjects need to model these pots using Let's Create! Pottery on an iPad Pro.
 
-\textbf{T}\textsubscript{3}: Given the same reference image used in \textbf{T}\textsubscript{2}, the subjects need to create a model using Maya on a PC.
+\textbf{T}\textsubscript{3}: Given reference pot models of the same order in \textbf{T}\textsubscript{1} and \textbf{T}\textsubscript{2}, the subjects need to model these pots using Maya on a PC.
 
 
 %[Task details]
@@ -590,53 +567,60 @@ NASA-TLX has been chosen in our research because it is widely used in human fact
 \textbf{Q}\textsubscript{3}: Rank the three systems according to your preference from high to low.
 
 
-
-
 \subsection{Study Results}
 \label{sec:6.4}
 
-%[basic introduction]
-Figure \ref{fig:7} shows mean values of the six dimensions of NASA-TLX for all the tasks. For the questions of ranking, we count a score of 3 for the system in the highest ranking and 1 for the system in the lowest ranking. Figure \ref{fig:8} shows the vote results of the last two of the additional questions. Figure \ref{fig:9} shows the percentages of the first ranking frequencies of the three systems in the last two additional questions, in other words, how many female/male gave the highest rankings to the system.
 
-%[DC - less time and mental demand]
-According to Figure \ref{fig:7}, we can get some findings. 
-Firstly, the mental demand value of Tmaya (M = 9.9) is much higher than the values of Tdigi (M = 0.1) and Tlcp (M = 0.2). Similarly, the temporal demand value of Tmaya (M = 9.9) is much higher than the values of Tdigi (M = 0.1) and Tlcp (M = 0.2). This indicated that PotteryVR was less time-consuming and easier to use than Maya and LCP.
-%[DC - easy to use, natural interaction]
-Compared with the formidable interfaces and the modeling operations heavily rely on mouse and keyboard in Maya, PotteryVR provides simple interfaces with intuitive bimanual interactions to deform the mesh. In our experiments, we found that it is not difficult for the subjects to understand how to deform the mesh in PotteryVR compared with the difficulties of selecting and editing vertices and faces in Maya. Since the natural interactions in PotteryVR are closely related to the operations in reality, the subjects can learn our system with ease.
+
+%[basic introduction]
+%Figure \ref{fig:boxplot} shows the boxplots of completion time and correlation coefficient for each target shape created in \textbf{T}\textsubscript{1}.
+Figure \ref{fig:tlx} shows mean values of the six dimensions of NASA-TLX for \textbf{T}\textsubscript{1}, \textbf{T}\textsubscript{2} and \textbf{T}\textsubscript{3}.
+Figure \ref{fig:ranking} shows the vote results of \textbf{Q}\textsubscript{1}, \textbf{Q}\textsubscript{2} and \textbf{Q}\textsubscript{3}, where we count a score of 3 for the system in the highest ranking and 1 for the system in the lowest ranking. 
+
+%fig8
+%\begin{figure*}
+%	\includegraphics[width=0.75\textwidth]{cc.eps}
+%	\caption{Correlation Coefficients \& Time}
+%	\label{fig:boxplot}
+%\end{figure*}
+
+%TODO boxplots - high curvature shapes are harder to make.
+
+%fig9
+\begin{figure*}
+	\includegraphics[width=\textwidth]{tlx.eps}
+	\caption{Mean values of the six dimensions of NASA-TLX.}
+	\label{fig:tlx}
+\end{figure*}
+
+%mental/physical/temporal
+According to Figure \ref{fig:tlx}, we can get some findings. 
+Firstly, the mental demand values of T1 (M = 2.52) and T2 (M = 2.11) were almost the same and much lower than the value of T3 (M = 4.92). Similarly, the temporal demand value of T3 (M = 5.77) was much higher than the values of T1 (M = 3.21) and T2 (M = 2.98). This indicated that PotteryVR and LCP were easier to use and less time-consuming than Maya. Unsurprisingly, the physical demand value of T1 (M = 2.89) is slightly higher than T2 (M = 1.86) and T3 (M = 2.31), which means interactions based spatial movements are slightly laborious than touchscreen and keyboard/mouse interactions.
+
+%[Maya - hard]
+Maya showed much higher values in effort (M = 6.87) and frustration (M = 7.30) and lower value in performance (M = 4.08) compared with PotteryVR and LCP.
+Since most subjects in the user study have no 3D modeling software experience, the complex user interface in Maya makes it challenging for these novice users to memorize where to find the commands they need, rendering a high effort.
+Although keyboard-mouse based interaction allows precise controls with low physical demand, many subjects struggled with selecting and manipulating vertices and faces accurately, which caused high user frustration. As a result, most subjects were not satisfied with their performances in T3.
 
 %[LCP - limitation] [thickness smooth sharpness]
-We also found that it was not as easy as we predicted for the subjects to design potteries when using the Let's Create Pottery app. There are some limitations in the throwing process in LCP, where subjects cannot modify the thickness of the clay. Moreover, subjects found it is impossible to create sharp features on the clay in LCP. 
-%[Maya - hard]
-Maya showed much higher values in mental demand (M = 0.2), effort (M = 0.2) and frustration (M = 0.2) and lower value in performance (M = 0.2) compared with PotteryVR and LCP. Although mouse and keyboard based interaction allows precise controls, many subjects struggled with selecting and manipulating vertices and faces accurately.
+Surprisingly, we found that it was not as satisfied as we predicted for the subjects using LCP in T2, where the performance value (M = 3.10) is lower than we expected. This is due to the limitations in LCP: Although the interaction in LCP is easy to learn, some high curvature features (Figure \ref{fig:target}b, \ref{fig:target}d, \ref{fig:target}e and \ref{fig:target}f) cannot be reached due to LCP has a fixed deformation range. Moreover, subjects cannot modify the thickness of pots, which is another limitation of LCP. Thus, the frustration value (M = 4.66) are high during T2.
+
+%fig10
+\begin{figure*}
+	\includegraphics[width=0.75\textwidth]{ranking.eps}
+	\caption{Mean ranking scores of Q1, Q2 and Q3.}
+	\label{fig:ranking}
+\end{figure*}
+
 %[user preference][enjoyable and intuitive]
-The results also showed that a majority subjects preferred the experience of designing pottery in PotteryVR than those of Maya, as shown in Figure C. In addition, more than 50\% subjects considered PotteryVR stimulate their creativity the most and chose it as their favorite system among the three systems. From their feedbacks, we found that immersive interactions in virtual reality context gave them a novel and realistic way to interact with virtual pottery models when using PotteryVR.
-%[sex preference difference]
-\begin{figure*}
-% Use the relevant command to insert your figure file.
-% For example, with the graphicx package use
-  \includegraphics[width=0.75\textwidth]{fig7.eps}
-% figure caption is below the figure
-\caption{NASA-TLX}
-\label{fig:7}       % Give a unique label
-\end{figure*}
+The voting results in Figure \ref{fig:ranking} demonstrated the ease of learning, the support of creativity and overall preference of the three systems.
+%ease
+Compared with the complex interfaces and the keyboard and mouse operations in Maya, PotteryVR and LCP provides simple interfaces and intuitive interactions, allowing users get familiar with the interaction with ease.
+%creativity
+In addition, most subjects considered PotteryVR stimulate their creativity and imagination the most. From their feedbacks, we found that spatial interactions in virtual reality context gave them a novel and realistic way to interact with virtual clay when using PotteryVR. Moreover, PotteryVR provides more powerful operations such as adjustable deformation range, thickness control and smoothing than LCP, allowing subjects creating characteristic shapes.
 
-\begin{figure*}
-% Use the relevant command to insert your figure file.
-% For example, with the graphicx package use
-  \includegraphics[width=0.75\textwidth]{cc.eps}
-% figure caption is below the figure
-\caption{Correlation Coefficients}
-\label{fig:8}       % Give a unique label
-\end{figure*}
-
-\begin{figure*}
-% Use the relevant command to insert your figure file.
-% For example, with the graphicx package use
-  \includegraphics[width=0.75\textwidth]{fig8.eps}
-% figure caption is below the figure
-\caption{System Rankings by Subjects}
-\label{fig:9}       % Give a unique label
-\end{figure*}
+%overall-enjoyable, useful for training
+In Q3, PotteryVR became the favorite virtual pottery system for the subjects. From user feedbacks, we found that PotteryVR provided the subjects with most enjoyable experience among the three systems, which also has a balance of having simple interfaces and useful functionalities. In addition, the natural bimanual interactions in PotteryVR are closely related to the operations in reality pottery, making it an ideal training simulation tool for pottery.
 
 \subsection{User Feedbacks}
 \label{sec:6.5}
@@ -645,10 +629,9 @@ The results also showed that a majority subjects preferred the experience of des
 We also collected user feedbacks after the subjects had used our system. In summary, subjects gave many positive feedbacks when using our system to design pottery models. They spoke highly of the immersive pottery creation experience with intuitive interaction and haptic feedback that motivated them to design potteries just like working on real clay. In addition, the undo/redo are quite convenient according to the subjects, which enhances the efficiency during the creation process. For those who have no real life pottery creation experience enjoyed our system very much and would like to try real pottery someday. 
 
 %[Suggestions]
-During our user study, we found that...
+During our user study, we found that the undo/redo functionality is not used frequently as we expected. 
 We also asked their suggestions for the future features they wanted to see in PotteryVR.
-One suggested ...
-A few subjects expressed their wishes to add ...
+A few subjects expressed their wishes to add coloring feature, which allows them decorate the pots with colors and patterns.
 At the end of our user study, many subjects said they would like to try PotteryVR one more time.
 
 \section{Limitations}
