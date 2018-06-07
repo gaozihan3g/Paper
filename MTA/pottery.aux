@@ -12,12 +12,6 @@
 \citation{cui2016exploration}
 \citation{schkolne2001surface}
 \citation{hinckley1998two}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The virtual pots created by our system.}}{3}}
-\newlabel{fig:1}{{1}{3}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{3}}
-\newlabel{sec:2}{{2}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Bimanual Interaction}{3}}
-\newlabel{sec:2.1}{{2.1}{3}}
 \citation{wingcrave2010wii,niehorster2017accuracy}
 \citation{laviola20113d}
 \citation{keefe2001cavepainting}
@@ -25,19 +19,29 @@
 \citation{otsuki2017brush}
 \citation{mcdonnell2001virtual}
 \citation{sheng2006interface}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{3}}
+\newlabel{sec:2}{{2}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Bimanual Interaction}{3}}
+\newlabel{sec:2.1}{{2.1}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Art and Design Tools in VR}{3}}
+\newlabel{sec:2.2}{{2.2}{3}}
 \citation{koutsoudis2009qp}
 \citation{kumar2011wheel}
 \citation{murugappan2013handy}
 \citation{han2014virtual}
 \citation{han2007ar}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Art and Design Tools in VR}{4}}
-\newlabel{sec:2.2}{{2.2}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Virtual Pottery Systems}{4}}
 \newlabel{sec:2.3}{{2.3}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}System Overview}{4}}
+\newlabel{sec:3}{{3}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}System Architecture}{4}}
+\newlabel{sec:3.1}{{3.1}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Workflow}{4}}
+\newlabel{sec:3.2}{{3.2}{4}}
 \citation{han2007ar,ramani2015gesture,Vinayak2016Extracting}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Workflow}{5}}
-\newlabel{sec:3}{{3}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Implementation}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The system architecture of EasyPot.}}{5}}
+\newlabel{fig:1}{{1}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Interactive Modeling System for Pottery Design in VR}{5}}
 \newlabel{sec:4}{{4}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Mesh Generation}{5}}
 \newlabel{sec:4.1}{{4.1}{5}}
@@ -50,74 +54,88 @@
 \newlabel{fig:3}{{3}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces To get a noised radius $r_{i,j}$ (green) based on radius $r_{base_{i}}$ (red): (1) Move the centre from origin (0,0) to $\mathbf  {O}_{i}$. (2)Calculate the sum: $r_{total_{i,j}} = r_{base_{i}} + r_{row_{i}} + r_{indv_{i,j}}$. (3) Find the distance to the origin, which will be the noised radius $r_{i,j}$.}}{8}}
 \newlabel{fig:4}{{4}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Mesh Processing}{8}}
-\newlabel{sec:4.2}{{4.2}{8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Symmetry Control}{8}}
-\newlabel{sec:4.2.1}{{4.2.1}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces mesh}}{8}}
+\newlabel{fig:mesh}{{5}{8}}
 \citation{botsch2010polygon}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The blue curve is the noised circular section at height $h_{i}$, and the green curve is a circle with the average radius $\mathaccentV {bar}016r_{i}$. Let $\Delta r_{i,j}$ be the difference, then multiplied by the parameter $\lambda $. We can get $r'_{i, j}$.}}{9}}
-\newlabel{fig:5}{{5}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Mesh Processing}{9}}
+\newlabel{sec:4.2}{{4.2}{9}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Symmetry Control}{9}}
+\newlabel{sec:4.2.1}{{4.2.1}{9}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Thickness/Height Control}{9}}
 \newlabel{sec:4.2.2}{{4.2.2}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The blue curve is the noised circular section at height $h_{i}$, and the green curve is a circle with the average radius $\mathaccentV {bar}016r_{i}$. Let $\Delta r_{i,j}$ be the difference, then multiplied by the parameter $\lambda $. We can get $r'_{i, j}$.}}{10}}
+\newlabel{fig:5}{{6}{10}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Mesh Deformation}{10}}
 \newlabel{sec:4.2.3}{{4.2.3}{10}}
-\newlabel{equation:falloff}{{14}{10}}
 \citation{website:vive}
 \citation{Jacob2008Reality}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces (a) The center of the concentric circles is the initial position of the handle. $R_{i}$ and $R_{o}$ define the inner range and outer range respectively. $d_{i,j}$ is the vertical distance between a vertex $\mathbf  {v}_{i,j}$ and the handle, which is used for weight calculation. (b) We use a cubic polynomial function $f(t) = 2t^3 - 3t^2 + 1$ as the falloff curve for calculating the weight $w_{i,j}$. }}{11}}
-\newlabel{fig:6}{{6}{11}}
+\newlabel{equation:falloff}{{14}{11}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}Mesh Smoothing}{11}}
 \newlabel{sec:4.2.4}{{4.2.4}{11}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Interactions}{11}}
 \newlabel{sec:4.3}{{4.3}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces (a) The center of the concentric circles is the initial position of the handle. $R_{i}$ and $R_{o}$ define the inner range and outer range respectively. $d_{i,j}$ is the vertical distance between a vertex $\mathbf  {v}_{i,j}$ and the handle, which is used for weight calculation. (b) We use a cubic polynomial function $f(t) = 2t^3 - 3t^2 + 1$ as the falloff curve for calculating the weight $w_{i,j}$. }}{12}}
+\newlabel{fig:6}{{7}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces ui}}{12}}
+\newlabel{fig:ui}{{8}{12}}
 \citation{choudhary1995general}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces The interactions using VIVE motion controllers in our system.}}{13}}
+\newlabel{fig:controller}{{9}{13}}
+\@writefile{toc}{\contentsline {paragraph}{New Mesh}{13}}
+\@writefile{toc}{\contentsline {paragraph}{Radius Adjustment}{13}}
+\@writefile{toc}{\contentsline {paragraph}{Undo/Redo}{13}}
+\@writefile{toc}{\contentsline {paragraph}{Export Mesh}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}System Feedback}{13}}
+\newlabel{sec:4.4}{{4.4}{13}}
 \citation{website:unity}
 \citation{website:vive}
-\@writefile{toc}{\contentsline {paragraph}{New Mesh}{12}}
-\@writefile{toc}{\contentsline {paragraph}{Radius Adjustment}{12}}
-\@writefile{toc}{\contentsline {paragraph}{Undo/Redo}{12}}
-\@writefile{toc}{\contentsline {paragraph}{Export Mesh}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}System Feedback}{12}}
-\newlabel{sec:4.4}{{4.4}{12}}
-\@writefile{toc}{\contentsline {paragraph}{Visual Feedback}{12}}
-\@writefile{toc}{\contentsline {paragraph}{Haptic Feedback}{12}}
 \citation{website:maya}
 \citation{website:letspottery}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces The random parameters based on Perlin Noise.}}{13}}
-\newlabel{tab:1}{{1}{13}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Statistics for different axis and height segments.}}{13}}
-\newlabel{tab:1}{{2}{13}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Results}{13}}
-\newlabel{sec:5}{{5}{13}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}User Study}{13}}
-\newlabel{sec:6}{{6}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Evaluated Systems}{13}}
-\newlabel{sec:6.1}{{6.1}{13}}
-\@writefile{toc}{\contentsline {paragraph}{PotteryVR}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The target shapes used in our user study.}}{14}}
-\newlabel{fig:target}{{7}{14}}
-\@writefile{toc}{\contentsline {paragraph}{Let’s Create! Pottery}{14}}
-\@writefile{toc}{\contentsline {paragraph}{Autodesk Maya}{14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Participants}{14}}
-\newlabel{sec:6.2}{{6.2}{14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Experimental Design and Procedure}{14}}
-\newlabel{sec:6.3}{{6.3}{14}}
-\@writefile{toc}{\contentsline {paragraph}{Practice}{14}}
-\@writefile{toc}{\contentsline {paragraph}{Task 1}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces highlight}}{14}}
+\newlabel{fig:highlight}{{10}{14}}
+\@writefile{toc}{\contentsline {paragraph}{Visual Feedback}{14}}
+\@writefile{toc}{\contentsline {paragraph}{Haptic Feedback}{14}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Results}{14}}
+\newlabel{sec:5}{{5}{14}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}User Study}{14}}
+\newlabel{sec:6}{{6}{14}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces The random parameters based on Perlin Noise.}}{15}}
+\newlabel{tab:1}{{1}{15}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Statistics for different axis and height segments.}}{15}}
+\newlabel{tab:1}{{2}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces results}}{15}}
+\newlabel{fig:results}{{11}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Evaluated Systems}{15}}
+\newlabel{sec:6.1}{{6.1}{15}}
+\@writefile{toc}{\contentsline {paragraph}{EasyPot}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces systems}}{16}}
+\newlabel{fig:sys}{{12}{16}}
+\@writefile{toc}{\contentsline {paragraph}{Let’s Create! Pottery}{16}}
+\@writefile{toc}{\contentsline {paragraph}{Autodesk Maya}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Participants}{16}}
+\newlabel{sec:6.2}{{6.2}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Experimental Design and Procedure}{16}}
+\newlabel{sec:6.3}{{6.3}{16}}
+\@writefile{toc}{\contentsline {paragraph}{Practice}{16}}
+\@writefile{toc}{\contentsline {paragraph}{Task 1}{16}}
 \citation{hart2006nasa}
-\@writefile{toc}{\contentsline {paragraph}{Questionnaire 1}{15}}
-\@writefile{toc}{\contentsline {paragraph}{Task 2}{15}}
-\@writefile{toc}{\contentsline {paragraph}{Questionnaire 2}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Study Results}{15}}
-\newlabel{sec:6.4}{{6.4}{15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Mean values of the six dimensions of NASA-TLX.}}{16}}
-\newlabel{fig:tlx}{{8}{16}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Mean ranking scores of Q1, Q2 and Q3.}}{17}}
-\newlabel{fig:ranking}{{9}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}User Feedbacks}{17}}
-\newlabel{sec:6.5}{{6.5}{17}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Limitations}{17}}
-\newlabel{sec:7}{{7}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces The target shapes used in our user study.}}{17}}
+\newlabel{fig:target}{{13}{17}}
+\@writefile{toc}{\contentsline {paragraph}{Questionnaire 1}{17}}
+\@writefile{toc}{\contentsline {paragraph}{Task 2}{17}}
+\@writefile{toc}{\contentsline {paragraph}{Questionnaire 2}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Study Results}{17}}
+\newlabel{sec:6.4}{{6.4}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces The virtual pots created by our system.}}{18}}
+\newlabel{fig:1}{{14}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Mean values of the six dimensions of NASA-TLX.}}{18}}
+\newlabel{fig:tlx}{{15}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Mean ranking scores of Q1, Q2 and Q3.}}{19}}
+\newlabel{fig:ranking}{{16}{19}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Discussions}{20}}
+\newlabel{sec:7}{{7}{20}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusions}{20}}
+\newlabel{sec:8}{{8}{20}}
 \bibstyle{spmpsci}
 \bibdata{pottery}
 \bibcite{agrawala19953d}{1}
@@ -130,8 +148,6 @@
 \bibcite{han2014virtual}{8}
 \bibcite{hart2006nasa}{9}
 \bibcite{hinckley1998two}{10}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusions}{18}}
-\newlabel{sec:8}{{8}{18}}
 \bibcite{website:vive}{11}
 \bibcite{Jacob2008Reality}{12}
 \bibcite{keefe2001cavepainting}{13}
