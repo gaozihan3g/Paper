@@ -194,11 +194,11 @@ In contrast to existing works, our system provides a novel pottery creation work
 
 TODO
 
-%%% architecture
+%%%Fig%%% architecture
 \begin{figure*}
 \includegraphics[width=\textwidth]{arc.pdf}
 \caption{The system architecture of EasyPot.}
-\label{fig:1}
+\label{fig:arc}
 \end{figure*}
 
 
@@ -208,18 +208,18 @@ TODO
 The pottery creation process on a pottery wheel is called "throwing", where a ball of clay is placed in the centre of a turntable wheel-head, and shaped by a potter.
 To illustrate the pipeline of pottery creation in our system, an example workflow using EasyPot is described as follows.
 
-When a user starts to use EasyPot, a realistic clay mesh is automatically generated with Perlin noise. (Figure \ref{fig:2}a, Section \ref{sec:4.1})
-Similar to the operation in reality, the user first need to use both hands to make the irregular clay shape into perfect rotational symmetry, which is called \textit{centring}. (Figure \ref{fig:2}b, Section \ref{sec:4.2.1})
-The user can control the thickness of the clay (i.e. \textit{opening}) by pressing down the clay to create a hollow in the clay (Figure \ref{fig:2}c), 
-and then draw up the walls with two hands moving up together (i.e. \textit{pulling}), controlling the height of the clay. (Figure \ref{fig:2}d, Section \ref{sec:4.2.2})
-The system not only allows mesh deformation ( Figure \ref{fig:2}e, Section \ref{sec:4.2.3}) with different deformation range parameters but also mesh smoothing (Figure \ref{fig:2}f, Section \ref{sec:4.2.4}), where the user can remove sharp features in the pot to get ideal shape.
+When a user starts to use EasyPot, a realistic clay mesh is automatically generated with Perlin noise. (Figure \ref{fig:workflow}a, Section \ref{sec:4.1})
+Similar to the operation in reality, the user first need to use both hands to make the irregular clay shape into perfect rotational symmetry, which is called \textit{centring}. (Figure \ref{fig:workflow}b, Section \ref{sec:4.2.1})
+The user can control the thickness of the clay (i.e. \textit{opening}) by pressing down the clay to create a hollow in the clay (Figure \ref{fig:workflow}c), 
+and then draw up the walls with two hands moving up together (i.e. \textit{pulling}), controlling the height of the clay. (Figure \ref{fig:workflow}d, Section \ref{sec:4.2.2})
+The system not only allows mesh deformation ( Figure \ref{fig:workflow}e, Section \ref{sec:4.2.3}) with different deformation range parameters but also mesh smoothing (Figure \ref{fig:workflow}f, Section \ref{sec:4.2.4}), where the user can remove sharp features in the pot to get ideal shape.
 After the creation process is finished, the user can export the pottery model as an OBJ file, which can be used for 3D printing.
 
-%%% Fig 2
+%%%Fig%%% workflow
 \begin{figure*}
-\includegraphics[width=\textwidth]{fig2.pdf}
+\includegraphics[width=\textwidth]{workflow.pdf}
 \caption{(a) The automatically generated clay mesh with Perlin Noise. (b) The mesh is shaped into rotational symmetry by using both hands. (c) The user controls the thickness of the mesh by pressing down the clay. (d) The user controls the height of the mesh by drawing up the clay wall.(e) The deformation range can be adjusted to get varied deformation effect on different parts. (f) The sharp features on the upper part can be removed by mesh smoothing.}
-\label{fig:2}
+\label{fig:workflow}
 \end{figure*}
 
 \section{Interactive Modeling System for Pottery Design in VR}
@@ -230,7 +230,7 @@ After the creation process is finished, the user can export the pottery model as
 
 Most of virtual pottery systems approximate the initial shape of pottery clay as a primitive cylinder shape \cite{han2007ar,ramani2015gesture,Vinayak2016Extracting}. While this approach is simple to implement, it ignores subtle details of clay in real life, whose irregularity needs to be dealed with during the creation process. Unlike the existing systems, we first approximate the initial clay on the pottery wheel as a blending shape of cylinder and semi-ellipsoid, then adding Perlin noises to mimic the irregular clay in reality.
 
-\paragraph{Basic clay} We describe the clay mesh as a series of circular sections in different heights, whose resolution can be defined by axis segments $s_{a}$ and height segments $s_{h}$. Given radius $r$ and height $h$, our system can generate primitive mesh of cylinder and semi-ellipsoid respectively (Figure \ref{fig:3}).
+\paragraph{Basic clay} We describe the clay mesh as a series of circular sections in different heights, whose resolution can be defined by axis segments $s_{a}$ and height segments $s_{h}$. Given radius $r$ and height $h$, our system can generate primitive mesh of cylinder and semi-ellipsoid respectively (Figure \ref{fig:base}).
 For each vertex in the mesh, we use a $m \times n$ matrix $M$ to store radius values, where number of row $m = s_{h} + 1$ and the number of column $n = s_{a}$ respectively. The base radius $r_{base_{i}}$ of each vertex $\mathbf{v}_{i,j}$ in row $i$ can be calculated as: 
 
 \begin{equation}
@@ -240,13 +240,13 @@ r_{base_{i}} = \alpha \cdot \frac{r}{h} \sqrt{h^2 -  h_{i}^2} + (1 - \alpha) \cd
 h_{i} = i \cdot \frac{h}{m-1}
 \end{equation}
 
-where $\alpha$ is a factor controls the shape blending between a  cylinder (when $\alpha=0$) and a semi-ellipsoid (when $\alpha=1$) (Figure \ref{fig:3}).
+where $\alpha$ is a factor controls the shape blending between a  cylinder (when $\alpha=0$) and a semi-ellipsoid (when $\alpha=1$) (Figure \ref{fig:base}).
 
-%%% Fig 3
+%%%Fig%%% base mesh
 \begin{figure*}
 \includegraphics[width=\textwidth]{fig3.pdf}
 \caption{The basic clay generated by our system, which is a blending shape between a cylinder and a semi-ellipsoid. $\alpha$ is the blending factor which controls the radius on the top.}
-\label{fig:3}
+\label{fig:base}
 \end{figure*}
 
 \paragraph{Adding noise} Although the initial shape of clay can be roughly approximated like a rotational symmetric shape, in real life the actual clay shape is not regular, whose irregular features needs to be specially handled during the pottery creation process. To address this issue, we add some randomness to the vertices to mimic the realistic clay using Perlin Noise \cite{Perlin1985An}, which is a smooth random method proposed by Ken Perlin in 1985.
@@ -255,7 +255,7 @@ To add noise to the centre, we use random $\phi_{i} \in [0, 2\pi]$ and $r_{c_{i}
 $\mathbf{O}_{i} = \left[r_{c_{i}}cos\phi_{i}, h_{i}, r_{c_{i}}sin\phi_{i}\right]^T$
 . Then we sum the values for each radius
 $r_{total_{i,j}} = r_{base_{i}} + r_{row_{i}} + r_{indv_{i,j}}$
-, where $r_{row_{i}}$ is the radius noise for each circular section, and $r_{indv_{i,j}}$ is individual radius for each vertex.(Figure \ref{fig:4}) We can get the radius value $r_{i,j}$ in the matrix $M$ for each vertex, and calculate the vertex position $\mathbf{v}_{i,j}$ based on the radius values in the matrix:
+, where $r_{row_{i}}$ is the radius noise for each circular section, and $r_{indv_{i,j}}$ is individual radius for each vertex.(Figure \ref{fig:noise}) We can get the radius value $r_{i,j}$ in the matrix $M$ for each vertex, and calculate the vertex position $\mathbf{v}_{i,j}$ based on the radius values in the matrix:
 \begin{equation}
 r_{i,j} = \left\|
 \mathbf{O}_{i} + \left[ r_{total_{i,j}} cos \theta_{j},
@@ -269,10 +269,11 @@ r_{total_{i,j}} sin \theta_{j}
 \theta_{j} = j \cdot \frac{2\pi}{n}
 \end{equation}
 
+%%%Fig%%%
 \begin{figure*}
 \includegraphics[width=\textwidth]{fig4.pdf}
 \caption{To get a noised radius $r_{i,j}$ (green) based on radius $r_{base_{i}}$ (red): (1) Move the centre from origin (0,0) to $\mathbf{O}_{i}$. (2)Calculate the sum: $r_{total_{i,j}} = r_{base_{i}} + r_{row_{i}} + r_{indv_{i,j}}$. (3) Find the distance to the origin, which will be the noised radius $r_{i,j}$.}
-\label{fig:4}
+\label{fig:noise}
 \end{figure*}
 
 Unlike other virtual pottery creation system, we aim to create 3D printing oriented pottery models. To accomplish that we need to generate watertight 3D models with thickness. Hence, our system generate inner and bottom sides based on the outer side mesh. The vertices on inner side can be denoted as:
@@ -299,10 +300,10 @@ r_{i,j} sin \theta_{j}\right]^T
 where $t$ is the thickness value of the clay mesh. In mesh generation phase, the initial value of $t$ is 1; in mesh deformation phase, the value of $t$ can be adjusted by user.
 We then generate vertices for both inner-bottom and outer-bottom sides according to inner-side and outer-side vertices respectively. Finally, a mesh can be generated by constructing triangle faces based on the vertex indices. 
 
-%%% Fig Mesh
+%%%Fig%%% Mesh
 \begin{figure}
 \includegraphics[width=\textwidth]{mesh}
-\caption{mesh}
+\caption{The meshes generated with our system. (a) A regular mesh without adding Perlin noise. (b) A mesh with Perlin noise, which is more realistic as a clay.}
 \label{fig:mesh}
 \end{figure}
 
@@ -325,13 +326,11 @@ r'_{i,j} =
 
 where $\lambda \in [0,1]$ is a damping factor controlling the effect rate of symmetry control.
 
+%%%Fig%%% symmetry
 \begin{figure*}
-% Use the relevant command to insert your figure file.
-% For example, with the graphicx package use
-  \includegraphics[width=\textwidth]{fig5.pdf}
-% figure caption is below the figure
-\caption{The blue curve is the noised circular section at height $h_{i}$, and the green curve is a circle with the average radius $\bar r_{i}$. Let $\Delta r_{i,j}$ be the difference, then multiplied by the parameter $\lambda$. We can get $r'_{i, j}$.}
-\label{fig:5}       % Give a unique label
+\includegraphics[width=\textwidth]{fig5.pdf}
+\caption{Rotational symmetry control. The blue curve is the noised circular section at height $h_{i}$, and the green curve is a circle with the average radius $\bar r_{i}$. Let $\Delta r_{i,j}$ be the difference, then multiplied by the parameter $\lambda$. We can get $r'_{i, j}$.}
+\label{fig:symmetry}
 \end{figure*}
 
 \subsubsection{Thickness/Height Control}
@@ -407,28 +406,22 @@ where $N$ is the number of adjacent vertices of $\mathbf{v}_{i,j}$; $\mu \in [0,
 
 Users can control the handle position and adjust the outer radius of the handle to apply smoothing interactively on the mesh.
 
-
-
-
-
+%%%Fig%%%
 \begin{figure*}
-% Use the relevant command to insert your figure file.
-% For example, with the graphicx package use
-  \includegraphics[width=\textwidth]{fig6.pdf}
-% figure caption is below the figure
+\includegraphics[width=\textwidth]{fig6.pdf}
 \caption{(a) The center of the concentric circles is the initial position of the handle. $R_{i}$ and $R_{o}$ define the inner range and outer range respectively. $d_{i,j}$ is the vertical distance between a vertex $\mathbf{v}_{i,j}$ and the handle, which is used for weight calculation. (b) We use a cubic polynomial function $f(t) = 2t^3 - 3t^2 + 1$ as the falloff curve for calculating the weight $w_{i,j}$. }
-\label{fig:6}       % Give a unique label
+\label{fig:deform}
 \end{figure*}
 
 \subsection{Interactions}
 \label{sec:4.3}
 
-%%% Fig UI
-\begin{figure}
+%%%Fig%%% UI
+\begin{figure*}
 \includegraphics[width=\textwidth]{ui}
-\caption{ui}
+\caption{The user interface of our system.}
 \label{fig:ui}
-\end{figure}
+\end{figure*}
 
 %the system in a virtual studio - pottery wheel
 In order to reduce mental load, we create a virtual pottery wheel in our system.
@@ -455,14 +448,6 @@ Undo/redo is an important interactive feature whose absence seriously degrades t
 \paragraph{Export Mesh}
 Our system can encode the mesh data into OBJ file, which is widely used in the field of 3D printing.
 
-%%% interaction
-\begin{figure*}
-\includegraphics[width=\textwidth]{interaction.pdf}
-\caption{The interactions using VIVE motion controllers in our system.}
-\label{fig:controller}
-\end{figure*}
-
-
 \subsection{System Feedback}
 \label{sec:4.4}
 Effective feedback can notify user the current state of the system. Feedbacks in our system can be classified into two categories: visual feedback and haptic feedback.
@@ -474,10 +459,10 @@ Unlike the bare hand experience, the instrument based interaction can provide ha
 k = k_{min} + f_{Clamp}(\frac{ \| \mathbf{p'} - \mathbf{p}_{0} \|}{d_{max}}) \cdot (k_{max} - k_{min})
 \end{equation}
 
-%%% Fig Highlight
+%%%Fig%%% Highlight
 \begin{figure}
 \includegraphics[width=\textwidth]{highlight}
-\caption{highlight}
+\caption{The visual and haptic feedback when user touches the clay. (a) The normal state of the handle when it is not touching the clay. (b) The highlight state of the handle when a user has touched the clay, with a haptic pulse to the corresponding hand.}
 \label{fig:highlight}
 \end{figure}
 
@@ -536,10 +521,10 @@ Axis Segments & Height Segments & Vertices & Triangles & Generation Time (ms)\\
 \end{tabular}
 \end{table}
 
-%%% Fig Highlight
+%%%Fig%%% results
 \begin{figure}
 \includegraphics[width=\textwidth]{results}
-\caption{results}
+\caption{A user is using our system to create virtual pots.}
 \label{fig:results}
 \end{figure}
 
@@ -563,10 +548,10 @@ Although the three systems are different, we focus on comparing them based on th
 To investigate the influence of modeling process, we compare EasyPot and Autodesk Maya since they both support 3D modeling. They differ in workflow to create a pottery mesh. While EasyPot can automatically generate a clay mesh for deformation with motion controllers, Maya needs to create the mesh from a primitive cylinder in order to edit in vertex mode, edge mode or face mode with mouse and keyboard. 
 %EasyPot vs Lets
 
-%%% Fig Sys
+%%%Fig%%% Sys
 \begin{figure*}
 \includegraphics[width=\textwidth]{sys}
-\caption{systems}
+\caption{The three systems used in our user study. (a) A virtual reality system EasyPot proposed by us. (b) A touchscreen-based system Let's Create! Pottery. (c) A desktop modeling tool Autodesk Maya.}
 \label{fig:sys}
 \end{figure*}
 
@@ -578,6 +563,7 @@ To investigate the influence of modeling process, we compare EasyPot and Autodes
 \subsection{Experimental Design and Procedure}
 \label{sec:6.3}
 
+%%%Fig%%%
 \begin{figure*}
 \includegraphics[width=\textwidth]{target.pdf}
 \caption{The target shapes used in our user study.}
@@ -625,7 +611,7 @@ NASA-TLX has been chosen in our research because it is widely used in human fact
 \subsection{Study Results}
 \label{sec:6.4}
 
-%%% Fig 1
+%%%Fig%%% pots
 \begin{figure*}
 \includegraphics[width=\textwidth]{pots.png}
 \caption{The virtual pots created by our system.}
@@ -637,16 +623,7 @@ NASA-TLX has been chosen in our research because it is widely used in human fact
 Figure \ref{fig:tlx} shows mean values of the six dimensions of NASA-TLX for \textbf{T}\textsubscript{1}, \textbf{T}\textsubscript{2} and \textbf{T}\textsubscript{3}.
 Figure \ref{fig:ranking} shows the vote results of \textbf{Q}\textsubscript{1}, \textbf{Q}\textsubscript{2} and \textbf{Q}\textsubscript{3}, where we count a score of 3 for the system in the highest ranking and 1 for the system in the lowest ranking. 
 
-%fig8
-%\begin{figure*}
-%	\includegraphics[width=0.75\textwidth]{cc.eps}
-%	\caption{Correlation Coefficients \& Time}
-%	\label{fig:boxplot}
-%\end{figure*}
-
-%TODO boxplots - high curvature shapes are harder to make.
-
-%fig9
+%%%Fig%%% tlx
 \begin{figure*}
 	\includegraphics[width=\textwidth]{tlx.eps}
 	\caption{Mean values of the six dimensions of NASA-TLX.}
@@ -665,7 +642,7 @@ Although keyboard-mouse based interaction allows precise controls with low physi
 %[LCP - limitation] [thickness smooth sharpness]
 Surprisingly, we found that it was not as satisfied as we predicted for the subjects using LCP in T2, where the performance value (M = 3.10) is lower than we expected. This is due to the limitations in LCP: Although the interaction in LCP is easy to learn, some high curvature features (Figure \ref{fig:target}b, \ref{fig:target}d, \ref{fig:target}e and \ref{fig:target}f) cannot be reached due to LCP has a fixed deformation range. Moreover, subjects cannot modify the thickness of pots, which is another limitation of LCP. Thus, the frustration value (M = 4.66) are high during T2.
 
-%fig10
+%%%Fig%%% ranking
 \begin{figure*}
 	\includegraphics[width=0.75\textwidth]{ranking.eps}
 	\caption{Mean ranking scores of Q1, Q2 and Q3.}
