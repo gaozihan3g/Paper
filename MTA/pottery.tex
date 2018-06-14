@@ -90,45 +90,45 @@ The results of our user study have shown that our system is easier to use and al
 \label{sec:1}
 %[CAD tools - hard to use]
 Pottery is one of the oldest inventions in many civilizations in human history for thousands of years, which is made by shaping clay into heterogeneous forms.
-In recent years, emerging technologies such as 3D printing introduces a new way of pottery design, enabling people to fabricate pots in a digital way with the help of Computer Aided Design (CAD) software and 3D printers.
-Professional CAD tools, such as Maya\cite{website:maya} and 3ds Max\cite{website:3dmax}, provide powerful toolsets and rich features for 3D modeling pipeline.
-However, for novice users who are not professional 3D artists, these systems are formidable to learn due to complex user interfaces. 
+In recent years, emerging technologies such as 3D printing introduces a new way of pot design, enabling people to fabricate pots in a digital way with the help of Computer Aided Design (CAD) software and 3D printers.
+However, although professional CAD tools (such as Maya\cite{website:maya}, 3ds Max\cite{website:3dmax}, etc.) provide powerful toolsets and rich features for 3D modeling pipeline, these systems are formidable to learn due to complex user interfaces for novice users who are not professional 3D artists. 
 This kind of systems limits the creativity of novice users, since it is quite challenging for them to master the tools in a short period of time.
 There are several CAD systems which are specifically developed for pottery design \cite{koutsoudis2009qp,kumar2011wheel}, which can generate 3D meshes based on the values from user keyboard and mouse input. Although having simplified user interfaces comparing with professional tools, the experience of these systems is not intuitive and the operations are far different from the workflow in reality.
 
 %[in-air interaction system - freehand, lacks robustness, feedback and reality]
 To address this situation, some camera-based virtual pottery systems have been developed \cite{ramani2015gesture,murugappan2013handy,han2014virtual}, which provides natural and intuitive user interfaces, allowing users to design pots via freehand interactions.
-These works indeed provide a gentle learning curve, however, they have some common limitations.
-First, freehand interactions from depth cameras lacks robustness due to jittering, whose inaccuracy hinders work efficiency and user experience severely.
-Second, freehand interaction lacks haptic feedback, making it difficult for users to perceive if they have touched anything in VR environments.
-In addition, some features of clay, namely shape irregularity, thickness etc., are missing from these systems, undermining realistic look and feel in the pot design process.
+These works indeed provide a gentle learning curve, however, they have some common limitations:
+% although simple, hardware limitation
+First, although freehand interactions in these systems are simple, user inputs from depth cameras lack accuracy due to jitter, hindering work efficiency and user experience severely.
+%
+Moreover, freehand interactions lack haptic feedback, making it difficult for users to perceive whether they have touched anything in VR environments. In terms of reality, these systems overlooked some visual features of clay, namely shape irregularity, thickness, etc., undermining realistic look and feel in the pot design process.
+%
+In addition, the deformation parameters cannot be adjusted interactively by the users, which limits the effects of deformation.
 
 %[design goals: 1. simple 2. robust/realistic]
-In this paper, we present EasyPot, a VR system that allows users to design virtual pottery models from their hand movement using hand-held motion controllers. There are two major design goals for EasyPot:
-
-\begin{itemize}
-%[easy]
-\item Provide a simple and intuitive interface for novice users to learn virtual pottery skills with minimum cognitive load.
-%[robust realistic]
-\item Design a robust virtual pottery system on VR devices that can generate realistic clay meshes and provide refined haptic feedbacks based on bimanual spatial interactions.
-\end{itemize}
+In this paper, we present EasyPot, a VR system that allows users to design virtual pottery models from their hand movement using hand-held motion controllers. There are three major design goals for EasyPot:
+%simple and reliable
+(1) Design a simple and intuitive interface for novice users to learn pottery skills with minimum cognitive load.
+%realistic
+(2) Create a virtual pottery system that can generate realistic clay meshes with refined haptic feedbacks based on bimanual spatial interactions.
+%powerful
+and (3) Provide helpful functionalities such as parameter control, undo/redo to support creativities in virtual pottery design.
 
 %[design considerations: 1.HCD 2. RBI]
 Oviatt \cite{oviatt2006human} concluded that human-centered design can minimize users’ cognitive load, which effectively frees up mental resources for performing better while also remaining more attuned to the world around them.
 %% TODO
 So we take the human-centered design approach, which models users’ natural behavior so that interfaces can be more intuitive, easier to learn, and freer of performance errors.
 In addition, Jacob et al. \cite{Jacob2008Reality} summarized that the designer's goal should be to allow the user to perform realistic tasks realistically, to provide additional non real-world functionality, and to use analogies for these commands whenever possible.
-Hence, while we design our system based on pottery creation process in reality to minimize the effort, we should provide convenient functionalities in our system for efficiency.
+Hence, while our system is designed based on pottery creation process in reality to minimize the effort, convenient functionalities should be provided in our system for efficiency.
 
 %[contributions]
 The main contributions of our works are:
-
-\begin{itemize}
-\item Present a virtual pottery system which can generate pot models from user spatial interaction for 3D printing.
-\item Propose a virtual pottery workflow by introducing simple and intuitive user interfaces for modeling, enabling novice users to understand and learn pottery production pipeline.
-\item Conduct an user study showing the comparison results among three modeling systems. The results have shown that our system is easier to use compared with traditional 3D modeling tools and is more intuitive and immersive than touchscreen based interfaces.
-\end{itemize}
-
+%
+(1) Propose a simple virtual pottery system with hand-held controllers which can generate pot models for 3D printing from user spatial interactions.
+%
+(2) Present a virtual pottery workflow by providing realistic look and feel with haptic feedback, enabling novice users to understand and learn pottery production pipeline via simulation training.
+%
+and (3) Conduct an user study showing the comparison results among three modeling systems. The results have shown that our system is easier to use compared with traditional 3D modeling tools and provides more creativity than touchscreen apps.
 
 %%%
 
@@ -188,11 +188,22 @@ In contrast to existing works, our system provides a novel pottery creation work
 
 \section{System Overview}
 \label{sec:3}
+EasyPot is an interactive modeling system based on HTC Vive, which is composed of two motion controllers and a head-mounted display. 
+Users can create pottery in our system with bimanual input, deforming the virtual clay in realtime.
+EasyPot can save the model as an OBJ file when a pottery is done, which can be used in 3D printing.
+Our system provide a simulation training environment in virtual worlds, allowing novice users learn pottery skills in an immersive and interactive way.
+
+%%%Fig%%% results
+\begin{figure}
+\includegraphics[width=\textwidth]{results}
+\caption{A user is using our system to create virtual pots.}
+\label{fig:results}
+\end{figure}
 
 \subsection{System Architecture}
 \label{sec:3.1}
 
-TODO
+The system architecture is demonstrated in Figure \ref{fig:arc}. When the mesh generator has generated a clay mesh, users can start to interact with the clay with motion controllers. The deformation manager is the core component of the system, which will deform the clay, sending information to haptic manager and UI manager. The haptic manager will send pulses to motion controller as haptic feedbacks, and the UI manager will update the UI elements, sending to head-mounted display via rendering engine. Once the creation is done, the mesh IO manager will convert the meshes into OBJ files and save them.
 
 %%%Fig%%% architecture
 \begin{figure*}
@@ -230,8 +241,8 @@ After the creation process is finished, the user can export the pottery model as
 
 Most of virtual pottery systems approximate the initial shape of pottery clay as a primitive cylinder shape \cite{han2007ar,ramani2015gesture,Vinayak2016Extracting}. While this approach is simple to implement, it ignores subtle details of clay in real life, whose irregularity needs to be dealed with during the creation process. Unlike the existing systems, we first approximate the initial clay on the pottery wheel as a blending shape of cylinder and semi-ellipsoid, then adding Perlin noises to mimic the irregular clay in reality.
 
-\paragraph{Basic clay} We describe the clay mesh as a series of circular sections in different heights, whose resolution can be defined by axis segments $s_{a}$ and height segments $s_{h}$. Given radius $r$ and height $h$, our system can generate primitive mesh of cylinder and semi-ellipsoid respectively (Figure \ref{fig:base}).
-For each vertex in the mesh, we use a $m \times n$ matrix $M$ to store radius values, where number of row $m = s_{h} + 1$ and the number of column $n = s_{a}$ respectively. The base radius $r_{base_{i}}$ of each vertex $\mathbf{v}_{i,j}$ in row $i$ can be calculated as: 
+\paragraph{Basic Clay} The clay mesh is described as a series of circular sections in different heights, whose resolution can be defined by axis segments $s_{a}$ and height segments $s_{h}$. Given radius $r$ and height $h$, our system can generate primitive mesh of cylinder and semi-ellipsoid respectively (Figure \ref{fig:base}).
+For each vertex in the mesh, a $m \times n$ matrix $M$ is used to store radius values, where number of row $m = s_{h} + 1$ and the number of column $n = s_{a}$ respectively. The base radius $r_{base_{i}}$ of each vertex $\mathbf{v}_{i,j}$ in row $i$ can be calculated as: 
 
 \begin{equation}
 r_{base_{i}} = \alpha \cdot \frac{r}{h} \sqrt{h^2 -  h_{i}^2} + (1 - \alpha) \cdot r
@@ -249,13 +260,18 @@ where $\alpha$ is a factor controls the shape blending between a  cylinder (when
 \label{fig:base}
 \end{figure*}
 
-\paragraph{Adding noise} Although the initial shape of clay can be roughly approximated like a rotational symmetric shape, in real life the actual clay shape is not regular, whose irregular features needs to be specially handled during the pottery creation process. To address this issue, we add some randomness to the vertices to mimic the realistic clay using Perlin Noise \cite{Perlin1985An}, which is a smooth random method proposed by Ken Perlin in 1985.
-In our approach, we first randomize the centre positions for each circular section, then add Perlin Noise to the radii for each circular section and individual vertices.
-To add noise to the centre, we use random $\phi_{i} \in [0, 2\pi]$ and $r_{c_{i}}$ to present the centre
-$\mathbf{O}_{i} = \left[r_{c_{i}}cos\phi_{i}, h_{i}, r_{c_{i}}sin\phi_{i}\right]^T$
-. Then we sum the values for each radius
-$r_{total_{i,j}} = r_{base_{i}} + r_{row_{i}} + r_{indv_{i,j}}$
-, where $r_{row_{i}}$ is the radius noise for each circular section, and $r_{indv_{i,j}}$ is individual radius for each vertex.(Figure \ref{fig:noise}) We can get the radius value $r_{i,j}$ in the matrix $M$ for each vertex, and calculate the vertex position $\mathbf{v}_{i,j}$ based on the radius values in the matrix:
+\paragraph{Adding Noise} Although the initial shape of clay can be roughly approximated like a rotational symmetric shape, in real life the actual clay shape is not regular, whose irregular features needs to be specially handled during the pottery creation process. To address this issue, randomness is added to the vertices to mimic the realistic clay using Perlin Noise \cite{Perlin1985An}, which is a smooth random method proposed by Ken Perlin in 1985.
+In our approach, the centre positions for each circular section are randomized first, then Perlin Noise is added to the radii for each circular section and individual vertices.
+
+To add noise to the centre for each circular section, we use random $\phi_{i} \in [0, 2\pi]$ and $\eta_{c_{i}}$ to calculate the new centre $\mathbf{O}_{i}$ (Equation \ref{eqn:oi}). Then we get the new radii $r_{total_{i,j}}$ for each vertex by getting the sum of $r_{base_{i}}$ and noise values:
+\begin{equation}
+\label{eqn:oi}
+\mathbf{O}_{i} = \left[\eta_{c_{i}}cos\phi_{i}, h_{i}, \eta_{c_{i}}sin\phi_{i}\right]^T
+\end{equation}
+\begin{equation}
+r_{total_{i,j}} = r_{base_{i}} + \eta_{row_{i}} + \eta_{indv_{i,j}}
+\end{equation}
+where $\eta_{row_{i}}$ is the radius noise for each circular section, and $\eta_{indv_{i,j}}$ is individual radius for each vertex.(Figure \ref{fig:noise}) We can get the radius value $r_{i,j}$ in the matrix $M$ for each vertex, and calculate the vertex position $\mathbf{v}_{i,j}$ based on the radius values in the matrix:
 \begin{equation}
 r_{i,j} = \left\|
 \mathbf{O}_{i} + \left[ r_{total_{i,j}} cos \theta_{j},
@@ -269,6 +285,14 @@ r_{total_{i,j}} sin \theta_{j}
 \theta_{j} = j \cdot \frac{2\pi}{n}
 \end{equation}
 
+\begin{equation}
+\label{eqn:v}
+\mathbf{v}_{i,j} =
+\left[r_{i,j}  cos \theta_{j},
+h_{i},
+r_{i,j} sin \theta_{j}\right]^T
+\end{equation}
+
 %%%Fig%%%
 \begin{figure*}
 \includegraphics[width=\textwidth]{fig4.pdf}
@@ -276,29 +300,31 @@ r_{total_{i,j}} sin \theta_{j}
 \label{fig:noise}
 \end{figure*}
 
-Unlike other virtual pottery creation system, we aim to create 3D printing oriented pottery models. To accomplish that we need to generate watertight 3D models with thickness. Hence, our system generate inner and bottom sides based on the outer side mesh. The vertices on inner side can be denoted as:
+\paragraph{Inner Vertices} Unlike other virtual pottery creation system, EasyPot aims to create 3D printing oriented pottery models. To accomplish that our system need to generate watertight 3D models with thickness. Hence, our system generate inner and bottom sides based on the outer side mesh. The vertices on inner side can be denoted as:
+
 
 \begin{equation}
-\mathbf{v}_{i,j} =
-\left[r_{i,j}  cos \theta_{j},
-h_{i},
-r_{i,j} sin \theta_{j}\right]^T
-\end{equation}
-
-\begin{equation}
-\begin{split}
-\mathbf{v'}_{i,j} = 
+\label{eqn:v'}
+\mathbf{v'}_{i,j} 
+= \begin{cases}
 \begin{bmatrix}
-1 & 0 & 0 & t\cos\theta \\
-0 & 1 & 0 & 0\\ 
-0 & 0 & 1 & t\sin\theta \\
-0 & 0 & 0 & 1 
-\end{bmatrix}
-\mathbf{v}_{i,j}
-\end{split}
+0,h_{i},0
+\end{bmatrix}^T & t=1
+\\
+\begin{bmatrix}
+r'_{i,j} \cdot cos \theta_{j},
+h_{i},
+r'_{i,j} \cdot sin \theta_{j}
+\end{bmatrix}^T & 0 \le t<1
+\end{cases}
 \end{equation}
-where $t$ is the thickness value of the clay mesh. In mesh generation phase, the initial value of $t$ is 1; in mesh deformation phase, the value of $t$ can be adjusted by user.
-We then generate vertices for both inner-bottom and outer-bottom sides according to inner-side and outer-side vertices respectively. Finally, a mesh can be generated by constructing triangle faces based on the vertex indices. 
+
+\begin{equation}
+r'_{i,j} = r_{i,j} - \max(t_{min}, r_{top} \cdot t)
+\end{equation}
+
+where $t$ is the thickness ratio of the clay, whose range is $[0,1]$. In mesh generation phase, the default value of $t$ is 1, which means the clay is a solid shape; in mesh deformation phase, the value of $t$ can be adjusted by user interactively, getting a centre hollowed shape. $t_{min}$ is a predefined value for the minimum thickness, and $r_{top}$ is the largest radius value for the top section, which guarantees equal thickness for each part.
+Vertices for both inner-bottom and outer-bottom sides will be then generated according to inner-side and outer-side vertices respectively. Finally, a mesh can be generated by constructing triangle faces based on the vertex indices. 
 
 %%%Fig%%% Mesh
 \begin{figure}
@@ -313,10 +339,10 @@ After observing and analyzing several real life pottery-making videos, we put me
 Since the clay mesh $C$ can be generated from feature parameters including height $h$, thickness $t$ and radius matrix $M$, we have $ C =  f(h, t, M) $.
 In our approach, we first modify feature parameters of the clay according to user interactions, then update mesh $C$  in realtime based on these parameters.
 
-\subsubsection{Symmetry Control}
+\subsubsection{Rotational Symmetry Control}
 \label{sec:4.2.1}
 \textit{Centring} is the first important operation in pottery creation in reality, where people press the ball of clay downward and inward, making the irregular clay into perfect rotational symmetry.
-In our system, user can place two hands close to the clay at the same time to achieve symmetry control.
+In our system, user can place two hands close to the clay at the same time to achieve symmetry control (Figure \ref{fig:workflow}b).
 The mean in each row of the radius matrix is calculated and then each value in matrix needs updating based on the mean values:
 \begin{equation}
 r'_{i,j} = 
@@ -324,7 +350,7 @@ r'_{i,j} =
 + (1 - \lambda) \cdot r_{i,j}
 \end{equation}
 
-where $\lambda \in [0,1]$ is a damping factor controlling the effect rate of symmetry control.
+where $\lambda \in [0,1]$ is a damping factor controlling the effect rate of symmetry control.(Figure \ref{fig:symmetry})
 
 %%%Fig%%% symmetry
 \begin{figure*}
@@ -335,9 +361,9 @@ where $\lambda \in [0,1]$ is a damping factor controlling the effect rate of sym
 
 \subsubsection{Thickness/Height Control}
 \label{sec:4.2.2}
-\textit{Opening} (thickness control) and \textit{pulling} (height control) are basic clay manipulations in pottery creation process which are done by applying force to clay with both hands. The thickness can be adjusted by pushing down the top centre part of the clay, making a centred hollow into the clay. The height can be adjusted by both hands drawing up and shaping the walls.
+\textit{Opening} (thickness control) and \textit{pulling} (height control) are basic clay manipulations in pottery creation process which are done by applying force to clay with both hands. The thickness can be adjusted by pushing down the top centre part of the clay, making a centre hollow into the clay (Figure \ref{fig:workflow}c). The height can be adjusted by both hands drawing up and shaping the walls (Figure \ref{fig:workflow}d).
 %%%TODO
- Let $\Delta y$ be the vertical hand movement distance, we have:
+Let $\Delta y$ be the vertical hand movement distance, we have:
 \begin{equation}
 \Delta y = (\Delta y_{l} + \Delta y_{r})/2
 \end{equation}
@@ -347,14 +373,14 @@ h' = h_{0} + \Delta y * \gamma
 \begin{equation}
 \beta' = \beta_{0} + \Delta y/ h
 \end{equation}
-where $h_{0}$ and $\beta_{0}$ are previous height and thickness values before every deformation respectively; $\gamma$ is a damping factor for height.
+where $h_{0}$ and $\beta_{0}$ are previous height and thickness values before every deformation respectively; $\gamma$ is a damping factor for height. And mesh will be updated in Equation \ref{eqn:v} and \ref{eqn:v'}.
 
 \subsubsection{Mesh Deformation}
 \label{sec:4.2.3}
-In this section we talk about interactive deformation. According to \cite{botsch2010polygon}, this topic is challenging since complex mathematical formulations (1) have to be hidden behind an intuitive user interface and (2) have to be implemented in a sufficiently efficient and robust manner to allow for interactive applications.
+In this section interactive deformation in our system will be discussed. According to \cite{botsch2010polygon}, this topic is challenging since complex mathematical formulations (1) have to be hidden behind an intuitive user interface and (2) have to be implemented in a sufficiently efficient and robust manner to allow for interactive applications.
 
 % turn to radius
-In our approach, we uses a cylindrical coordinate system to specify the position for each vertex, where y-axis is the reference axis. For any point $P$ in the coordinate system, we use$(\rho, \phi, y)$ to denote the position. The radial distance $\rho$ is the Euclidean distance from the y-axis to the point P; $\phi$ is the azimuth; $y$ is the height of point P from xz-plane.
+In our approach, a cylindrical coordinate system is used to specify the position for each vertex, where y-axis is the reference axis. For any point $P$ in the coordinate system, we use$(\rho, \phi, y)$ to denote the position, where the radial distance $\rho$ is the Euclidean distance from the y-axis to the point P; $\phi$ is the azimuth; $y$ is the height of point P from xz-plane.
 Due to rotational symmetry in virtual pottery, we modify $\rho$ value for each vertex while keep $\phi$ and $y$ constant. Thus, the deformation problem is turned into how to calculate the new radius matrix based on hand movement:
 \begin{equation}
 r'_{i,j} = r_{i,j} + \Delta r_{i,j}
@@ -388,10 +414,14 @@ f'(1) = 0
 \end{aligned}
 \end{equation}
 we can find the solution from Equation \ref{equation:falloff}, where 
-$a = 2, b = -3, c = 0, d = 1$
-\begin{equation}
-f(t) = 2t^3 - 3t^2 + 1
-\end{equation}
+$a = 2, b = -3, c = 0, d = 1$. Therefore, the expression of the falloff function is $f(t) = 2t^3 - 3t^2 + 1$ (Figure \ref{fig:deform}).
+
+%%%Fig%%%
+\begin{figure*}
+\includegraphics[width=\textwidth]{fig6.pdf}
+\caption{(a) The center of the concentric circles is the initial position of the handle. $R_{i}$ and $R_{o}$ define the inner range and outer range respectively. $d_{i,j}$ is the vertical distance between a vertex $\mathbf{v}_{i,j}$ and the handle, which is used for weight calculation. (b) We use a cubic polynomial function $f(t) = 2t^3 - 3t^2 + 1$ as the falloff curve for calculating the weight $w_{i,j}$. }
+\label{fig:deform}
+\end{figure*}
 
 \subsubsection{Mesh Smoothing}
 \label{sec:4.2.4}
@@ -406,13 +436,6 @@ where $N$ is the number of adjacent vertices of $\mathbf{v}_{i,j}$; $\mu \in [0,
 
 Users can control the handle position and adjust the outer radius of the handle to apply smoothing interactively on the mesh.
 
-%%%Fig%%%
-\begin{figure*}
-\includegraphics[width=\textwidth]{fig6.pdf}
-\caption{(a) The center of the concentric circles is the initial position of the handle. $R_{i}$ and $R_{o}$ define the inner range and outer range respectively. $d_{i,j}$ is the vertical distance between a vertex $\mathbf{v}_{i,j}$ and the handle, which is used for weight calculation. (b) We use a cubic polynomial function $f(t) = 2t^3 - 3t^2 + 1$ as the falloff curve for calculating the weight $w_{i,j}$. }
-\label{fig:deform}
-\end{figure*}
-
 \subsection{Interactions}
 \label{sec:4.3}
 
@@ -424,8 +447,7 @@ Users can control the handle position and adjust the outer radius of the handle 
 \end{figure*}
 
 %the system in a virtual studio - pottery wheel
-In order to reduce mental load, we create a virtual pottery wheel in our system.
-In our implementation, we use HTC Vive VR system \cite{website:vive}, which includes a headset and two hand-held controllers (Fig) to track user head movements and bimanual inputs.
+In our implementation, we use HTC Vive VR system \cite{website:vive}, which includes a head-mounted display and two hand-held controllers (Figure \ref{fig:ui}) to track user head orientation and bimanual movement.
 The goal of our system is not only to provide realistic experience in pottery creation, but also to provide convenient operations to improve the efficiency of pottery design. 
 Jacob et al. \cite{Jacob2008Reality} summarized that the designer's goal should be to allow the user to perform realistic tasks realistically, to provide additional non real-world functionality, and to use analogies for these commands whenever possible.
 As a result, our system offers several operations in VR for pottery design.
@@ -435,29 +457,30 @@ As a result, our system offers several operations in VR for pottery design.
 
 There are four main operations supported by our system:
 
-\paragraph{New Mesh}
-Whenever a user touch this button, a new clay will be generated on the pottery wheel. Since the shape is randomized, the user can keep getting a new shape until she is satisfied with the shape.
+\paragraph{Rest Mesh}
+Whenever a user touch this button, the generated mesh on the pottery wheel will be reset to initial state. Since the shape is randomized, the user can keep getting a new shape until she is satisfied with the shape.
 
-\paragraph{Radius Adjustment}
-The user can adjust the outer radius by pressing the upper and lower part of the pad on controller, which controls the influence area. The inner ratio can be adjusted by pressing left and right part of the pad controlling the smoothness of deformation.
+\paragraph{Parameter Adjustment}
+The user can adjust the outer range by pressing the upper and lower part of the pad on controller, which controls the influence area. The inner ratio can be adjusted by pressing left and right part of the pad controlling the smoothness of deformation.
 
 
 \paragraph{Undo/Redo}
 Undo/redo is an important interactive feature whose absence seriously degrades the usability of an interactive program.\cite{choudhary1995general} It provides automatic support for recovery from user errors and misunderstandings as well as a mechanism for exploring alternatives. Our system provides capturing the state of the program before user actions.
 
 \paragraph{Export Mesh}
-Our system can encode the mesh data into OBJ file, which is widely used in the field of 3D printing.
+Our system can encode the mesh data into an OBJ file, and save the file on the disk, which can be used for 3D printing.
 
 \subsection{System Feedback}
 \label{sec:4.4}
 Effective feedback can notify user the current state of the system. Feedbacks in our system can be classified into two categories: visual feedback and haptic feedback.
 \paragraph{Visual Feedback}
-In a VR environment, it is not so easy for users to perceive if her hands have touched anything. Hence, our system adds visual feedback on both virtual hands, which will be highlighted when touching the clay. The Area of Effect on the clay is also highlighted, which can give user hint that which part of mesh will be influenced by user.
+In a VR environment, it is not so easy for users to perceive if her hands have touched anything. Hence, our system adds visual feedback on both virtual hands, which will be highlighted when touching the clay (Figure \ref{fig:highlight}).
 \paragraph{Haptic Feedback}
-Unlike the bare hand experience, the instrument based interaction can provide haptic feedbacks, adding realistic feel in VR environments. In our system, a haptic pulse has been added to a controller when that controller has touched the clay. During any mesh editing process, we add movement resistance feedback based on the movement speed of each hand.
+Unlike the bare hand experience, the instrument based interaction can provide haptic feedbacks, adding realistic feel in VR environments. In our system, a haptic pulse has been added to a controller when that controller has touched the clay. During any mesh editing process, we add movement resistance feedback based on the movement speed of each hand. The frequency of the haptic feedback is calculated as:
 \begin{equation}
 k = k_{min} + f_{Clamp}(\frac{ \| \mathbf{p'} - \mathbf{p}_{0} \|}{d_{max}}) \cdot (k_{max} - k_{min})
 \end{equation}
+where $k_{min}$ and $k_{max}$ are predefined minimum and maximum frequency values respectively; $d_{max}$ is predefined maximum move distance, and $f_{Clamp}(x)$ is a function that clamps the value in $[0,1]$; $\mathbf{p'}$ and $\mathbf{p}_{0}$ are current and previous hand positions respectively.
 
 %%%Fig%%% Highlight
 \begin{figure}
@@ -476,10 +499,9 @@ We have implemented EasyPot using Unity3D\cite{website:unity} game engine. We bu
 
 In order to get performance statistics of the mesh generator, we tested EasyPot to generate 4 models with different resolutions.
 Based on the common size of clay placed on pottery wheels, we set the height 0.2 units with the radius 0.15 units.
-We set the outer radius of handle 0.2 units, and the inner ratio of handle 0\% to get smooth deformation effect as the process begins. The centring parameter $\lambda$ and smoothing parameter $\mu$ are set 0.5 and 0.7 respectively to damping the deformation. The parameters for Perlin noise generation are listed in Table 1.
-
+We set the outer radius of handle 0.2 units, and the inner ratio of handle 0\% to get smooth deformation effect as the process begins. The centring parameter $\lambda$ and smoothing parameter $\mu$ are set 0.5 and 0.7 respectively to damping the deformation. The parameters for Perlin noise generation are listed in Table \ref{tab:1}. These parameters are adjusted to get a realistic look of the clay.
 %tables
-Table 2 demonstrates statistics based on different mesh solutions. 
+Table \ref{tab:2} demonstrates statistics based on different mesh solutions. Higher resolution require more time, since more vertices and triangles need to be calculated and assigned. In general, the performance of mesh generator is sufficient for the requirement in EasyPot.
 
 %[noise parameters]
 % For tables use
@@ -503,11 +525,10 @@ $b_{a}$ & 3.75 & Angle Noise Span \\
 \end{tabular}
 \end{table}
 
-
 \begin{table}
 % table caption is above the table
 \caption{Statistics for different axis and height segments.}
-\label{tab:1}       % Give a unique label
+\label{tab:2}       % Give a unique label
 % For LaTeX tables use
 \begin{tabular}{lllll}
 \hline\noalign{\smallskip}
@@ -521,33 +542,24 @@ Axis Segments & Height Segments & Vertices & Triangles & Generation Time (ms)\\
 \end{tabular}
 \end{table}
 
-%%%Fig%%% results
-\begin{figure}
-\includegraphics[width=\textwidth]{results}
-\caption{A user is using our system to create virtual pots.}
-\label{fig:results}
-\end{figure}
-
 \section{User Study}
 \label{sec:6}
-In order to compare our system with prior modeling systems on desktop and tablet platforms, we set up a comparative user study. We chose Autodesk Maya \cite{website:maya} as the representative of traditional desktop modeling systems and Let's Create! Pottery (LCP) \cite{website:letspottery} as the representative of tablet pottery creation systems.
+In order to compare our system with prior CAD systems that can design virtual pottery on desktop and tablet platforms, we set up a comparative user study. We chose Autodesk Maya \cite{website:maya} as a representative of desktop modeling systems and Let's Create! Pottery (LCP) \cite{website:letspottery} as a representative of tablet pottery design systems.
 
 
 \subsection{Evaluated Systems}
 \label{sec:6.1}
 The three evaluated systems were as follows:
 
-\paragraph{EasyPot}: Our interactive pottery creation tool on HTC Vive VR system. The user can shape the virtual clay with bimanual spatial interaction.
-
+\paragraph{EasyPot}: Our virtual pottery tool based on HTC Vive VR system. The user can shape the virtual clay with bimanual spatial interaction.
 \paragraph{Let’s Create! Pottery}: A touchscreen-based pottery creation tool on mobile devices. Users can interactively create pottery models by finger swiping on the screen.
-
 \paragraph{Autodesk Maya}: A traditional desktop 3D modeling system, which provides a set of powerful tools for professional 3D artists. The user can edit vertex, edge, face etc. with mouse and keyboard.
 
 Although the three systems are different, we focus on comparing them based on their similarities and workflows.
 %EasyPot vs Maya
-To investigate the influence of modeling process, we compare EasyPot and Autodesk Maya since they both support 3D modeling. They differ in workflow to create a pottery mesh. While EasyPot can automatically generate a clay mesh for deformation with motion controllers, Maya needs to create the mesh from a primitive cylinder in order to edit in vertex mode, edge mode or face mode with mouse and keyboard. 
+To investigate the influence of modeling pipeline, we compare EasyPot and Autodesk Maya since they both support 3D modeling. They differ in workflow to create and edit meshes. While EasyPot can automatically generate a mesh for deformation with motion controllers, Maya needs to create a mesh from a primitive cylinder in order to edit in vertex mode, edge mode or face mode with mouse and keyboard. 
 %EasyPot vs Lets
-
+On the other hand, EasyPot and LCP have similarities in their workflows with intuitive interactions. They both allow users deform the mesh interactively with natural user interfaces. While EasyPot enables parameter control and spatial interaction, LCP has no parameter control and provides touchscreen-based experience.
 %%%Fig%%% Sys
 \begin{figure*}
 \includegraphics[width=\textwidth]{sys}
@@ -582,7 +594,7 @@ To investigate the influence of modeling process, we compare EasyPot and Autodes
 
 
 %[Task details]
-When doing tasks \textbf{T}\textsubscript{1}, a total of six target shapes were presented to subjects in a randomized sequence.
+When doing tasks \textbf{T}\textsubscript{1} to \textbf{T}\textsubscript{3}, a total of six target shapes were presented to subjects in a randomized sequence.
 %%% TODO
 
 %[NASA-TLX]
@@ -599,7 +611,7 @@ NASA-TLX has been chosen in our research because it is widely used in human fact
 
 \textbf{T}\textsubscript{6}: Use Maya to freely make a creative pot model.
 
-\paragraph{Questionnaire 2} Each subject needs to answer the following questions after finishing all tasks:
+\paragraph{Questionnaire 2} Each subject needs to answer the following questions after finishing tasks \textbf{T}\textsubscript{4} to \textbf{T}\textsubscript{6}:
 
 \textbf{Q}\textsubscript{1}: Rank the three systems according to ease of learning from high to low.
 
@@ -632,15 +644,15 @@ Figure \ref{fig:ranking} shows the vote results of \textbf{Q}\textsubscript{1}, 
 
 %mental/physical/temporal
 According to Figure \ref{fig:tlx}, we can get some findings. 
-Firstly, the mental demand values of T1 (M = 2.52) and T2 (M = 2.11) were almost the same and much lower than the value of T3 (M = 4.92). Similarly, the temporal demand value of T3 (M = 5.77) was much higher than the values of T1 (M = 3.21) and T2 (M = 2.98). This indicated that EasyPot and LCP were easier to use and less time-consuming than Maya. Unsurprisingly, the physical demand value of T1 (M = 2.89) is slightly higher than T2 (M = 1.86) and T3 (M = 2.31), which means interactions based spatial movements are slightly laborious than touchscreen and keyboard/mouse interactions.
+Firstly, the mental demand values of \textbf{T}\textsubscript{1} (M = 2.52) and \textbf{T}\textsubscript{2} (M = 2.11) were almost the same and much lower than the value of \textbf{T}\textsubscript{3} (M = 4.92). Similarly, the temporal demand value of \textbf{T}\textsubscript{3} (M = 5.77) was much higher than the values of \textbf{T}\textsubscript{1} (M = 3.21) and \textbf{T}\textsubscript{2} (M = 2.98). This indicated that EasyPot and LCP were easier to use and less time-consuming than Maya. Unsurprisingly, the physical demand value of \textbf{T}\textsubscript{1} (M = 2.89) is slightly higher than \textbf{T}\textsubscript{2} (M = 1.86) and \textbf{T}\textsubscript{3} (M = 2.31), which means interactions based spatial movements are slightly laborious than touchscreen and keyboard/mouse interactions.
 
 %[Maya - hard]
 Maya showed much higher values in effort (M = 6.87) and frustration (M = 7.30) and lower value in performance (M = 4.08) compared with EasyPot and LCP.
 Since most subjects in the user study have no 3D modeling software experience, the complex user interface in Maya makes it challenging for these novice users to memorize where to find the commands they need, rendering a high effort.
-Although keyboard-mouse based interaction allows precise controls with low physical demand, many subjects struggled with selecting and manipulating vertices and faces accurately, which caused high user frustration. As a result, most subjects were not satisfied with their performances in T3.
+Although keyboard-mouse based interaction allows precise controls with low physical demand, many subjects struggled with selecting and manipulating vertices and faces accurately, which caused high user frustration. As a result, most subjects were not satisfied with their performances in \textbf{T}\textsubscript{3}.
 
 %[LCP - limitation] [thickness smooth sharpness]
-Surprisingly, we found that it was not as satisfied as we predicted for the subjects using LCP in T2, where the performance value (M = 3.10) is lower than we expected. This is due to the limitations in LCP: Although the interaction in LCP is easy to learn, some high curvature features (Figure \ref{fig:target}b, \ref{fig:target}d, \ref{fig:target}e and \ref{fig:target}f) cannot be reached due to LCP has a fixed deformation range. Moreover, subjects cannot modify the thickness of pots, which is another limitation of LCP. Thus, the frustration value (M = 4.66) are high during T2.
+Surprisingly, we found that it was not as satisfied as we predicted for the subjects using LCP in \textbf{T}\textsubscript{2}, where the performance value (M = 3.10) is lower than we expected. This is due to the limitations in LCP: Although the interaction in LCP is easy to learn, some high curvature features (Figure \ref{fig:target}b, \ref{fig:target}d, \ref{fig:target}e and \ref{fig:target}f) cannot be reached due to LCP has a fixed deformation range. Moreover, subjects cannot modify the thickness of pots, which is another limitation of LCP. Thus, the frustration value (M = 4.66) are high during \textbf{T}\textsubscript{2}.
 
 %%%Fig%%% ranking
 \begin{figure*}
