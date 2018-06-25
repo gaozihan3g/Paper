@@ -3,46 +3,47 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: pottery.aux
 The style file: spmpsci.bst
 Database file #1: pottery.bib
+Warning--I didn't find a database entry for "Vinayak2016Extracting"
 Warning--can't use both volume and number fields in hart2006nasa
-You've used 30 entries,
+You've used 29 entries,
             2945 wiz_defined-function locations,
-            770 strings with 10126 characters,
-and the built_in function-call counts, 15516 in all, are:
-= -- 1272
-> -- 480
+            764 strings with 9909 characters,
+and the built_in function-call counts, 15053 in all, are:
+= -- 1235
+> -- 468
 < -- 16
-+ -- 206
-- -- 170
-* -- 918
-:= -- 1944
-add.period$ -- 41
-call.type$ -- 30
-change.case$ -- 203
++ -- 201
+- -- 166
+* -- 888
+:= -- 1883
+add.period$ -- 40
+call.type$ -- 29
+change.case$ -- 198
 chr.to.int$ -- 0
-cite$ -- 31
-duplicate$ -- 1356
-empty$ -- 1448
-format.name$ -- 192
-if$ -- 3401
+cite$ -- 30
+duplicate$ -- 1313
+empty$ -- 1403
+format.name$ -- 187
+if$ -- 3302
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 293
-newline$ -- 128
-num.names$ -- 50
-pop$ -- 581
+int.to.str$ -- 29
+missing$ -- 283
+newline$ -- 124
+num.names$ -- 48
+pop$ -- 566
 preamble$ -- 1
-purify$ -- 148
+purify$ -- 144
 quote$ -- 0
-skip$ -- 469
+skip$ -- 460
 stack$ -- 0
-substring$ -- 784
-swap$ -- 750
+substring$ -- 758
+swap$ -- 725
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 118
+type$ -- 114
 warning$ -- 1
-while$ -- 105
-width$ -- 32
-write$ -- 302
-(There was 1 warning)
+while$ -- 102
+width$ -- 31
+write$ -- 292
+(There were 2 warnings)
