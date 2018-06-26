@@ -188,8 +188,8 @@ In contrast to all existing works, our system provides a much realistic workflow
 
 \section{System Overview}
 \label{sec:3}
-EasyPot is an interactive modeling system based on HTC Vive, which is composed of two motion controllers and a head-mounted display. 
-Users can create pottery in our system with bimanual input, deforming the virtual clay in realtime.
+EasyPot is an interactive modeling system based on handheld devices and a head-mounted display. 
+Users can create pottery in our system with bimanual inputs, deforming the virtual clay in realtime.
 EasyPot can save the model as an OBJ file when a pottery is done, which can be used in 3D printing.
 Our system provide a simulation training environment in virtual worlds, allowing novice users and children to learn pottery skills in an immersive and interactive way.
 
@@ -203,7 +203,7 @@ Our system provide a simulation training environment in virtual worlds, allowing
 \subsection{System Architecture}
 \label{sec:3.1}
 
-The system architecture is demonstrated in Figure \ref{fig:arc}. When the mesh generator has generated a clay mesh, users can start to interact with the clay with motion controllers. The deformation manager is the core component of the system, which will deform the clay, sending information to haptic manager and UI manager. The haptic manager will send pulses to motion controller as haptic feedbacks, and the UI manager will update the UI elements, sending to head-mounted display via rendering engine. Once the creation is done, the mesh IO manager will convert the meshes into OBJ files and save them.
+The system architecture is demonstrated in Figure \ref{fig:arc}. When the mesh generator generates a clay mesh, users can start to interact with the clay with motion controllers. The deformation manager is the core component of the mesh editor, which will deform the clay, sending information to haptic manager and UI manager. The haptic manager will send pulses to motion controller as haptic feedbacks, and the UI manager will update the UI elements, sending to head-mounted display via rendering engine. Once the creation is done, the mesh IO manager will convert the meshes into OBJ files and save them.
 
 %%%Fig%%% architecture
 \begin{figure*}
@@ -216,7 +216,7 @@ The system architecture is demonstrated in Figure \ref{fig:arc}. When the mesh g
 
 \subsection{Workflow}
 \label{sec:3.2}
-The pottery creation process on a pottery wheel is called "throwing", where a ball of clay is placed in the centre of a turntable wheel-head, and shaped by a potter.
+In real life, the pottery creation process on a pottery wheel is called "throwing", where a ball of clay is placed in the centre of a turntable wheel-head, and shaped by a potter.
 To illustrate the pipeline of pottery creation in our system, an example workflow using EasyPot is described as follows.
 
 When a user starts to use EasyPot, a realistic clay mesh is automatically generated with Perlin noise (Figure \ref{fig:workflow}a, Section \ref{sec:4.1}). 
@@ -457,7 +457,7 @@ As a result, our system offers several operations in VR for pottery design.
 
 There are four main operations supported by our system:
 
-\paragraph{Rest Mesh}
+\paragraph{Mesh Reset}
 Whenever a user touch this button, the generated mesh on the pottery wheel will be reset to initial state. Since the shape is randomized, the user can keep getting a new shape until she is satisfied with the shape.
 
 \paragraph{Parameter Adjustment}
@@ -467,7 +467,7 @@ The user can adjust the outer range by pressing the upper and lower part of the 
 \paragraph{Undo/Redo}
 Undo/redo is an important interactive feature whose absence seriously degrades the usability of an interactive program.\cite{choudhary1995general} It provides automatic support for recovery from user errors and misunderstandings as well as a mechanism for exploring alternatives. Our system provides capturing the state of the program before user actions.
 
-\paragraph{Export Mesh}
+\paragraph{Mesh Export}
 Our system can encode the mesh data into an OBJ file, and save the file on the disk, which can be used for 3D printing.
 
 \subsection{System Feedback}
