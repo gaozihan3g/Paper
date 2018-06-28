@@ -41,12 +41,13 @@
 \begin{document}
 
 %\title{EasyPot: a Virtual Pottery System with Handheld Haptic Devices
-\title{EasyPot: Interactive Modeling of Virtual Pottery with Handheld Haptic Devices
+%\title{EasyPot: Interactive Modeling of Virtual Pottery with Handheld Haptic Devices
+\title{EasyPot: Interactive Modeling for Virtual Pottery with Handheld Haptic Devices
 %\thanks{Grants or other notes
 %about the article that should go on the front page should be
 %placed here. General acknowledgments should be placed at the end of the article.}
 }
-%\subtitle{Do you have a subtitle?\cite{Jacob2008Reality}  \\ If so, write it here \cite{website:unity3d}}
+%\subtitle{Do you have a subtitle?  \\ If so, write it here
 
 %\titlerunning{Short form of title}        % if too long for running head
 
@@ -78,7 +79,7 @@ We present EasyPot, an interactive virtual reality (VR) modeling system that all
 Our system consists of two major components: an automatic mesh generator and an interactive model editor.
 The mesh generator can procedurally generate a realistic clay mesh by adding Perlin Noise. With the interactive pottery model editor, the user can shape the virtual clay in realtime intuitively to design virtual pots.
 The virtual pots created by our system can be exported as OBJ files and used for 3D printing.
-The results of our user study have shown that our system requires lower cognitive load compared with desktop modeling systems and allows more creativity than touchscreen based systems. Users without real-life pottery experience and 3D modeling knowledge can easily create pottery works with our system.
+The results of our user study have shown that our system requires lower cognitive load compared with desktop modeling experience and allows more creativity than touchscreen based interfaces. Users without real-life pottery experience and 3D modeling knowledge can easily create pottery works with our system.
 
 %Insert your abstract here. Include keywords, PACS and mathematical
 %subject classification numbers as needed.
@@ -118,11 +119,11 @@ In this paper, we present EasyPot, a VR system that allows users to design virtu
 and (3) provide helpful functionalities such as parameter control, undo/redo to support creativities in virtual pottery design.
 
 %[design considerations: 1.HCD 2. RBI]
-Oviatt \cite{oviatt2006human} concluded that human-centered design can minimize users’ cognitive load, which effectively frees up mental resources for performing better while also remaining more attuned to the world around them.
-%% TODO
-So we take the human-centered design approach, which models users’ natural behavior so that interfaces can be more intuitive, easier to learn, and freer of performance errors.
+In order to achieve the design goals, we take the human-centered design approach in our research.
+Oviatt concluded that human-centered design can minimize users’ cognitive load, which effectively frees up mental resources for performing better while also remaining more attuned to the world around them \cite{oviatt2006human}.
+The natural behaviors in real-life pottery creation is fully considered in our system, so that the interface of EasyPot can be more intuitive, easier to learn, and freer of performance errors.
 In addition, Jacob et al. \cite{Jacob2008Reality} summarized that the designer's goal should be to allow the user to perform realistic tasks realistically, to provide additional non real-world functionality, and to use analogies for these commands whenever possible.
-Hence, while our system is designed based on pottery creation process in reality to minimize the effort, convenient functionalities should be provided in our system for efficiency.
+Hence, while EasyPot is designed based on pottery creation process in reality to minimize the effort, convenient functionalities should be provided in our system for efficiency.
 
 %[contributions]
 The main contributions of our works are:
@@ -133,6 +134,11 @@ The main contributions of our works are:
 %
 and (3) conduct an user study showing the comparison results among three modeling systems. The results have shown that our system is easier to use compared with traditional 3D modeling tools and provides more creativity than touchscreen apps.
 
+The paper is structured as follows:
+Section 2 introduces the related work about virtual pottery.
+In Section 3 the overall system is demonstrated and the technical details are discussed in Section 4.
+Section 5 shows the results of the experimental results and we set up a comparison user study in Section 6.
+Finally, discussions for the system are given in Section 7, followed by the conclusions in Section 8.
 %%%
 
 \section{Related Work}
@@ -160,11 +166,12 @@ In our project, HTC Vive system is used in our system, which provides precision,
 
 \subsection{Art and Design Tools in VR}
 \label{sec:2.2}
-Virtual Reality has shown great potential for art and design, which not only provides immersive and intuitive interfaces for user, but also creates new art medium, new art form and novel experience\cite{laviola20113d}.
+Virtual reality has shown great potential for art and design, which not only provides immersive and intuitive interfaces for user, but also creates new art medium, new art form and novel experience \cite{laviola20113d}.
 
-CavePainting \cite{keefe2001cavepainting} is a 3D artistic medium in a fully immersive environment, which enables artists to create spatial paintings with physical props and gestures. Agrawala et al.\cite{agrawala19953d} developed an interface for painting on polygon meshes using a 6DOF space tracker, which provides a natural force-feedback for painting, allowing users to place colors on meshes intuitively. MAI Painting Brush++ \cite{otsuki2017brush} is a brush device for virtual painting of 3D virtual objects, where users could take a physical object in the real world and apply virtual paint to it with visual and haptic feedback.
-
+CavePainting \cite{keefe2001cavepainting} is a 3D artistic medium in a fully immersive environment, which enables artists to create spatial paintings with physical props and gestures. Agrawala et al. \cite{agrawala19953d} developed an interface for painting on polygon meshes using a 6DOF space tracker, which provides a natural force-feedback for painting, allowing users to place colors on meshes intuitively. MAI Painting Brush++ \cite{otsuki2017brush} is a brush device for virtual painting of 3D virtual objects, where users could take a physical object in the real world and apply virtual paint to it with visual and haptic feedback.
 Virtual Clay \cite{mcdonnell2001virtual} is a sculpture framework based on subdivision solids and physics-based modeling, which is equipped with natural, haptic based interaction, providing users with a realistic sculpting experience. Sheng et al. \cite{sheng2006interface} proposed an interface for virtual 3D sculpting, which uses camera-based motion tracking technology to track passive markers on the fingers and prop, enabling users to apply operations such as deforming, smoothing, pasting and extruding.
+
+To leverage the immersive experience brought by VR, the setup of our system is based on a virtual environment, where users can enjoy the creation process in a realistic way.
 
 \subsection{Virtual Pottery Systems}
 \label{sec:2.3}
@@ -178,17 +185,17 @@ Several systems have been specifically developed for virtual pottery design in t
 One of the earliest virtual pottery systems is CHINA \cite{korida1997interactive}, where users can create pottery works wearing digital gloves and stereoscopic glasses.
 Ramani et al. proposed a series of freehand systems based on depth cameras, where point cloud data is analyzed to extract user design intent \cite{ramani2014zpots,ramani2015gesture,ramani2016extracting}.
 Handy-Potter \cite{murugappan2013handy} is a rapid 3D creation tool, which tracks user skeletons with Kinect, enabling users to create potteries in several seconds based on the trails of both hands.
-Han et al. \cite{han2014virtual} presented an audiovisual interface, where pottery shapes deformed by hand motions are translated into musical sound.
+Han and Han \cite{han2014virtual} presented an audiovisual interface, where pottery shapes deformed by hand motions are translated into musical sound.
 In AR Pottery \cite{han2007ar}, augmented reality has been applied to pottery design, with which users can deform a virtual pottery using a marker held by hand.
-%Although most of these systems users could create virtual potteries without much difficulty, the experience lacks realistic features such as haptic feedback. Thus, users cannot learn the actual pottery process from using these systems effectively.
 
+Although the interfaces provided by these systems are not difficult to learn, some realistic features are ignored and the workflow is oversimplified.
 %[design consideration - EDUCATION!!!]
 In contrast to all existing works, our system provides a much realistic workflow and experience, which allows users to manipulate virtual pots through various two-handed spatial interactions, helping novice users and children to understand and learn real life pottery skills in a virtual environment.
 
 
 \section{System Overview}
 \label{sec:3}
-EasyPot is an interactive modeling system based on handheld devices and a head-mounted display. 
+EasyPot is an interactive modeling system for virtual pottery based on handheld haptic devices in VR.
 Users can create pottery in our system with bimanual inputs, deforming the virtual clay in realtime.
 EasyPot can save the model as an OBJ file when a pottery is done, which can be used in 3D printing.
 Our system provide a simulation training environment in virtual worlds, allowing novice users and children to learn pottery skills in an immersive and interactive way.
@@ -216,7 +223,7 @@ The system architecture is demonstrated in Figure \ref{fig:arc}. When the mesh g
 
 \subsection{Workflow}
 \label{sec:3.2}
-In real life, the pottery creation process on a pottery wheel is called "throwing", where a ball of clay is placed in the centre of a turntable wheel-head, and shaped by a potter.
+In real life, the pottery creation process on a pottery wheel is called \textit{throwing}, where a ball of clay is placed in the centre of a turntable wheel-head, and shaped by a potter.
 To illustrate the pipeline of pottery creation in our system, an example workflow using EasyPot is described as follows.
 
 When a user starts to use EasyPot, a realistic clay mesh is automatically generated with Perlin noise (Figure \ref{fig:workflow}a, Section \ref{sec:4.1}). 
@@ -233,15 +240,15 @@ After the creation process is finished, the user can export the pottery model as
 \label{fig:workflow}
 \end{figure*}
 
-\section{Interactive Modeling System for Pottery Design in VR}
+\section{Interactive Modeling for Virtual Pottery in VR}
 \label{sec:4}
 
 \subsection{Mesh Generation}
 \label{sec:4.1}
 
-Most of virtual pottery systems approximate the initial shape of pottery clay as a primitive cylinder shape \cite{han2007ar,ramani2015gesture,Vinayak2016Extracting}. While this approach is simple to implement, it ignores subtle details of clay in real life, whose irregularity needs to be dealed with during the creation process. Unlike the existing systems, we first approximate the initial clay on the pottery wheel as a blending shape of cylinder and semi-ellipsoid, then adding Perlin noises to mimic the irregular clay in reality.
+Most of virtual pottery systems approximate the initial shape of pottery clay as a primitive cylinder shape \cite{han2007ar,ramani2015gesture,ramani2016extracting}. While this approach is simple to implement, it ignores subtle details of clay in real life, whose irregularity needs to be handled first during the creation process. Unlike the existing virtual pottery systems, we approximate the initial clay on the pottery wheel as a blending shape of cylinder and semi-ellipsoid, then adding Perlin noises to mimic the irregular clay in reality.
 
-\paragraph{Basic Clay} The clay mesh is described as a series of circular sections in different heights, whose resolution can be defined by axis segments $s_{a}$ and height segments $s_{h}$. Given radius $r$ and height $h$, our system can generate primitive mesh of cylinder and semi-ellipsoid respectively (Figure \ref{fig:base}).
+\paragraph{Basic Clay} The clay mesh is described as a generalized cylinder, whose resolution can be defined by axis segments $s_{a}$ and height segments $s_{h}$. Given radius $r$ and height $h$, our system can generate primitive mesh of cylinder and semi-ellipsoid respectively (Figure \ref{fig:base}).
 For each vertex in the mesh, a $m \times n$ matrix $M$ is used to store radius values, where number of row $m = s_{h} + 1$ and the number of column $n = s_{a}$ respectively. The base radius $r_{base_{i}}$ of each vertex $\mathbf{v}_{i,j}$ in row $i$ can be calculated as: 
 
 \begin{equation}
@@ -250,7 +257,6 @@ r_{base_{i}} = \alpha \cdot \frac{r}{h} \sqrt{h^2 -  h_{i}^2} + (1 - \alpha) \cd
 \begin{equation}
 h_{i} = i \cdot \frac{h}{m-1}
 \end{equation}
-
 where $\alpha$ is a factor controls the shape blending between a  cylinder (when $\alpha=0$) and a semi-ellipsoid (when $\alpha=1$) (Figure \ref{fig:base}).
 
 %%%Fig%%% base mesh
@@ -322,7 +328,6 @@ r'_{i,j} \cdot sin \theta_{j}
 \begin{equation}
 r'_{i,j} = r_{i,j} - \max(t_{min}, r_{top} \cdot t)
 \end{equation}
-
 where $t$ is the thickness ratio of the clay, whose range is $[0,1]$. In mesh generation phase, the default value of $t$ is 1, which means the clay is a solid shape; in mesh deformation phase, the value of $t$ can be adjusted by user interactively, getting a centre hollowed shape. $t_{min}$ is a predefined value for the minimum thickness, and $r_{top}$ is the largest radius value for the top section, which guarantees equal thickness for each part.
 Vertices for both inner-bottom and outer-bottom sides will be then generated according to inner-side and outer-side vertices respectively. Finally, a mesh can be generated by constructing triangle faces based on the vertex indices. 
 
@@ -349,8 +354,7 @@ r'_{i,j} =
 \lambda \cdot \frac{1}{n}\sum_{k=1}^{n} r_{i,k}
 + (1 - \lambda) \cdot r_{i,j}
 \end{equation}
-
-where $\lambda \in [0,1]$ is a damping factor controlling the effect rate of symmetry control.(Figure \ref{fig:symmetry})
+where $\lambda \in [0,1]$ is a damping factor controlling the effect rate of symmetry control (Figure \ref{fig:symmetry}).
 
 %%%Fig%%% symmetry
 \begin{figure*}
@@ -388,13 +392,13 @@ r'_{i,j} = r_{i,j} + \Delta r_{i,j}
 
 % base on handle radial dist
 Let $(x_{0},y_{0},z_{0})$ be the initial handle position at time $t_{0}$ when the deformation starts, and we can calculate the initial handle distance from y-axis: $\rho_{0} = \sqrt{x_{0}^2 + z_{0}^2}$. The new handle position at time $t_{1}$ is $(x_{1},y_{1},z_{1})$, and the new handle distance is $\rho_{t} = \sqrt{x_{1}^2 + z_{1}^2}$.
-
 % vertical dist
 When a user pressed the trigger on the motion controller while the handle touched the mesh, the vertical distance $d_{i,j}$ between the handle and each vertex:
 \begin{equation}
 d_{i,j} = |y_{0} - y_{i,j}|
 \end{equation}
-In our system, outer radius $R_{o}$ and inner radius $R_{i}$ are two key parameters affecting deformation, which define the moving region and fixed region. The deformation region should deform in an intuitive and smooth manner. Note that when $r_{0} = r_{i}$, it is possible to create sharp features on the clay.
+
+In our system, outer radius $R_{o}$ and inner radius $R_{i}$ are two key parameters affecting deformation, which define the moving region and fixed region. The deformation region should deform in an intuitive and smooth manner. Note that when $r_{0} = r_{i}$, it is possible to create sharp features on the clay:
 \begin{equation}
 \Delta r_{i,j} = \begin{cases}
 \rho_{t} - \rho_{0} &  d_{i,j} < R_{i} \\
@@ -402,6 +406,7 @@ In our system, outer radius $R_{o}$ and inner radius $R_{i}$ are two key paramet
 (\rho_{t} - \rho_{0}) \cdot w_{i,j} &  R_{i} < d_{i,j} < R_{o}
 \end{cases}
 \end{equation}
+
 %get weight from falloff curve
 A falloff curve is needed in order to get smooth deformation effect when calculating weights: $w_{i,j} = f(t)$. In order to efficiently calculate the weights, we choose a cubic polynomial function $f(t) = at^3 + bt^2 + ct + d$ as the falloff function, we have:
 \begin{equation}
@@ -442,7 +447,7 @@ Users can control the handle position and adjust the outer radius of the handle 
 %%%Fig%%% UI
 \begin{figure*}
 \includegraphics[width=\textwidth]{ui}
-\caption{The user interface of our system.}
+\caption{The user interface of our system. (a) The virtual pottery wheel in the virtual space. (b) The controller button configuration of EasyPot. (c) The button layout of left Controller Pad. (d) The button layout of right Controller Pad.}
 \label{fig:ui}
 \end{figure*}
 
@@ -495,7 +500,7 @@ where $k_{min}$ and $k_{max}$ are predefined minimum and maximum frequency value
 \label{sec:5}
 
 %platform
-We have implemented EasyPot using Unity3D\cite{website:unity} game engine. We built our system on a HTC Vive\cite{website:vive} VR system with a PC (2.10 GHz Dual Core CPU, 16 GB RAM and NVIDIA GeForce GTX 1080 graphics card) running 64 bit Windows 10 Professional.
+We have implemented EasyPot using Unity3D \cite{website:unity} game engine. We built our system on a HTC Vive \cite{website:vive} VR system with a PC (2.10 GHz Dual Core CPU, 16 GB RAM and NVIDIA GeForce GTX 1080 graphics card) running 64-bit Windows 10 Professional.
 
 In order to get performance statistics of the mesh generator, we tested EasyPot to generate 4 models with different resolutions.
 Based on the common size of clay placed on pottery wheels, we set the height 0.2 units with the radius 0.15 units.
@@ -677,17 +682,17 @@ In Q3, EasyPot became the favorite virtual pottery system for the subjects. From
 We collected user feedbacks after the subjects had used our system. In summary, subjects gave many positive feedbacks when using our system to design pottery models. They spoke highly of the immersive pottery creation experience with intuitive interaction and haptic feedback that motivated them to design potteries just like working on real clay. In addition, the undo/redo are quite convenient according to the subjects, which enhances the efficiency during the creation process. For those who have no real life pottery creation experience enjoyed our system very much and would like to try real pottery someday. 
 
 %[Suggestions]
-During our user study, we found that the undo/redo functionality is not used frequently as we expected. 
+During our user study, we found that the Undo/Redo functionality is not used frequently as we expected. 
 We also asked their suggestions for the future features they wanted to see in EasyPot.
 A few subjects expressed their wishes to add coloring feature, which allows them decorate the pots with colors and patterns.
 At the end of our user study, many subjects said they would like to try EasyPot one more time.
 
 %[limitations]
-Our system still has its limitations. First, the physical size of the motion controllers sometimes influence the deformation in bimanual mode, especially when the part of the clay is narrow that two controllers may collide with each other. For example, when subjects working on the neck of clay, it will be difficult to edit with two controllers. This problem can be easily solved by providing user one-hand deformation mode. We plan to use data gloves to avoid these situations in the future.
+Our system still has its limitations. First, the physical size of the motion controllers sometimes affect the deformation in bimanual mode, especially when the part of the clay is narrow that two controllers may collide with each other. For example, when subjects working on the neck of clay, it will be difficult to edit with two controllers. This problem can be easily solved by providing user one-hand deformation mode. We plan to use data gloves to avoid these situations in the future.
 %
 Second, the potteries designed by our systems lack colors and textures. Although we focus on deformation in our study, several subjects stated that they wish to paint the pottery after designing the shape of the clay. We intend to add new features related to interactive painting on 3D objects.
 %
-Another limitation of our system is that it cannot adding handles to the pottery. We will introduce more tools that allow users to modify the topology of the mesh in order to create more personalized pottery works.
+Another limitation of our system is that it cannot adding handles to the pottery. We will introduce more features that allow users to modify the topology of the mesh in order to create more personalized pottery works.
 
 
 \section{Conclusions}
@@ -701,6 +706,7 @@ A possible extension of our system is to support interactive coloring functional
 
 
 \begin{acknowledgements}
+This work is supported by the Natural Science Foundation of China (No.~61502118), the Natural Science Foundation of Heilongjiang Province in China (No.~F2016028 and F2016009), the Fundamental Research Fund for the Central Universities in China (No.~HEUCF180602 and HEUCFM180604) and the National Science and Technology Major Project (No.~2016ZX03001023-005).
 %If you'd like to thank anyone, place your comments here
 %and remove the percent signs.
 \end{acknowledgements}
