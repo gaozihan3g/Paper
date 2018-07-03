@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  30 JUN 2018 09:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  3 JUL 2018 14:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -276,129 +276,128 @@ Missing character: There is no ™ in font cmr9!
 Underfull \vbox (badness 3323) has occurred while \output is active []
 
  [2]
-[3] <results.pdf, id=18, 845.1575pt x 455.20041pt>
-File: results.pdf Graphic file (type pdf)
- <use results.pdf>
-Package pdftex.def Info: results.pdf used on input line 209.
+[3] <fig1.pdf, id=18, 845.1575pt x 455.20041pt>
+File: fig1.pdf Graphic file (type pdf)
+ <use fig1.pdf>
+Package pdftex.def Info: fig1.pdf used on input line 209.
 (pdftex.def)             Requested size: 347.0pt x 186.89731pt.
  [4]
-<arc.pdf, id=22, 845.1575pt x 597.23125pt>
-File: arc.pdf Graphic file (type pdf)
- <use arc.pdf>
-Package pdftex.def Info: arc.pdf used on input line 221.
+<fig2.pdf, id=22, 845.1575pt x 597.23125pt>
+File: fig2.pdf Graphic file (type pdf)
+ <use fig2.pdf>
+Package pdftex.def Info: fig2.pdf used on input line 221.
 (pdftex.def)             Requested size: 347.0pt x 245.21268pt.
- [5 <./results.pdf> <./arc.pdf>] <workflow.pdf, id=68, 845.1575pt x 486.18608pt
->
-File: workflow.pdf Graphic file (type pdf)
- <use workflow.pdf>
-Package pdftex.def Info: workflow.pdf used on input line 242.
+ [5 <./fig1.pdf> <./fig2.pdf>] <fig3.pdf, id=68, 845.1575pt x 486.18608pt>
+File: fig3.pdf Graphic file (type pdf)
+ <use fig3.pdf>
+Package pdftex.def Info: fig3.pdf used on input line 242.
 (pdftex.def)             Requested size: 347.0pt x 199.61949pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./workflow.pdf>] <fig3.pdf, id=176, 845.1575pt x 597.23125pt>
-File: fig3.pdf Graphic file (type pdf)
- <use fig3.pdf>
-Package pdftex.def Info: fig3.pdf used on input line 268.
-(pdftex.def)             Requested size: 347.0pt x 245.21268pt.
- [7]
-<fig4.pdf, id=186, 845.1575pt x 597.23125pt>
+ [6 <./fig3.pdf>] <fig4.pdf, id=176, 845.1575pt x 597.23125pt>
 File: fig4.pdf Graphic file (type pdf)
  <use fig4.pdf>
-Package pdftex.def Info: fig4.pdf used on input line 308.
+Package pdftex.def Info: fig4.pdf used on input line 268.
 (pdftex.def)             Requested size: 347.0pt x 245.21268pt.
-
-<mesh.pdf, id=187, 845.1575pt x 352.94359pt>
-File: mesh.pdf Graphic file (type pdf)
- <use mesh.pdf>
-Package pdftex.def Info: mesh.pdf used on input line 340.
-(pdftex.def)             Requested size: 347.0pt x 144.91245pt.
- [8 <./fig3.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9 <./fig4.pdf> <./mesh.pdf>] <fig5.pdf, id=308, 845.1575pt x 597.23125pt>
+ [7]
+<fig5.pdf, id=186, 845.1575pt x 597.23125pt>
 File: fig5.pdf Graphic file (type pdf)
-
-<use fig5.pdf>
-Package pdftex.def Info: fig5.pdf used on input line 367.
+ <use fig5.pdf>
+Package pdftex.def Info: fig5.pdf used on input line 308.
 (pdftex.def)             Requested size: 347.0pt x 245.21268pt.
- [10] [11 <./fig5.pdf>]
-<fig6.pdf, id=353, 845.1575pt x 597.23125pt>
+
+<fig6.pdf, id=187, 845.1575pt x 352.94359pt>
 File: fig6.pdf Graphic file (type pdf)
  <use fig6.pdf>
-Package pdftex.def Info: fig6.pdf used on input line 432.
+Package pdftex.def Info: fig6.pdf used on input line 340.
+(pdftex.def)             Requested size: 347.0pt x 144.91245pt.
+ [8 <./fig4.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9 <./fig5.pdf> <./fig6.pdf>] <fig7.pdf, id=308, 845.1575pt x 597.23125pt>
+File: fig7.pdf Graphic file (type pdf)
+
+<use fig7.pdf>
+Package pdftex.def Info: fig7.pdf used on input line 367.
+(pdftex.def)             Requested size: 347.0pt x 245.21268pt.
+ [10] [11 <./fig7.pdf>]
+<fig8.pdf, id=353, 845.1575pt x 597.23125pt>
+File: fig8.pdf Graphic file (type pdf)
+ <use fig8.pdf>
+Package pdftex.def Info: fig8.pdf used on input line 432.
 (pdftex.def)             Requested size: 347.0pt x 245.21268pt.
 
-<ui.pdf, id=354, 845.1575pt x 444.1875pt>
-File: ui.pdf Graphic file (type pdf)
- <use ui.pdf>
-Package pdftex.def Info: ui.pdf used on input line 455.
+<fig9.pdf, id=354, 845.1575pt x 444.1875pt>
+File: fig9.pdf Graphic file (type pdf)
+ <use fig9.pdf>
+Package pdftex.def Info: fig9.pdf used on input line 455.
 (pdftex.def)             Requested size: 347.0pt x 182.37561pt.
- [12] [13 <./fig6.pdf> <./ui.pdf>] <highlight.pdf, id=457, 845.1575pt x 303.850
-17pt>
-File: highlight.pdf Graphic file (type pdf)
-
-<use highlight.pdf>
-Package pdftex.def Info: highlight.pdf used on input line 498.
+ [12] [13 <./fig8.pdf> <./fig9.pdf>] <fig10.pdf, id=457, 845.1575pt x 303.85017
+pt>
+File: fig10.pdf Graphic file (type pdf)
+ <use fig10.pdf>
+Package pdftex.def Info: fig10.pdf used on input line 498.
 (pdftex.def)             Requested size: 347.0pt x 124.75555pt.
- [14] [15 <./highlight.pdf>]
+
+[14] [15 <./fig10.pdf>]
 Missing character: There is no â in font cmti9!
 Missing character: There is no € in font cmti9!
 Missing character: There is no ™ in font cmti9!
+ <fig11.pdf, id=482, 845.1575pt x 254.06519pt>
+File: fig11.pdf Graphic file (type pdf)
 
-<sys.pdf, id=482, 845.1575pt x 254.06519pt>
-File: sys.pdf Graphic file (type pdf)
- <use sys.pdf>
-Package pdftex.def Info: sys.pdf used on input line 576.
+<use fig11.pdf>
+Package pdftex.def Info: fig11.pdf used on input line 576.
 (pdftex.def)             Requested size: 347.0pt x 104.31471pt.
-
-<target.pdf, id=483, 845.04686pt x 284.52759pt>
-File: target.pdf Graphic file (type pdf)
- <use target.pdf>
-Package pdftex.def Info: target.pdf used on input line 591.
+ <fig12.pdf, id=483, 845.04686pt x 284.52759pt>
+File: fig12.pdf Graphic file (type pdf)
+ <use fig12.pdf>
+Package pdftex.def Info: fig12.pdf used on input line 591.
 (pdftex.def)             Requested size: 347.0pt x 116.83507pt.
- [16] [17 <./sys.pdf> <./target.pdf>] <pots.png, id=538, 679.03688pt x 431.3615
-6pt>
-File: pots.png Graphic file (type png)
 
-<use pots.png>
-Package pdftex.def Info: pots.png used on input line 639.
+[16] [17 <./fig11.pdf> <./fig12.pdf>]
+<fig13.png, id=538, 679.03688pt x 431.36156pt>
+File: fig13.png Graphic file (type png)
+ <use fig13.png>
+Package pdftex.def Info: fig13.png used on input line 639.
 (pdftex.def)             Requested size: 347.0pt x 220.43248pt.
-Package epstopdf Info: Source file: <tlx.eps>
+Package epstopdf Info: Source file: <fig14.eps>
 (epstopdf)                    date: 2018-06-05 08:32:47
 (epstopdf)                    size: 18261 bytes
-(epstopdf)             Output file: <tlx-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-06-05 08:32:47
+(epstopdf)             Output file: <fig14-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-03 14:02:49
 (epstopdf)                    size: 7689 bytes
-(epstopdf)             Command: <repstopdf --outfile=tlx-eps-converted-to.pdf t
-lx.eps>
+(epstopdf)             Command: <repstopdf --outfile=fig14-eps-converted-to.pdf
+ fig14.eps>
 (epstopdf)             \includegraphics on input line 651.
 Package epstopdf Info: Output file is already uptodate.
- <tlx-eps-converted-to.pdf, id=540, 840.13875pt x 578.16pt>
-File: tlx-eps-converted-to.pdf Graphic file (type pdf)
 
-<use tlx-eps-converted-to.pdf>
-Package pdftex.def Info: tlx-eps-converted-to.pdf used on input line 651.
+<fig14-eps-converted-to.pdf, id=540, 840.13875pt x 578.16pt>
+File: fig14-eps-converted-to.pdf Graphic file (type pdf)
+
+<use fig14-eps-converted-to.pdf>
+Package pdftex.def Info: fig14-eps-converted-to.pdf used on input line 651.
 (pdftex.def)             Requested size: 347.0pt x 238.79388pt.
- [18 <./pots.png>]
-Package epstopdf Info: Source file: <ranking.eps>
+ [18 <./fig13.png>]
+Package epstopdf Info: Source file: <fig15.eps>
 (epstopdf)                    date: 2018-06-05 08:32:47
 (epstopdf)                    size: 15728 bytes
-(epstopdf)             Output file: <ranking-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-06-05 08:32:47
+(epstopdf)             Output file: <fig15-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-03 14:02:50
 (epstopdf)                    size: 6220 bytes
-(epstopdf)             Command: <repstopdf --outfile=ranking-eps-converted-to.p
-df ranking.eps>
+(epstopdf)             Command: <repstopdf --outfile=fig15-eps-converted-to.pdf
+ fig15.eps>
 (epstopdf)             \includegraphics on input line 670.
 Package epstopdf Info: Output file is already uptodate.
 
-<ranking-eps-converted-to.pdf, id=545, 937.5025pt x 578.16pt>
-File: ranking-eps-converted-to.pdf Graphic file (type pdf)
+<fig15-eps-converted-to.pdf, id=545, 937.5025pt x 578.16pt>
+File: fig15-eps-converted-to.pdf Graphic file (type pdf)
 
-<use ranking-eps-converted-to.pdf>
-Package pdftex.def Info: ranking-eps-converted-to.pdf used on input line 670.
+<use fig15-eps-converted-to.pdf>
+Package pdftex.def Info: fig15-eps-converted-to.pdf used on input line 670.
 (pdftex.def)             Requested size: 260.25pt x 160.4898pt.
- [19 <./tlx-eps-converted-to.pdf>] [20 <./ranking-eps-converted-to.pdf>]
+ [19 <./fig14-eps-converted-to.pdf>] [20 <./fig15-eps-converted-to.pdf>]
 Overfull \hbox (0.41315pt too wide) in paragraph at lines 707--712
 \OT1/cmr/m/n/9.5 We present Easy-Pot, a re-al-time pot-tery mod-el-ing sys-tem 
 in Vir-tual Re-al-ity. Closely
@@ -434,8 +433,8 @@ LaTeX Font Warning: Size substitutions with differences
  ) 
 Here is how much of TeX's memory you used:
  3250 strings out of 492995
- 46998 string characters out of 6132704
- 111312 words of memory out of 5000000
+ 46968 string characters out of 6132704
+ 111311 words of memory out of 5000000
  6753 multiletter control sequences out of 15000+600000
  14170 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -459,7 +458,7 @@ local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/lo
 cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loca
 l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/
 texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on pottery.pdf (22 pages, 13335956 bytes).
+Output written on pottery.pdf (22 pages, 13335943 bytes).
 PDF statistics:
  624 PDF objects out of 1000 (max. 8388607)
  425 compressed objects within 5 object streams
