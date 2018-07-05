@@ -109,7 +109,7 @@ These works indeed provide a gentle learning curve, however, they have some comm
 % although simple, hardware limitation
 First, although freehand interactions in these systems are simple, user inputs from depth cameras lack accuracy due to jitter, hindering work efficiency and user experience severely.
 %
-Moreover, freehand interactions lack haptic feedback, making it difficult for users to perceive whether they have touched anything in VR environments. In terms of reality, these systems overlooked some visual features of clay, namely shape irregularity, thickness, etc., undermining realistic look and feel in the pot design process.
+Moreover, freehand interactions lack haptic feedback, making it difficult for users to perceive whether they have touched anything in VR environments. In terms of reality, these systems overlook some visual features of clay, namely shape irregularity, thickness, etc., which undermines realistic look and feel in the pot design process.
 %
 In addition, the deformation parameters cannot be adjusted interactively by the users, which limits the effects of deformation.
 
@@ -127,7 +127,7 @@ In order to achieve the design goals, we take the human-centered design approach
 Oviatt concluded that human-centered design can minimize users’ cognitive load, which effectively frees up mental resources for performing better while also remaining more attuned to the world around them \cite{oviatt2006human}.
 The natural behaviors in real-life pottery creation is fully considered in our system, so that the interface of EasyPot can be more intuitive, easier to learn, and freer of performance errors.
 In addition, Jacob et al. \cite{Jacob2008Reality} summarized that the designer's goal should be to allow the user to perform realistic tasks realistically, to provide additional non real-world functionality, and to use analogies for these commands whenever possible.
-Hence, while EasyPot is designed based on pottery creation process in reality to minimize the effort, convenient functionalities should be provided in our system for efficiency.
+Hence, while EasyPot is designed based on pottery creation process in reality to minimize the effort, convenient functionalities should be provided in our system for efficiency as well.
 
 %[contributions]
 The main contributions of our works are:
@@ -153,16 +153,16 @@ Finally, discussions for the system are given in Section 7, followed by the conc
 Bimanual interaction has been a popular research field, which can accomplish a variety of tasks in both physical and virtual environments.
 In terms of mechanisms, bimanual interaction can be classified into two categories: bare-hand based interactions and instrument based interactions.
 
-There are a great number of research efforts \cite{walter2014cuenesics,cui2016exploration,ramani2015gesture,murugappan2013handy,han2014virtual} on bare-hand based interactions using depth camera such as Kinect, Leap Motion etc.
-Cuenestics \cite{walter2014cuenesics} is a design space for hand-gesture based mid-air selection techniques using a depth camera Kinect, where users can select contents on interactive public displays with their gesture input.
-Cui et al. \cite{cui2016exploration} proposed a modeling system with natural free-hand interaction using a Leap Motion controller, allowing users to grab and manipulate objects with one or two hands intuitively.
+There are a great number of research efforts \cite{walter2014cuenesics,cui2016exploration,ramani2015gesture,murugappan2013handy,han2014virtual} on bare-hand based interactions using depth camera such as Kinect, Leap Motion, etc.
+Cuenestics \cite{walter2014cuenesics} is a design space for hand-gesture based mid-air selection techniques using a depth camera Kinect, where users can select contents on interactive public displays with their gesture inputs.
+Cui et al. \cite{cui2016exploration} proposed a modeling system with natural free-hand interactions using a Leap Motion controller, allowing users to grab and manipulate objects with one or two hands intuitively.
 While these works provide accessibility to users, they have some common limitations: The inputs are inaccurate due to many factors such as lighting condition, occlusion, etc., which could handicap work efficiency and cause user frustration.
-In addition, these methods do not provide haptic feedbacks, which hinders the realistic feel for users.
+In addition, these methods do not provide haptic feedbacks, which hinders the realistic feel for users in the interaction process.
 
 Unlike bare-hand based interactions, instrument based interactions provide more control precision, haptic feedback and unambiguity.
-Surface Drawing \cite{schkolne2001surface} is a system for creating organic 3D shapes using tangible tools such as gloves, where users can define strokes with the path of hands wearing gloves.
+Surface Drawing \cite{schkolne2001surface} is a system for creating organic 3D shapes using tangible tools such as data gloves, where users can define strokes with the path of hands wearing data gloves.
 Hinckley et al. \cite{hinckley1998two} investigated two-handed virtual manipulation with a point design of a prop-based system, which allows users to view a cross section of a brain with interface props.
-These works have a common problem that the usage of these instruments are limited to a lab context that very few users can access.
+These works have a common issue that the usage of these instruments are limited to a lab context that very few users can access.
 %
 With the commercialization of gaming devices, some motion controllers such as Wii Remote and HTC Vive have become accessible to consumers, which are also used in scientific studies for 3D user interfaces \cite{wingcrave2010wii,niehorster2017accuracy}.
 %
@@ -175,7 +175,7 @@ Virtual reality has shown great potential for art and design, which not only pro
 CavePainting \cite{keefe2001cavepainting} is a 3D artistic medium in a fully immersive environment, which enables artists to create spatial paintings with physical props and gestures. Agrawala et al. \cite{agrawala19953d} developed an interface for painting on polygon meshes using a 6DOF space tracker, which provides a natural force-feedback for painting, allowing users to place colors on meshes intuitively. MAI Painting Brush++ \cite{otsuki2017brush} is a brush device for virtual painting of 3D virtual objects, where users could take a physical object in the real world and apply virtual paint to it with visual and haptic feedback.
 Virtual Clay \cite{mcdonnell2001virtual} is a sculpture framework based on subdivision solids and physics-based modeling, which is equipped with natural, haptic based interaction, providing users with a realistic sculpting experience. Sheng et al. \cite{sheng2006interface} proposed an interface for virtual 3D sculpting, which uses camera-based motion tracking technology to track passive markers on the fingers and prop, enabling users to apply operations such as deforming, smoothing, pasting and extruding.
 
-To leverage the immersive experience brought by VR, the setup of our system is based on a virtual environment, where users can enjoy the creation process in a realistic way.
+To leverage the novel experience brought by VR, the setup of our system is based on a virtual environment, where users can enjoy the creation process in a immersive way.
 
 \subsection{Virtual Pottery Systems}
 \label{sec:2.3}
@@ -201,8 +201,8 @@ In contrast to all existing works, our system provides a much realistic workflow
 \label{sec:3}
 EasyPot is an interactive modeling system for virtual pottery based on handheld haptic devices in VR.
 Users can create pottery in our system with bimanual inputs, deforming the virtual clay in realtime.
-EasyPot can save the model as an OBJ file when a pottery is done, which can be used in 3D printing.
-Our system provide a simulation training environment in virtual worlds, allowing novice users and children to learn pottery skills in an immersive and interactive way.
+EasyPot can export the mesh data as an OBJ file when a pottery work is finished, which can be used in 3D printing.
+Our system provide a simulation training environment in virtual worlds, allowing novice users and children to learn pottery skills interactively.
 
 %%%Fig%%% results
 \begin{figure}
@@ -250,7 +250,9 @@ After the creation process is finished, the user can export the pottery model as
 \subsection{Mesh Generation}
 \label{sec:4.1}
 
-Most of virtual pottery systems approximate the initial shape of pottery clay as a primitive cylinder shape \cite{han2007ar,ramani2015gesture,ramani2016extracting}. While this approach is simple to implement, it ignores subtle details of clay in real life, whose irregularity needs to be handled first during the creation process. Unlike the existing virtual pottery systems, we approximate the initial clay on the pottery wheel as a blending shape of cylinder and semi-ellipsoid, then adding Perlin noises to mimic the irregular clay in reality.
+Mesh generation is the first step of interactive modeling, and most of virtual pottery systems approximate the initial shape of pottery clay as a primitive cylinder shape \cite{han2007ar,ramani2015gesture,ramani2016extracting}.
+Although this approach is simple to implement, it ignores subtle details of clay, whose irregularity needs to be handled first during the creation process in real life.
+Unlike the existing virtual pottery systems, EasyPot first approximates the initial clay on the pottery wheel as a blending shape of cylinder and semi-ellipsoid, then adds Perlin noises to the basic clay, in order to simulate realistic clay features in reality.
 
 \paragraph{Basic Clay} The clay mesh is described as a generalized cylinder, whose resolution can be defined by axis segments $s_{a}$ and height segments $s_{h}$. Given radius $r$ and height $h$, our system can generate primitive mesh of cylinder and semi-ellipsoid respectively (Figure \ref{fig:base}).
 For each vertex in the mesh, a $m \times n$ matrix $M$ is used to store radius values, where number of row $m = s_{h} + 1$ and the number of column $n = s_{a}$ respectively. The base radius $r_{base_{i}}$ of each vertex $\mathbf{v}_{i,j}$ in row $i$ can be calculated as: 
@@ -270,18 +272,20 @@ where $\alpha$ is a factor controls the shape blending between a  cylinder (when
 \label{fig:base}
 \end{figure*}
 
-\paragraph{Adding Noise} Although the initial shape of clay can be roughly approximated like a rotational symmetric shape, in real life the actual clay shape is not regular, whose irregular features needs to be specially handled during the pottery creation process. To address this issue, randomness is added to the vertices to mimic the realistic clay using Perlin Noise \cite{Perlin1985An}, which is a smooth random method proposed by Ken Perlin in 1985.
+\paragraph{Adding Noise} Although the initial shape of clay can be roughly approximated like a rotational symmetric shape, in real life, the actual clay shape is not regular, whose irregular features needs to be specially handled during the pottery creation process. To simulate the realistic features, randomness is added to the vertices using Perlin Noise \cite{Perlin1985An}, which is a smooth random method proposed by Ken Perlin in 1985.
 In our approach, the centre positions for each circular section are randomized first, then Perlin Noise is added to the radii for each circular section and individual vertices.
 
-To add noise to the centre for each circular section, we use random $\phi_{i} \in [0, 2\pi]$ and $\eta_{c_{i}}$ to calculate the new centre $\mathbf{O}_{i}$ (Equation \ref{eqn:oi}). Then we get the new radii $r_{total_{i,j}}$ for each vertex by getting the sum of $r_{base_{i}}$ and noise values:
+To add noise to the centre for each circular section, random parameters $\phi_{i}$ and $\eta_{c_{i}}$ are used to calculate the new centre $\mathbf{O}_{i}$:
 \begin{equation}
 \label{eqn:oi}
 \mathbf{O}_{i} = \left[\eta_{c_{i}}cos\phi_{i}, h_{i}, \eta_{c_{i}}sin\phi_{i}\right]^T
 \end{equation}
+where $\phi_{i} \in [0, 2\pi]$ is a random degree, and $\eta_{c_{i}}$ is a random radius.
+Then the new radii $r_{total_{i,j}}$ for each vertex can be computed by getting the sum of $r_{base_{i}}$ and noise values:
 \begin{equation}
 r_{total_{i,j}} = r_{base_{i}} + \eta_{row_{i}} + \eta_{indv_{i,j}}
 \end{equation}
-where $\eta_{row_{i}}$ is the radius noise for each circular section, and $\eta_{indv_{i,j}}$ is individual radius for each vertex (Figure \ref{fig:noise}). We can get the radius value $r_{i,j}$ in the matrix $M$ for each vertex, and calculate the vertex position $\mathbf{v}_{i,j}$ based on the radius values in the matrix:
+where $\eta_{row_{i}}$ is the radius noise for each circular section, and $\eta_{indv_{i,j}}$ is the individual radius for each vertex (Figure \ref{fig:noise}). The radius value $r_{i,j}$, along with the position $\mathbf{v}_{i,j}$ for each vertex can be computed in the follow equations:
 \begin{equation}
 r_{i,j} = \left\|
 \mathbf{O}_{i} + \left[ r_{total_{i,j}} cos \theta_{j},
@@ -310,8 +314,8 @@ r_{i,j} sin \theta_{j}\right]^T
 \label{fig:noise}
 \end{figure*}
 
-\paragraph{Inner Vertices} Unlike other virtual pottery creation system, EasyPot aims to create 3D printing oriented pottery models. To accomplish that our system need to generate watertight 3D models with thickness. Hence, our system generate inner and bottom sides based on the outer side mesh. The vertices on inner side can be denoted as:
-
+\paragraph{Inner Vertices} To create 3D printing oriented pottery models, our system needs to generate watertight 3D models with thickness.
+To accomplish that, EasyPot generates inner and bottom sides based on the outer side mesh. The vertices on inner side can be denoted as:
 
 \begin{equation}
 \label{eqn:v'}
@@ -332,8 +336,8 @@ r'_{i,j} \cdot sin \theta_{j}
 \begin{equation}
 r'_{i,j} = r_{i,j} - \max(t_{min}, r_{top} \cdot t)
 \end{equation}
-where $t$ is the thickness ratio of the clay, whose range is $[0,1]$. In mesh generation phase, the default value of $t$ is 1, which means the clay is a solid shape; in mesh deformation phase, the value of $t$ can be adjusted by user interactively, getting a centre hollowed shape. $t_{min}$ is a predefined value for the minimum thickness, and $r_{top}$ is the largest radius value for the top section, which guarantees equal thickness for each part.
-Vertices for both inner-bottom and outer-bottom sides will be then generated according to inner-side and outer-side vertices respectively. Finally, a mesh can be generated by constructing triangle faces based on the vertex indices (Figure \ref{fig:mesh}).
+where $t$ is the thickness ratio of the clay, whose range is $[0,1]$. In mesh generation phase, the default value of $t$ is 1, which means the clay is a solid shape; in mesh deformation phase, the value of $t$ can be adjusted by users interactively, getting a centre hollowed shape. $t_{min}$ is a predefined value for the minimum thickness, and $r_{top}$ is the largest radius value for the top section, which guarantees equal thickness for each part.
+Vertices for inner-bottom and outer-bottom sides will be then generated according to inner-side and outer-side vertices respectively. Finally, a mesh can be generated by constructing triangle faces based on the vertex indices (Figure \ref{fig:mesh}).
 
 %%%Fig%%% Mesh
 \begin{figure}
