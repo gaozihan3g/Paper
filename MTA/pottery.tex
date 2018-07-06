@@ -348,15 +348,15 @@ Vertices for inner-bottom and outer-bottom sides will be then generated accordin
 
 \subsection{Mesh Processing}
 \label{sec:4.2}
-After observing and analyzing several real life pottery-making videos, we put mesh editing operation into 4 categories: (1) symmetry control, (2) height/thickness control, (3) mesh deformation and (4) mesh smoothing. These operations will be discussed in detail in the following sections.
-Since the clay mesh $C$ can be generated from feature parameters including height $h$, thickness $t$ and radius matrix $M$, we have $ C =  f(h, t, M) $.
-In our approach, we first modify feature parameters of the clay according to user interactions, then update mesh $C$  in realtime based on these parameters.
+After observing and analyzing several real-life pottery throwing videos, we put mesh operations into 4 categories: (1) symmetry control, (2) height/thickness control, (3) mesh deformation and (4) mesh smoothing. These operations will be discussed in detail in the following sections.
+Since any clay mesh $C$ can be generated from key parameters including height $h$, thickness $t$ and radius matrix $M$, a mesh generation function is constructed: $ C =  g(h, t, M) $, which can be used to update the mesh data as well.
+In our approach, EasyPot first modifies key parameters of the clay according to user interactions, then updates mesh data $C$  in realtime based on these parameters using the mesh generation function.
 
 \subsubsection{Rotational Symmetry Control}
 \label{sec:4.2.1}
 \textit{Centring} is the first important operation in pottery creation in reality, where people press the ball of clay downward and inward, making the irregular clay into perfect rotational symmetry.
-In our system, user can place two hands close to the clay at the same time to achieve symmetry control (Figure \ref{fig:workflow}b).
-The mean in each row of the radius matrix is calculated and then each value in matrix needs updating based on the mean values:
+In our system, the user can use two controllers to touch the virtual clay and pull the trigger button to achieve symmetry control (Figure \ref{fig:workflow}b).
+The mean radius value of each row in the radius matrix is calculated and then each radius value in matrix needs updating based on the mean radius values:
 \begin{equation}
 \label{eqn:sym}
 r'_{i,j} = 
@@ -366,17 +366,16 @@ r'_{i,j} =
 where $\lambda \in [0,1]$ is a damping factor controlling the rate of symmetry.
 The effect of rotational symmetry control is illustrated in Figure \ref{fig:symmetry}.
 
-%%%Fig%%% symmetry
+%		Fig:Symmetry
 \begin{figure*}
 \includegraphics[width=\textwidth]{fig7.pdf}
-\caption{Rotational symmetry control. The blue curve is the noised circular section at height $h_{i}$, and the green curve is a circle with the average radius $\bar r_{i}$. Let $\Delta r_{i,j}$ be the difference, then multiplied by the damping factor $\lambda$. New radius be calculated : $r'_{i, j} = r_{i,j} - \lambda\Delta r_{i}$, which is identical to Equation (\ref{eqn:sym}). }
+\caption{Rotational symmetry control. The blue curve is the noised circular section at height $h_{i}$, and the green curve is a circle with the average radius $\bar r_{i}$. Let $\Delta r_{i,j}$ be the difference between $r_{i,j}$ and $\bar r_{i}$, then multiplied by the damping factor $\lambda$. New radius be calculated : $r'_{i, j} = r_{i,j} - \lambda\Delta r_{i}$, which is identical to Equation (\ref{eqn:sym}). }
 \label{fig:symmetry}
 \end{figure*}
 
 \subsubsection{Thickness/Height Control}
 \label{sec:4.2.2}
-\textit{Opening} (thickness control) and \textit{pulling} (height control) are basic clay manipulations in pottery creation process which are done by applying force to clay with both hands. The thickness can be adjusted by pushing down the top centre part of the clay, making a centre hollow into the clay (Figure \ref{fig:workflow}c). The height can be adjusted by both hands drawing up and shaping the walls (Figure \ref{fig:workflow}d).
-%%%TODO
+\textit{Opening} (thickness control) and \textit{pulling} (height control) are basic clay operations in pottery throwing process which are done by applying force to clay with both hands. The thickness can be adjusted by pushing down the top centre part of the clay, making a centre hollow into the clay (Figure \ref{fig:workflow}c). The height can be adjusted by both hands drawing up and shaping the walls (Figure \ref{fig:workflow}d).
 Let $\Delta y$ be the mean of $\Delta y_{l}$ and $\Delta y_{r}$, which are left and right vertical hand movement distance respectively. New height $h'$ and new thickness $\beta'$ can be calculated in the following equations:
 \begin{equation}
 \Delta y = (\Delta y_{l} + \Delta y_{r})/2
@@ -387,38 +386,42 @@ h' = h_{0} + \Delta y * \gamma
 \begin{equation}
 \beta' = \beta_{0} + \Delta y/ h
 \end{equation}
-where $h_{0}$ and $\beta_{0}$ are initial height and thickness values before deformation respectively; $\gamma$ is a damping factor for height. And the new mesh data will be recalculated based on Equation (\ref{eqn:v}) and (\ref{eqn:v'}).
+where $h_{0}$ and $\beta_{0}$ are initial height and thickness values before deformation respectively; $\gamma$ is a damping factor for height. And the new mesh data will be recomputed based on $h'$ and $\beta'$.
 
 \subsubsection{Mesh Deformation}
 \label{sec:4.2.3}
-In this section interactive deformation in our system will be discussed. According to \cite{botsch2010polygon}, this topic is challenging since complex mathematical formulations (1) have to be hidden behind an intuitive user interface and (2) have to be implemented in a sufficiently efficient and robust manner to allow for interactive applications.
+In this section, interactive deformation in our system will be discussed. According to \cite{botsch2010polygon}, this topic is challenging since complex mathematical formulations (1) have to be hidden behind an intuitive user interface and (2) have to be implemented in a sufficiently efficient and robust manner to allow for interactive applications.
 
-% turn to radius
 In our approach, a cylindrical coordinate system is used to specify the position for each vertex, where y-axis is the reference axis. For any point $P$ in the coordinate system, we use$(\rho, \phi, y)$ to denote the position, where the radial distance $\rho$ is the Euclidean distance from the y-axis to the point P; $\phi$ is the azimuth; $y$ is the height of point P from xz-plane.
-Due to rotational symmetry in virtual pottery, we modify $\rho$ value for each vertex while keep $\phi$ and $y$ constant. Thus, the deformation problem is turned into how to calculate the new radius matrix based on hand movement:
+Due to rotational symmetry in virtual pottery, EasyPot modifies the $\rho$ for each vertex while keeping $\phi$ and $y$ constant. Thus, the deformation problem is turned into how to calculate the new radius $\rho'_{i,j}$ based on hand movement:
 \begin{equation}
-r'_{i,j} = r_{i,j} + \Delta r_{i,j}
+\rho'_{i,j} = \rho_{i,j} + \Delta \rho_{i,j}
 \end{equation}
 
 % base on handle radial dist
-Let $(x_{0},y_{0},z_{0})$ be the initial handle position at time $t_{0}$ when the deformation starts, and we can calculate the initial handle distance from y-axis: $\rho_{0} = \sqrt{x_{0}^2 + z_{0}^2}$. The new handle position at time $t_{1}$ is $(x_{1},y_{1},z_{1})$, and the new handle distance is $\rho_{t} = \sqrt{x_{1}^2 + z_{1}^2}$.
+Let $(x_{0},y_{0},z_{0})$ be the initial handle position at time $t_{0}$ when the deformation starts, and we can calculate the initial radial distance of the handle from y-axis: $\rho_{0} = \sqrt{x_{0}^2 + z_{0}^2}$. The new handle position at time $t_{1}$ is $(x_{1},y_{1},z_{1})$, and the new radial distance is $\rho_{t} = \sqrt{x_{1}^2 + z_{1}^2}$.
 % vertical dist
-When a user pressed the trigger on the motion controller while the handle touched the mesh, the vertical distance $d_{i,j}$ between the handle and each vertex:
+When the user presses the trigger button on the controller while the handle touches the mesh, the vertical distance $d_{i,j}$ between the handle and each vertex $\mathbf{v}_{i,j}$ can be computed as:
 \begin{equation}
 d_{i,j} = |y_{0} - y_{i,j}|
 \end{equation}
-
-In our system, outer radius $R_{o}$ and inner radius $R_{i}$ are two key parameters affecting deformation, which define the moving region and fixed region. The deformation region should deform in an intuitive and smooth manner. Note that when $r_{0} = r_{i}$, it is possible to create sharp features on the clay:
+where $y_{i,j}$ is the height of $\mathbf{v}_{i,j}$.
+In our system, outer range $R_{O}$ and inner range $R_{I}$ are two key parameters affecting deformation effect, which divides the mesh into three regions: fixed region, moving region and  deformation region.
+The fixed region will keep constant during the deformation, where $d_{i,j} > R_{O}$; the moving region will follow the movement of the handle, where $d_{i,j} < R_{I}$; and the deformation region will be affected based on the weights, where $R_{I} < d_{i,j} < R_{O}$.
+%The deformation region should deform in an intuitive and smooth manner.
+Note that when $R_{I} = 0$, the deformation will go in a smooth way; when $R_{I} = R_{O}$, it is possible to create sharp features on the clay:
 \begin{equation}
 \Delta r_{i,j} = \begin{cases}
-\rho_{t} - \rho_{0} &  d_{i,j} < R_{i} \\
-0 &  d_{i,j} > R_{o} \\
-(\rho_{t} - \rho_{0}) \cdot w_{i,j} &  R_{i} < d_{i,j} < R_{o}
+\rho_{t} - \rho_{0} &  d_{i,j} < R_{I} \\
+0 &  d_{i,j} > R_{O} \\
+(\rho_{t} - \rho_{0}) \cdot w_{i,j} &  R_{I} < d_{i,j} < R_{O}
 \end{cases}
 \end{equation}
 
 %get weight from falloff curve
-A falloff curve is needed in order to get smooth deformation effect when calculating weights: $w_{i,j} = f(t)$. In order to efficiently calculate the weights, we choose a cubic polynomial function $f(t) = at^3 + bt^2 + ct + d$ as the falloff function, we have:
+A falloff curve is needed in order to get smooth deformation effect when calculating weights: $w_{i,j} = f(t)$.
+There are many ways to select a falloff functions for the weights, which needs to satisfy these requirements: (i) f(0) = 1 , (ii) f(1) = 0 and (iii) f'(0) = f'(1) = 0.
+In order to efficiently calculate the weights, we choose a cubic polynomial function $f(t) = at^3 + bt^2 + ct + d$ as the weight falloff function, we have:
 \begin{equation}
 \begin{aligned}
 \label{equation:falloff}
@@ -447,7 +450,7 @@ r'_{i,j} =
 \sum_{k=1}^N r_{k}
 + (1 - \mu)  r_{i,j}
 \end{equation}
-where $N$ is the number of adjacent vertices of $\mathbf{v}_{i,j}$; $\mu \in [0,1]$ is a factor controlling the radial smoothing effect.
+where $N$ is the number of adjacent vertices of $\mathbf{v}_{i,j}$; $\mu \in [0,1]$ is a factor controlling the smoothing effect.
 Only the vertices within the range of the handle will be affected.
 As a result, users can control the handle position and adjust the outer range of the handle to apply smoothing on specific areas interactively on the mesh.
 
@@ -462,7 +465,7 @@ As a result, users can control the handle position and adjust the outer range of
 \end{figure*}
 
 %the system in a virtual studio - pottery wheel
-In our implementation, we use HTC Vive VR system \cite{website:vive}, which includes a head-mounted display and two hand-held controllers to track user head orientation and bimanual movement (Figure \ref{fig:ui}).
+EasyPot is designed as a workshop built in a virtual environment. In our implementation, we use HTC Vive VR system \cite{website:vive}, which includes a head-mounted display and two hand-held controllers to track user head orientation and bimanual movement (Figure \ref{fig:ui}).
 The goal of our system is not only to provide realistic experience in pottery creation, but also to provide convenient operations to improve the efficiency of pottery design. 
 Jacob et al. \cite{Jacob2008Reality} summarized that the designer's goal should be to allow the user to perform realistic tasks realistically, to provide additional non real-world functionality, and to use analogies for these commands whenever possible.
 As a result, our system offers several operations in VR for pottery design.
