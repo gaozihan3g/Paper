@@ -148,9 +148,9 @@ Finally, discussions for the system are given in Section 7, followed by the conc
 \section{Related Work}
 \label{sec:2}
 
-\subsection{Bimanual Interaction}
+\subsection{Bimanual Interactions}
 \label{sec:2.1}
-Bimanual interaction has been a popular research field, which can accomplish a variety of tasks in both physical and virtual environments.
+Bimanual interactions has been a popular research field, which can accomplish a variety of tasks in both physical and virtual environments.
 In terms of mechanisms, bimanual interaction can be classified into two categories: bare-hand based interactions and instrument based interactions.
 
 There are a great number of research efforts \cite{walter2014cuenesics,cui2016exploration,ramani2015gesture,murugappan2013handy,han2014virtual} on bare-hand based interactions using depth camera such as Kinect, Leap Motion, etc.
@@ -465,35 +465,35 @@ As a result, users can control the handle position and adjust the outer range of
 \end{figure*}
 
 %the system in a virtual studio - pottery wheel
-EasyPot is designed as a workshop built in a virtual environment. In our implementation, we use HTC Vive VR system \cite{website:vive}, which includes a head-mounted display and two hand-held controllers to track user head orientation and bimanual movement (Figure \ref{fig:ui}).
+EasyPot is designed as a pottery workshop built in a virtual environment. In our implementation, we use a HTC Vive VR system \cite{website:vive}, which includes a head-mounted display and two hand-held controllers to track user head orientation and bimanual movement (Figure \ref{fig:ui}).
 The goal of our system is not only to provide realistic experience in pottery creation, but also to provide convenient operations to improve the efficiency of pottery design. 
 Jacob et al. \cite{Jacob2008Reality} summarized that the designer's goal should be to allow the user to perform realistic tasks realistically, to provide additional non real-world functionality, and to use analogies for these commands whenever possible.
 As a result, our system offers several operations in VR for pottery design.
-
-%[descriptions]
-%buttons on the side of the pottery wheel
-
+The buttons on the controllers are assigned with different functionalities for convenience. The user can control deformation parameters with dominant hand, and perform undo and redo with non-dominant hand.
+The mesh reset button and mesh export button are designed on the side of the pottery wheel, as they are not frequently used during the work process, which could prevent user errors.
 There are four main operations supported by our system:
 
-\paragraph{Mesh Reset}
-Whenever a user touch this button, the generated mesh on the pottery wheel will be reset to initial state. Since the shape is randomized, the user can keep getting a new shape until she is satisfied with the shape.
-
 \paragraph{Parameter Adjustment}
-The user can adjust the outer range by pressing the upper and lower part of the pad on controller, which controls the influence area. The inner ratio can be adjusted by pressing left and right part of the pad controlling the smoothness of deformation.
-
+Parameter adjustment allows the user to control the deformation effect.
+The`1 user can adjust the outer range by pressing the upper and lower part of the pad on controller, which controls the influence area. The inner range can be adjusted by pressing left and right part of the pad controlling the smoothness of deformation. This function is designed to activate using dominant hand since parameter adjustment is frequently used during the process. Users can adjust the inner and outer ranges while get immidiate visual feedback from the size of the sphere.
 
 \paragraph{Undo/Redo}
-Undo/redo is an important interactive feature whose absence seriously degrades the usability of an interactive program.\cite{choudhary1995general} It provides automatic support for recovery from user errors and misunderstandings as well as a mechanism for exploring alternatives. Our system provides capturing the state of the program before user actions.
+Undo and redo is an important interactive feature whose absence seriously degrades the usability of an interactive program \cite{choudhary1995general}. It provides automatic support for recovery from user errors and misunderstandings as well as a mechanism for exploring alternatives. Our system provides capturing the state of the program before user actions.
+Undo and redo buttons are placed on non-dominant hand controller, which allows user to revert changes made on the clay.
 
-\paragraph{Mesh Export}
-Our system can encode the mesh data into an OBJ file, and save the file on the disk, which can be used for 3D printing.
+\paragraph{Mesh Reset/Export}
+Mesh reset allows users to start over from the beginning.
+Whenever a user touch this button, the generated mesh on the pottery wheel will be reset to initial state. Since the shape is randomized, the user can keep getting a new shape until she is satisfied with the shape.
+When the virtual pot is finished, the mesh should be able to export for further use. Our system can encode the mesh data into an OBJ file, and save the file on the disk. The exported OBJ file can be used for 3D printing.
 
-\subsection{System Feedback}
+\subsection{System Feedbacks}
 \label{sec:4.4}
-Effective feedback can notify user the current state of the system. Feedbacks in our system can be classified into two categories: visual feedback and haptic feedback.
-\paragraph{Visual Feedback}
+Effective feedbacks can notify user the current state of the system. Feedbacks in our system can be classified into two categories: visual feedbacks and haptic feedbacks.
+
+\paragraph{Visual Feedbacks}
 In a VR environment, it is not so easy for users to perceive if her hands have touched anything. Hence, our system adds visual feedback on both virtual hands, which will be highlighted when touching the clay (Figure \ref{fig:highlight}).
-\paragraph{Haptic Feedback}
+
+\paragraph{Haptic Feedbacks}
 Unlike the bare hand experience, the instrument based interaction can provide haptic feedbacks, adding realistic feel in VR environments. In our system, a haptic pulse has been added to a controller when that controller has touched the clay. During any mesh editing process, we add movement resistance feedback based on the movement speed of each hand. The frequency of the haptic feedback is modeled as the following equation:
 \begin{equation}
 k = k_{min} + f_{Clamp}(\frac{ \| \mathbf{p'} - \mathbf{p}_{0} \|}{d_{max}}) \cdot (k_{max} - k_{min})
@@ -513,13 +513,13 @@ where $k_{min}$ and $k_{max}$ are predefined minimum and maximum frequency value
 \label{sec:5}
 
 %platform
-We have implemented EasyPot using Unity3D \cite{website:unity} game engine. We built our system on a HTC Vive \cite{website:vive} VR system with a PC (2.10 GHz Dual Core CPU, 16 GB RAM and NVIDIA GeForce GTX 1080 graphics card) running 64-bit Windows 10 Professional.
+We have implemented EasyPot using Unity3D \cite{website:unity} game engine. EasyPot is built on a HTC Vive VR system with a PC (2.10 GHz Dual Core CPU, 16 GB RAM and NVIDIA GeForce GTX 1080 graphics card) running 64-bit Windows 10 Professional.
 
-In order to get performance statistics of the mesh generator, we tested EasyPot to generate 4 models with different resolutions.
+In order to get performance statistics of the mesh generator, EasyPot is tested to generate 4 models with different resolutions.
 Based on the common size of clay placed on pottery wheels, we set the height 0.2 units with the radius 0.15 units.
-We set the outer radius of handle 0.2 units, and the inner ratio of handle 0\% to get smooth deformation effect as the process begins. The centring parameter $\lambda$ and smoothing parameter $\mu$ are set 0.5 and 0.7 respectively to damping the deformation. The parameters for Perlin noise generation are listed in Table \ref{tab:1}. These parameters are adjusted to get a realistic look of the clay.
+The outer range of the handles is set to 0.2 units, and the inner range is set to 0 to get smooth deformation effect as the process begins. The centring parameter $\lambda$ and smoothing parameter $\mu$ are set to 0.5 and 0.7 respectively, in order to damp the deformation. The parameters for Perlin noise generation are listed in Table \ref{tab:1}. These parameters are fine tuned to get a realistic look of the clay.
 %tables
-Table \ref{tab:2} demonstrates statistics based on different mesh solutions. Higher resolution require more time, since more vertices and triangles need to be calculated and assigned. In general, the performance of mesh generator is sufficient for the requirement in EasyPot.
+Table \ref{tab:2} demonstrates statistics based on different mesh solutions. Higher resolution require more generation time, since more vertices and triangles need to be calculated and assigned. In general, the performance of mesh generator is sufficient for the requirement in EasyPot.
 
 %[noise parameters]
 % For tables use
