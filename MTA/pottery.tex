@@ -40,9 +40,7 @@
 %
 \begin{document}
 
-%\title{EasyPot: a Virtual Pottery System with Handheld Haptic Devices
-%\title{EasyPot: Interactive Modeling of Virtual Pottery with Handheld Haptic Devices
-\title{EasyPot: Interactive Modeling for Virtual Pottery with Handheld Haptic Devices
+\title{RealPot: a Realistic Virtual Pottery System with Handheld Haptic Devices
 %\thanks{Grants or other notes
 %about the article that should go on the front page should be
 %placed here. General acknowledgments should be placed at the end of the article.}
@@ -82,7 +80,7 @@ Bingyang Li
 \maketitle
 
 \begin{abstract}
-We present EasyPot, an interactive virtual reality (VR) modeling system that allows novice users to create virtual pottery works by bimanual interactions via hand-held motion controllers.
+We present \textbf{RealPot}, a realistic virtual pottery system in VR that allows novice users and children to create virtual pottery works by bimanual interactions via hand-held haptic motion controllers.
 Our system consists of two major components: an automatic mesh generator and an interactive model editor.
 The mesh generator can procedurally generate a realistic clay mesh by adding Perlin Noise. With the interactive pottery model editor, the user can shape the virtual clay in realtime intuitively to design virtual pots.
 The virtual pots created by our system can be exported as OBJ files and used for 3D printing.
@@ -117,7 +115,8 @@ Moreover, freehand interactions lack haptic feedback, making it difficult for us
 In addition, the deformation parameters cannot be adjusted interactively by the users, which limits the effects of deformation.
 
 %[design goals: 1. simple 2. robust/realistic]
-In this paper, we present EasyPot, a VR system that allows users to design virtual pottery models from their hand movement using hand-held motion controllers. There are three major design goals for EasyPot:
+In this paper, we present RealPot, a VR system that allows users to design virtual pottery models from their hand movements using hand-held haptic motion controllers.
+There are three major design goals for RealPot:
 %simple and reliable
 (1) design a simple and intuitive interface for novice users to learn pottery skills with minimum cognitive load,
 %realistic
@@ -128,9 +127,9 @@ and (3) provide helpful functionalities such as parameter control, undo/redo to 
 %[design considerations: 1.HCD 2. RBI]
 In order to achieve the design goals, we take the human-centered design approach in our research.
 Oviatt concluded that human-centered design can minimize users’ cognitive load, which effectively frees up mental resources for performing better while also remaining more attuned to the world around them \cite{oviatt2006human}.
-The natural behaviors in real-life pottery creation is fully considered in our system, so that the interface of EasyPot can be more intuitive, easier to learn, and freer of performance errors.
+The natural behaviors in real-life pottery creation is fully considered in our system, so that the interface of RealPot can be more intuitive, easier to learn, and freer of performance errors.
 In addition, Jacob et al. \cite{Jacob2008Reality} summarized that the designer's goal should be to allow the user to perform realistic tasks realistically, to provide additional non real-world functionality, and to use analogies for these commands whenever possible.
-Hence, while EasyPot is designed based on pottery creation process in reality to minimize the effort, convenient functionalities should be provided in our system for efficiency as well.
+Hence, while RealPot is designed based on pottery creation process in reality to minimize the effort, convenient functionalities should be provided in our system for efficiency as well.
 
 %[contributions]
 The main contributions of our works are:
@@ -202,9 +201,9 @@ In contrast to all existing works, our system provides a much realistic workflow
 
 \section{System Overview}
 \label{sec:3}
-EasyPot is an interactive modeling system for virtual pottery based on handheld haptic devices in VR.
+RealPot is an interactive modeling system for virtual pottery based on handheld haptic devices in VR.
 Users can create pottery in our system with bimanual inputs, deforming the virtual clay in realtime.
-EasyPot can export the mesh data as an OBJ file when a pottery work is finished, which can be used in 3D printing.
+RealPot can export the mesh data as an OBJ file when a pottery work is finished, which can be used in 3D printing.
 Our system provide a simulation training environment in virtual worlds, allowing novice users and children to learn pottery skills interactively.
 
 %%%Fig%%% results
@@ -222,7 +221,7 @@ The system architecture is demonstrated in Figure \ref{fig:arc}. When the mesh g
 %%%Fig%%% architecture
 \begin{figure*}
 \includegraphics[width=\textwidth]{fig2}
-\caption{The system architecture of EasyPot.}
+\caption{The system architecture of RealPot.}
 \label{fig:arc}
 \end{figure*}
 
@@ -231,9 +230,9 @@ The system architecture is demonstrated in Figure \ref{fig:arc}. When the mesh g
 \subsection{Workflow}
 \label{sec:3.2}
 In real life, the pottery creation process on a pottery wheel is called \textit{throwing}, where a ball of clay is placed in the centre of a turntable wheel-head, and shaped by a potter.
-To illustrate the pipeline of pottery creation in our system, an example workflow using EasyPot is described as follows.
+To illustrate the pipeline of pottery creation in our system, an example workflow using RealPot is described as follows.
 
-When a user starts to use EasyPot, a realistic clay mesh is automatically generated with Perlin noise (Figure \ref{fig:workflow}a, Section \ref{sec:4.1}). 
+When a user starts to use RealPot, a realistic clay mesh is automatically generated with Perlin noise (Figure \ref{fig:workflow}a, Section \ref{sec:4.1}). 
 Similar to the operation in reality, the user first need to use both hands to make the irregular clay shape into perfect rotational symmetry, which is called \textit{centring} (Figure \ref{fig:workflow}b, Section \ref{sec:4.2.1}).
 The user can control the thickness of the clay (i.e. \textit{opening}) by pressing down the clay to create a hollow in the clay (Figure \ref{fig:workflow}c), 
 and then draw up the walls with two hands moving up together (i.e. \textit{pulling}), controlling the height of the clay (Figure \ref{fig:workflow}d, Section \ref{sec:4.2.2}).
@@ -243,7 +242,7 @@ After the creation process is finished, the user can export the pottery model as
 %%%Fig%%% workflow
 \begin{figure*}
 \includegraphics[width=\textwidth]{fig3}
-\caption{The workflow in EasyPot. (a) The automatically generated clay mesh with Perlin Noise. (b) The mesh is shaped into rotational symmetry by holding both hands. (c) The user controls the thickness of the mesh by pressing down the clay. (d) The user controls the height of the mesh by drawing up the clay wall.(e) The deformation range can be adjusted to get varied deformation effect on different parts. (f) The sharp features on the upper part can be removed by mesh smoothing.}
+\caption{The workflow in RealPot. (a) The automatically generated clay mesh with Perlin Noise. (b) The mesh is shaped into rotational symmetry by holding both hands. (c) The user controls the thickness of the mesh by pressing down the clay. (d) The user controls the height of the mesh by drawing up the clay wall.(e) The deformation range can be adjusted to get varied deformation effect on different parts. (f) The sharp features on the upper part can be removed by mesh smoothing.}
 \label{fig:workflow}
 \end{figure*}
 
@@ -255,7 +254,7 @@ After the creation process is finished, the user can export the pottery model as
 
 Mesh generation is the first step of interactive modeling, and most of virtual pottery systems approximate the initial shape of pottery clay as a primitive cylinder shape \cite{han2007ar,ramani2015gesture,ramani2016extracting}.
 Although this approach is simple to implement, it ignores subtle details of clay, whose irregularity needs to be handled first during the creation process in real life.
-Unlike the existing virtual pottery systems, EasyPot first approximates the initial clay on the pottery wheel as a blending shape of cylinder and semi-ellipsoid, then adds Perlin noises to the basic clay, in order to simulate realistic clay features in reality.
+Unlike the existing virtual pottery systems, RealPot first approximates the initial clay on the pottery wheel as a blending shape of cylinder and semi-ellipsoid, then adds Perlin noises to the basic clay, in order to simulate realistic clay features in reality.
 
 \paragraph{Basic Clay} The clay mesh is described as a generalized cylinder, whose resolution can be defined by axis segments $s_{a}$ and height segments $s_{h}$. Given radius $r$ and height $h$, our system can generate primitive mesh of cylinder and semi-ellipsoid respectively (Figure \ref{fig:base}).
 For each vertex in the mesh, a $m \times n$ matrix $M$ is used to store radius values, where number of row $m = s_{h} + 1$ and the number of column $n = s_{a}$ respectively. The base radius $r_{base_{i}}$ of each vertex $\mathbf{v}_{i,j}$ in row $i$ can be calculated as: 
@@ -318,7 +317,7 @@ r_{i,j} sin \theta_{j}\right]^T
 \end{figure*}
 
 \paragraph{Inner Vertices} To create 3D printing oriented pottery models, our system needs to generate watertight 3D models with thickness.
-To accomplish that, EasyPot generates inner and bottom sides based on the outer side mesh. The vertices on inner side can be denoted as:
+To accomplish that, RealPot generates inner and bottom sides based on the outer side mesh. The vertices on inner side can be denoted as:
 
 \begin{equation}
 \label{eqn:v'}
@@ -353,7 +352,7 @@ Vertices for inner-bottom and outer-bottom sides will be then generated accordin
 \label{sec:4.2}
 After observing and analyzing several real-life pottery throwing videos, we put mesh operations into 4 categories: (1) symmetry control, (2) height/thickness control, (3) mesh deformation and (4) mesh smoothing. These operations will be discussed in detail in the following sections.
 Since any clay mesh $C$ can be generated from key parameters including height $h$, thickness $t$ and radius matrix $M$, a mesh generation function is constructed: $ C =  g(h, t, M) $, which can be used to update the mesh data as well.
-In our approach, EasyPot first modifies key parameters of the clay according to user interactions, then updates mesh data $C$  in realtime based on these parameters using the mesh generation function.
+In our approach, RealPot first modifies key parameters of the clay according to user interactions, then updates mesh data $C$  in realtime based on these parameters using the mesh generation function.
 
 \subsubsection{Rotational Symmetry Control}
 \label{sec:4.2.1}
@@ -396,7 +395,7 @@ where $h_{0}$ and $\beta_{0}$ are initial height and thickness ratio values befo
 In this section, interactive deformation in our system will be discussed. According to \cite{botsch2010polygon}, this topic is challenging since complex mathematical formulations (1) have to be hidden behind an intuitive user interface and (2) have to be implemented in a sufficiently efficient and robust manner to allow for interactive applications.
 
 In our approach, a cylindrical coordinate system is used to specify the position for each vertex, where y-axis is the reference axis. For any point $P$ in the coordinate system, we use$(\rho, \phi, y)$ to denote the position, where the radial distance $\rho$ is the Euclidean distance from the y-axis to the point P; $\phi$ is the azimuth; $y$ is the height of point P from xz-plane.
-Due to rotational symmetry in virtual pottery, EasyPot modifies the $\rho$ for each vertex while keeping $\phi$ and $y$ constant. Thus, the deformation problem is turned into how to calculate the new radius $\rho'_{i,j}$ based on hand movement:
+Due to rotational symmetry in virtual pottery, RealPot modifies the $\rho$ for each vertex while keeping $\phi$ and $y$ constant. Thus, the deformation problem is turned into how to calculate the new radius $\rho'_{i,j}$ based on hand movement:
 \begin{equation}
 \rho'_{i,j} = \rho_{i,j} + \Delta \rho_{i,j}
 \end{equation}
@@ -463,12 +462,12 @@ As a result, users can control the handle position and adjust the outer range $R
 %%%Fig%%% UI
 \begin{figure*}
 \includegraphics[width=\textwidth]{fig9}
-\caption{The user interface of our system. (a) The virtual pottery wheel in the virtual space. (b) The controller button configuration of EasyPot. (c) The button layout of left Controller Pad. (d) The button layout of right Controller Pad.}
+\caption{The user interface of our system. (a) The virtual pottery wheel in the virtual space. (b) The controller button configuration of RealPot. (c) The button layout of left Controller Pad. (d) The button layout of right Controller Pad.}
 \label{fig:ui}
 \end{figure*}
 
 %the system in a virtual studio - pottery wheel
-EasyPot is designed as a pottery workshop built in a virtual environment. In our implementation, we use a HTC Vive VR system \cite{website:vive}, which includes a head-mounted display and two hand-held controllers to track user head orientation and bimanual movement (Figure \ref{fig:ui}).
+RealPot is designed as a pottery workshop built in a virtual environment. In our implementation, we use a HTC Vive VR system \cite{website:vive}, which includes a head-mounted display and two hand-held controllers to track user head orientation and bimanual movement (Figure \ref{fig:ui}).
 The goal of our system is not only to provide realistic experience in pottery creation, but also to provide convenient operations to improve the efficiency of pottery design. 
 Jacob et al. \cite{Jacob2008Reality} summarized that the designer's goal should be to allow the user to perform realistic tasks realistically, to provide additional non real-world functionality, and to use analogies for these commands whenever possible.
 As a result, our system offers several operations in VR for pottery design.
@@ -481,7 +480,7 @@ Parameter adjustment allows the user to control the deformation effect.
 The user can adjust the outer range $R_{O}$ by pressing the upper and lower part of the pad on controller, which controls the influence area. The inner range $R_{I}$ can be adjusted by pressing left and right part of the pad controlling the radio of the inner range. This function is designed to activate using dominant hand since parameter adjustment is frequently used during the process. Users can adjust the inner and outer ranges while get immidiate visual feedback from the size of the sphere.
 
 \paragraph{Undo/Redo}
-EasyPot allows users to revert changes using undo and redo, which provides automatic support for recovery from user errors and misunderstandings as well as a mechanism for exploring alternatives.
+RealPot allows users to revert changes using undo and redo, which provides automatic support for recovery from user errors and misunderstandings as well as a mechanism for exploring alternatives.
 Undo and redo is an important interactive feature whose absence seriously degrades the usability of an interactive program \cite{choudhary1995general}.
 %Our system provides capturing the state of the program before user actions.
 Undo and redo buttons are placed on non-dominant hand controller, which allows user to revert changes made on the clay easily.
@@ -518,13 +517,13 @@ where $k_{min}$ and $k_{max}$ are predefined minimum and maximum frequency value
 \label{sec:5}
 
 %platform
-We have implemented EasyPot using Unity3D \cite{website:unity} game engine. EasyPot is built on a HTC Vive VR system with a PC (2.10 GHz Dual Core CPU, 16 GB RAM and NVIDIA GeForce GTX 1080 graphics card) running 64-bit Windows 10 Professional.
+We have implemented RealPot using Unity3D \cite{website:unity} game engine. RealPot is built on a HTC Vive VR system with a PC (2.10 GHz Dual Core CPU, 16 GB RAM and NVIDIA GeForce GTX 1080 graphics card) running 64-bit Windows 10 Professional.
 
-In order to get performance statistics of the mesh generator, EasyPot is tested to generate 4 models with different resolutions.
+In order to get performance statistics of the mesh generator, RealPot is tested to generate 4 models with different resolutions.
 Based on the common size of clay placed on pottery wheels, we set the height 0.2 units with the radius 0.15 units.
 The outer range of the handles is set to 0.2 units, and the inner range is set to 0 to get smooth deformation effect as the process begins. The centring parameter $\lambda$, height parameter $\gamma$ and smoothing parameter $\mu$ are set to 0.5, 0.4 and 0.7 respectively, in order to get a more realistic deformation via damping. The parameters for Perlin noise generation are listed in Table \ref{tab:1}. These parameters are fine tuned to get a realistic look of the clay.
 %tables
-Table \ref{tab:2} demonstrates statistics based on different mesh solutions. Higher resolution require more generation time, since more vertices and triangles need to be calculated and assigned. In general, the performance of mesh generator is sufficient for the requirement in EasyPot.
+Table \ref{tab:2} demonstrates statistics based on different mesh solutions. Higher resolution require more generation time, since more vertices and triangles need to be calculated and assigned. In general, the performance of mesh generator is sufficient for the requirement in RealPot.
 
 %[noise parameters]
 % For tables use
@@ -574,19 +573,19 @@ In order to compare our system with prior CAD systems that can design virtual po
 \label{sec:6.1}
 The three evaluated systems were as follows:
 
-\paragraph{EasyPot}: Our virtual pottery tool based on HTC Vive VR system. The user can shape the virtual clay with bimanual spatial interaction.
+\paragraph{RealPot}: Our virtual pottery tool based on HTC Vive VR system. The user can shape the virtual clay with bimanual spatial interaction.
 \paragraph{Let’s Create! Pottery}: A touchscreen-based pottery creation tool on mobile devices. Users can interactively create pottery models by finger swiping on the screen.
 \paragraph{Autodesk Maya}: A traditional desktop 3D modeling system, which provides a set of powerful tools for professional 3D artists. The user can edit vertex, edge, face etc. with mouse and keyboard.
 
 Although the three systems are different, we focus on comparing them based on their similarities and workflows.
-%EasyPot vs Maya
-To investigate the influence of modeling pipeline, we compare EasyPot and Autodesk Maya since they both support 3D modeling. They differ in workflow to create and edit meshes. While EasyPot can automatically generate a mesh for deformation with motion controllers, Maya needs to create a mesh from a primitive cylinder in order to edit in vertex mode, edge mode or face mode with mouse and keyboard. 
-%EasyPot vs Lets
-On the other hand, EasyPot and LCP have similarities in their workflows with intuitive interactions. They both allow users deform the mesh interactively with natural user interfaces. While EasyPot enables parameter control and spatial interaction, LCP has no parameter control and provides touchscreen-based experience.
+%RealPot vs Maya
+To investigate the influence of modeling pipeline, we compare RealPot and Autodesk Maya since they both support 3D modeling. They differ in workflow to create and edit meshes. While RealPot can automatically generate a mesh for deformation with motion controllers, Maya needs to create a mesh from a primitive cylinder in order to edit in vertex mode, edge mode or face mode with mouse and keyboard. 
+%RealPot vs Lets
+On the other hand, RealPot and LCP have similarities in their workflows with intuitive interactions. They both allow users deform the mesh interactively with natural user interfaces. While RealPot enables parameter control and spatial interaction, LCP has no parameter control and provides touchscreen-based experience.
 %%%Fig%%% Sys
 \begin{figure*}
 \includegraphics[width=\textwidth]{fig11}
-\caption{The three systems used in our user study. (a) A virtual reality system EasyPot proposed by us. (b) A touchscreen-based system Let's Create! Pottery. (c) A desktop modeling tool Autodesk Maya.}
+\caption{The three systems used in our user study. (a) A virtual reality system RealPot proposed by us. (b) A touchscreen-based system Let's Create! Pottery. (c) A desktop modeling tool Autodesk Maya.}
 \label{fig:sys}
 \end{figure*}
 
@@ -609,7 +608,7 @@ On the other hand, EasyPot and LCP have similarities in their workflows with int
 
 \paragraph{Task 1} After the 15-minute practice of the three systems, each subject need to accomplish 3 tasks:
 
-\textbf{T}\textsubscript{1}: Given a sequence of reference pot models as target shapes, the subjects were asked to create same pots from irregular generated meshes using EasyPot. 
+\textbf{T}\textsubscript{1}: Given a sequence of reference pot models as target shapes, the subjects were asked to create same pots from irregular generated meshes using RealPot. 
 
 \textbf{T}\textsubscript{2}: Given reference pot models of the same order in \textbf{T}\textsubscript{1}, the subjects need to model these pots using Let's Create! Pottery on an iPad Pro.
 
@@ -630,7 +629,7 @@ We intended to allow our subjects to experience those differences and similariti
 
 \paragraph{Task 2} After finishing tasks \textbf{T}\textsubscript{1} to \textbf{T}\textsubscript{3}, each subject need to accomplish 3 more tasks:
 
-\textbf{T}\textsubscript{4}: Use EasyPot to make a creative pottery model freely.
+\textbf{T}\textsubscript{4}: Use RealPot to make a creative pottery model freely.
 
 \textbf{T}\textsubscript{5}: Use Let's Create! Pottery to make a creative pottery model freely.
 
@@ -669,10 +668,10 @@ Figure \ref{fig:ranking} shows the vote results of \textbf{Q}\textsubscript{1}, 
 
 %mental/physical/temporal
 According to Figure \ref{fig:tlx}, we can get some findings. 
-Firstly, the mental demand values of \textbf{T}\textsubscript{1} (M = 2.52) and \textbf{T}\textsubscript{2} (M = 2.11) were almost the same and much lower than the value of \textbf{T}\textsubscript{3} (M = 4.92). Similarly, the temporal demand value of \textbf{T}\textsubscript{3} (M = 5.77) was much higher than the values of \textbf{T}\textsubscript{1} (M = 3.21) and \textbf{T}\textsubscript{2} (M = 2.98). This indicated that EasyPot and LCP were easier to use and less time-consuming than Maya. Unsurprisingly, the physical demand value of \textbf{T}\textsubscript{1} (M = 2.89) is slightly higher than \textbf{T}\textsubscript{2} (M = 1.86) and \textbf{T}\textsubscript{3} (M = 2.31), which means interactions based spatial movements are slightly laborious than touchscreen and keyboard/mouse interactions.
+Firstly, the mental demand values of \textbf{T}\textsubscript{1} (M = 2.52) and \textbf{T}\textsubscript{2} (M = 2.11) were almost the same and much lower than the value of \textbf{T}\textsubscript{3} (M = 4.92). Similarly, the temporal demand value of \textbf{T}\textsubscript{3} (M = 5.77) was much higher than the values of \textbf{T}\textsubscript{1} (M = 3.21) and \textbf{T}\textsubscript{2} (M = 2.98). This indicated that RealPot and LCP were easier to use and less time-consuming than Maya. Unsurprisingly, the physical demand value of \textbf{T}\textsubscript{1} (M = 2.89) is slightly higher than \textbf{T}\textsubscript{2} (M = 1.86) and \textbf{T}\textsubscript{3} (M = 2.31), which means interactions based spatial movements are slightly laborious than touchscreen and keyboard/mouse interactions.
 
 %[Maya - hard]
-Maya showed much higher values in effort (M = 6.87) and frustration (M = 7.30) and lower value in performance (M = 4.08) compared with EasyPot and LCP.
+Maya showed much higher values in effort (M = 6.87) and frustration (M = 7.30) and lower value in performance (M = 4.08) compared with RealPot and LCP.
 Since most subjects in the user study have no 3D modeling software experience, the complex user interface in Maya makes it challenging for these novice users to memorize where to find the commands they need, rendering a high effort.
 Although keyboard-mouse based interaction allows precise controls with low physical demand, many subjects struggled with selecting and manipulating vertices and faces accurately, which caused high user frustration. As a result, most subjects were not satisfied with their performances in \textbf{T}\textsubscript{3}.
 
@@ -689,12 +688,12 @@ Surprisingly, we found that it was not as satisfied as we predicted for the subj
 %[user preference][enjoyable and intuitive]
 The voting results in Figure \ref{fig:ranking} demonstrated the ease of learning, the support of creativity and overall preference of the three systems.
 %ease
-Compared with the complex interfaces and the keyboard and mouse operations in Maya, EasyPot and LCP provides simple interfaces and intuitive interactions, allowing users get familiar with the interaction with ease.
+Compared with the complex interfaces and the keyboard and mouse operations in Maya, RealPot and LCP provides simple interfaces and intuitive interactions, allowing users get familiar with the interaction with ease.
 %creativity
-In addition, most subjects considered EasyPot stimulate their creativity and imagination the most. From their feedbacks, we found that spatial interactions in virtual reality context gave them a novel and realistic way to interact with virtual clay when using EasyPot. Moreover, EasyPot provides more powerful operations such as adjustable deformation range, thickness control and smoothing than LCP, allowing subjects creating characteristic shapes.
+In addition, most subjects considered RealPot stimulate their creativity and imagination the most. From their feedbacks, we found that spatial interactions in virtual reality context gave them a novel and realistic way to interact with virtual clay when using RealPot. Moreover, RealPot provides more powerful operations such as adjustable deformation range, thickness control and smoothing than LCP, allowing subjects creating characteristic shapes.
 
 %overall-enjoyable, useful for training
-In \textbf{Q}\textsubscript{3}, EasyPot became the favorite virtual pottery system for the subjects. From user feedbacks, we found that EasyPot provided the subjects with most enjoyable experience among the three systems, which also has a balance of having simple interfaces and useful functionalities. In addition, the natural bimanual interactions in EasyPot are closely related to the operations in reality pottery, making it an ideal training simulation tool for pottery.
+In \textbf{Q}\textsubscript{3}, RealPot became the favorite virtual pottery system for the subjects. From user feedbacks, we found that RealPot provided the subjects with most enjoyable experience among the three systems, which also has a balance of having simple interfaces and useful functionalities. In addition, the natural bimanual interactions in RealPot are closely related to the operations in reality pottery, making it an ideal training simulation tool for pottery.
 
 \section{Discussions}
 \label{sec:7}
@@ -703,11 +702,11 @@ We collected user feedbacks after the subjects had used our system. In summary, 
 
 %[Suggestions]
 During our user study, we found that the undo/redo functionality is not used frequently as we expected.
-The reason might be that the changes for each operation are not so difficult to revert, that some users just manually fix the chagne without using undo/redo shortcut provided by EasyPot.
+The reason might be that the changes for each operation are not so difficult to revert, that some users just manually fix the chagne without using undo/redo shortcut provided by RealPot.
 
-We also asked their suggestions for the future features they wanted to see in EasyPot.
+We also asked their suggestions for the future features they wanted to see in RealPot.
 A few subjects expressed their wishes to add coloring feature, which allows them decorate the pots with colors and patterns.
-At the end of our user study, many subjects said they would like to try EasyPot one more time.
+At the end of our user study, many subjects said they would like to try RealPot one more time.
 
 %[limitations]
 Our system still has its limitations. First, the physical size of the motion controllers sometimes affect the deformation in bimanual mode, especially when the part of the clay is narrow that two controllers may collide with each other. For example, when subjects working on the neck of clay, it will be difficult to edit with two controllers. This problem can be easily solved by providing user one-hand deformation mode. We plan to use data gloves to avoid these situations in the future.
@@ -720,10 +719,10 @@ Another limitation of our system is that it cannot adding handles to the pottery
 \section{Conclusions}
 \label{sec:8}
 
-We present EasyPot, a realtime pottery modeling system in VR.
+We present RealPot, a realistic virtual pottery system in VR.
 Closely linked to the pottery creation experience real life, our system enables users to manipulate the mesh in realtime with two hands, allowing them creating a variety of pottery models from realistic generated clay meshes.
-As an educational tool, EasyPot can help novice users and children to learn real-life pottery creation process in virtual environments, who can fabricate their works using our system with a 3D printer.
-Our results have shown that EasyPot has relative advantage compared with traditional desktop 3D modeling experience (Maya) and touchscreen experience (Let's Create! Pottery).
+As an educational tool, RealPot can help novice users and children to learn real-life pottery creation process in virtual environments, who can fabricate their works using our system with a 3D printer.
+Our results have shown that RealPot has relative advantage compared with traditional desktop 3D modeling experience (Maya) and touchscreen experience (Let's Create! Pottery).
 A possible extension of our system is to support interactive coloring functionalities in the future, which can enhance the artistry of user generated pottery works.
 
 
