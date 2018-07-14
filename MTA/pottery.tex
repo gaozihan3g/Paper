@@ -80,7 +80,7 @@ Bingyang Li
 \maketitle
 
 \begin{abstract}
-We present \textbf{RealPot}, a realistic virtual pottery system in VR that allows novice users and children to create virtual pottery works by bimanual interactions via hand-held haptic motion controllers.
+We present \textbf{RealPot}, a realistic virtual pottery system in virtual reality (VR) that allows novice users and children to design pottery works by bimanual interactions via hand-held haptic motion controllers.
 Our system consists of two major components: an automatic mesh generator and an interactive model editor.
 The mesh generator can procedurally generate a realistic clay mesh by adding Perlin Noise. With the interactive pottery model editor, the user can shape the virtual clay in realtime intuitively to design virtual pots.
 The virtual pots created by our system can be exported as OBJ files and used for 3D printing.
@@ -421,8 +421,8 @@ Note that when $R_{I} = 0$, the deformation will go in a smooth way; when $R_{I}
 \end{equation}
 
 %get weight from falloff curve
-A falloff curve is needed in order to get smooth deformation effect when calculating weights: $w_{i,j} = f(t)$.
-There are many ways to select a falloff functions for the weights, which needs to satisfy these requirements: (i) f(0) = 1 , (ii) f(1) = 0 and (iii) f'(0) = f'(1) = 0.
+A falloff curve is needed in order to get smooth deformation effect when calculating weights: $w_{i,j} = f(t)$, where $t = (d_{i,j} - R_{I}) / (R_{O} - R_{I})$.
+There are many ways to select a smooth falloff functions for the weights, which needs to satisfy these additional requirements: (i) f(0) = 1 , (ii) f(1) = 0 and (iii) f'(0) = f'(1) = 0.
 In order to efficiently calculate the weights, we choose a cubic polynomial function $f(t) = at^3 + bt^2 + ct + d$ as the weight falloff function, we have:
 \begin{equation}
 \begin{aligned}
@@ -439,7 +439,7 @@ $a = 2, b = -3, c = 0, d = 1$. Therefore, the expression of the falloff function
 %%%Fig%%%
 \begin{figure*}
 \includegraphics[width=\textwidth]{fig8.pdf}
-\caption{(a) The center of the concentric circles is the initial position of the handle. $R_{i}$ and $R_{o}$ define the inner range and outer range respectively. $d_{i,j}$ is the vertical distance between a vertex $\mathbf{v}_{i,j}$ and the handle, which is used for weight calculation. (b) We use a cubic polynomial function $f(t) = 2t^3 - 3t^2 + 1$ as the falloff curve for calculating the weight $w_{i,j}$. }
+\caption{(a) The concentric circles represent the handle, and $R_{I}$ and $R_{O}$ define the inner range and outer range respectively. $d_{i,j}$ is the vertical distance between a vertex $\mathbf{v}_{i,j}$ in the deformation region and the handle, which is used for calculating weight parameter : $t = (d_{i,j} - R_{I}) / (R_{O} - R_{I})$. (b) A cubic polynomial function $f(t) = 2t^3 - 3t^2 + 1, t \in [0,1]$ is used as the falloff curve for calculating the weight $w_{i,j}$. }
 \label{fig:deform}
 \end{figure*}
 
@@ -462,12 +462,12 @@ As a result, users can control the handle position and adjust the outer range $R
 %%%Fig%%% UI
 \begin{figure*}
 \includegraphics[width=\textwidth]{fig9}
-\caption{The user interface of our system. (a) The virtual pottery wheel in the virtual space. (b) The controller button configuration of RealPot. (c) The button layout of left Controller Pad. (d) The button layout of right Controller Pad.}
+\caption{The user interface of our system. (a) The pottery wheel in the virtual space. (b) The controller button configuration of RealPot. (c) The button layout of left controller pad. (d) The button layout of right controller pad.}
 \label{fig:ui}
 \end{figure*}
 
 %the system in a virtual studio - pottery wheel
-RealPot is designed as a pottery workshop built in a virtual environment. In our implementation, we use a HTC Vive VR system \cite{website:vive}, which includes a head-mounted display and two hand-held controllers to track user head orientation and bimanual movement (Figure \ref{fig:ui}).
+RealPot is designed as a pottery studio built in a virtual environment. In our implementation, we use a HTC Vive VR system \cite{website:vive}, which includes a head-mounted display and two hand-held controllers to track user head orientation and bimanual movement (Figure \ref{fig:ui}).
 The goal of our system is not only to provide realistic experience in pottery creation, but also to provide convenient operations to improve the efficiency of pottery design. 
 Jacob et al. \cite{Jacob2008Reality} summarized that the designer's goal should be to allow the user to perform realistic tasks realistically, to provide additional non real-world functionality, and to use analogies for these commands whenever possible.
 As a result, our system offers several operations in VR for pottery design.
@@ -600,7 +600,7 @@ On the other hand, RealPot and LCP have similarities in their workflows with int
 %%%Fig%%%
 \begin{figure*}
 \includegraphics[width=\textwidth]{fig12}
-\caption{The target shapes used in our user study.}
+\caption{The target shapes used in our user study, which have various heights and curvatures.}
 \label{fig:target}
 \end{figure*}
 
@@ -650,7 +650,7 @@ We intended to allow our subjects to experience those differences and similariti
 %%%Fig%%% pots
 \begin{figure*}
 \includegraphics[width=\textwidth]{fig13}
-\caption{The virtual pots created by our system.}
+\caption{The virtual pots designed by our system, which are real-time rendered in Unity3D.}
 \label{fig:pots}
 \end{figure*}
 
