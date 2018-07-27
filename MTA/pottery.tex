@@ -40,7 +40,7 @@
 %
 \begin{document}
 
-\title{RealPot: a realistic virtual pottery system with handheld haptic devices
+\title{RealPot: an immersive virtual pottery system with handheld haptic devices
 %\thanks{Grants or other notes
 %about the article that should go on the front page should be
 %placed here. General acknowledgments should be placed at the end of the article.}
@@ -52,25 +52,32 @@
 \author{Zihan Gao		\and
 		Huiqiang Wang	\and
         Guangsheng Feng	\and
-	Fangfang Guo \and
-Hongwu Lv \and
-Bingyang Li
+		Fangfang Guo 	\and
+		Hongwu Lv 		\and
+		Bingyang Li
 }
 
 %\authorrunning{Short form of author list} % if too long for running head
 
 \institute{Zihan Gao \at
-                Department of Computer Science and Technology, Harbin Engineering University\\
-                \email{gao\_zihan@126.com}           %  \\
+			\email{gao\_zihan@126.com}           %  \\
 %             \emph{Present address:} of F. Author  %  if needed
     \and
            Huiqiang Wang \at
-           Department of Computer Science and Technology, Harbin Engineering University\\
-           \email{wanghuiqiang@hrbeu.edu.cn}
+			\email{wanghuiqiang@hrbeu.edu.cn}
     \and
            Guangsheng Feng \at
-           Department of Computer Science and Technology, Harbin Engineering University\\
-           \email{ica@hrbeu.edu.cn}
+			\email{ica@hrbeu.edu.cn}
+   \and
+           Fangfang Guo \at
+			\email{guofangfang@hrbeu.edu.cn}
+   \and
+           Hongwu Lv \at
+			\email{lvhongwu@hrbeu.edu.cn}
+   \and
+           Bingyang Li \at
+			\email{libingyang@hrbeu.edu.cn}\\
+            College of Computer Science and Technology, Harbin Engineering University
 }
 
 \date{Received: date / Accepted: date}
@@ -80,11 +87,11 @@ Bingyang Li
 \maketitle
 
 \begin{abstract}
-We present \textbf{RealPot}, a realistic virtual pottery system in virtual reality (VR) that allows novice users and children to design pottery works by bimanual interactions via hand-held haptic motion controllers.
+We present \textbf{RealPot}, an immersive virtual pottery system in virtual reality (VR) that allows novice users and children to design pottery works by bimanual interactions via hand-held haptic motion controllers.
 Our system consists of two major components: an automatic mesh generator and an interactive model editor.
 The mesh generator can procedurally generate a realistic clay mesh by adding Perlin Noise. With the interactive pottery model editor, the user can shape the virtual clay in real time intuitively to design virtual pots.
 The virtual pots created by our system can be exported as OBJ files and used for 3D printing.
-The results of our user study has shown that our system requires lower cognitive load compared with desktop modeling experience and allows more creativity than touchscreen based interfaces. Users without real-life pottery experience and 3D modeling knowledge can easily create virtual pottery works with our system.
+The results of our user study has shown that our system requires lower cognitive load compared with desktop modeling experience and allows more creativity than touchscreen-based interfaces. Users without real-life pottery experience and 3D modeling knowledge can easily create virtual pottery works with our system.
 
 %Insert your abstract here. Include keywords, PACS and mathematical
 %subject classification numbers as needed.
@@ -100,27 +107,26 @@ The results of our user study has shown that our system requires lower cognitive
 %[CAD tools - hard to use]
 Pottery is one of the oldest inventions in many civilizations in human history for thousands of years, which is made by shaping clay into heterogeneous forms.
 In recent years, emerging technologies such as 3D printing introduces a new way of pot design, enabling people to fabricate pots in a digital way with the help of Computer Aided Design (CAD) software and 3D printers.
-However, although professional CAD tools (Maya \cite{website:maya}, 3ds Max \cite{website:3dmax}, etc.) provide powerful toolsets and rich features for 3D modeling pipeline, these systems are formidable for novice users and children to learn due to complex user interfaces.
-%This kind of systems limits the creativity of novice users, since it is quite challenging for them to master the tools in a short period of time.
-There are several CAD systems which are specifically developed for pottery design \cite{koutsoudis2009qp,kumar2011wheel}, which can generate 3D meshes based on the values from user keyboard and mouse input. Although having simplified user interfaces comparing with professional tools, the experience of these systems is not intuitive and the operations are far different from the pottery workflow in reality.
+However, although state-of-the-art CAD tools (Maya \cite{website:maya}, 3ds Max \cite{website:3dmax}, etc.) provide powerful toolsets and rich features for 3D modeling pipeline, these systems are formidable for novice users and children to learn due to complex user interfaces.
+There are several desktop CAD systems which are specifically developed for pottery design \cite{koutsoudis2009qp,kumar2011wheel}, which can generate 3D pot meshes based on the values from user keyboard and mouse input. Although having simplified user interfaces comparing with professional tools, the experience of these systems is not intuitive and the operations are far different from the pottery workflow in reality.
 
 %[in-air interaction system - freehand, lacks robustness, feedback and reality]
 To address this situation, some camera-based virtual pottery systems have been developed \cite{ramani2015gesture,murugappan2013handy,han2014virtual}, which provide natural and intuitive user interfaces, allowing users to design pots via freehand interactions.
 These works indeed provide a gentle learning curve, however, they have some common limitations.
 % although simple, hardware limitation
-First, although freehand interactions in these systems are simple, user inputs from depth cameras lack accuracy due to jitter, hindering work efficiency and user experience severely.
+(1) Although freehand interactions in these systems are simple, the imprecision of user inputs from depth cameras hinders work efficiency and user experience.
 %
-Moreover, freehand interactions lack haptic feedback, making it difficult for users to perceive whether they have touched anything in VR environments. In terms of reality, these systems overlook some visual features of clay, namely shape irregularity, thickness, etc., which undermines realistic look and feel in the pot design process.
+(2) In terms of reality, immersion or haptic feedbacks are missing in these systems, where the user experience is less realistic. Moreover, these systems overlook some visual features of clay, namely shape irregularity, thickness, etc., which undermines realistic look and feel in the pot design process.
 %
-In addition, the deformation parameters cannot be adjusted interactively by the users, which limits the effects of deformation.
+(3) The deformation parameters cannot be adjusted interactively by the users, which restricts various possible effects of deformation.
 
 %[design goals: 1. simple 2. robust/realistic]
-In this paper, we present RealPot, a VR system that allows users to design virtual pottery models from their hand movements using hand-held haptic motion controllers.
+In this paper, we present RealPot, an immersive VR system that allows users to design virtual pottery models from their hand movements using hand-held haptic motion controllers in a virtual environment (VE).
 There are three major design goals for RealPot:
 %simple and reliable
 (1) design a simple and intuitive interface for novice users to learn pottery skills with minimum cognitive load,
 %realistic
-(2) create a virtual pottery system that can generate realistic clay meshes with refined haptic feedbacks based on bimanual spatial interactions 
+(2) create an immersive virtual pottery system that can generate realistic clay meshes with refined haptic feedbacks based on bimanual spatial interactions 
 %powerful
 and (3) provide helpful functionalities such as parameter control, undo/redo to support creativities in virtual pottery design.
 
@@ -174,10 +180,10 @@ In our project, HTC Vive system is used in our system, which provides precision,
 \label{sec:2.2}
 Virtual reality has shown great potential for art and design, which not only provides immersive and intuitive interfaces for user, but also creates new art medium, new art form and novel experience \cite{laviola20113d}.
 
-CavePainting \cite{keefe2001cavepainting} is a 3D artistic medium in a fully immersive environment, which enables artists to create spatial paintings with physical props and gestures. Agrawala et al. \cite{agrawala19953d} developed an interface for painting on polygon meshes using a 6DOF space tracker, which provides a natural force feedback for painting, allowing users to place colors on meshes intuitively. MAI Painting Brush++ \cite{otsuki2017brush} is a brush device for virtual painting of 3D virtual objects, where users could take a physical object in the real world and apply virtual paint to it with visual and haptic feedback.
+CavePainting \cite{keefe2001cavepainting} is a 3D artistic medium in a fully immersive VE, which enables artists to create spatial paintings with physical props and gestures. Agrawala et al. \cite{agrawala19953d} developed an interface for painting on polygon meshes using a 6DOF space tracker, which provides a natural force feedback for painting, allowing users to place colors on meshes intuitively. MAI Painting Brush++ \cite{otsuki2017brush} is a brush device for virtual painting of 3D virtual objects, where users could take a physical object in the real world and apply virtual paint to it with visual and haptic feedback.
 Virtual Clay \cite{mcdonnell2001virtual} is a sculpture framework based on subdivision solids and physics-based modeling, which is equipped with natural, haptic based interaction, providing users with a realistic sculpting experience. Sheng et al. \cite{sheng2006interface} proposed an interface for virtual 3D sculpting, which uses camera-based motion tracking technology to track passive markers on the fingers and prop, enabling users to apply operations such as deforming, smoothing, pasting and extruding.
 
-To leverage the novel experience brought by VR, the setup of our system is based on a virtual environment, where users can enjoy the creation process in a immersive way.
+To leverage the novel experience brought by VR, the setup of our system is based on a VE, where users can enjoy the creation process in an immersive way.
 
 \subsection{Virtual Pottery Systems}
 \label{sec:2.3}
@@ -196,7 +202,7 @@ In AR Pottery \cite{han2007ar}, augmented reality has been applied to pottery de
 
 Although the interfaces provided by these systems are not difficult to learn, some realistic features are ignored and the workflow is oversimplified.
 %[design consideration - EDUCATION!!!]
-In contrast to all existing works, our system provides a much realistic workflow and experience, which allows users to manipulate virtual pots through various two-handed spatial interactions, helping novice users and children to understand and learn real life pottery skills in a virtual environment.
+In contrast to all existing works, our system provides a much realistic workflow and experience, which allows users to manipulate virtual pots through various two-handed spatial interactions, helping novice users and children to understand and learn real life pottery skills in a VE.
 
 
 \section{System Overview}
@@ -230,13 +236,14 @@ The system architecture is demonstrated in Figure \ref{fig:arc}. When the mesh g
 \subsection{Workflow}
 \label{sec:3.2}
 In real life, the pottery creation process on a pottery wheel is called \textit{throwing}, where a ball of clay is placed in the center of a turntable wheel-head, and shaped by a potter.
+Some interaction metaphors are used in RealPot, which simulates the operations on real-life pottery.
 To illustrate the pipeline of pottery creation in our system, an example workflow using RealPot is described as follows.
 
 When a user starts to use RealPot, a realistic clay mesh is automatically generated with Perlin noise (Figure \ref{fig:workflow}a, Section \ref{sec:4.1}). 
 Similar to the operation in reality, the user first need to use both hands to make the irregular clay shape into perfect rotational symmetry, which is called \textit{centering} (Figure \ref{fig:workflow}b, Section \ref{sec:4.2.1}).
 The user can control the thickness of the clay (i.e. \textit{opening}) by pressing down the clay to create a hollow in the clay (Figure \ref{fig:workflow}c), 
 and then draw up the walls with two hands moving up together (i.e. \textit{pulling}), controlling the height of the clay (Figure \ref{fig:workflow}d, Section \ref{sec:4.2.2}).
-The system not only allows mesh deformation (Figure \ref{fig:workflow}e, Section \ref{sec:4.2.3}) with different deformation range parameters but also mesh smoothing (Figure \ref{fig:workflow}f, Section \ref{sec:4.2.4}), where the user can remove sharp features in the pot to get ideal shape.
+The system not only allows mesh deforming (Figure \ref{fig:workflow}e, Section \ref{sec:4.2.3}) with different deformation range parameters but also mesh smoothing (Figure \ref{fig:workflow}f, Section \ref{sec:4.2.4}), where the user can remove sharp features in the pot to get an ideal shape.
 After the creation process is finished, the user can export the pottery model as an OBJ file, which can be used for 3D printing.
 
 %%%Fig%%% workflow
@@ -274,7 +281,7 @@ where $\alpha$ is a factor controls the shape blending between a  cylinder (when
 \label{fig:base}
 \end{figure*}
 
-\paragraph{Adding Noise} Although the initial shape of clay can be roughly approximated like a rotational symmetric shape, in real life, the actual clay shape is not regular, whose irregular features needs to be specially handled during the pottery creation process. To simulate the realistic features, randomness is added to the vertices using Perlin Noise \cite{Perlin1985An}, which is a smooth random method proposed by Ken Perlin in 1985.
+\paragraph{Adding Noise} Although the initial shape of clay can be roughly approximated like a rotational symmetric shape, in real life, the actual clay shape is not regular, whose irregular features needs to be specially treated during the pottery creation process. To simulate the realistic features, randomness is added to the vertices using Perlin Noise \cite{Perlin1985An}, which is a smooth random method proposed by Ken Perlin in 1985.
 In our approach, the center positions for each circular section are randomized first, then Perlin Noise is added to the radii for each circular section and individual vertices.
 
 To add noise to the center for each circular section, random parameters $\phi_{i}$ and $\eta_{c_{i}}$ are used to calculate the new center $\mathbf{O}_{i}$:
@@ -348,11 +355,13 @@ Vertices for inner-bottom and outer-bottom sides will be then generated accordin
 \label{fig:mesh}
 \end{figure}
 
-\subsection{Mesh Processing}
+\subsection{Mesh Editing}
 \label{sec:4.2}
-After observing and analyzing several real-life pottery throwing videos, we put mesh operations into 4 categories: (1) symmetry control, (2) height/thickness control, (3) mesh deformation and (4) mesh smoothing. These operations will be discussed in detail in the following sections.
-Since any clay mesh $C$ can be generated from key parameters including height $h$, thickness $t$ and radius matrix $M$, a mesh generation function is constructed: $ C =  g(h, t, M) $, which can be used to update the mesh data as well.
-In our approach, RealPot first modifies key parameters of the clay according to user interactions, then updates mesh data $C$  in realtime based on these parameters using the mesh generation function.
+After observing and analyzing several real-life pottery throwing videos, we put real-life clay operations into 5 categories: (1) rotational symmetry control, (2) thickness control, (3) height control, (4) mesh deformation and (5) mesh smoothing.
+And we propose 5 interaction metaphors in our system: \textit{centering}, \textit{opening}, \textit{pulling}, \textit{shaping} and \textit{smoothing}, which correspond to the clay operations above.
+These operations will be discussed in detail in the following sections.
+Since any clay mesh $C$ can be generated from key parameters including height $h$, thickness $t$ and radius matrix $M$, a mesh generation function is constructed: $C =  g(h, t, M)$, which can be used to update the mesh data as well.
+In our approach, RealPot first modifies key parameters of the clay according to user interactions, then updates mesh data $C$ in realtime based on these parameters using the mesh generation function.
 
 \subsubsection{Rotational Symmetry Control}
 \label{sec:4.2.1}
@@ -375,7 +384,7 @@ The effect of rotational symmetry control is illustrated in Figure \ref{fig:symm
 \label{fig:symmetry}
 \end{figure*}
 
-\subsubsection{Thickness/Height Control}
+\subsubsection{Thickness and Height Control}
 \label{sec:4.2.2}
 \textit{Opening} (thickness control) and \textit{pulling} (height control) are basic clay operations in pottery throwing process which are done by applying force to clay with both hands. The thickness can be adjusted by pushing down the top center part of the clay, making a centered hollow into the clay (Figure \ref{fig:workflow}c). The height can be adjusted by both hands drawing up and shaping the walls (Figure \ref{fig:workflow}d).
 Let $\Delta y$ be the mean of $\Delta y_{l}$ and $\Delta y_{r}$, which are left and right vertical hand movement distance respectively. New height $h'$ and new thickness ratio $\beta'$ can be calculated in the following equations:
@@ -400,16 +409,16 @@ Due to rotational symmetry in virtual pottery, RealPot modifies the $\rho$ for e
 \rho'_{i,j} = \rho_{i,j} + \Delta \rho_{i,j}
 \end{equation}
 
-% base on handle radial dist
-Let $(x_{0},y_{0},z_{0})$ be the initial handle position at time $t_{0}$ when the deformation starts, and we can calculate the initial radial distance of the handle from y-axis: $\rho_{0} = \sqrt{x_{0}^2 + z_{0}^2}$. The new handle position at time $t_{1}$ is $(x_{1},y_{1},z_{1})$, and the new radial distance is $\rho_{t} = \sqrt{x_{1}^2 + z_{1}^2}$.
+% base on 3D cursor radial dist
+Let $(x_{0},y_{0},z_{0})$ be the initial 3D cursor position at time $t_{0}$ when the deformation starts, and we can calculate the initial radial distance of the 3D cursor from y-axis: $\rho_{0} = \sqrt{x_{0}^2 + z_{0}^2}$. The new 3D cursor position at time $t_{1}$ is $(x_{1},y_{1},z_{1})$, and the new radial distance is $\rho_{t} = \sqrt{x_{1}^2 + z_{1}^2}$.
 % vertical dist
-When the user presses the trigger button on the controller while the handle touches the mesh, the vertical distance $d_{i,j}$ between the handle and each vertex $\mathbf{v}_{i,j}$ can be computed as:
+When the user presses the trigger button on the controller while the 3D cursor touches the mesh, the vertical distance $d_{i,j}$ between the 3D cursor and each vertex $\mathbf{v}_{i,j}$ can be computed as:
 \begin{equation}
 d_{i,j} = |y_{0} - y_{i,j}|
 \end{equation}
 where $y_{i,j}$ is the height of $\mathbf{v}_{i,j}$.
 In our system, outer range $R_{O}$ and inner range $R_{I}$ are two key parameters affecting deformation effect, which divides the mesh into three regions: fixed region, moving region and  deformation region (Figure \ref{fig:deform}a).
-The fixed region will keep constant during the deformation, where $d_{i,j} > R_{O}$; the moving region will follow the movement of the handle, where $d_{i,j} < R_{I}$; and the deformation region will be affected based on the weights, where $R_{I} < d_{i,j} < R_{O}$.
+The fixed region will keep constant during the deformation, where $d_{i,j} > R_{O}$; the moving region will follow the movement of the 3D cursor, where $d_{i,j} < R_{I}$; and the deformation region will be affected based on the weights, where $R_{I} < d_{i,j} < R_{O}$.
 %The deformation region should deform in an intuitive and smooth manner.
 Note that when $R_{I} = 0$, the deformation will go in a smooth way; when $R_{I} = R_{O}$, it is possible to create sharp features on the clay:
 \begin{equation}
@@ -439,7 +448,7 @@ $a = 2, b = -3, c = 0, d = 1$. Therefore, the expression of the falloff function
 %%%Fig%%%
 \begin{figure*}
 \includegraphics[width=\textwidth]{fig8.pdf}
-\caption{(a) The concentric circles represent the handle, and $R_{I}$ and $R_{O}$ define the inner range and outer range respectively. $d_{i,j}$ is the vertical distance between a vertex $\mathbf{v}_{i,j}$ in the deformation region and the handle, which is used for calculating weight parameter : $t = (d_{i,j} - R_{I}) / (R_{O} - R_{I})$. (b) A cubic polynomial function $f(t) = 2t^3 - 3t^2 + 1, t \in [0,1]$ is used as the falloff curve for calculating the weight $w_{i,j}$. }
+\caption{(a) The concentric circles represent the 3D cursor, and $R_{I}$ and $R_{O}$ define the inner range and outer range respectively. $d_{i,j}$ is the vertical distance between a vertex $\mathbf{v}_{i,j}$ in the deformation region and the 3D cursor, which is used for calculating weight parameter : $t = (d_{i,j} - R_{I}) / (R_{O} - R_{I})$. (b) A cubic polynomial function $f(t) = 2t^3 - 3t^2 + 1, t \in [0,1]$ is used as the falloff curve for calculating the weight $w_{i,j}$. }
 \label{fig:deform}
 \end{figure*}
 
@@ -453,8 +462,8 @@ r'_{i,j} =
 + (1 - \mu)  r_{i,j}
 \end{equation}
 where $N$ is the number of adjacent vertices of $\mathbf{v}_{i,j}$; $\mu \in [0,1]$ is a factor controlling the smoothing effect.
-Only the vertices within the range of the handle $R_{O}$ will be affected.
-As a result, users can control the handle position and adjust the outer range $R_{O}$ of the handle to apply smoothing on specific areas interactively on the mesh.
+Only the vertices within the range of the 3D cursor $R_{O}$ will be affected.
+As a result, users can control the 3D cursor position and adjust the outer range $R_{O}$ of the 3D cursor to apply smoothing on specific areas interactively on the mesh.
 
 \subsection{Interactions}
 \label{sec:4.3}
@@ -467,7 +476,11 @@ As a result, users can control the handle position and adjust the outer range $R
 \end{figure*}
 
 %the system in a virtual studio - pottery wheel
-RealPot is designed as a pottery studio built in a virtual environment. In our implementation, we use a HTC Vive VR system \cite{website:vive}, which includes a head-mounted display and two hand-held controllers to track user head orientation and bimanual movement (Figure \ref{fig:ui}).
+RealPot is designed as a pottery studio built in a VE.
+In our implementation, we use a HTC Vive VR system \cite{website:vive}, which includes a head-mounted display (HMD) and two hand-held controllers to track user head orientation and bimanual movements (Figure \ref{fig:ui}).
+%immersion
+%head tracking
+The HMD uses head tracking to create a human-centric rather than a computer-determined point of view, and the two hand-held controller allows user to manipulate the mesh in a natural and realistic way.
 The goal of our system is not only to provide realistic experience in pottery creation, but also to provide convenient operations to improve the efficiency of pottery design. 
 Jacob et al. \cite{Jacob2008Reality} summarized that the designer's goal should be to allow the user to perform realistic tasks realistically, to provide additional non real-world functionality, and to use analogies for these commands whenever possible.
 As a result, our system offers several operations in VR for pottery design.
@@ -495,7 +508,7 @@ When the virtual pot is finished, the mesh should be able to export for further 
 Effective feedbacks can notify user the current state of the system. Feedbacks in our system can be classified into two categories: visual feedbacks and haptic feedbacks.
 
 \paragraph{Visual Feedbacks}
-In a VR environment, it is not so easy for users to perceive if her hands have touched anything. Hence, our system adds visual feedback on both virtual hands, which will be highlighted when touching the clay (Figure \ref{fig:highlight}).
+In a VE, it is not so easy for users to perceive if her hands have touched anything. Hence, our system adds visual feedback on both virtual hands, which will be highlighted when touching the clay (Figure \ref{fig:highlight}).
 
 \paragraph{Haptic Feedbacks}
 Unlike the barehanded experience, instrument-based interactions can provide haptic feedbacks, adding realistic feel in VR environments. In our system, a haptic pulse has been added to a controller when that controller has touched the clay. During any mesh editing process, we add movement resistance feedback based on the movement speed of each hand. The frequency of the haptic feedback is modeled as the following equation:
@@ -507,7 +520,7 @@ where $k_{min}$ and $k_{max}$ are predefined minimum and maximum frequency value
 %%%Fig%%% Highlight
 \begin{figure}
 \includegraphics[width=\textwidth]{fig10}
-\caption{The visual and haptic feedback when user touches the clay. (a) The normal state of the handle when it is not touching the clay. (b) The highlight state of the handle when a user has touched the clay, with a haptic pulse to the corresponding hand.}
+\caption{The visual and haptic feedback when user touches the clay. (a) The normal state of the 3D cursor when it is not touching the clay. (b) The highlight state of the 3D cursor when a user has touched the clay, with a haptic pulse to the corresponding hand.}
 \label{fig:highlight}
 \end{figure}
 
@@ -573,10 +586,11 @@ In order to compare our system with prior CAD systems that can design virtual po
 \label{sec:6.1}
 The three evaluated systems were as follows:
 
-\paragraph{RealPot}: Our virtual pottery tool based on HTC Vive VR system. The user can shape the virtual clay with bimanual spatial interaction.
+\paragraph{RealPot}: Our virtual pottery tool based on HTC Vive VR system. The user can shape the virtual clay with bimanual spatial interactions.
 \paragraph{Let’s Create! Pottery}: A touchscreen-based pottery creation tool on mobile devices. Users can interactively create pottery models by finger swiping on the screen.
 \paragraph{Autodesk Maya}: A traditional desktop 3D modeling system, which provides a set of powerful tools for professional 3D artists. The user can edit vertex, edge, face etc. with mouse and keyboard.
 
+The interfaces of all the three systems are demonstrated in Figure \ref{fig:sys}, and a comparison of interactions in these systems is listed in Table \ref{tab:3}. 
 Although the three systems are different, we focus on comparing them based on their similarities and workflows.
 %RealPot vs Maya
 To investigate the influence of modeling pipeline, we compare RealPot and Autodesk Maya since they both support 3D modeling. They differ in workflow to create and edit meshes. While RealPot can automatically generate a mesh for deformation with motion controllers, Maya needs to create a mesh from a primitive cylinder in order to edit in vertex mode, edge mode or face mode with mouse and keyboard. 
@@ -588,6 +602,23 @@ On the other hand, RealPot and LCP have similarities in their workflows with int
 \caption{The three systems used in our user study. (a) A virtual reality system RealPot proposed by us. (b) A touchscreen-based system Let's Create! Pottery. (c) A desktop modeling tool Autodesk Maya.}
 \label{fig:sys}
 \end{figure*}
+
+% For tables use
+\begin{table}
+% table caption is above the table
+\caption{A comparison of interactions in the three systems used in our user study.}
+\label{tab:3}       % Give a unique label
+% For LaTeX tables use
+\begin{tabular}{llllll}
+\hline\noalign{\smallskip}
+System & Platform & Input Method & Head Tracking & Stereoscopy & 2D or 3D UI \\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+RealPot & PC & Hand-held Motion Controllers & Yes & Yes & 3D \\
+LCP & iPad & Touchscreen & No & No & 2D \\
+Maya & PC & Keyboard and Mouse & No & No & 2D \\
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
 
 \subsection{Participants}
 \label{sec:6.2}
@@ -719,7 +750,7 @@ Another limitation of our system is that it cannot adding handles to the pottery
 \section{Conclusions}
 \label{sec:8}
 
-We present RealPot, a realistic virtual pottery system in VR.
+We present RealPot, an immersive virtual pottery system in VR.
 Closely linked to pottery creation experience in real life, our system enables users to manipulate the mesh in real time with two hands, allowing them creating a variety of pottery models from realistic generated clay meshes.
 As an educational tool, RealPot can help novice users and children to learn real-life pottery creation process in virtual environments, who can fabricate their works using our system with a 3D printer.
 Our results have shown that RealPot has relative advantage compared with traditional desktop 3D modeling experience (Maya) and touchscreen experience (Let's Create! Pottery).
