@@ -10,7 +10,7 @@
 \history{Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.}
 \doi{10.1109/ACCESS.2017.DOI}
 
-\title{Adaptive Hybrid Semantic Service Matchmaking based on Feature Learning Classification}
+\title{Adaptive Hybrid Semantic Service Matchmaking Based on Feature Learning Classification}
 \author{
 \uppercase{Wei Jiang}\authorrefmark{1,2},
 \uppercase{Huiqiang Wang}\authorrefmark{1},
@@ -47,16 +47,17 @@ feature learning, random forest, service composition, service matchmaking, seman
 
 \section{Introduction}
 \label{sec:introduction}
-
-\PARstart{S}{emantic} services have the characteristics of machine understandable and reasoning, which can realize interoperability at the semantic level and enhance the automation and intelligence of a service system. A semantic service system involves service publishing, service matching, service composition, etc. Semantic service matchmaking (SSM) can satisfy the user's needs by finding the suitable services and enhance the efficiency of the service system and improve user satisfaction, which is the premise and key for service system dependability. The common methods of SSM can be divided into two categories: logic-based service matching and non-logic-based service matching. The logic-based service matching method is mainly aimed at logical reasoning and deduction of semantic service description information. For example, SPARQLent [1] uses the SPARQL to describe preconditions, effects and input/output concepts of semantic services, and then uses the RDF entailment rule to do service matchmaking. Logic-based service matchmaking performs well on precision ratio due to strict logical reasoning, however, the recall ratio is not ideal because of its excessive strictness. Non-logical-based service matching is based primarily on text similarity, XML/RDF graph matching, data mining and other non-logical reasoning methods. Although the method is easy to implement, it has obvious defects in precision.
+\PARstart{S}{emantic} services have the characteristics of machine understandable and reasoning, which can realize interoperability at the semantic level and enhance the automation and intelligence of a service system. A semantic service system involves service publishing, service matching, service composition, etc. Semantic service matchmaking (SSM) can satisfy the user's needs by finding the suitable services and enhance the efficiency of the service system and improve user satisfaction, which is the premise and key for service system dependability. The common methods of SSM can be divided into two categories: logic-based service matching and non-logic-based service matching. The logic-based service matching method is mainly aimed at logical reasoning and deduction of semantic service description information. For example, SPARQLent \cite{sbodio2010discovering} uses the SPARQL to describe preconditions, effects and input/output concepts of semantic services, and then uses the RDF entailment rule to do service matchmaking. Logic-based service matchmaking performs well on precision ratio due to strict logical reasoning, however, the recall ratio is not ideal because of its excessive strictness. Non-logical-based service matching is based primarily on text similarity, XML/RDF graph matching, data mining and other non-logical reasoning methods. Although the method is easy to implement, it has obvious defects in precision.
 
 Since the purpose of a service is satisfying the needs of users, for SSM, it is a subjective feeling from a user whether the candidate service given by the matcher can satisfy the user's needs. Because of the difference between the user's perception and the matching results calculated by the service matcher, there are two issues in semantic service matchmaking, which are False Positive and False Negative.
 
-\subsection{False Positive}
+\begin{enumerate}
+\item\textbf{False Positive.}
 Based on the logic analysis on concepts of input/output between the service and users' demands, the semantic service matchmaking is a confirmed success. In fact, the provided service is difficult to complete users' demands, which means matchmaking is a failure. One of the reasons for this problem is that the concept definition in ontology cannot accurately capture the semantics of the real world, which is reflected in the difference of ontology granularities. For instance, a user needs to get the price of a hybrid sedan, and the service matchmaker returns a query service for all car prices to the user due to semantic deduction. However, user believes that true semantic distance between "hybrid sedan" and "car" is too large. The service does not meet their needs from user's subjective judgement. This situation was noted in the semantic service retrieval test set in OWLS-TC. Another reason is that many SSM methods match the input/output of services without considering the functional information contained in preconditions and effects of the service, which results in failure of the service matching.
 
-\subsection{False Negative}
+\item\textbf{False Negative.}
 False Negative means that the semantic service matcher affirms that a service that matches the user service request does not match in fact. The main reason for this problem is the over strict logical matching restrictions. There are some problems in ontology based on strict logical partitioning. In the real world, the concept of similar semantics may be completely exclusive in the ontology tree. For example, debit cards and credit cards can both make payment. When a user requests to use a debit card to pay, it is often implicit that the user can pay using a credit card as well. However, debit cards and credit cards are divided into two completely mutually exclusive concepts in the ontology tree by the property of overdraw account, where a service which matches the user's service request is considered as mismatched.
+\end{enumerate}
 
 The main reason for False Positive and False Negative is the use of a single type of service matching method, which has flaws in either way. In recent years, hybrid methods that combine different types of SSM methods are emerging, such as OWLS-MX3, XSSD, LOG4SWS, etc. But how to combine different service matching methods adaptively is still a challenging problem. Many hybrid service matchmakings use different matching methods to calculate service matching degrees, and then sum all the matching degrees according to the predefined weight values. And the result which exceeds a certain threshold is considered as a successful match. However, the weights and the threshold settings are not described in details. In fact, the process of service matching can be attributed to classifying the results of service matching as matching success and failure with the service matching degree as the feature value. As a result, service matching is transformed into a two-classification problem based on multidimensional feature vectors. In this regard, we propose an adaptive hybrid semantic service matchmaking method, which includes:
 \begin{enumerate}
@@ -66,105 +67,256 @@ The main reason for False Positive and False Negative is the use of a single typ
 \end{enumerate}
 
 \section{SSM based on logical method}
-SSM based on logical method usually uses Deductive Reasoning on service semantic to determine whether the semantic between services and user needs is equivalent or reasonable logic containment relations in terms of input/output. The principles of process are: (a) All inputs of semantic services should be matched by the input of user service requests. Only in this way can the service request provide enough input information to ensure the service work normally. (b) All outputs of the service request should be matched by the output of the semantic service. Only in this way can the output information of the service be satisfied with the requirements of the user. Usually the semantic service input/output function parameters are given in the representation of concept in an ontology tree, and the preconditions and effects can be described using first-order logic rule description language, such as SWRL and PDDL. These conditions allow semantic services to support logical reasoning, so it is feasible and effective to use logical methods to match semantic services. However, such strict methods can cause the deterioration of false negative problem, resulting in low recall of service matching. Therefore, while we propose SSM based on strict logic, a SSM method based on approximate logic is proposed by introducing the concept of logic contraction and abductive thought [2], which alleviates the problem of False Negative.
+SSM based on logical method usually uses Deductive Reasoning on service semantic to determine whether the semantic between services and user needs is equivalent or reasonable logic containment relations in terms of input/output. The principles of process are: (a) All inputs of semantic services should be matched by the input of user service requests. Only in this way can the service request provide enough input information to ensure the service work normally. (b) All outputs of the service request should be matched by the output of the semantic service. Only in this way can the output information of the service be satisfied with the requirements of the user. Usually the semantic service input/output function parameters are given in the representation of concept in an ontology tree, and the preconditions and effects can be described using first-order logic rule description language, such as SWRL and PDDL. These conditions allow semantic services to support logical reasoning, so it is feasible and effective to use logical methods to match semantic services. However, such strict methods can cause the deterioration of false negative problem, resulting in low recall of service matching. Therefore, while we propose SSM based on strict logic, a SSM method based on approximate logic is proposed by introducing the concept of logic contraction and abductive thought \cite{di2009tableaux}, which alleviates the problem of False Negative.
 
 \subsection{Strict logic matching method}
-Matching based on strict logic is the most common SSM method at present, and most of the methods follow the principle  , in which  are logical concepts in ontology. However, in some cases such a principle can lead to deterioration of the False Positive problem, such as partial lack of service or request input and output concepts, as shown in Figure 1.
+\label{2.1}
+Matching based on strict logic is the most common SSM method at present, and most of the methods follow the principle
+$
+\forall C \in I_{S}, \exists {C}'\in I_{R}:
+C\sqsupseteq {C}'\wedge \forall {D}'\in O_{R}\exists D\in O_{S}:D\sqsubseteq {D}',
+$
+in which $C,C',D,D'$ are logical concepts in ontology. However, in some cases such a principle can lead to deterioration of the False Positive problem, such as partial lack of service or request input and output concepts, as shown in Figure \ref{fig1}.
+\Figure[h][width=3in]{fig1.png}
+{False Positive problem in service matching.
+\label{fig1}}
 
-There are two groups of customer service requests and semantic services in Figure 1, a group in which a user needs a service to buy books. However, by matching criterion, a dating service with the different output same input and has nothing to do with the needs of business users is given to the user. Similarly, the matcher may also incorrectly match a service that has no input but has the same output as the service request and erroneously matches the user. The main reason for such a situation is that   put up a surjective relation between the input of semantic service concept and request, therefore, the lack of definitions of service semantics, even key concepts in service input, is wrongly tolerate which also occur on output. To improve this situation, it is necessary to ensure that the mapping between input and output concepts is injective, which guarantees that key concept mapping is not missing.
+There are two groups of customer service requests and semantic services in Figure \ref{fig1}, a group in which a user needs a service to buy books. However, by matching criterion, a dating service with the different output same input and has nothing to do with the needs of business users is given to the user. Similarly, the matcher may also incorrectly match a service that has no input but has the same output as the service request and erroneously matches the user. The main reason for such a situation is that $\forall C\in I_{S}, \exists {C}'\in I_{R}$ put up a surjective relation between the input of semantic service concept and request, therefore, the lack of definitions of service semantics, even key concepts in service input, is wrongly tolerate which also occur on output. To improve this situation, it is necessary to ensure that the mapping between input and output concepts is injective, which guarantees that key concept mapping is not missing.
 
-In fact, the input/output of the semantic service and the user request constitute a bipartite graph, in which the concepts are the nodes, and the weights of the concepts in the ontology tree are the degrees of difference. Thus, the injective mapping between the concepts of the input and output is the maximum matching of the bipartite graph, and the matching points in the maximal allocation must cover all the inputs (outputs) of the semantic service completely. There are many mature algorithms for solving bipartite graph matching, which will not be discussed in details here. Finally, the two nodes of the matching edge in the maximal matching are regarded as a concept pair, which will be added to the concept mapping set A or B according to whether it is input or output.
+In fact, the input/output of the semantic service and the user request constitute a bipartite graph, in which the concepts are the nodes, and the weights of the concepts in the ontology tree are the degrees of difference. Thus, the injective mapping between the concepts of the input and output is the maximum matching of the bipartite graph, and the matching points in the maximal allocation must cover all the inputs (outputs) of the semantic service completely. There are many mature algorithms for solving bipartite graph matching, which will not be discussed in details here. Finally, the two nodes of the matching edge in the maximal matching are regarded as a concept pair, which will be added to the concept mapping set $A$ or $B$ according to whether it is input or output.
 
-In addition, since it is not convenient for the matcher to report the matching degree between services and requirements with a single matching criterion, the matching results are defined as Exact, Plug-in, Subsumes, Subsumed-by and Logical Fail, according to the semantic service input/output bipartite graph maximum matching mentioned above.
+In addition, since it is not convenient for the matcher to report the matching degree between services and requirements with a single matching criterion, the matching results are defined as \textit{Exact}, \textit{Plug-in}, \textit{Subsumes}, \textit{Subsumed-by} and \textit{Logical Fail}, according to the semantic service input/output bipartite graph maximum matching mentioned above.
 
-\textbf{Definition 1.} Let S and R be semantic service and user service request respectively, and   are collections of semantic concepts of inputs and outputs of semantic service S and user service request R, which are defined on the same ontology tree. Based on the strict logic of semantic service matchmaking, we divide the matching degree of S and R into the following situations.
+\textbf{Definition 1.} Let $S$ and $R$ be semantic service and user service request respectively, and  $I_{S}$, $I_{R}$, $O_{S}$ and $O_{R}$ are collections of semantic concepts of inputs and outputs of semantic service $S$ and user service request $R$, which are defined on the same ontology tree. Based on the strict logic of semantic service matchmaking, we divide the matching degree of $S$ and $R$ into the following situations:
 
-(1) Exact:
+\begin{enumerate}
+\item\textit{Exact}
+\begin{align}
+&( \forall C\in I_{S}, \exists {C}'\in I_{R}:( C,{C}')\in BCM( I_{S},I_{R} )\nonumber \\
+&\wedge C\equiv C' )\wedge( \forall {D}'\in O_{R}, \exists D\in O_{S}:( D,{D}' )\nonumber \\
+&\in BCM( O_{S},O_{R} )\wedge D\equiv {D}' ) 
+\end{align}
+
  
-(2) Plug-in:
+\item\textit{Plug-in}
+\begin{align}
+&( \forall C\in I_{S}, \exists {C}'\in I_{R}:( C,{C}')\in BCM( I_{S},I_{R} )\nonumber \\
+&\wedge C\sqsupseteq C' )\wedge( \forall {D}'\in O_{R}, \exists D\in O_{S}:( D,{D}' )\nonumber \\
+&\in BCM( O_{S},O_{R} )\wedge D\sqsubseteq_{1} {D}' ) 
+\end{align}
  
-(3) Subsumes: 
- 
-(4) Subsumed-by:
- 
-(5) Logical Fail: When there is no matching relation between S and R, the strict logical match between S and R is considered as fail.
+\item\textit{Subsumes}
+\begin{align}
+&( \forall C\in I_{S}, \exists {C}'\in I_{R}:( C,{C}')\in BCM( I_{S},I_{R} )\nonumber \\
+&\wedge C\sqsupseteq C' )\wedge( \forall {D}'\in O_{R}, \exists D\in O_{S}:( D,{D}' )\nonumber \\
+&\in BCM( O_{S},O_{R} )\wedge D\sqsubseteq {D}' ) 
+\end{align}
 
-Both Plug-in and Subsumes matching are concepts of semantic service output, which comprise the concept of user service request output. The difference is that the concept of service output in Plug-in is a direct sub node of the user request output concept in an ontology tree, so that the output of the service is closer to the expected output of the user in the true semantic distance. In addition, Subsumed-by matching is achieved by relaxing restrictions on some outputs, because more generalized outputs may partially meet the needs of users, but the matching degree is obviously inferior to that of Plug-in and Subsumes. Note that this generalization must be limited on the direct parent node in the service request output concept, which prevents False Positive caused by excessive generalization; On the other hand, this generalization cannot be performed on input, since the input concept generalization of user requests for service may not satisfy the input constraints, leading to service failure. In summary, the matching degree of the five results is sorted according to the degree of semantic similarity: Exact＞Plug-in＞Subsumes＞Subsumed-by＞Logical Fail.
+\item\textit{Subsumed-by}
+\begin{align}
+&( \forall C\in I_{S}, \exists {C}'\in I_{R}:( C,{C}')\in BCM( I_{S},I_{R} )\nonumber \\
+&\wedge C\sqsupseteq C' )\wedge( \forall {D}'\in O_{R}, \exists D\in O_{S}:( D,{D}' )\nonumber \\
+&\in BCM( O_{S},O_{R} )\wedge D\sqsupseteq_{1} {D}' ) 
+\end{align}
+ 
+\item\textit{Logical Fail} When there is no matching relation between $S$ and $R$, the strict logical match between $S$ and $R$ is considered as fail.
+\end{enumerate}
+
+Both Plug-in and Subsumes matching are concepts of semantic service output, which comprise the concept of user service request output. The difference is that the concept of service output in Plug-in is a direct sub node of the user request output concept in an ontology tree, so that the output of the service is closer to the expected output of the user in the true semantic distance. In addition, Subsumed-by matching is achieved by relaxing restrictions on some outputs, because more generalized outputs may partially meet the needs of users, but the matching degree is obviously inferior to that of Plug-in and Subsumes. Note that this generalization must be limited on the direct parent node in the service request output concept, which prevents False Positive caused by excessive generalization; On the other hand, this generalization cannot be performed on input, since the input concept generalization of user requests for service may not satisfy the input constraints, leading to service failure. In summary, the matching degree of the five results is sorted according to the degree of semantic similarity: \textit{Exact} > \textit{Plug-in} > \textit{Subsumes} > \textit{Subsumed-by} > \textit{Logical Fail}.
 
 \subsection{Approximate logic matching method}
-SSM based on strict logic reasons and judges the subsumption relations between input and output ontology concepts with formal methods, which is too strict when describing user needs with strong fuzziness, and may lead to excessive exclusion of compatible services, resulting in False Negative. As shown in Figure 2, an example from OWLS-TC4 is demonstrated.
+\label{2.2}
+SSM based on strict logic reasons and judges the subsumption relations between input and output ontology concepts with formal methods, which is too strict when describing user needs with strong fuzziness, and may lead to excessive exclusion of compatible services, resulting in False Negative. As shown in Figure \ref{fig2}, an example from OWLS-TC4 is demonstrated.
 
-In Figure 2, the user proposes a service request R, hoping to buy a book with a debit card and get confirmation information after the purchase is successful. An e-commerce service S can sell all kinds of documents (including books) to users with credit cards and provide users with receipts and pricing information. With the method described in Section 2.1, the result of Logical Fail will be returned. But in OWLS-TC4, the user believes that the service and request are matched, where the False Negative occurs. The reason for this problem is that, while books and documents belong to different branches of object in the ontology tree, which are not completely logical mutually exclusive, credit cards and debit cards form strict logical mutual exclusion because of the property of whether they can overdraw. Klusch found that if the strict logic matching method was applied in OWLS-TC4, about 45\% of the services in each service request set will be incorrectly categorized as mismatches [3]. In fact, if the user could give up the concepts which cause logical subsumption failure and only keep part of the concepts for calculating subsumption relations approximately, the approximate logical matching degree between semantic service and user request can be determined, where the erroneous judgement of strict logic matching result is compensated.
+\Figure[h][width=6in]{fig2.png}
+{False Negative problem in service matching.
+\label{fig2}}
 
-Inspired by [2], Logical Concept Constriction and Abduction are introduced when calculating approximate logical matching degree. The compatible parts CC (Concept Compatible) and the incompatible part CI (Concept Incompatible) of concept C and D can be found by logical concept constriction, which abandons some property constraints of the concepts. The Structural Abduction   of CC relative to D can be obtained by performing abduction on the compatible part CC, and the approximate concept C' of C relative to D can be obtained from the mapping  . By computing the information quantity differences among C, C' and D, the approximate quantity of information can be calculated, based on which the approximate logical matching degree between the service and the request can be computed.
+In Figure \ref{fig2}, the user proposes a service request R, hoping to buy a book with a debit card and get confirmation information after the purchase is successful. An e-commerce service S can sell all kinds of documents (including books) to users with credit cards and provide users with receipts and pricing information. With the method described in Section \ref{2.1}, the result of \textit{Logical Fail} will be returned. But in OWLS-TC4, the user believes that the service and request are matched, where the False Negative occurs. The reason for this problem is that, while books and documents belong to different branches of object in the ontology tree, which are not completely logical mutually exclusive, credit cards and debit cards form strict logical mutual exclusion because of the property of whether they can overdraw. Klusch found that if the strict logic matching method was applied in OWLS-TC4, about 45\% of the services in each service request set will be incorrectly categorized as mismatches\cite{klusch2012isem}. In fact, if the user could give up the concepts which cause logical subsumption failure and only keep part of the concepts for calculating subsumption relations approximately, the approximate logical matching degree between semantic service and user request can be determined, where the erroneous judgement of strict logic matching result is compensated.
 
-\textbf{Definition 2. Logical concept constriction and abduction.} The constriction of the concept C relative to the concept D is  , where CC represents the compatible part of C relative to D, and CI represents the incompatible part of C relative to D. Abduction concept   is derived from C by following expansion:  , where  ,  ,  ,  , A is the atomic concept after expanding CC in the ontology tree. The structural abduction of CC relative to D is expressed as  , where   and  . The approximate concept of C relative to D is denoted as  , where  .
+Inspired by \cite{di2009tableaux}, Logical Concept Constriction and Abduction are introduced when calculating approximate logical matching degree. The compatible parts CC (Concept Compatible) and the incompatible part CI (Concept Incompatible) of concept $C$ and $D$ can be found by logical concept constriction, which abandons some property constraints of the concepts. The Structural Abduction $SAC\left( CC,D \right)$ of CC relative to $D$ can be obtained by performing abduction on the compatible part CC, and the approximate concept $C'$ of $C$ relative to $D$ can be obtained from the mapping $\sigma \left[ \overline{H},H \right]\left( C{{C}^{h}} \right)$. By computing the information quantity differences among $C$, $C'$ and $D$, the approximate quantity of information can be calculated, based on which the approximate logical matching degree between the service and the request can be computed.
 
+\textbf{Definition 2. Logical concept constriction and abduction.}
+The constriction of the concept $C$ relative to the concept $D$ is
+\begin{equation}
+LCC\left( C,D \right)=\left( CI,CC \right),
+\end{equation}
+where $CC$ represents the compatible part of $C$ relative to $D$, and $CI$ represents the incompatible part of $C$ relative to $D$.
+Abduction concept $CC^{h}$ is derived from $C$ by following expansion:
+\begin{equation}
+CC^{h}={{h}_{0}}\sqcap rew\left( k \right),
+\end{equation}
+where $rew\left( A \right)=A$,
+$rew\left( \neg A \right)=\neg A$,
+$rew\left( C\sqcap D \right)=rew\left( D \right)\sqcap rew\left( D \right)$ and
+$rew\left( \exists R.C \right)=\exists R.\left( {{h}_{i}}\sqcap rew\left( C \right) \right)$.
+%%%
+$A$ is the atomic concept after expanding CC in the ontology tree. The structural abduction of CC relative to D is expressed as
+\begin{equation}
+SAC\left( CC,D \right)=H=\left( {{H}_{0}},...,{{H}_{n}} \right),
+\end{equation}
+where $\sigma \left[ \overline{H},H \right]\left( C{{C}^{h}} \right)\sqsubseteq D$ and $\sigma \left[ \overline{H},H \right]\left( C{{C}^{h}} \right)\sqsubseteq D$.
+%%%
+The approximate concept of C relative to D is denoted as
+\begin{equation}
+C'=\sigma \left[ \overline{H},H \right]\left( C{{C}^{h}} \right),
+\end{equation}
+where $\sigma \left[ \overline{H},H \right]\text{=}\left\{ {{h}_{0}}\mapsto {{H}_{0}},...,{{h}_{n}}\mapsto {{H}_{n}} \right\}$.
 The definition of approximate logical concept subsumption can be obtained from the definition and calculation method above.
 
-\textbf{Definition 3. Approximate logical concept subsumption.} Concept C is approximate logic concept subsumed by concept D, if and only if the approximate concept of C relative to D is contained by the D logically, that is,  , where  ,  ,  . The following two concepts of debit cards and credit cards are taken as examples to illustrate the derivation process of approximate logical concepts subsumption. Suppose that the user agrees to relax restrictions on the debit card on the property of no overdraft, then
- 
-From \textbf{Definition 2},  . And from the algorithm given in [2], we can obtain ,  . Then it can be obtained that . Thus, the approximate concept of debit card is  . Obviously,  . Therefore, debit cards are approximated logical concept subsumed by the logic of credit cards, that is  .
-Note that it is uncertain that which one of two mutually exclusive concepts the logical concept constriction is carried out on, so the approximate logical subsumption relation is also uncertain. As in the last example, abandoning the overdraft attribute in   approves , thus,   is valid.
-In order to evaluate the matching degree of semantic service based on approximate logic, the approximate logic subsumption degree between concepts is calculated by introducing information quantity [4] to analyze the loss of information caused by concept contraction during approximate concept construction. The concept approximate calculation formula based on information quantity is as follows:
- 
-The information quantity  [5] is obtained by the probability of the concept C:  ,  , where   is the number of occurrence of all sub-concepts contained in the ontology tree of the concept C. N is the total number of concepts in ontology. Obviously,  . Based on the above, approximate logic subsumption degree can be calculated as: 
- 
-Since  , we have .
-Since concept C', which is an approximate concept derived from logical concept constriction and abduction of C, has a direct subsumption relation with concept D, the subsumption relation formed in the ontology tree must be a direct parent-child relationship. Thus, we propose two assumptions about approximate logical matching, which are approximate plug-in matching and approximate subsumed-by matching respectively.
+\textbf{Definition 3. Approximate logical concept subsumption.} Concept $C$ is approximate logic concept subsumed by concept $D$, if and only if the approximate concept of $C$ relative to $D$ is contained by the $D$ logically:
+\begin{equation}
+\sigma \left[ \overline{H},H \right]\left( C{{C}^{h}} \right)\sqsubseteq D,
+\end{equation}
+where $C'=\sigma \left[ \overline{H},H \right]\left( C{{C}^{h}} \right)$, $\left( CI,CC \right)=LCC\left( C,D \right)$ and $H=SAC\left( CC,D \right)$.
 
-\textbf{Definition 4. SSM based on approximate logic.} Let S and R be semantic service and user service request respectively, and   are the sets of input and output semantic concepts of semantic service S and user service request R defined on the same ontology tree respectively. Semantic service matchmaking based on approximate logic divides the matching degree of S and R into the following cases:
-(1) Approximate plug-in
+The following two concepts of debit cards and credit cards are taken as examples to illustrate the derivation process of approximate logical concepts subsumption. Suppose that the user agrees to relax restrictions on the debit card on the property of no overdraft, then
+\begin{align}
+( CI,CC )&=LCC( DebitCard,CreditCard )\nonumber\\
+& =( \neg \exists allows.Credi{{t}^{p}}, MediumOfExchange\nonumber\\
+&\sqcap\exists issuedBy.Bank^{p} ).
+\end{align}
+
+From Definition 2, $C{{C}^{h}}={{h}_{0}}\sqcap Objec{{t}^{p}}\sqcap \exists hasValue.\left( {{h}_{1}}\sqcap Valu{{e}^{p}} \right)\sqcap \exists issuedBy.\left( {{h}_{2}}\sqcap Ban{{k}^{p}} \right)$.
+And from the algorithm given in [2], we can obtain $\bar{H}=\left( {{h}_{0}},{{h}_{1}},{{h}_{2}} \right)$, $H=SAC\left( DebitCard,CreditCard \right)=\left( \exists allows.Credi{{t}^{p}},\bot ,Compan{{y}^{p}} \right)$.
+Then it can be obtained that $\sigma[\bar{H},H]=\{ {{h}_{0}}\mapsto \exists allows.Credi{{t}^{p}},{{h}_{1}}\mapsto \bot$, ${{h}_{2}}\mapsto Company^{p} \}$. Thus, the approximate concept of debit card is $DebitCard'=\exists allows.Credit\sqcap MediumOfExchange\sqcap \exists issuedBy.\left( Bank\sqcap Company \right)$. Obviously, $DebitCard'\sqsubseteq CreditCard$. Therefore, debit cards are approximated logical concept subsumed by the logic of credit cards, that is $DebitCard{{\sqsubseteq }_{AC}}CreditCard$.
+
+Note that it is uncertain that which one of two mutually exclusive concepts the logical concept constriction is carried out on, so the approximate logical subsumption relation is also uncertain. As in the last example, abandoning the overdraft attribute in $CreditCard$ approves $CreditCard'=\neg \exists allows.Credit\sqcap MediumOfExchange\sqcap \exists issuedBy.\left( Bank\sqcap Company \right)$, thus, $CreditCard{{\sqsubseteq }_{AC}}DebitCard$ is valid.
+
+In order to evaluate the matching degree of semantic service based on approximate logic, the approximate logic subsumption degree between concepts is calculated by introducing information quantity \cite{lin1998information} to analyze the loss of information caused by concept contraction during approximate concept construction. The concept approximate calculation formula based on information quantity is as follows:
+\begin{equation}
+Si{{m}_{Info}}\left( C,D \right)=\frac{2\times IC\left( LCA\left( C,D \right) \right)}{IC\left( C \right)+IC\left( D \right)}.
+\end{equation}
  
-(2) Approximate subsumed-by
- 
+The information quantity $IC(C)$ \cite{amiri2016learning} is obtained by the probability of the concept C:
+\begin{align}
+IC\left( C \right)\text{=}-\log P\left( C \right),\nonumber\\
+P\left( C \right)={n\left( C \right)}/{N}\;,
+\end{align}
+where $n(C)$ is the number of occurrence of all sub-concepts contained in the ontology tree of the concept C.
+N is the total number of concepts in ontology.
+Obviously, $Si{{m}_{Info}}\left( C,D \right)\in \left[ 0,1 \right]$.
+Based on the above, approximate logic subsumption degree can be calculated as: 
+\begin{align}
+ALSD\left( C,D \right)=Si{{m}_{Info}}\left( C',D \right)\nonumber\\
+-\left( 1-Si{{m}_{Info}}\left( C',C \right) \right).
+\end{align}
+
+Because $Si{{m}_{Info}}\left( C,D \right)\in \left[ 0,1 \right]$, we have $ALSD\left( C,D \right)\in \left[ -1,1 \right]$.
+Since concept $C'$, which is an approximate concept derived from logical concept constriction and abduction of $C$, has a direct subsumption relation with concept $D$, the subsumption relation formed in the ontology tree must be a direct parent-child relationship. Thus, we propose two assumptions about approximate logical matching, which are approximate plug-in matching and approximate subsumed-by matching respectively.
+
+%%%
+\textbf{Definition 4. SSM based on approximate logic.} Let S and R be semantic service and user service request respectively, and $I_{S}$, $I_{R}$, $O_{S}$ and $O_{R}$ are the sets of input and output semantic concepts of semantic service $S$ and user service request $R$ defined on the same ontology tree respectively. Semantic service matchmaking based on approximate logic divides the matching degree of $S$ and $R$ into the following cases:
+
+\begin{enumerate}
+\item Approximate plug-in
+\begin{align}
+( \forall C\in I_{S}\exists {C}'\in I_{R}:( C,{C}' )\in BCM( I_{S},I_{R} )\nonumber\\
+\wedge C{{\sqsupseteq }_{AC}}{C}')\wedge( \forall {D}'\in O_{R}\exists D\in O_{S}:( D,{D}' )\nonumber\\
+\in BCM( O_{S},O_{R} )\wedge D{{\sqsubseteq }_{AC}}{D}')
+\end{align}
+
+\item Approximate subsumed-by
+\begin{align}
+( \forall C\in I_{S}\exists {C}'\in I_{R}:( C,{C}' )\in BCM( I_{S},I_{R} )\nonumber\\
+\wedge C{{\sqsupseteq }_{AC}}{C}')\wedge( \forall {D}'\in O_{R}\exists D\in O_{S}:( D,{D}' )\nonumber\\
+\in BCM( O_{S},O_{R} )\wedge D{{\sqsupseteq }_{AC}}{D}')
+\end{align}
+\end{enumerate}
+
 By calculating the approximate logic subsumption degree, approximate matching degrees under all kinds of the condition of service approximate logical matching can be obtained, and the formula is as follows:
- 
+\begin{align}
+MatchAL( S,R )=\frac{1}{2} \left( \frac{\mathop{\sum }^{}ALSD( C,{C}')}{|I_{S}|}\right.\nonumber\\
++\left.\frac{\mathop{\sum }^{}ALSD( D,{D}' )}{| O_{R} |} \right).
+\end{align}
+
 Since approximate logical subsumption relation is uncertain due to different concept constrictions, semantic services and user requests are likely to conform to both approximate plug-in matching and approximate subsumed-by matching.
 Therefore, it is necessary to calculate both degrees of service matching under different approximate matching.
 In which case the matching degree of service is higher and the value is positive, then the matching in that case will be considered as the match between semantic service and user request.
-If  are less than or equal to 0 in the two matching cases, then the semantic service and the user request are considered as not matched on the approximate logic.
+If $ALSD(C,D)$ are less than or equal to 0 in the two matching cases, then the semantic service and the user request are considered as not matched on the approximate logic.
 
-
+%%%
 \subsection{Precondition and effect logical plug-in matching}
 The input and output of service cannot reflect the functional semantics of service, and this part is usually expressed in the form of precondition and effect of service logic. In addition to semantic explanation on services using ontology, SWRL (Semantic Web Rule Language), PDDL (Planning Domain Definition Language) and other languages which present rules in a semantic way are also used to describe service precondition and effect. 
 
-Since only using logical match on the concepts of service input and output will cause False Positive problem, we propose the precondition and effect logical plug-in matching of semantic service, by introducing the method used in LARKS [6].
+Since only using logical match on the concepts of service input and output will cause False Positive problem, we propose the precondition and effect logical plug-in matching of semantic service, by introducing the method used in LARKS \cite{sycara5dynamic}.
 
 The following principle is inherited from the software retrieval domain: Logical Specification Plug-in Matching.
 
 \textbf{Definition 5. Precondition and effect logical plug-in matching.}Semantic service and user service request is precondition and effect logical plug-in matching, if and only if the precondition of the user request logical contains the precondition of the semantic service, and the effect of the semantic service logical implies the effect of the user request, which is
- 
-The logical implication relation between precondition and effect can be determined by the concept of θ-inclusion proposed by [7], which is
+\begin{equation}
+MatchPE\left( S,R \right)iff\left| = \right.\left( {{P}_{R}}\Rightarrow {{P}_{S}} \right)\wedge \left( {{E}_{S}}\Rightarrow {{E}_{R}} \right).
+\end{equation}
+
+The logical implication relation between precondition and effect can be determined by the concept of $\theta$-inclusion proposed by \cite{idestam1995generalization}, which is
+\begin{align}
+( \forall {{p}_{S}}\in {{P}_{S}}\exists {{p}_{R}}\in {{P}_{R}}:{{p}_{R}}{{\le }_{\theta }}{{p}_{S}} )\Rightarrow ( {{P}_{R}}\Rightarrow {{P}_{S}} ), \nonumber\\
+( \forall {{e}_{R}}\in {{E}_{R}}\exists {{e}_{S}}\in {{E}_{S}}:{{e}_{S}}{{\le }_{\theta }}{{e}_{R}} )\Rightarrow ( {{E}_{S}}\Rightarrow {{E}_{R}} ).
+\end{align}
+
 
 \section{SSM based on non-logical method}
 Service Signature not only contains hasInput, hasOutput, precondition, effect (IOPEs) and other functional parameters, but also contains many non-functional parameters, such as serviceName, serviceCategory, qualityRating, textDescription and the metadata of the name and location of a service provider. It is more intuitive, easy to compare the degree of similarity between semantic service and the information requested by the user when performing text similarity matching on the service descriptions, which can retrieve the possible matches which are misjudged as mismatched by the logic-based method, which may help to alleviate the problem of False Negative.
 
 \subsection{Service description text similarity matching}
 When using service description text similarity matching, the service description textDescription is usually modeled by the text vector space model. In order to avoid the high-dimensional sparse problem caused by the increase of text amount, we first need to reduce the dimension using Natural Language Processing methods, such as word segmentation, stop word filtering, etc. Then, based on TF-IDF (Term Frequency - Inverse Document Frequency), the service description text similarity is calculated. Next, calculate the weights of text keywords in service and user request respectively, and then the distance between feature vectors can be obtained based on cosine theorem. The TF-IDF formula used in this paper is as follows:
+\begin{align}
+&T{{F}_{i,j}}=\frac{{{n}_{i,j}}}{\mathop{\sum }_{k}{{n}_{k,j}}},\nonumber\\
+&ID{{F}_{i,j}}=log\frac{\left| D \right|}{\left| \left\{ j:{{w}_{i}}\in {{d}_{j}} \right\} \right|},\nonumber\\
+&TFID{{F}_{i,j}}=T{{F}_{i,j}}\times ID{{F}_{i,j}}.
+\end{align}
  
-After getting the TF-IDF weights, we can calculate  , which is the similarity of service description texts by cosine theorem.
+After getting the TF-IDF weights, we can calculate $Si{{m}_{Description}}\left( S,R \right)$, which is the similarity of service description texts by cosine theorem.
 
 Due to lack of uniform standards, service providers and service users may have different representations of the service description language, so computing text similarity of the service description may merely exist in the problems of low precision. Therefore, based on the text matching of service description, we introduce the expanded concept of service input and output, and propose an extended text similarity matching method for service description.
 
 \textbf{Definition 6. Extended concept expression.} An extended concept expression of concept is the sequential splicing text of all the intermediate concept nodes which is passed by from the root node of the ontology tree. 
-The ontology tree in Figure 2 is taken as an example, and according to the Definition 6, the extended concept expression of   is  . When the extended concept expression is used to calculate the similarity of text, Loss of Information [8] based on similarity is introduced. The losses of information of input/output ( / ) between service and user request in expanded concept expression can be obtained respectively to measure the difference of expanded concept expression between service and user request.
+The ontology tree in Figure \ref{fig2} is taken as an example, and according to the Definition 6, the extended concept expression of  $CreditCard$ is $andCreditCard^{P}(andMediumOfExchange^{P}Object^{P})$ . When the extended concept expression is used to calculate the similarity of text, Loss of Information \cite{klusch2009owls} based on similarity is introduced. The losses of information of input and output ( $LOI(I_{S}, I_{R})$ and $LOI(O_{S}, O_{R})$ ) between service and user request in expanded concept expression can be obtained respectively to measure the difference of expanded concept expression between service and user request:
+\begin{equation}
+LOI\left( A,B \right)=1-\frac{\left| A\cup B \right|-\left| A\cap B \right|}{\left| A \right|+\left| B \right|}.
+\end{equation}
  
-It can be seen that  , and the greater the value is, the higher the similarity is. After calculating the text similarity of the extended concept expression, the extended service description text similarity can be obtained by the following formula:
- 
+It can be seen that $LOI\left( A,B \right)\in \left[ 0,1 \right]$, and the greater the value is, the higher the similarity is. After calculating the text similarity of the extended concept expression, the extended service description text similarity can be obtained by the following formula:
+\begin{align}
+Si{{m}_{ExtD}}\left( S,R \right)&=Si{{m}_{Description}}\left( S,R \right)\nonumber\\
+&+LOI\left( I_{S},I_{R} \right)\nonumber\\
+&+LOI\left( O_{S},O_{R} \right).
+\end{align}
+
 \subsection{Ontology structure similarity matching}
 The core idea of ontology matching method is mapping the information of semantic service and user's request to the ontology, and then the similarity of the whole semantic is obtained to realize the SSM by calculating the similarity of the corresponding nodes between ontologies. In general, the similarity of ontology structure can be measured from semantic distance, depth and information quantity.
+
 Semantic distance refers to the length of the shortest path of the two concepts to be compared in the ontology tree through its nearest common ancestor node. The greater the semantic distance is, the greater the semantic difference of concept is. The similarity computation methods of semantic distance are as follows:
+\begin{equation}
+Si{{m}_{Dist}}\left( c,d \right)={1}/{{{e}^{Dist(c,d)}}},
+\end{equation}
  
-where   represents the length of the shortest path of the concept C and D with passing their nearest common ancestor node.
-Depth is also an important indicator to measure similarity. With the increase of the depth of the nearest common ancestor nodes of the two concepts, the number of common attributes of concepts is more, and the semantic similarity is higher. In this paper, the depth similarity is defined as the ratio of the depth of the nearest common ancestor node to the maximum depth of the tree.
- 
-  represents the nearest common ancestor node of C and D.    represents the maximum depth of the ontology tree.
-In addition, the quantity of information can also measure the semantic information size of a concept from the perspective of probability, which helps to analyze the similarity between concepts. The calculation formula of similarity based on information quantity has been given in section 2.2.
+where $Dist(c,d)$ represents the length of the shortest path of the concept C and D with passing their nearest common ancestor node.
+
+Depth is also an important indicator to measure similarity. With the increase of the depth of the nearest common ancestor nodes of the two concepts, the number of common attributes of concepts is more, and the semantic similarity is higher. In this paper, the depth similarity is defined as the ratio of the depth of the nearest common ancestor node to the maximum depth of the tree:
+\begin{equation}
+Sim_{Depth}( c,d )=\frac{Depth( LCA( c,d ) )}{Depth( Tree )}.
+\end{equation}
+
+$LCA(c,d)$ represents the nearest common ancestor node of C and D. $Depth(Tree)$ represents the maximum depth of the ontology tree.
+
+In addition, the quantity of information can also measure the semantic information size of a concept from the perspective of probability, which helps to analyze the similarity between concepts. The calculation formula of similarity based on information quantity has been given in section \ref{2.2}.
+
 By integrating semantic distance, depth and information quantity, we can calculate the similarity of ontology structure between two concepts and between two concept sets:
- 
- 
+\begin{align}
+Si{{m}_{Conc}}\left( c,d \right)&=Si{{m}_{Dist}}\left( c,d \right)\nonumber\\
+&+Si{{m}_{Depth}}\left( c,d \right)\nonumber\\
+&+Si{{m}_{Info}}\left( c,d \right),
+\end{align}
+\begin{equation}
+Si{{m}_{ConcSet}}\left( C,D \right)=\frac{1}{\left| C \right|}\sum\limits_{c\in C}{\underset{d\in D}{\mathop{\max }}\,Si{{m}_{Conc}}\left( c,d \right)}.
+\end{equation}
+
 And the ontology structure similarity between semantic service and user request can be obtained as follows:
+\begin{align}
+MatchNL(S,R)=\frac{1}{2}( Sim_{ConcSet}( I_{S},I_{R})\nonumber\\
+ + Sim_{ConcSet}( O_{S},O_{R}) ).
+\end{align}
 
 \section{Feature learning classification of SSM based on random forest}
 In order to realize the combination of different SSM methods and avoid the disadvantages of traditional fixed weight addition method, the matching results obtained by different types of semantic service methods are used as feature vectors of service matching, and the self-learning intelligent service matching classification is realized by using random forest method. Therefore, the SSM problem is transformed into a two-classification problem.
@@ -172,26 +324,65 @@ In order to realize the combination of different SSM methods and avoid the disad
 \subsection{Random forest method}
 The idea of random forest method comes from decision tree. Because of its ease of explanation and interpretation, decision tree methods can easily handle the interaction between features, there is no need to worry about outliers or whether the data is linearly separable. However, the decision tree method has the problem of over-fitting. To address this problem, with the voting theory when multiple classifiers are combined into a single classifier, the core idea of random forest method is to generate multiple decision trees without high classification accuracy, which allows all trees to make decision by voting. 
 
-When a random forest is constructed, a decision tree is set up for each training subset, and the "forest" formed by several decision trees is generated. Each decision tree does not need pruning to prevent over-fitting. When using random forests for classification, K samples are extracted from the original training set according to the bootstrap sampling method. Then, K decision trees combination classification model is constructed based on these samples. Next, a test sample is classified according to the multiple decision subtrees which are randomly constructed. The results of each subtree are aggregated, and the majority voting method is used to get the final output. That is, when the independent variable X is given, every decision tree in the random forest has 1 vote to decide the optimal classification result [10]. The whole process is shown in Figure 3.
- 
-Fig 3 Decision process of random forest
-Random forest is usually the winner of many classification problems (usually slightly better than support vector machines), which has fast and scalable characteristics, and avoids the drawbacks of large amount of parameter tuning for, for example, support vector machines. Since the stipulations of an agreement of outliers, 0-1 normalization, etc. have no effect on random forest, the data doesn't need to be preprocessed when random forest is used. Therefore, the use of random forest method is advantageous for different forms of attribute values in service matching feature state vectors [9].
-For the random forest training process, we first randomly select 5\% of the samples from the OWLS-TC4 test set as training set. The OWLS-TC4 test set contains a large number of evaluated matching pairs of semantic services and user requests. We first run the previous SSM method on these matching pairs, and combine the matching results of different methods into a ten dimensional feature vectors  , where   represents the result of SSM based on strict logic. Each item corresponds to a result defined in Definition 1, whose values are 0 or 1, and only one item in all five items can be 1.   represents the results obtained by SSM based on approximate logic, each of which corresponds to one of the results defined in Definition 4.   represents the results obtained by precondition and effect logical plug-in matching.   represents the result of similarity matching of service description text.   represents the result of ontology structure similarity matching.   represents the results of user evaluation of semantic services matching with user requests. Thus, the service matching feature state vector space   is formed.
+When a random forest is constructed, a decision tree is set up for each training subset, and the "forest" formed by several decision trees is generated. Each decision tree does not need pruning to prevent over-fitting. When using random forests for classification, $K$ samples are extracted from the original training set according to the bootstrap sampling method. Then, $K$ decision trees combination classification model is constructed based on these samples. Next, a test sample is classified according to the multiple decision subtrees which are randomly constructed. The results of each subtree are aggregated, and the majority voting method is used to get the final output. That is, when the independent variable $X$ is given, every decision tree in the random forest has 1 vote to decide the optimal classification result \cite{lindner2015robust}. The whole process is shown in Figure \ref{fig3}.
+
+\Figure[h][width=6in]{fig3.png}
+{Decision process of random forest.\label{fig3}}
+
+Random forest is usually the winner of many classification problems (usually slightly better than support vector machines), which has fast and scalable characteristics, and avoids the drawbacks of large amount of parameter tuning for, for example, support vector machines. Since the stipulations of an agreement of outliers, 0-1 normalization, etc. have no effect on random forest, the data doesn't need to be preprocessed when random forest is used. Therefore, the use of random forest method is advantageous for different forms of attribute values in service matching feature state vectors \cite{caruana2008empirical}.
+
+For the random forest training process, we first randomly select 5\% of the samples from the OWLS-TC4 test set as training set. The OWLS-TC4 test set contains a large number of evaluated matching pairs of semantic services and user requests. We first run the previous SSM method on these matching pairs, and combine the matching results of different methods into a ten-dimensional feature vectors $X=( {{x}_{1}},{{x}_{2}},...,{{x}_{10}} )$ , where ${{x}_{1}},{{x}_{2}},...,{{x}_{5}}\in \{ 0,1 \}$ represents the result of SSM based on strict logic. Each item corresponds to a result defined in Definition 1, whose values are 0 or 1, and only one item in all five items can be 1. ${{x}_{6}},{{x}_{7}}\in [-1,1]$ represents the results obtained by SSM based on approximate logic, each of which corresponds to one of the results defined in Definition 4. ${{x}_{8}}\in \{ 0,1 \}$ represents the results obtained by precondition and effect logical plug-in matching. ${{x}_{9}}\in \{ 0,1 \}$ represents the result of similarity matching of service description text. ${{x}_{10}}\in \{ 0,1 \}$ represents the result of ontology structure similarity matching. $y\in \{ -1,1 \}$ represents the results of user evaluation of semantic services matching with user requests. Thus, the service matching feature state vector space $X\times y$ is formed.
 
 \subsection{Service matching feature state space}
 
-In order to coordinate the matching results of the strict logic and approximate logic matching and improve the training effect of feature data for classifier, it is necessary to do some pruning on the vector space of service matching feature state. The strict logic subsumption relations also satisfies the approximate logic subsumption, so approximate logic matching is usually consistent with strict logic matching judgment on the successful samples of service matching. Therefore, the state space trimming is mainly aimed at the parts that are identified as failure based on strict logic matching, in order to avoid weakening the performance of classifier by the contradiction between strict logic matching and approximate logic matching results. According to the results of matching based on approximate logic and the real results of training samples, four subsets are separated from training samples  , which is strict logical matching failure:
- 
+In order to coordinate the matching results of the strict logic and approximate logic matching and improve the training effect of feature data for classifier, it is necessary to do some pruning on the vector space of service matching feature state. The strict logic subsumption relations also satisfies the approximate logic subsumption, so approximate logic matching is usually consistent with strict logic matching judgment on the successful samples of service matching. Therefore, the state space trimming is mainly aimed at the parts that are identified as failure based on strict logic matching, in order to avoid weakening the performance of classifier by the contradiction between strict logic matching and approximate logic matching results. According to the results of matching based on approximate logic and the real results of training samples, four subsets are separated from training samples ($x_{5}=1$), which is strict logical matching failure:
+\begin{align}
+TS_{1}=&\{({{x}_{1}},...,{{x}_{10}},y )\in TS| y=1\nonumber\\
+&\wedge ( {{x}_{6}}\le 0\wedge {{x}_{7}}\le 0 )\},\nonumber\\
+TS_{2}=&\{({{x}_{1}},...,{{x}_{10}},y )\in TS| y=1\nonumber\\
+&\wedge ( {{x}_{6}}> 0\wedge {{x}_{7}}> 0 )\},\nonumber\\
+TS_{3}=&\{({{x}_{1}},...,{{x}_{10}},y )\in TS| y=-1\nonumber\\
+&\wedge ( {{x}_{6}}\le 0\wedge {{x}_{7}}\le 0 )\},\nonumber\\
+TS_{4}=&\{({{x}_{1}},...,{{x}_{10}},y )\in TS| y=-1\nonumber\\
+&\wedge ( {{x}_{6}}> 0\wedge {{x}_{7}}> 0 )\}.
+\end{align}
 
-In subset  ,  means that the samples are matched by the user, but neither strict logical matching nor approximate logical matching correctly match the result, resulting in False Negative. This will affect the training results of classifiers, so it is necessary to prune   directly from the state space. In subset   and  , approximate logic matching is used to obtain the correct matching result, and their eigenvalues should be rewarded. It is particularly important to note that in  , when the approximate logical matching results are motivated, the error results (mismatches) of the strict logic matching need to be modified  . In subset   where  , mismatched services and requests are designated as matching success, but they do not affect the correctness of strict logical matching. Therefore, the inverse weight adjustment of the value in the state space is needed to alleviate the influence of False Positive on the training results. The adjustment methods are as follows:
+In subset $TS_{1}$ , $y=1$ means that the samples are matched by the user, but neither strict logical matching nor approximate logical matching correctly match the result, resulting in False Negative. This will affect the training results of classifiers, so it is necessary to prune $TS_{1}$ directly from the state space. In subset $TS_{2}$ and $TS_{3}$ , approximate logic matching is used to obtain the correct matching result, and their eigenvalues should be rewarded. It is particularly important to note that in $TS_{2}$, when the approximate logical matching results are motivated, the error results (mismatches) of the strict logic matching need to be modified $(x_{5}=0)$. In subset $TS_{4}$ where $y=-1$, mismatched services and requests are designated as matching success, but they do not affect the correctness of strict logical matching. Therefore, the inverse weight adjustment of the value in the state space is needed to alleviate the influence of False Positive on the training results. The adjustment methods are as follows:
 
-In the selection of incentive weights, inspired by [11] and based on the Bayesian posterior probability, we adjust the positive weights of state space value with the help of inference to the best explanation method. First, hypothesis   represents approximate logical matching and correctly identifies the services and requests that can be successfully matched (i=1,2 represents two results of approximate matching), and explanation   represents services and requests are actually successful matches in the training sets. The posterior probability is used to analyze the consistency between the hypothesis and the explanation, which is used as the incentive weight. Accordingly, the training set state space adjustment weight is set as  , where   represents the frequency of the matched sample that is identified as the approximate Plug-in matching by approximate logical matching. Similarly,  ,  ,  .
+\begin{align}
+TS_{2}: & IF &x_{6} \ge x_{7},\nonumber\\ & THEN &x_{6}=\omega_{1}x_{6}, x_{7}=0, \nonumber\\ & ELSE &x_{6}=0, x_{7} = \omega_{2}x_{7},\nonumber\\
+TS_{3}: & IF &x_{6} \ge x_{7},\nonumber\\ & THEN &x_{6}=\omega_{3}x_{6}, x_{7}=0, \nonumber\\ & ELSE &x_{6}=0, x_{7} = \omega_{4}x_{7},\nonumber\\
+TS_{4}: & IF &x_{6} \ge x_{7},\nonumber\\ & THEN &x_{6}=(1-\omega_{1})x_{6}, x_{7}=0 \nonumber\\ & ELSE &x_{6}=0, x_{7} = (1-\omega_{2})x_{7}.
+\end{align}
+
+
+In the selection of incentive weights, inspired by \cite{glass2009inference} and based on the Bayesian posterior probability, we adjust the positive weights of state space value with the help of inference to the best explanation method. First, hypothesis $H_{i}$ represents approximate logical matching and correctly identifies the services and requests that can be successfully matched ($i=1,2$ represents two results of approximate matching), and explanation $E$ represents services and requests are actually successful matches in the training sets. The posterior probability is used to analyze the consistency between the hypothesis and the explanation, which is used as the incentive weight. Accordingly, the training set state space adjustment weight is set as 
+\begin{equation}
+\omega_{1} = P(H_{1}|E) = P(E|H_{1}) P(H_{1})/P(E),
+\end{equation}
+where $P(E|H_{1})$ represents the frequency of the matched sample that is identified as the approximate Plug-in matching by approximate logical matching. Similarly, $\omega_{2}=P(H_{2}|E)$, $\omega_{3}=P(\neg H_{1}|\neg E)$ and $\omega_{4}=P( \neg H_{2}| \neg E)$.
 
 \section{Adaptive hybrid semantic service matchmaking experiment}
 This section uses public service discovery test set to build a simulation environment for service discovery and matching. By collecting test results and evaluating a series of service discovery algorithms, we analyze the performance and effectiveness of this method.
 
 \subsection{Simulation scenarios settings}
-Since there is no standard test set for OWL-S service discovery and matching, this paper uses service discovery test data set OWLS-TC4 to construct simulation experiment scenarios. OWLS-TC4[3] is the fourth version of the OWL-S service test set developed by Klusch et al., which is to support the performance evaluation of semantic service matchmaking algorithm based on OWL-S description. OWLS-TC4 provides 1083 semantic services described by OWL-S 1.1, which come from 9 different fields: education, health care, food, tourism, communications, economy, weapons, geography and simulation. At the same time, OWLS-TC4 provides a set of 42 test requests for performance evaluation experiments. Part of OWL-TC4 comes from the public IBM UDDI registration center, and there are many institutions and researchers working to improve and expand it to realize semi-automatic conversion from WSDL to OWL-S. In this simulation experiment, services and requests from 3 fields are selected as experimental data sets, as shown in table 1.
+Since there is no standard test set for OWL-S service discovery and matching, this paper uses service discovery test data set OWLS-TC4 to construct simulation experiment scenarios. OWLS-TC4\cite{klusch2012isem} is the fourth version of the OWL-S service test set developed by Klusch et al., which is to support the performance evaluation of semantic service matchmaking algorithm based on OWL-S description. OWLS-TC4 provides 1083 semantic services described by OWL-S 1.1, which come from 9 different fields: education, health care, food, tourism, communications, economy, weapons, geography and simulation. At the same time, OWLS-TC4 provides a set of 42 test requests for performance evaluation experiments. Part of OWL-TC4 comes from the public IBM UDDI registration center, and there are many institutions and researchers working to improve and expand it to realize semi-automatic conversion from WSDL to OWL-S. In this simulation experiment, services and requests from 3 fields are selected as experimental data sets, as shown in Table \ref{table}.
+
+\begin{table}
+\caption{Selected OWLS-TC4 domain.}
+\label{table}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{75pt}|p{75pt}|p{75pt}}
+\hline
+Fields & Number of services & Number of requests\\
+\hline
+tourism & 197 & 6 \\
+economy & 395 & 12 \\
+education & 286 & 6 \\
+\hline
+\end{tabular}
+\label{tab1}
+\end{table}
 
 The hardware environment used in the simulation experiment of SSM is a PC with Intel Xeon（TM） E3-1230v2 3.30GHz CPU and 16GB memory. The operating system is Windows 7 SP1 64 bit, which is configured with XAMPP to run the OWLS-TC4 test set. The ontology used in the experiment is based on the semantic dictionary WordNet designed by Princeton University. Based on the S2M2 framework, the semantic services and requests are parsed and the service matching simulation experiments are carried out.
 The test metrics used in the simulation experiment are precision ratio and recall ratio. Precision ratio refers to the ratio of true positive matches in the results obtained by the service matching method, and recall ratio refers to the ratio of true positive matches in the results obtained by the service matching method to the matching services specified by the test set. The advantages of the proposed algorithm are demonstrated by comparing with the logic matching, approximate logic matching, ontology structure matching and service text matching algorithms.
@@ -201,173 +392,42 @@ In order to eliminate the influence of experimental error, 10 simulation experim
 
 Note that the strict logic matching method obtains a two-classification result, namely, matching and mismatching, while other methods, including approximate logic matching, ontology structure matching and text service matching, return the order list of the service request and the matching degree. While a common method is setting a threshold to determine whether matching, our experiments are conducted to ensure the effectiveness of the algorithm under relatively fair conditions, in order to avoid the subjective bias caused by the simple threshold setting method. According to the matching service set size obtained by the strict logic matching method, the scale of the matching service set of other methods is demarcated, so all the algorithms are consistent with the number of services in the matching service set. Thus, the difference between precision and recall in fair comparison analysis algorithm is analyzed under relatively fair conditions.
 
-Figure 4 shows the precision performance of 4 typical algorithms and the proposed algorithm in different domains of test set. It can be seen from the figure that the method based on the service description text similarity matching method results is better than the other three non-hybrid algorithms in precision, while the ontology-based method on structural similarity is the worst. This is because ontology-based structural similarity and logical matching methods are very dependent on the degree of optimization constructed on the ontology tree. These methods are easy to integrate services with large concept ontology distance into the matching service set, leading to the emergence of False Positive, which directly affects the accuracy of service matching. On the other hand, although service description matching is able to improve the precision rely on text similarity, it is easy to cause False Positive phenomenon because of language ambiguity. The adaptive hybrid matching method proposed in this paper can improve the performance of service matching precision to a certain extent through the collaborative analysis of the results obtained by various algorithms.
- 
-Fig 4 The precision of different algorithms in different domains
-Figure 5 shows the recall performance of 4 typical algorithms and the proposed algorithm in different domains of test set. Because of excessively restrictions of strict logic matching, many services that can be identified as matching are judged to be mismatched by strict logical reasoning, which leads to poor performance on recall in the strict logic matching method. Based on approximate logic matching, the concept of ontology constriction and abduction are implemented to relax the restrictions on concept of ontology, so that more potential matching services can be found and the recall performance can be improved. At the same time, ontology structure matching and service text matching can also improve the False Negative phenomenon caused by strict logic matching to some extent. The adaptive hybrid matching method proposed in this paper combines the advantages of various algorithms, and improves the performance of service matching recall by using the advantages of random forest method in the classification learning model.
- 
-Fig 5 The recall of different algorithms in different domains
-In Figure 6, the effect of state space pruning based on the consistency of testimony on the average precision ratio is compared. Average precision is the average value of all precision results in all test sets. From the results it can be seen that the state space pruning based on the consistency of testimony has a significant improvement on the effect of random forest self-learning classification, which shows the effectiveness of the state space pruning.
- 
-Fig 6 The effect on recall with state space prune
+Figure \ref{fig4} shows the precision performance of 4 typical algorithms and the proposed algorithm in different domains of test set. It can be seen from the figure that the method based on the service description text similarity matching method results is better than the other three non-hybrid algorithms in precision, while the ontology-based method on structural similarity is the worst. This is because ontology-based structural similarity and logical matching methods are very dependent on the degree of optimization constructed on the ontology tree. These methods are easy to integrate services with large concept ontology distance into the matching service set, leading to the emergence of False Positive, which directly affects the accuracy of service matching. On the other hand, although service description matching is able to improve the precision rely on text similarity, it is easy to cause False Positive phenomenon because of language ambiguity. The adaptive hybrid matching method proposed in this paper can improve the performance of service matching precision to a certain extent through the collaborative analysis of the results obtained by various algorithms.
+
+\Figure[h][width=3in]{fig4}
+{The precision of different algorithms in different domains.
+\label{fig4}}
+
+Figure \ref{fig5} shows the recall performance of 4 typical algorithms and the proposed algorithm in different domains of test set. Because of excessively restrictions of strict logic matching, many services that can be identified as matching are judged to be mismatched by strict logical reasoning, which leads to poor performance on recall in the strict logic matching method. Based on approximate logic matching, the concept of ontology constriction and abduction are implemented to relax the restrictions on concept of ontology, so that more potential matching services can be found and the recall performance can be improved. At the same time, ontology structure matching and service text matching can also improve the False Negative phenomenon caused by strict logic matching to some extent. The adaptive hybrid matching method proposed in this paper combines the advantages of various algorithms, and improves the performance of service matching recall by using the advantages of random forest method in the classification learning model.
+
+\Figure[h][width=3in]{fig5}
+{The recall of different algorithms in different domains.
+\label{fig5}}
+
+In Figure \ref{fig6}, the effect of state space pruning based on the consistency of testimony on the average precision ratio is compared. Average precision is the average value of all precision results in all test sets. From the results it can be seen that the state space pruning based on the consistency of testimony has a significant improvement on the effect of random forest self-learning classification, which shows the effectiveness of the state space pruning.
+
+\Figure[h][width=3in]{fig6}
+{The effect on recall with state space prune.
+\label{fig6}}
+
 Through a comprehensive analysis of the precision and recall performance of different algorithms in all 3 fields, we can see a special phenomenon that the trend of precision ratio based on strict logic matching and approximate logic matching method is different in the domain test set with higher recall rate and lower recall level. In the tourism service area with low recall level, the performance of precision matching based on strict logic matching is better than that based on approximate logic matching. But in the economic service field with higher recall level, it shows opposite results. The results also show that any single type of service matching method has more or less defects, and it is difficult to ensure good service matching results under all the conditions. The hybrid method combining different types of SSM method is the best scheme to realize the service matching with service dependability guarantee.
 
 \section{Summary}
 In recent years, with the rapid development of cloud computing technology and service-oriented computing architecture, more and more services have been developed and run online to meet the individual needs of users. Service discovery and matching for service dependability guarantee is the basis and key to build a dependable service composition to meet the needs of users. Semantic service has the characteristics of explicit semantics and machine understandable, so that services can be automated and intelligent interoperability at the semantic level, which helps to improve the dependability level of the service system. According to the False Positive and False Negative are currently facing problems of SSM, we propose an adaptive hybrid semantic service matchmaking based on feature learning classification. SSM oriented service trustworthiness guarantee is carried out based on random forest classification. Simulation results show that the proposed method has some advantages in terms of precision and recall.
 
-
-\begin{thebibliography}{00}
-
-\bibitem{b1} G. O. Young, ``Synthetic structure of industrial plastics,'' in \emph{Plastics,} 2\textsuperscript{nd} ed., vol. 3, J. Peters, Ed. New York, NY, USA: McGraw-Hill, 1964, pp. 15--64.
-
-\bibitem{b2} W.-K. Chen, \emph{Linear Networks and Systems.} Belmont, CA, USA: Wadsworth, 1993, pp. 123--135.
-
-\bibitem{b3} J. U. Duncombe, ``Infrared navigation---Part I: An assessment of feasibility,'' \emph{IEEE Trans. Electron Devices}, vol. ED-11, no. 1, pp. 34--39, Jan. 1959, 10.1109/TED.2016.2628402.
-
-\bibitem{b4} E. P. Wigner, ``Theory of traveling-wave optical laser,'' \emph{Phys. Rev}., vol. 134, pp. A635--A646, Dec. 1965.
-
-\bibitem{b5} E. H. Miller, ``A note on reflector arrays,'' \emph{IEEE Trans. Antennas Propagat}., to be published.
-
-\bibitem{b6} E. E. Reber, R. L. Michell, and C. J. Carter, ``Oxygen absorption in the earth's atmosphere,'' Aerospace Corp., Los Angeles, CA, USA, Tech. Rep. TR-0200 (4230-46)-3, Nov. 1988.
-
-\bibitem{b7} J. H. Davis and J. R. Cogdell, ``Calibration program for the 16-foot antenna,'' Elect. Eng. Res. Lab., Univ. Texas, Austin, TX, USA, Tech. Memo. NGL-006-69-3, Nov. 15, 1987.
-
-\bibitem{b8} \emph{Transmission Systems for Communications}, 3\textsuperscript{rd} ed., Western Electric Co., Winston-Salem, NC, USA, 1985, pp. 44--60.
-
-\bibitem{b9} \emph{Motorola Semiconductor Data Manual}, Motorola Semiconductor Products Inc., Phoenix, AZ, USA, 1989.
-
-\bibitem{b10} G. O. Young, ``Synthetic structure of industrial
-plastics,'' in Plastics, vol. 3, Polymers of Hexadromicon, J. Peters,
-Ed., 2\textsuperscript{nd} ed. New York, NY, USA: McGraw-Hill, 1964, pp. 15-64.
-[Online]. Available:
-\underline{http://www.bookref.com}.
-
-\bibitem{b11} \emph{The Founders' Constitution}, Philip B. Kurland
-and Ralph Lerner, eds., Chicago, IL, USA: Univ. Chicago Press, 1987.
-[Online]. Available: \underline{http://press-pubs.uchicago.edu/founders/}
-
-\bibitem{b12} The Terahertz Wave eBook. ZOmega Terahertz Corp., 2014.
-[Online]. Available:
-\underline{http://dl.z-thz.com/eBook/zomega\_ebook\_pdf\_1206\_sr.pdf}. Accessed on: May 19, 2014.
-
-\bibitem{b13} Philip B. Kurland and Ralph Lerner, eds., \emph{The
-Founders' Constitution.} Chicago, IL, USA: Univ. of Chicago Press,
-1987, Accessed on: Feb. 28, 2010, [Online] Available:
-\underline{http://press-pubs.uchicago.edu/founders/}
-
-\bibitem{b14} J. S. Turner, ``New directions in communications,'' \emph{IEEE J. Sel. Areas Commun}., vol. 13, no. 1, pp. 11-23, Jan. 1995.
-
-\bibitem{b15} W. P. Risk, G. S. Kino, and H. J. Shaw, ``Fiber-optic frequency shifter using a surface acoustic wave incident at an oblique angle,'' \emph{Opt. Lett.}, vol. 11, no. 2, pp. 115--117, Feb. 1986.
-
-\bibitem{b16} P. Kopyt \emph{et al., ``}Electric properties of graphene-based conductive layers from DC up to terahertz range,'' \emph{IEEE THz Sci. Technol.,} to be published. DOI: 10.1109/TTHZ.2016.2544142.
-
-\bibitem{b17} PROCESS Corporation, Boston, MA, USA. Intranets:
-Internet technologies deployed behind the firewall for corporate
-productivity. Presented at INET96 Annual Meeting. [Online].
-Available: \underline{http://home.process.com/Intranets/wp2.htp}
-
-\bibitem{b18} R. J. Hijmans and J. van Etten, ``Raster: Geographic analysis and modeling with raster data,'' R Package Version 2.0-12, Jan. 12, 2012. [Online]. Available: \underline {http://CRAN.R-project.org/package=raster} 
-
-\bibitem{b19} Teralyzer. Lytera UG, Kirchhain, Germany [Online].
-Available:
-\underline{http://www.lytera.de/Terahertz\_THz\_Spectroscopy.php?id=home}, Accessed on: Jun. 5, 2014
-
-\bibitem{b20} U.S. House. 102\textsuperscript{nd} Congress, 1\textsuperscript{st} Session. (1991, Jan. 11). \emph{H. Con. Res. 1, Sense of the Congress on Approval of}  \emph{Military Action}. [Online]. Available: LEXIS Library: GENFED File: BILLS
-
-\bibitem{b21} Musical toothbrush with mirror, by L.M.R. Brooks. (1992, May 19). Patent D 326 189 [Online]. Available: NEXIS Library: LEXPAT File: DES
-
-\bibitem{b22} D. B. Payne and J. R. Stern, ``Wavelength-switched pas- sively coupled single-mode optical network,'' in \emph{Proc. IOOC-ECOC,} Boston, MA, USA, 1985, pp. 585--590.
-
-\bibitem{b23} D. Ebehard and E. Voges, ``Digital single sideband detection for interferometric sensors,'' presented at the \emph{2\textsuperscript{nd} Int. Conf. Optical Fiber Sensors,} Stuttgart, Germany, Jan. 2-5, 1984.
-
-\bibitem{b24} G. Brandli and M. Dick, ``Alternating current fed power supply,'' U.S. Patent 4 084 217, Nov. 4, 1978.
-
-\bibitem{b25} J. O. Williams, ``Narrow-band analyzer,'' Ph.D. dissertation, Dept. Elect. Eng., Harvard Univ., Cambridge, MA, USA, 1993.
-
-\bibitem{b26} N. Kawasaki, ``Parametric study of thermal and chemical nonequilibrium nozzle flow,'' M.S. thesis, Dept. Electron. Eng., Osaka Univ., Osaka, Japan, 1993.
-
-\bibitem{b27} A. Harrison, private communication, May 1995.
-
-\bibitem{b28} B. Smith, ``An approach to graphs of linear forms,'' unpublished.
-
-\bibitem{b29} A. Brahms, ``Representation error for real numbers in binary computer arithmetic,'' IEEE Computer Group Repository, Paper R-67-85.
-
-\bibitem{b30} IEEE Criteria for Class IE Electric Systems, IEEE Standard 308, 1969.
-
-\bibitem{b31} Letter Symbols for Quantities, ANSI Standard Y10.5-1968.
-
-\bibitem{b32} R. Fardel, M. Nagel, F. Nuesch, T. Lippert, and A. Wokaun, ``Fabrication of organic light emitting diode pixels by laser-assisted forward transfer,'' \emph{Appl. Phys. Lett.}, vol. 91, no. 6, Aug. 2007, Art. no. 061103.~
-
-\bibitem{b33} J. Zhang and N. Tansu, ``Optical gain and laser characteristics of InGaN quantum wells on ternary InGaN substrates,'' \emph{IEEE Photon. J.}, vol. 5, no. 2, Apr. 2013, Art. no. 2600111
-
-\bibitem{b34} S. Azodolmolky~\emph{et al.}, Experimental demonstration of an impairment aware network planning and operation tool for transparent/translucent optical networks,''~\emph{J. Lightw. Technol.}, vol. 29, no. 4, pp. 439--448, Sep. 2011.
-
-\end{thebibliography}
-
-\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{a1.png}}]{First A. Author} (M'76--SM'81--F'87) and all authors may include 
-biographies. Biographies are often not included in conference-related
-papers. This author became a Member (M) of IEEE in 1976, a Senior
-Member (SM) in 1981, and a Fellow (F) in 1987. The first paragraph may
-contain a place and/or date of birth (list place, then date). Next,
-the author's educational background is listed. The degrees should be
-listed with type of degree in what field, which institution, city,
-state, and country, and year the degree was earned. The author's major
-field of study should be lower-cased. 
-
-The second paragraph uses the pronoun of the person (he or she) and not the 
-author's last name. It lists military and work experience, including summer 
-and fellowship jobs. Job titles are capitalized. The current job must have a 
-location; previous positions may be listed 
-without one. Information concerning previous publications may be included. 
-Try not to list more than three books or published articles. The format for 
-listing publishers of a book within the biography is: title of book 
-(publisher name, year) similar to a reference. Current and previous research 
-interests end the paragraph. The third paragraph begins with the author's 
-title and last name (e.g., Dr.\ Smith, Prof.\ Jones, Mr.\ Kajor, Ms.\ Hunter). 
-List any memberships in professional societies other than the IEEE. Finally, 
-list any awards and work for IEEE committees and publications. If a 
-photograph is provided, it should be of good quality, and 
-professional-looking. Following are two examples of an author's biography.
+\bibliography{access}
+\bibliographystyle{IEEEtran.bst}
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{a1}}]{Wei Jiang} is engaged in teaching and researching as an associate professor and a master's Supervisor at Harbin Normal University. He is a member of China Computer Federation. His current research interests involve network security and autonomic computing.
 \end{IEEEbiography}
 
-\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{a2.png}}]{Second B. Author} was born in Greenwich Village, New York, NY, USA in 
-1977. He received the B.S. and M.S. degrees in aerospace engineering from 
-the University of Virginia, Charlottesville, in 2001 and the Ph.D. degree in 
-mechanical engineering from Drexel University, Philadelphia, PA, in 2008.
-
-From 2001 to 2004, he was a Research Assistant with the Princeton Plasma 
-Physics Laboratory. Since 2009, he has been an Assistant Professor with the 
-Mechanical Engineering Department, Texas A{\&}M University, College Station. 
-He is the author of three books, more than 150 articles, and more than 70 
-inventions. His research interests include high-pressure and high-density 
-nonthermal plasma discharge processes and applications, microscale plasma 
-discharges, discharges in liquids, spectroscopic diagnostics, plasma 
-propulsion, and innovation plasma applications. He is an Associate Editor of 
-the journal \emph{Earth, Moon, Planets}, and holds two patents. 
-
-Dr. Author was a recipient of the International Association of Geomagnetism 
-and Aeronomy Young Scientist Award for Excellence in 2008, and the IEEE 
-Electromagnetic Compatibility Society Best Symposium Paper Award in 2011. 
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{a2}}]{Huiqiang Wang} received his received M.E. and Ph.D. degrees from Harbin Engineering University~(HEU) in 1985 and 2005, respectively. From 2001 to 2002, He was at Queen's University, Ontario, Canada, as a senior visiting scholar. Now, he is engaged in teaching and researching as a professor and a doctoral advisor at HEU. Up to now, he holds ten Chinese patents. His research interests involve network security, cognitive networks, and autonomic computing.
 \end{IEEEbiography}
 
-\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{a3.png}}]{Third C. Author, Jr.} (M'87) received the B.S. degree in mechanical 
-engineering from National Chung Cheng University, Chiayi, Taiwan, in 2004 
-and the M.S. degree in mechanical engineering from National Tsing Hua 
-University, Hsinchu, Taiwan, in 2006. He is currently pursuing the Ph.D. 
-degree in mechanical engineering at Texas A{\&}M University, College 
-Station, TX, USA.
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{a3}}]{Guangsheng Feng} (M'18) received his B.E., M.E, and Ph.D. degrees from Harbin Engineering University (HEU) in 2003, from Harbin Institute Technology (HIT) in 2005, and from HEU in 2009, respectively. Now, he is an associate professor in HEU and researching at mobile data offloading in cellular networks and optimization. He is a full stuff at HEU. His research interests involve edge computing, LTE (LTE-A) networks and wireless channel access control.\end{IEEEbiography}
 
-From 2008 to 2009, he was a Research Assistant with the Institute of 
-Physics, Academia Sinica, Tapei, Taiwan. His research interest includes the 
-development of surface processing and biological/medical treatment 
-techniques using nonthermal atmospheric pressure plasmas, fundamental study 
-of plasma sources, and fabrication of micro- or nanostructured surfaces. 
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{a4}}]{Shichen Zou} received his Dr. degree from Harbin Engineering University in China in 2018. Now he is a full staff at the Huawei Nanjing Research Institute, and his research interests involve network security, cognitive networks.\end{IEEEbiography}
 
-Mr. Author's awards and honors include the Frew Fellowship (Australian 
-Academy of Science), the I. I. Rabi Prize (APS), the European Frequency and 
-Time Forum Award, the Carl Zeiss Research Award, the William F. Meggers 
-Award and the Adolph Lomb Medal (OSA).
-\end{IEEEbiography}
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{a5}}]{Zihan Gao} received his M.E. and Master of Digital Media in 2015 from Communication University of China and University of British Columbia, respectively. He is currently pursuing Ph.D. degree in Harbin Engineering University. His research interests involve virtual and augmented reality, human computer interaction and interactive computer graphics.\end{IEEEbiography}
 
 \EOD
 

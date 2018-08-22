@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: access.aux
+The style file: IEEEtran.bst.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: access.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty year in sycara5dynamic
+
+Done.
+You've used 11 entries,
+            4087 wiz_defined-function locations,
+            886 strings with 9416 characters,
+and the built_in function-call counts, 8946 in all, are:
+= -- 727
+> -- 196
+< -- 86
++ -- 110
+- -- 31
+* -- 446
+:= -- 1337
+add.period$ -- 25
+call.type$ -- 11
+change.case$ -- 11
+chr.to.int$ -- 192
+cite$ -- 12
+duplicate$ -- 631
+empty$ -- 704
+format.name$ -- 40
+if$ -- 2076
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 105
+newline$ -- 56
+num.names$ -- 11
+pop$ -- 223
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 689
+stack$ -- 0
+substring$ -- 457
+swap$ -- 530
+text.length$ -- 22
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 11
+warning$ -- 1
+while$ -- 43
+width$ -- 13
+write$ -- 131
+(There was 1 warning)
