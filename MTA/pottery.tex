@@ -462,8 +462,48 @@ where $N$ is the number of adjacent vertices of $\mathbf{v}_{i,j}$; $\mu \in [0,
 Only the vertices within the range of the 3D cursor $R_{O}$ will be affected.
 As a result, users can control the 3D cursor position and adjust the outer range $R_{O}$ of the 3D cursor to apply smoothing on specific areas interactively on the mesh.
 
+
+%%% HAPTIC
+
+
+\subsection{Haptic Feedback Model}
+
+\subsubsection{Analysis of Pottery Haptic}
+Unlike the barehanded experience, instrument-based interactions can provide haptic feedbacks, adding realistic feel in VR environments. In our system, a haptic pulse has been added to a controller when that controller has touched the clay. During any mesh editing process, we add movement resistance feedback based on the movement speed of each hand.
+
+\subsubsection{Static Haptic}
+
+
+
+\begin{equation}
+k = k_{min} + f_{Clamp}(\frac{ \| \mathbf{p'} - \mathbf{p}_{0} \|}{d_{max}}) \cdot (k_{max} - k_{min})
+\end{equation}
+
+
+
+\subsubsection{Kinetic Haptic}
+
+Direction
+\begin{equation}
+k = k_{min} + f_{Clamp}(\frac{ \| \mathbf{p'} - \mathbf{p}_{0} \|}{d_{max}}) \cdot (k_{max} - k_{min})
+\end{equation}
+
+Magnitude
+The frequency of the haptic feedback is modeled as the following equation:
+\begin{equation}
+k = k_{min} + f_{Clamp}(\frac{ \| \mathbf{p'} - \mathbf{p}_{0} \|}{d_{max}}) \cdot (k_{max} - k_{min})
+\end{equation}
+where $k_{min}$ and $k_{max}$ are predefined minimum and maximum frequency values respectively; $d_{max}$ is predefined maximum move distance, and $f_{Clamp}(x)$ is a function that clamps the value in $[0,1]$; $\mathbf{p'}$ and $\mathbf{p}_{0}$ are current and previous hand positions respectively.
+
+
+
+
+
+%%%
+
+
 \subsection{Interactions}
-\label{sec:4.3}
+\label{sec:4.4}
 
 %%%Fig%%% UI
 \begin{figure*}
@@ -507,12 +547,7 @@ Effective feedbacks can notify user the current state of the system. Feedbacks i
 \paragraph{Visual Feedbacks}
 In a VE, it is not so easy for users to perceive if her hands have touched anything. Hence, our system adds visual feedback on both virtual hands, which will be highlighted when touching the clay (Figure \ref{fig:highlight}).
 
-\paragraph{Haptic Feedbacks}
-Unlike the barehanded experience, instrument-based interactions can provide haptic feedbacks, adding realistic feel in VR environments. In our system, a haptic pulse has been added to a controller when that controller has touched the clay. During any mesh editing process, we add movement resistance feedback based on the movement speed of each hand. The frequency of the haptic feedback is modeled as the following equation:
-\begin{equation}
-k = k_{min} + f_{Clamp}(\frac{ \| \mathbf{p'} - \mathbf{p}_{0} \|}{d_{max}}) \cdot (k_{max} - k_{min})
-\end{equation}
-where $k_{min}$ and $k_{max}$ are predefined minimum and maximum frequency values respectively; $d_{max}$ is predefined maximum move distance, and $f_{Clamp}(x)$ is a function that clamps the value in $[0,1]$; $\mathbf{p'}$ and $\mathbf{p}_{0}$ are current and previous hand positions respectively.
+
 
 %%%Fig%%% Highlight
 \begin{figure}
