@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  26 DEC 2018 09:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.29)  8 JAN 2019 15:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -185,7 +185,19 @@ Package: marvosym 2011/07/20 v2.2 Martin Vogel's Symbols font definitions
 )
 (./pottery.aux
 
+LaTeX Warning: Label `sec:1.2' multiply defined.
+
+
 LaTeX Warning: Label `sec:4.4' multiply defined.
+
+
+LaTeX Warning: Label `sec:6.1' multiply defined.
+
+
+LaTeX Warning: Label `sec:6.2' multiply defined.
+
+
+LaTeX Warning: Label `sec:6.3' multiply defined.
 
 )
 \openout1 = `pottery.aux'.
@@ -283,97 +295,97 @@ Underfull \vbox (badness 1715) has occurred while \output is active []
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no ™ in font cmr9!
- [2]
-Underfull \vbox (badness 4132) has occurred while \output is active []
-
- [3]
-<fig1.pdf, id=20, 845.1575pt x 455.20041pt>
+ [2] [3] [4]
+<fig1.pdf, id=23, 845.1575pt x 455.20041pt>
 File: fig1.pdf Graphic file (type pdf)
  <use fig1.pdf>
-Package pdftex.def Info: fig1.pdf used on input line 214.
+Package pdftex.def Info: fig1.pdf used on input line 223.
 (pdftex.def)             Requested size: 347.0pt x 186.89731pt.
- [4]
+
 <fig2.pdf, id=24, 845.1575pt x 597.23125pt>
 File: fig2.pdf Graphic file (type pdf)
  <use fig2.pdf>
-Package pdftex.def Info: fig2.pdf used on input line 226.
+Package pdftex.def Info: fig2.pdf used on input line 235.
 (pdftex.def)             Requested size: 347.0pt x 245.21268pt.
  [5 <./fig1.pdf>]
 <fig3.pdf, id=41, 845.1575pt x 486.18608pt>
 File: fig3.pdf Graphic file (type pdf)
  <use fig3.pdf>
-Package pdftex.def Info: fig3.pdf used on input line 248.
+Package pdftex.def Info: fig3.pdf used on input line 257.
 (pdftex.def)             Requested size: 347.0pt x 199.61949pt.
  [6 <./fig2.pdf>]
-<fig4.pdf, id=77, 845.1575pt x 597.23125pt>
+<fig4.pdf, id=75, 845.1575pt x 597.23125pt>
 File: fig4.pdf Graphic file (type pdf)
  <use fig4.pdf>
-Package pdftex.def Info: fig4.pdf used on input line 276.
+Package pdftex.def Info: fig4.pdf used on input line 285.
 (pdftex.def)             Requested size: 347.0pt x 245.21268pt.
  [7 <./fig3.pdf>]
 <fig5.pdf, id=188, 845.1575pt x 597.23125pt>
 File: fig5.pdf Graphic file (type pdf)
  <use fig5.pdf>
-Package pdftex.def Info: fig5.pdf used on input line 318.
+Package pdftex.def Info: fig5.pdf used on input line 327.
 (pdftex.def)             Requested size: 347.0pt x 245.21268pt.
  [8 <./fig4.pdf>]
-<fig6.pdf, id=237, 845.1575pt x 352.94359pt>
+<fig6.pdf, id=236, 845.1575pt x 352.94359pt>
 File: fig6.pdf Graphic file (type pdf)
  <use fig6.pdf>
-Package pdftex.def Info: fig6.pdf used on input line 350.
+Package pdftex.def Info: fig6.pdf used on input line 359.
 (pdftex.def)             Requested size: 347.0pt x 144.91245pt.
  [9 <./fig5.pdf>]
 <fig7.pdf, id=287, 845.1575pt x 597.23125pt>
 File: fig7.pdf Graphic file (type pdf)
  <use fig7.pdf>
-Package pdftex.def Info: fig7.pdf used on input line 379.
+Package pdftex.def Info: fig7.pdf used on input line 388.
 (pdftex.def)             Requested size: 347.0pt x 245.21268pt.
  [10 <./fig6.pdf>]
 [11 <./fig7.pdf>] <fig8.pdf, id=354, 845.1575pt x 468.4435pt>
 File: fig8.pdf Graphic file (type pdf)
  <use fig8.pdf>
-Package pdftex.def Info: fig8.pdf used on input line 447.
+Package pdftex.def Info: fig8.pdf used on input line 456.
 (pdftex.def)             Requested size: 347.0pt x 192.33469pt.
 
 [12] [13 <./fig8.pdf>] <fig9.pdf, id=396, 845.1575pt x 444.1875pt>
 File: fig9.pdf Graphic file (type pdf)
 
 <use fig9.pdf>
-Package pdftex.def Info: fig9.pdf used on input line 507.
+Package pdftex.def Info: fig9.pdf used on input line 519.
 (pdftex.def)             Requested size: 347.0pt x 182.37561pt.
  [14 <./fig9.pdf>] <fig10.pdf, id=465, 845.1575pt x 303.85017pt>
 File: fig10.pdf Graphic file (type pdf)
 
 <use fig10.pdf>
-Package pdftex.def Info: fig10.pdf used on input line 551.
+Package pdftex.def Info: fig10.pdf used on input line 563.
 (pdftex.def)             Requested size: 347.0pt x 124.75555pt.
- [15 <./fig10.pdf>] [16]
+ [15] <fig13.png, id=469, 679.03688pt x 431.36156pt>
+File: fig13.png Graphic file (type png)
+
+<use fig13.png>
+Package pdftex.def Info: fig13.png used on input line 623.
+(pdftex.def)             Requested size: 347.0pt x 220.43248pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16 <./fig10.pdf>] [17 <./fig13.png>]
 Missing character: There is no â in font cmti9!
 Missing character: There is no € in font cmti9!
 Missing character: There is no ™ in font cmti9!
-
-<fig11.pdf, id=490, 845.1575pt x 254.06519pt>
+ <fig11.pdf, id=496, 845.1575pt x 254.06519pt>
 File: fig11.pdf Graphic file (type pdf)
- <use fig11.pdf>
-Package pdftex.def Info: fig11.pdf used on input line 630.
+
+<use fig11.pdf>
+Package pdftex.def Info: fig11.pdf used on input line 662.
 (pdftex.def)             Requested size: 347.0pt x 104.31471pt.
 
-Overfull \hbox (44.18246pt too wide) in paragraph at lines 641--650
+Overfull \hbox (44.18246pt too wide) in paragraph at lines 673--682
 [][] 
  []
 
-[17 <./fig11.pdf>] <fig12.pdf, id=514, 845.04686pt x 284.52759pt>
+<fig12.pdf, id=497, 845.04686pt x 284.52759pt>
 File: fig12.pdf Graphic file (type pdf)
-
-<use fig12.pdf>
-Package pdftex.def Info: fig12.pdf used on input line 662.
+ <use fig12.pdf>
+Package pdftex.def Info: fig12.pdf used on input line 694.
 (pdftex.def)             Requested size: 347.0pt x 116.83507pt.
- [18 <./fig12.pdf>]
-<fig13.png, id=546, 679.03688pt x 431.36156pt>
-File: fig13.png Graphic file (type png)
- <use fig13.png>
-Package pdftex.def Info: fig13.png used on input line 712.
-(pdftex.def)             Requested size: 347.0pt x 220.43248pt.
+ [18 <./fig11.pdf>] [19 <./fig12.pdf>]
 Package epstopdf Info: Source file: <fig14.eps>
 (epstopdf)                    date: 2018-07-27 09:47:13
 (epstopdf)                    size: 18479 bytes
@@ -382,16 +394,16 @@ Package epstopdf Info: Source file: <fig14.eps>
 (epstopdf)                    size: 7685 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig14-eps-converted-to.pdf
  fig14.eps>
-(epstopdf)             \includegraphics on input line 724.
+(epstopdf)             \includegraphics on input line 751.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig14-eps-converted-to.pdf, id=548, 943.525pt x 679.53876pt>
+<fig14-eps-converted-to.pdf, id=553, 943.525pt x 679.53876pt>
 File: fig14-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig14-eps-converted-to.pdf>
-Package pdftex.def Info: fig14-eps-converted-to.pdf used on input line 724.
+Package pdftex.def Info: fig14-eps-converted-to.pdf used on input line 751.
 (pdftex.def)             Requested size: 347.0pt x 249.91154pt.
- [19 <./fig13.png>]
+ [20 <./fig14-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <fig15.eps>
 (epstopdf)                    date: 2018-07-27 09:46:51
 (epstopdf)                    size: 15430 bytes
@@ -400,29 +412,32 @@ Package epstopdf Info: Source file: <fig15.eps>
 (epstopdf)                    size: 6124 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig15-eps-converted-to.pdf
  fig15.eps>
-(epstopdf)             \includegraphics on input line 743.
+(epstopdf)             \includegraphics on input line 770.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig15-eps-converted-to.pdf, id=554, 943.525pt x 679.53876pt>
+<fig15-eps-converted-to.pdf, id=562, 943.525pt x 679.53876pt>
 File: fig15-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig15-eps-converted-to.pdf>
-Package pdftex.def Info: fig15-eps-converted-to.pdf used on input line 743.
+Package pdftex.def Info: fig15-eps-converted-to.pdf used on input line 770.
 (pdftex.def)             Requested size: 260.25pt x 187.43884pt.
- [20 <./fig14-eps-converted-to.pdf>] [21 <./fig15-eps-converted-to.pdf>]
-Overfull \hbox (7.49399pt too wide) in paragraph at lines 790--793
+
+Underfull \vbox (badness 6268) has occurred while \output is active []
+
+ [21 <./fig15-eps-converted-to.pdf>] [22]
+Overfull \hbox (7.49399pt too wide) in paragraph at lines 817--820
 \OT1/cmr/m/n/8 (No. 61502118), the Nat-u-ral Sci-ence Foun-da-tion of Hei-longj
 iang Province in China (No. F2016028
  []
 
 
-Overfull \hbox (38.68611pt too wide) in paragraph at lines 790--793
+Overfull \hbox (38.68611pt too wide) in paragraph at lines 817--820
 \OT1/cmr/m/n/8 and F2016009), the Fun-da-men-tal Re-search Fund for the Cen-tra
 l Uni-ver-si-ties in China (No. HEUCF180602
  []
 
 
-Overfull \hbox (25.64981pt too wide) in paragraph at lines 790--793
+Overfull \hbox (25.64981pt too wide) in paragraph at lines 817--820
 \OT1/cmr/m/n/8 and HEUCFM180604) and the Na-tional Sci-ence and Tech-nol-ogy Ma
 -jor Project (No. 2016ZX03001023-
  []
@@ -431,7 +446,7 @@ Overfull \hbox (25.64981pt too wide) in paragraph at lines 790--793
 Missing character: There is no â in font cmr8!
 Missing character: There is no € in font cmr8!
 Missing character: There is no ™ in font cmr8!
- [22]) [23] (./pottery.aux)
+ [23]) [24] (./pottery.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -441,13 +456,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3533 strings out of 492995
- 49640 string characters out of 6132704
- 113099 words of memory out of 5000000
- 7029 multiletter control sequences out of 15000+600000
+ 3535 strings out of 492995
+ 49658 string characters out of 6132704
+ 113118 words of memory out of 5000000
+ 7031 multiletter control sequences out of 15000+600000
  14591 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,13n,25p,846b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,13n,25p,851b,314s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/STIXGeneral-Bold.
 pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/STIXGeneral-Ita
 lic.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/stix/STIXGeneral
@@ -468,10 +483,10 @@ cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loca
 l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/
 texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/te
 xlive/2017/texmf-dist/fonts/type1/public/marvosym/marvosym.pfb>
-Output written on pottery.pdf (23 pages, 13353983 bytes).
+Output written on pottery.pdf (24 pages, 13354461 bytes).
 PDF statistics:
- 635 PDF objects out of 1000 (max. 8388607)
- 429 compressed objects within 5 object streams
+ 638 PDF objects out of 1000 (max. 8388607)
+ 431 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

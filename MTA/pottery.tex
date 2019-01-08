@@ -103,6 +103,9 @@ The results of our user study has shown that our system requires lower cognitive
 \label{sec:1}
 %[CAD tools - hard to use]
 Pottery is one of the oldest inventions in many civilizations in human history for thousands of years, which is made by shaping clay into heterogeneous forms.
+
+\subsection{Motivation}
+\label{sec:1.1}
 In recent years, emerging technologies such as 3D printing introduces a new way of pot design, enabling people to fabricate pots in a digital way with the help of Computer Aided Design (CAD) software and 3D printers.
 However, although state-of-the-art CAD tools (Maya \cite{website:maya}, 3ds Max \cite{website:3dmax}, etc.) provide powerful toolsets and rich features for 3D modeling pipeline, these systems are formidable for novice users and children to learn due to complex user interfaces.
 There are several desktop CAD systems which are specifically developed for pottery design \cite{koutsoudis2009qp,kumar2011wheel}, which can generate 3D pot meshes based on the values from user keyboard and mouse input. Although having simplified user interfaces comparing with professional tools, the experience of these systems is not intuitive and the operations are far different from the pottery workflow in reality.
@@ -116,6 +119,9 @@ These works indeed provide a gentle learning curve, however, they have some comm
 (2) In terms of reality, immersion or haptic feedbacks are missing in these systems, where the user experience is less realistic. Moreover, these systems overlook some visual features of clay, namely shape irregularity, thickness, etc., which undermines realistic look and feel in the pot design process.
 %
 (3) The deformation parameters cannot be adjusted interactively by the users, which restricts various possible effects of deformation.
+
+\subsection{Goals}
+\label{sec:1.2}
 
 %[design goals: 1. simple 2. robust/realistic]
 In this paper, we present RealPot, an immersive VR system that allows users to design virtual pottery models from their hand movements using hand-held haptic motion controllers in a virtual environment (VE).
@@ -133,6 +139,9 @@ Oviatt concluded that human-centered design can minimize users’ cognitive load
 The natural behaviors in real-life pottery creation is fully considered in our system, so that the interface of RealPot can be more intuitive, easier to learn, and freer of performance errors.
 In addition, Jacob et al. \cite{Jacob2008Reality} summarized that the designer's goal should be to allow the user to perform realistic tasks realistically, to provide additional non real-world functionality, and to use analogies for these commands whenever possible.
 Hence, while RealPot is designed based on pottery creation process in reality to minimize the effort, convenient functionalities should be provided in our system for efficiency as well.
+
+\subsection{Contributions}
+\label{sec:1.2}
 
 %[contributions]
 The main contributions of our works are:
@@ -199,7 +208,7 @@ In AR Pottery \cite{han2007ar}, augmented reality has been applied to pottery de
 
 Although the interfaces provided by these systems are not difficult to learn, some realistic features are ignored and the workflow is oversimplified.
 %[design consideration - EDUCATION!!!]
-In contrast to all existing works, our system provides a much realistic workflow and experience, which allows users to manipulate virtual pots through various two-handed spatial interactions, helping novice users and children to understand and learn real life pottery skills in a VE.
+In contrast to all existing works, our system provides a much more realistic workflow and experience, which allows users to manipulate virtual pots through various two-handed spatial interactions, helping novice users and children to understand and learn real life pottery skills in a VE.
 
 
 \section{System Overview}
@@ -609,10 +618,45 @@ Axis Segments & Height Segments & Vertices & Triangles & Generation Time (ms)\\
 \end{tabular}
 \end{table}
 
+%%%Fig%%% pots
+\begin{figure*}
+\includegraphics[width=\textwidth]{fig13}
+\caption{The virtual pots designed by our system, which are real-time rendered in Unity3D.}
+\label{fig:pots}
+\end{figure*}
+
 \section{User Study}
 \label{sec:6}
 In order to compare our system with prior CAD systems that can design virtual pottery on desktop and tablet platforms, we set up a comparative user study. We chose Autodesk Maya \cite{website:maya} as a representative of desktop modeling systems and Let's Create! Pottery (LCP) \cite{website:letspottery} as a representative of tablet pottery design systems.
 
+\subsection{User Study 1: Haptic}
+\label{sec:6.1}
+we investigated how different haptic feedback can influence usability.
+
+no haptic
+
+simple haptic
+
+advanced haptic
+
+
+seven-point Likert scale
+
+
+
+
+\subsection{User Study 2: vs other vp}
+\label{sec:6.2}
+how our system compare with other virtual pottery systems
+since these systems are hard to obtain, we use DigiClay as a representative bare-hand based pottery system 
+
+\subsection{User Study 3: RealPot vs other cad system}
+\label{sec:6.3}
+%GOAL
+%RealPot vs Maya
+To investigate the influence of modeling pipeline, we compare RealPot and Autodesk Maya since they both support 3D modeling. They differ in workflow to create and edit meshes. While RealPot can automatically generate a mesh for deformation with motion controllers, Maya needs to create a mesh from a primitive cylinder in order to edit in vertex mode, edge mode or face mode with mouse and keyboard. 
+%RealPot vs Lets
+On the other hand, RealPot and LCP have similarities in their workflows with intuitive interactions. They both allow users deform the mesh interactively with natural user interfaces. While RealPot enables parameter control and spatial interaction, LCP has no parameter control and provides touchscreen-based experience.
 
 \subsection{Evaluated Systems}
 \label{sec:6.1}
@@ -624,10 +668,7 @@ The three evaluated systems were as follows:
 
 The interfaces of all the three systems are demonstrated in Figure \ref{fig:sys}, and a comparison of interactions in these systems is listed in Table \ref{tab:3}. 
 Although the three systems are different, we focus on comparing them based on their similarities and workflows.
-%RealPot vs Maya
-To investigate the influence of modeling pipeline, we compare RealPot and Autodesk Maya since they both support 3D modeling. They differ in workflow to create and edit meshes. While RealPot can automatically generate a mesh for deformation with motion controllers, Maya needs to create a mesh from a primitive cylinder in order to edit in vertex mode, edge mode or face mode with mouse and keyboard. 
-%RealPot vs Lets
-On the other hand, RealPot and LCP have similarities in their workflows with intuitive interactions. They both allow users deform the mesh interactively with natural user interfaces. While RealPot enables parameter control and spatial interaction, LCP has no parameter control and provides touchscreen-based experience.
+
 %%%Fig%%% Sys
 \begin{figure*}
 \includegraphics[width=\textwidth]{fig11}
@@ -710,12 +751,7 @@ We intended to allow our subjects to experience those differences and similariti
 \subsection{Study Results}
 \label{sec:6.4}
 
-%%%Fig%%% pots
-\begin{figure*}
-\includegraphics[width=\textwidth]{fig13}
-\caption{The virtual pots designed by our system, which are real-time rendered in Unity3D.}
-\label{fig:pots}
-\end{figure*}
+
 
 %[basic introduction]
 %Figure \ref{fig:boxplot} shows the boxplots of completion time and correlation coefficient for each target shape created in \textbf{T}\textsubscript{1}.
@@ -731,7 +767,7 @@ Figure \ref{fig:ranking} shows the vote results of \textbf{Q}\textsubscript{1}, 
 
 %mental/physical/temporal
 According to Figure \ref{fig:tlx}, we can get some findings. 
-Firstly, the mental demand values of \textbf{T}\textsubscript{1} (M = 2.52) and \textbf{T}\textsubscript{2} (M = 2.11) were almost the same and much lower than the value of \textbf{T}\textsubscript{3} (M = 4.92). Similarly, the temporal demand value of \textbf{T}\textsubscript{3} (M = 5.77) was much higher than the values of \textbf{T}\textsubscript{1} (M = 3.21) and \textbf{T}\textsubscript{2} (M = 2.98). This indicated that RealPot and LCP were easier to use and less time-consuming than Maya. Unsurprisingly, the physical demand value of \textbf{T}\textsubscript{1} (M = 2.89) is slightly higher than \textbf{T}\textsubscript{2} (M = 1.86) and \textbf{T}\textsubscript{3} (M = 2.31), which means interactions based spatial movements are slightly laborious than touchscreen and keyboard/mouse interactions.
+Firstly, the mental demand values of \textbf{T}\textsubscript{1} (M = 2.52) and \textbf{T}\textsubscript{2} (M = 2.11) were almost the same and much lower than the value of \textbf{T}\textsubscript{3} (M = 4.92). Similarly, the temporal demand value of \textbf{T}\textsubscript{3} (M = 5.77) was much higher than the values of \textbf{T}\textsubscript{1} (M = 3.21) and \textbf{T}\textsubscript{2} (M = 2.98). This indicated that RealPot and LCP were easier to use and less time-consuming than Maya. Unsurprisingly, the physical demand value of \textbf{T}\textsubscript{1} (M = 2.89) is slightly higher than \textbf{T}\textsubscript{2} (M = 1.86) and \textbf{T}\textsubscript{3} (M = 2.31), which means interactions based spatial movements are slightly more laborious than touchscreen and keyboard/mouse interactions.
 
 %[Maya - hard]
 Maya showed much higher values in effort (M = 6.87) and frustration (M = 7.30) and lower value in performance (M = 4.08) compared with RealPot and LCP.
