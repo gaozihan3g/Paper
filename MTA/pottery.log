@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.9)  9 JAN 2019 22:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.9)  12 JAN 2019 00:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -251,10 +251,16 @@ Package: marvosym 2011/07/20 v2.2 Martin Vogel's Symbols font definitions
 )
 (./pottery.aux
 
-LaTeX Warning: Label `sec:1.2' multiply defined.
-
-
 LaTeX Warning: Label `sec:4.4' multiply defined.
+
+
+LaTeX Warning: Label `fig:tlx' multiply defined.
+
+
+LaTeX Warning: Label `fig:tlx' multiply defined.
+
+
+LaTeX Warning: Label `tab:3' multiply defined.
 
 
 LaTeX Warning: Label `sec:6.1' multiply defined.
@@ -264,6 +270,9 @@ LaTeX Warning: Label `sec:6.2' multiply defined.
 
 
 LaTeX Warning: Label `sec:6.3' multiply defined.
+
+
+LaTeX Warning: Label `fig:tlx' multiply defined.
 
 )
 \openout1 = `pottery.aux'.
@@ -361,102 +370,77 @@ LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <9.5> not available
 (Font)              size <9> substituted on input line 84.
 
 LaTeX Font Info:    Try loading font information for U+mvs on input line 84.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/marvosym/umvs.fd)
-Underfull \vbox (badness 1715) has occurred while \output is active []
-
- [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] 
-[3] [4]
+(/usr/local/texlive/2018/texmf-dist/tex/latex/marvosym/umvs.fd) [1{/usr/local/t
+exlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
 <fig1.pdf, id=23, 845.1575pt x 455.20041pt>
 File: fig1.pdf Graphic file (type pdf)
 <use fig1.pdf>
-Package pdftex.def Info: fig1.pdf  used on input line 223.
+Package pdftex.def Info: fig1.pdf  used on input line 283.
 (pdftex.def)             Requested size: 347.0pt x 186.89731pt.
-<fig2.pdf, id=24, 845.1575pt x 597.23125pt>
+ [5 <./fig1.pdf>]
+<fig2.pdf, id=39, 845.1575pt x 597.23125pt>
 File: fig2.pdf Graphic file (type pdf)
 <use fig2.pdf>
-Package pdftex.def Info: fig2.pdf  used on input line 235.
+Package pdftex.def Info: fig2.pdf  used on input line 295.
 (pdftex.def)             Requested size: 347.0pt x 245.21268pt.
-
-[5 <./fig1.pdf>]
-<fig3.pdf, id=41, 845.1575pt x 486.18608pt>
+<fig3.pdf, id=40, 845.1575pt x 486.18608pt>
 File: fig3.pdf Graphic file (type pdf)
 <use fig3.pdf>
-Package pdftex.def Info: fig3.pdf  used on input line 257.
+Package pdftex.def Info: fig3.pdf  used on input line 317.
 (pdftex.def)             Requested size: 347.0pt x 199.61949pt.
- [6 <./fig2.pdf>]
-<fig4.pdf, id=75, 845.1575pt x 597.23125pt>
+ [6 <./fig2.pdf>] [7 <./fig3.pdf>]
+<fig4.pdf, id=185, 845.1575pt x 597.23125pt>
 File: fig4.pdf Graphic file (type pdf)
 <use fig4.pdf>
-Package pdftex.def Info: fig4.pdf  used on input line 285.
-(pdftex.def)             Requested size: 347.0pt x 245.21268pt.
- [7 <./fig3.pdf>]
-<fig5.pdf, id=188, 845.1575pt x 597.23125pt>
-File: fig5.pdf Graphic file (type pdf)
-<use fig5.pdf>
-Package pdftex.def Info: fig5.pdf  used on input line 327.
+Package pdftex.def Info: fig4.pdf  used on input line 345.
 (pdftex.def)             Requested size: 347.0pt x 245.21268pt.
  [8 <./fig4.pdf>]
-<fig6.pdf, id=236, 845.1575pt x 352.94359pt>
+<fig5.pdf, id=235, 845.1575pt x 597.23125pt>
+File: fig5.pdf Graphic file (type pdf)
+<use fig5.pdf>
+Package pdftex.def Info: fig5.pdf  used on input line 387.
+(pdftex.def)             Requested size: 347.0pt x 245.21268pt.
+ [9 <./fig5.pdf>]
+<fig6.pdf, id=286, 845.1575pt x 352.94359pt>
 File: fig6.pdf Graphic file (type pdf)
 <use fig6.pdf>
-Package pdftex.def Info: fig6.pdf  used on input line 359.
+Package pdftex.def Info: fig6.pdf  used on input line 419.
 (pdftex.def)             Requested size: 347.0pt x 144.91245pt.
- [9 <./fig5.pdf>]
-<fig7.pdf, id=287, 845.1575pt x 597.23125pt>
+
+[10 <./fig6.pdf>]
+<fig7.pdf, id=313, 845.1575pt x 597.23125pt>
 File: fig7.pdf Graphic file (type pdf)
 <use fig7.pdf>
-Package pdftex.def Info: fig7.pdf  used on input line 388.
+Package pdftex.def Info: fig7.pdf  used on input line 448.
 (pdftex.def)             Requested size: 347.0pt x 245.21268pt.
- [10 <./fig6.pdf>] [11 <./fig7.pdf>]
-<fig8.pdf, id=354, 845.1575pt x 468.4435pt>
+ [11 <./fig7.pdf>] [12]
+<fig8.pdf, id=357, 845.1575pt x 468.4435pt>
 File: fig8.pdf Graphic file (type pdf)
 <use fig8.pdf>
-Package pdftex.def Info: fig8.pdf  used on input line 456.
+Package pdftex.def Info: fig8.pdf  used on input line 516.
 (pdftex.def)             Requested size: 347.0pt x 192.33469pt.
- [12] [13 <./fig8.pdf>] [14]
+ [13 <./fig8.pdf>] [14]
 <fig9.pdf, id=399, 845.1575pt x 444.1875pt>
 File: fig9.pdf Graphic file (type pdf)
 <use fig9.pdf>
-Package pdftex.def Info: fig9.pdf  used on input line 604.
+Package pdftex.def Info: fig9.pdf  used on input line 664.
 (pdftex.def)             Requested size: 347.0pt x 182.37561pt.
- [15]
-Underfull \vbox (badness 2818) has occurred while \output is active []
-
- [16 <./fig9.pdf>]
+ [15] [16 <./fig9.pdf>]
 <fig10.pdf, id=471, 845.1575pt x 303.85017pt>
 File: fig10.pdf Graphic file (type pdf)
 <use fig10.pdf>
-Package pdftex.def Info: fig10.pdf  used on input line 648.
+Package pdftex.def Info: fig10.pdf  used on input line 708.
 (pdftex.def)             Requested size: 347.0pt x 124.75555pt.
-<fig13.png, id=472, 679.03688pt x 431.36156pt>
+ [17 <./fig10.pdf>]
+<fig13.png, id=493, 679.03688pt x 431.36156pt>
 File: fig13.png Graphic file (type png)
 <use fig13.png>
-Package pdftex.def Info: fig13.png  used on input line 708.
+Package pdftex.def Info: fig13.png  used on input line 768.
 (pdftex.def)             Requested size: 347.0pt x 220.43248pt.
 
-Underfull \vbox (badness 1158) has occurred while \output is active []
-
- [17 <./fig10.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [18 <./fig13.png>]
-<fig11.pdf, id=499, 845.1575pt x 254.06519pt>
-File: fig11.pdf Graphic file (type pdf)
-<use fig11.pdf>
-Package pdftex.def Info: fig11.pdf  used on input line 766.
-(pdftex.def)             Requested size: 347.0pt x 104.31471pt.
-
-Overfull \hbox (44.18246pt too wide) in paragraph at lines 777--786
-[][] 
- []
-
-[19]
-<fig12.pdf, id=504, 845.04686pt x 284.52759pt>
-File: fig12.pdf Graphic file (type pdf)
-<use fig12.pdf>
-Package pdftex.def Info: fig12.pdf  used on input line 798.
-(pdftex.def)             Requested size: 347.0pt x 116.83507pt.
- [20 <./fig11.pdf> <./fig12.pdf>]
 Package epstopdf Info: Source file: <fig14.eps>
 (epstopdf)                    date: 2019-01-09 09:53:14
 (epstopdf)                    size: 18479 bytes
@@ -465,14 +449,75 @@ Package epstopdf Info: Source file: <fig14.eps>
 (epstopdf)                    size: 7685 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig14-eps-converted-to.pdf
  fig14.eps>
-(epstopdf)             \includegraphics on input line 855.
+(epstopdf)             \includegraphics on input line 821.
 Package epstopdf Info: Output file is already uptodate.
-<fig14-eps-converted-to.pdf, id=556, 943.525pt x 679.53876pt>
+<fig14-eps-converted-to.pdf, id=499, 943.525pt x 679.53876pt>
 File: fig14-eps-converted-to.pdf Graphic file (type pdf)
 <use fig14-eps-converted-to.pdf>
-Package pdftex.def Info: fig14-eps-converted-to.pdf  used on input line 855.
+Package pdftex.def Info: fig14-eps-converted-to.pdf  used on input line 821.
 (pdftex.def)             Requested size: 347.0pt x 249.91154pt.
- [21]
+ [19]
+Package epstopdf Info: Source file: <fig14.eps>
+(epstopdf)                    date: 2019-01-09 09:53:14
+(epstopdf)                    size: 18479 bytes
+(epstopdf)             Output file: <fig14-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-01-09 09:53:14
+(epstopdf)                    size: 7685 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig14-eps-converted-to.pdf
+ fig14.eps>
+(epstopdf)             \includegraphics on input line 849.
+Package epstopdf Info: Output file is already uptodate.
+File: fig14-eps-converted-to.pdf Graphic file (type pdf)
+<use fig14-eps-converted-to.pdf>
+Package pdftex.def Info: fig14-eps-converted-to.pdf  used on input line 849.
+(pdftex.def)             Requested size: 347.0pt x 249.91154pt.
+ [20 <./fig14-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <fig14.eps>
+(epstopdf)                    date: 2019-01-09 09:53:14
+(epstopdf)                    size: 18479 bytes
+(epstopdf)             Output file: <fig14-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-01-09 09:53:14
+(epstopdf)                    size: 7685 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig14-eps-converted-to.pdf
+ fig14.eps>
+(epstopdf)             \includegraphics on input line 908.
+Package epstopdf Info: Output file is already uptodate.
+File: fig14-eps-converted-to.pdf Graphic file (type pdf)
+<use fig14-eps-converted-to.pdf>
+Package pdftex.def Info: fig14-eps-converted-to.pdf  used on input line 908.
+(pdftex.def)             Requested size: 347.0pt x 249.91154pt.
+ [21] [22]
+<fig11.pdf, id=518, 845.1575pt x 254.06519pt>
+File: fig11.pdf Graphic file (type pdf)
+<use fig11.pdf>
+Package pdftex.def Info: fig11.pdf  used on input line 944.
+(pdftex.def)             Requested size: 347.0pt x 104.31471pt.
+
+Overfull \hbox (44.18246pt too wide) in paragraph at lines 955--964
+[][] 
+ []
+
+<fig12.pdf, id=519, 845.04686pt x 284.52759pt>
+File: fig12.pdf Graphic file (type pdf)
+<use fig12.pdf>
+Package pdftex.def Info: fig12.pdf  used on input line 976.
+(pdftex.def)             Requested size: 347.0pt x 116.83507pt.
+[23 <./fig11.pdf>]
+Package epstopdf Info: Source file: <fig14.eps>
+(epstopdf)                    date: 2019-01-09 09:53:14
+(epstopdf)                    size: 18479 bytes
+(epstopdf)             Output file: <fig14-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-01-09 09:53:14
+(epstopdf)                    size: 7685 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig14-eps-converted-to.pdf
+ fig14.eps>
+(epstopdf)             \includegraphics on input line 1033.
+Package epstopdf Info: Output file is already uptodate.
+File: fig14-eps-converted-to.pdf Graphic file (type pdf)
+<use fig14-eps-converted-to.pdf>
+Package pdftex.def Info: fig14-eps-converted-to.pdf  used on input line 1033.
+(pdftex.def)             Requested size: 347.0pt x 249.91154pt.
+ [24 <./fig12.pdf>]
 Package epstopdf Info: Source file: <fig15.eps>
 (epstopdf)                    date: 2019-01-09 09:53:14
 (epstopdf)                    size: 15430 bytes
@@ -481,33 +526,36 @@ Package epstopdf Info: Source file: <fig15.eps>
 (epstopdf)                    size: 6124 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig15-eps-converted-to.pdf
  fig15.eps>
-(epstopdf)             \includegraphics on input line 874.
+(epstopdf)             \includegraphics on input line 1052.
 Package epstopdf Info: Output file is already uptodate.
-<fig15-eps-converted-to.pdf, id=560, 943.525pt x 679.53876pt>
+<fig15-eps-converted-to.pdf, id=574, 943.525pt x 679.53876pt>
 File: fig15-eps-converted-to.pdf Graphic file (type pdf)
 <use fig15-eps-converted-to.pdf>
-Package pdftex.def Info: fig15-eps-converted-to.pdf  used on input line 874.
+Package pdftex.def Info: fig15-eps-converted-to.pdf  used on input line 1052.
 (pdftex.def)             Requested size: 260.25pt x 187.43884pt.
- [22 <./fig14-eps-converted-to.pdf>]
-[23 <./fig15-eps-converted-to.pdf>]
-Overfull \hbox (7.49399pt too wide) in paragraph at lines 921--924
+
+Underfull \vbox (badness 5161) has occurred while \output is active []
+
+ [25]
+[26 <./fig15-eps-converted-to.pdf>]
+Overfull \hbox (7.49399pt too wide) in paragraph at lines 1099--1102
 \OT1/cmr/m/n/8 (No. 61502118), the Nat-u-ral Sci-ence Foun-da-tion of Hei-longj
 iang Province in China (No. F2016028
  []
 
 
-Overfull \hbox (38.68611pt too wide) in paragraph at lines 921--924
+Overfull \hbox (38.68611pt too wide) in paragraph at lines 1099--1102
 \OT1/cmr/m/n/8 and F2016009), the Fun-da-men-tal Re-search Fund for the Cen-tra
 l Uni-ver-si-ties in China (No. HEUCF180602
  []
 
 
-Overfull \hbox (25.64981pt too wide) in paragraph at lines 921--924
+Overfull \hbox (25.64981pt too wide) in paragraph at lines 1099--1102
 \OT1/cmr/m/n/8 and HEUCFM180604) and the Na-tional Sci-ence and Tech-nol-ogy Ma
 -jor Project (No. 2016ZX03001023-
  []
 
-(./pottery.bbl [24]) [25] (./pottery.aux)
+(./pottery.bbl [27] [28]) [29] (./pottery.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -517,13 +565,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3535 strings out of 492649
- 49663 string characters out of 6129623
- 115765 words of memory out of 5000000
- 7359 multiletter control sequences out of 15000+600000
+ 3536 strings out of 492649
+ 49672 string characters out of 6129623
+ 115785 words of memory out of 5000000
+ 7360 multiletter control sequences out of 15000+600000
  14591 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,25p,851b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,13n,25p,851b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/stix/STIXGeneral-Bold.
 pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/stix/STIXGeneral-Ita
 lic.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/stix/STIXGeneral
@@ -544,10 +592,10 @@ cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loca
 l/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/
 texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/te
 xlive/2018/texmf-dist/fonts/type1/public/marvosym/marvosym.pfb>
-Output written on pottery.pdf (25 pages, 13359140 bytes).
+Output written on pottery.pdf (29 pages, 13363983 bytes).
 PDF statistics:
- 642 PDF objects out of 1000 (max. 8388607)
- 434 compressed objects within 5 object streams
+ 654 PDF objects out of 1000 (max. 8388607)
+ 442 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
