@@ -87,7 +87,7 @@
 \begin{abstract}
 
 %1. background
-In the recent decade, virtual pottery has become an interesting topic in computer aided design.
+In the last two decades, virtual pottery has become an interesting topic in computer aided design.
 %2. however
 Although existing works allows user to create pottery intuitively, aiming for simulation trainning, it is unclear whether the increased display and interaction asepects of fidelity can impact the usability of the system.
 %3. therefore, we ...
@@ -542,69 +542,62 @@ As a result, users can control the 3D cursor position and adjust the outer range
 %%% HAPTIC
 \subsection{Haptic Feedback Model}
 
-Unlike the barehanded experience, instrument-based interactions can provide haptic feedbacks, adding realistic feel in VR environments. In our system, a haptic pulse has been added to a controller when that controller has touched the clay. During any mesh editing process, we add movement resistance feedback based on the movement speed of each hand.
+Haptic feedbacks can be crucial when touching or grasping an object in virtual environments, which are helpful for users to perceive the location of virtual objects.
+However, little work has been done on haptic feedbacks in the existing virtual pottery systems, due to their intrinsic barehand-based interaction mechanisms.
+To increase the fidelity of our system, a haptic feedback model for virtual pottery is described  in this subsection.
+Unlike the barehand experience, RealPot provide users with rich haptic feedbacks by handheld controllers based on the proposed model.
 
-
-// It is crucial to have haptic feedback. Unfortunately, most existing vp system fail to consider
+%Unlike the barehand experience, instrument-based interactions can provide haptic feedbacks, adding realistic feel in VR environments. In our system, a haptic pulse has been added to a controller when that controller has touched the clay. During any mesh editing process, we add movement resistance feedback based on the movement speed of each hand.
 
 
 \subsubsection{Analysis of the sensation in pottery}
 
-%%%
+In real life pottery, users can perceive forces from hands and fingers when performing various operations on the clay.
+In addition, users can obtain information from these forces, such as shape and smoothness etc.
 
-1//When making a pottery work with hands in real life, users can percept
+To provide realistic haptic feedbacks in our system, we analyzed the pottery throwing process in real life.
+In general, the haptic feedbacks from clay can be classified into two categories based on the type of forces: friction force and reaction force.
+When a user softly touches the clay without pushing or pulling, he/she can perceive the sensation on fingers or hands since the clay is rotating.
+Moreover, when a user pushes or pulls to deform the clay, reaction forces are generated in the opposite direction to the movement.
 
-//In addition, users can obtain information from the forces such as shape
+% in our system, ? are provided to the user.
 
+From the analysis, clay various changes including...(i)friction (ii)reaction
 
+As described in Section \ref{sec:editing}, there are five main mesh editing operations in our system.
 
-2//To provide the sensation using our system, we analyzed the pottery creation process in real life.
+% ??? Among the five operations, both friction force and reaction force will be generated.
 
-// in general, two category: the Friction force and reaction force
+By designing mechanisms that simulate the forces, we can realize a virtual pottery system with realistic haptic feedbacks.
+The mechanisms will be described in detail in the following subsections.
 
-// assumption
+%5// friction from rotation
 
+%// factors - pressure and dryness, smoothness
 
-3// when start very softly touching - friction
+%6// reaction force
 
-// when applying force - reaction force
+%// depends on the force, hand acceleration
 
-// in our system, ? are provided to the user.
+\subsubsection{Friction Haptic Model}
 
+%The direction of the force is ...
 
+%The magnitude of the force is ...
 
-4 // From this analysis, clay various changes including...(i)friction (ii)reaction
+%The friction force is the pressure.
 
-// in the 5 operations, 1 and 5 can be considered as static haptic since …
-// 2, 3 and 4 are kinetic haptic
+% changes according to the amount of pressure applied to the clay.
 
-//By creating mechanisms that simulate the forces, we can realize a virtual pottery system with high fidelity.
-
-//The mechanism is described in detail in the following sections.
-
-%%%
-
-5// friction from rotation
-
-// factors - pressure and dryness, smoothness
-
-6// reaction force
-
-// depends on the force, hand acceleration
+%// The hand will get frictional force when touching the rotating clay
+%// can will get extra force when trying to centering or smoothing by applying pressure
 
 
+%//When the hand start to contact with the rotating clay, the user can perceive the sensation of touching the clay surface. The roughness of the contact surface and the pressure 
 
-\subsubsection{Basic Haptic Model}
+In this subsection, we describe a model to calculate the friction force, which is generated when the user touches the surface of the rotating clay.
 
-//In this subsection, we calculate the friction force, which changes according to the amount of pressure applied to the clay.
-// This model is the "basic haptic model" and an advanced model is presented in the next section.
-
-// The hand will get frictional force when touching the rotating clay
-// can will get extra force when trying to centering or smoothing by applying pressure
-
-
-//When the hand start to contact with the rotating clay, the user can perceive the sensation of touching the clay surface. The roughness of the contact surface and the pressure 
-
+For calculation efficiency, we assumed the friction type as kinetic friction, which is a force that opposes the relative motion between moving surfaces.
 The frictional force can be calculated by the following equation:
 
 \begin{equation}
@@ -613,56 +606,64 @@ F_{f} = \mu \cdot F_{n}
 
 where $\mu$ is the coefficient of friction between clay and hand, and $F_{n}$ is the normal force exerted on the clay surface.
 
+Since all the mesh editing operations in our system can be performed using handheld controllers, we use the trigger value as the input of normal force.
 
-//In our system, haptic feedback pulse is generated by the HTC VIVE handheld controller. 
+The trigger value ranges from 0 to 1, which indicates how much has the user pulled the trigger button.
 
-// we use trigger value as the normal force
+% when the trigger is not pressed and the controller is contacted with the clay. -> minimum friction
 
-// when the trigger is not pressed and the controller is contacted with the clay. -> minimum friction
-
-the harder the user pull the trigger, the normal force is larger
-
-The pulse frequency based on friction is calculated as:
+In the HTC VIVE handheld controllers, haptic feedback is generated by the built-in vibrators.
+The haptic pulse intensity based on friction is calculated as:
 
 \begin{equation}
 k_{f} = k_{min} + \epsilon \cdot k_{\mu}
 \end{equation}
-where $k_{0}$ is the minimum friction frequency when user just touches the clay, and $\epsilon \in [0,1]$ is analog value of the trigger button. $k_{\mu}$ is the predefined coefficient.
+where $k_{0}$ is the minimum friction intensity when user just touches the clay, and $\epsilon \in [0,1]$ is analog value of the trigger button. $k_{\mu}$ is the predefined coefficient.
 
 
+\subsubsection{Reaction Haptic Model}
 
+In actual pottery creation processes, users often exert forces to deform the clay by pushing or pulling.
 
-\subsubsection{Advanced Haptic Model}
+According to Newton's Third Law, the forces between the hand and the clay exist in equal magnitude and opposite direction.
 
-// In actual pottery throwing process, the hands not only apply force to the clay, but also make movements sometimes, such as pulling, opening and shaping.
-
-// we can consider clay apply reaction force to the hands when we apply force to the clay.
-
-//The reaction force $\mathbf{F}_{r}$ from the clay is opposite to the force $F_{h}$ exerted by hand.
-
-// According to Newton's second law, the reaction force can be calculated as follows:
+Since handheld controllers are used in our system, the reaction force exerted by hands can be calculated based on the position of the controllers.
 
 \begin{equation}
-\mathbf{F}_{r} = -\mathbf{F}_{h} = -m\mathbf{p''}= -\frac{m}{\Delta t^2} \cdot (\mathbf{p}_{2}-2\mathbf{p}_{1}+\mathbf{p}_{0})
+\mathbf{F} = m \frac{\mathrm{d} \mathbf{v}}{\mathrm{d} t}
 \end{equation}
-Since both the hand mass $m$ and frame time interval $\Delta t$ are constant, a predefined value $k_{\omega}$ is used in the follow equation to calculate the frequency of the reaction haptic feedback:
+Since both the hand mass $m$ and frame time interval $\Delta t$ are constant, a predefined value $k_{\omega}$ is used in the follow equation to calculate 
+
+
+The reaction haptic intensity $k_{r}$ in each frame can be calculated based on the consecutive controller positions in last three frames:
 
 \begin{equation}
-k_{r} = k_{\nu} \cdot \|\mathbf{p}_{0}-2\mathbf{p}_{1}+\mathbf{p}_{2}\|
+k_{r} = k_{\nu} \cdot \|\mathbf{v} - \mathbf{v}'\| = k_{\nu} \cdot \|(\mathbf{x}-\mathbf{x}') - (\mathbf{x}'-\mathbf{x}'')\| = k_{\nu} \cdot \|\mathbf{x}-2\mathbf{x}'+\mathbf{x}''\|
 \end{equation}
 
-Here, $k_{\nu}$ is a predefined value; $\mathbf{p}_{0}$, $\mathbf{p}_{1}$ and $\mathbf{p}_{2}$ are consecutive hand positions respectively.
+Here, $k_{\nu}$ is a predefined coefficient; $\mathbf{x}$ is the controller position in current frame; $\mathbf{x}'$ and $\mathbf{x}''$ are the consecutive controller positions in last two frames.
+
+The total hapic intensity is the sum of friction force and reaction force.
 
 \begin{equation}
-K = k_{r} + k_{f}
+k_{\sigma} = k_{r} + k_{f}
 \end{equation}
 
 From the above, the user can perceive rich haptic feedback when shaping the virtual pottery.
 
-By providing haptic feedback based on $K$, we can implement the sensation caused by clay deformation.
+By providing haptic feedback based on $k_{\sigma}$, we can implement the sensation caused by clay deformation.
 
-//In addition, visual feedback
-In a VE, it is not so easy for users to perceive if her hands have touched anything. Hence, our system adds visual feedback on both virtual hands, which will be highlighted when touching the clay (Figure \ref{fig:highlight}).
+%the reaction force is opposite to the force exerted on the clay
+
+%We can consider clay apply reaction force to the hands when we apply force to the clay.
+
+%According to Newton's Third Law, the reaction force $F_{r}$ from the clay is opposite to the force $F_{h}$ exerted by hand. 
+%According to Newton's second law, the reaction force can be calculated as follows:
+
+
+
+%In addition, visual feedback
+In a VE, it is not so easy for users to perceive if her hands have touched anything. Hence, our system adds visual feedback on both virtual sphere, which will be highlighted when touching the clay (Figure \ref{fig:highlight}).
 
 
 %%%Fig%%% Highlight
