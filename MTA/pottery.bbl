@@ -35,6 +35,12 @@ Cui, J., Kuijper, A., Sourin, A.: Exploration of natural free-hand interaction
 \newblock In: Cyberworlds (CW), 2016 International Conference on, pp. 41--48.
   IEEE (2016)
 
+\bibitem{gao2018digiclay}
+Gao, Z., Li, J., Wang, H., Feng, G.: Digiclay: An interactive installation for
+  virtual pottery using motion sensing technology.
+\newblock In: Proceedings of the 4th International Conference on Virtual
+  Reality, pp. 126--132. ACM (2018)
+
 \bibitem{han2007ar}
 Han, G., Hwang, J., Choi, S., Kim, G.J.: Ar pottery: experiencing pottery
   making in the augmented space.
@@ -45,12 +51,6 @@ Han, G., Hwang, J., Choi, S., Kim, G.J.: Ar pottery: experiencing pottery
 Han, Y.C., Han, B.j.: Virtual pottery: a virtual 3d audiovisual interface using
   natural hand motions.
 \newblock Multimedia tools and applications \textbf{73}(2), 917--933 (2014)
-
-\bibitem{hart2006nasa}
-Hart, S.G.: Nasa-task load index (nasa-tlx); 20 years later.
-\newblock In: Proceedings of the human factors and ergonomics society annual
-  meeting, vol.~50, pp. 904--908. Sage Publications Sage CA: Los Angeles, CA
-  (2006)
 
 \bibitem{hinckley1998two}
 Hinckley, K., Pausch, R., Proffitt, D., Kassell, N.F.: Two-handed virtual
@@ -98,15 +98,17 @@ LaViola, J.J., Keefe, D.F.: 3d spatial interaction: applications for art,
   design, and science.
 \newblock In: ACM Siggraph 2011 Courses, p.~1. ACM (2011)
 
-\bibitem{website:letspottery}
-Let's create! pottery.
-\newblock \urlprefix\url{http://www.potterygame.com}
-
 \bibitem{mcdonnell2001virtual}
 McDonnell, K.T., Qin, H., Wlodarczyk, R.A.: Virtual clay: A real-time sculpting
   system with haptic toolkits.
 \newblock In: Proceedings of the 2001 symposium on Interactive 3D graphics, pp.
   179--190. ACM (2001)
+
+\bibitem{mcmahan2012evaluating}
+McMahan, R.P., Bowman, D.A., Zielinski, D.J., Brady, R.B.: Evaluating display
+  fidelity and interaction fidelity in a virtual reality game.
+\newblock IEEE Transactions on Visualization \& Computer Graphics (4), 626--633
+  (2012)
 
 \bibitem{murugappan2013handy}
 Murugappan, S., Piya, C., Ramani, K., et~al.: Handy-potter: Rapid exploration
@@ -162,6 +164,11 @@ Schkolne, S., Pruett, M., Schr{\"o}der, P.: Surface drawing: creating organic
 Sheng, J., Balakrishnan, R., Singh, K.: An interface for virtual 3d sculpting
   via physical proxy.
 \newblock In: GRAPHITE, vol.~6, pp. 213--220 (2006)
+
+\bibitem{slater1994depth}
+Slater, M., Usoh, M., Steed, A.: Depth of presence in virtual environments.
+\newblock Presence: Teleoperators \& Virtual Environments \textbf{3}(2),
+  130--144 (1994)
 
 \bibitem{website:unity}
 Unity3d.

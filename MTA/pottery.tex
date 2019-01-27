@@ -540,6 +540,36 @@ where $N$ is the number of adjacent vertices of $\mathbf{v}_{i,j}$; $\omega \in 
 Only the vertices within the range of the 3D cursor $R_{O}$ will be affected.
 As a result, users can control the 3D cursor position and adjust the outer range $R_{O}$ of the 3D cursor to apply smoothing on specific areas interactively on the mesh.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %%% HAPTIC
 \subsection{Haptic Feedback Model}
 
@@ -551,15 +581,29 @@ Unlike the barehand experience, RealPot provide users with rich haptic feedbacks
 %Unlike the barehand experience, instrument-based interactions can provide haptic feedbacks, adding realistic feel in VR environments. In our system, a haptic pulse has been added to a controller when that controller has touched the clay. During any mesh editing process, we add movement resistance feedback based on the movement speed of each hand.
 
 
-\subsubsection{Analysis of the sensation in pottery}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Analysis of the sensation in real life pottery}
 
 In real life pottery, users can perceive forces from hands and fingers when performing various operations on the clay.
-In addition, users can obtain information from these forces, such as shape and smoothness etc.
+Moreover, users can obtain information from these forces, such as shape and smoothness etc.
 
 To provide realistic haptic feedbacks in our system, we analyzed the pottery throwing process in real life.
 In general, the haptic feedbacks from clay can be classified into two categories based on the type of forces: friction force and reaction force.
 When a user softly touches the clay without pushing or pulling, he/she can perceive the sensation on fingers or hands since the clay is rotating.
-Moreover, when a user pushes or pulls to deform the clay, reaction forces are generated in the opposite direction to the movement.
+In addition, when a user pushes or pulls to deform the clay, reaction forces are generated in the opposite direction to the movement.
 
 % in our system, ? are provided to the user.
 
@@ -579,6 +623,25 @@ The mechanisms will be described in detail in the following subsections.
 %6// reaction force
 
 %// depends on the force, hand acceleration
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsubsection{Friction Haptic Model}
 
@@ -620,6 +683,24 @@ The haptic pulse intensity based on friction is calculated as:
 k_{f} = k_{min} + \epsilon \cdot k_{\mu}
 \end{equation}
 where $k_{0}$ is the minimum friction intensity when user just touches the clay, and $\epsilon \in [0,1]$ is analog value of the trigger button. $k_{\mu}$ is the predefined coefficient.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsubsection{Reaction Haptic Model}
@@ -675,6 +756,30 @@ In a VE, it is not so easy for users to perceive if her hands have touched anyth
 \end{figure}
 
 %%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsection{Interactions}
@@ -778,60 +883,317 @@ Axis Segments & Height Segments & Vertices & Triangles & Generation Time (ms)\\
 \end{figure*}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{User Studies}
 \label{sec:study}
 
+\subsection{User Study 1: Haptic Models}
+\label{sec:study1}
+
 The goal of our first user study was to investigate how different haptic models can impact user experience. 
+%
+Although McMahan et al. found that display fidelity significantly affect performance in virtual environments \cite{mcmahan2012evaluating}, they only focused on the visual aspects, not haptic aspects.
+%
+To increase experimental control and reduce confounds, we adopted a systematic approach that utilizes RealPot while investigating haptic fidelity.
+%
+As the independent variable, haptic fidelity had three levels (No Haptic Model, Basic Haptic Model and Advanced Haptic Model) and varied within subjects.
+%
+The presentation order of the three conditions was counterbalanced between subjects.
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Appartus}
+In order to evaluate different levels of display fidelity, we used HTC Vive Virtual System, which contains a head mounted display (HMD) and two wireless motion tracked controllers.
+%HMD
+The HMD has a resolution of 2160 x 1200 (1080 x 1200 per eye) and a refresh rate of 90 Hz.
+%controllers
+The wireless motion tracked controllers have multiple input methods including a track pad, grip buttons, and a dual-stage trigger, which can generate pulses to provide haptic feedbacks.
+%different haptic models
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Participants}
+% paticipants
+36 participants were participated in our user study, 23 males and 13 females, whose age ranged from 24 to 41 years. 8 of the subjects are familiar with VR systems (?\%); 2 of the subjects have experience with 3D modeling tools (?\%); 4 of the subjects have amateur pottery throwing experience in real life (?\%).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Experimental Design}
+%procedure
+
+The participants were required to perform 5 tasks with 3 different haptic models.
+
+%3 conditions
+\paragraph{No Haptic Model}: In this condition, there was no haptic model applied. In the case without haptic model, RealPot did not provide any haptic feedback, even if the cursor touches the virtual clay.
+
+\paragraph{Basic Haptic Model}: 
+
+\paragraph{Advanced Haptic Model}: In the case with the basic haptic model, the system provided haptic feedback that change according to the amount that user pulled the trigger on the handheld controller.
+
+
+
+
+\paragraph{Task 1} After the 15-minute practice of the three systems, each subject need to accomplish 3 tasks:
+
+\textbf{T}\textsubscript{1}: Given a sequence of reference pot models as target shapes, the subjects were asked to create same pots from irregular generated meshes using RealPot. 
+
+\textbf{T}\textsubscript{2}: Given reference pot models of the same order in \textbf{T}\textsubscript{1}, the subjects need to model these pots using Let's Create! Pottery on an iPad Pro.
+
+\textbf{T}\textsubscript{3}: Given reference pot models of the same order in \textbf{T}\textsubscript{1} and \textbf{T}\textsubscript{2}, the subjects need to model these pots using Maya on a PC.
+
+
+\paragraph{Questionnaire 1} After accomplishing each task, the subjects were asked to answer a questionnaire with six questions to measure the six dimensions of NASA-TLX, which includes physical demand, mental demand, temporal demand, effort, performance and frustration. 5 additional questions were asked after they finished all tasks.
+
+
+\subsubsection{Procedure}
+%1. 
+Each participant was required to fill out a background survey, which collected general demographic information and experiences of VR, real pottery and 3D modeling tools.
+%2. 
+In the next phase, each participant experience a quick VR training for five minutes.
+Since it is possible that the participants are first time users to virtual reality, that subjective may be influenced by 
+Hence, we hoped VR familiarity could eliminate "wow-factor" situations.
+
+The order of the three different conditions (i.e. no haptic model, basic haptic model and advanced haptic model) and the five tasks was assigned at random for each participant.
+
+the order of ... was counterbalanced between subjects.
+
+evaluate the components of A and B while controlling other components
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Metrics}
+
+For usability and preferences, we developed our own usability questionnaire consiting of seven-point Likert-scale items (See Appendix A)
+
+%
+Each participant evaluated the basic and advanced model using a seven-point Likert scale, with 1 being the most negative score, 7 the most positive and 4 the baseline with no haptic model.
+
+
+To evaluate the overall performance of the two systems, we collected metrics related to objective user performance and subjective judgments of usability and presence.
+For user performance, we measured completion time and accuracy.
+The accuracy was the correlation coefficient between the user-created shape data and the target shape data.
+
+For perceptions of presence, we used Slater-Usoh-Steed (SUS) Presence Questionnaire after each trial.
+To measure the usability of pottery systems, we developed our own usability questionnaire consisting of seven-point Likert-scale items (see Appendix A).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Study Results}
+
+% time
+For completion times, we performed a one-way ANOVA and the results showed two systems had a significant effect ($F(1, 23) = 82.3503, p < 0.0001$). 
+% accuracy
+For accuracy, we performed a one-way ANOVA and the results showed two systems had a significant effect ($F(1, 23) = 82.3503, p < 0.0001$). 
+% presence
+For subjective presence questionnaire, we performed a one-way ANOVA and the results showed different haptic models had a significant effect ($F(1, 23) = 82.3503, p < 0.0001$).
+% usability
+For subjective usability questionnaire, we performed a one-way ANOVA and the results showed different haptic models had a significant effect ($F(1, 23) = 82.3503, p < 0.0001$).
+% relations
+To determine if participants' backgrounds hand any significant effects on our results, we computed Pearson correlation coefficients to assess the relationships between objective metrics and participants' real pottery experience and VR experience.
+
+\begin{figure*}
+	\includegraphics[width=\textwidth]{haptic_time.pdf}
+	\caption{user study 1 result here}
+	\label{fig:u1r}
+\end{figure*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{User Study 2: RealPot vs barehand based systems}
 
 2nd: compare RealPot with other virtual pottery systems
-
-%%%%%
-
-\subsection{User Study 2: RealPot vs other virtual pottery systems}
-\label{sec:study3}
 %GOAL
-To investigate the usability of RealPot, we compare RealPot with other virtual pottery systems.
-
-We used DigiClay, a virtual pottery system based on barehand interaction.
+To investigate the usability of RealPot, we compare RealPot with other barehand based virtual pottery systems. We used DigiClay, a representative of barehand based virtual pottery systems \cite{gao2018digiclay}.
 
 
-\subsubsection{Evaluated Systems}
+
+
+
+
+\subsubsection{Appartus}
 
 The two evaluated systems were as follows:
 
 \paragraph{RealPot}: Our virtual pottery tool based on HTC Vive VR system. The user can shape the virtual clay with bimanual spatial interactions.
 
 \paragraph{DigiClay}: DigiClay uses Kinect,
+%monitor
+Unlike the HMD which can provide immersive experience, We used a Dell 23.8" LED monitor with a 1920 x 1080 resolution and 60Hz refresh rate 
+to provide output for low level of visual display fidelity.
+%kinect specs
+Kinect, which is composed of a RGB camera and a IR camera both with 640 x 480 resolution and 30 Hz refresh rate.
+
+%PC
 
 The interfaces of the systems are demonstrated in Figure \ref{fig:sys}, and a comparison of these systems is listed in Table \ref{tab:3}. 
-Although the three systems are different, we focus on comparing them based on their similarities and workflows.
+
 
 %%%Fig%%% Sys
 \begin{figure*}
 \includegraphics[width=\textwidth]{fig11}
-\caption{The three systems used in our user study. (a) A virtual reality system RealPot proposed by us. (b) A touchscreen-based system Let's Create! Pottery. (c) A desktop modeling tool Autodesk Maya.}
+\caption{The systems used in our user study. (a) RealPot: the proposed immersive virtual pottery system based on handheld haptic motion controllers (b) DigiClay: a representative of barehand based virtual pottery systems.}
 \label{fig:sys}
 \end{figure*}
+
 
 % For tables use
 \begin{table}
 % table caption is above the table
-\caption{A comparison of interactions in the three systems used in our user study.}
-\label{tab:33}       % Give a unique label
+\caption{A comparison of the two systems used in our user study.}
+\label{tab:3}       % Give a unique label
 % For LaTeX tables use
 \begin{tabular}{llllll}
 \hline\noalign{\smallskip}
-System & Platform & Input Method & Head Tracking & Stereoscopy & 2D or 3D UI \\
+System & Platform & Input Method & Immersion & Haptic Feedback \\
 \noalign{\smallskip}\hline\noalign{\smallskip}
-RealPot & PC & Hand-held Motion Controllers & Yes & Yes & 3D \\
-LCP & iPad & Touchscreen & No & No & 2D \\
-Maya & PC & Keyboard and Mouse & No & No & 2D \\
+RealPot & PC & Hand-held Motion Controllers & Yes & Yes \\
+DigiClay & PC & Barehand & No & No \\
 \noalign{\smallskip}\hline
 \end{tabular}
 \end{table}
 
+
+
+
+
+
+
+
+
+
+
+
+
 \subsubsection{Participants}
-19 participants were participated in our user study, 10 males and 9 females, whose age ranged from 8 to 32 years. 8 of the subjects are familiar with VR systems (42.1\%); 2 of the subjects have experience with 3D modeling tools (10.5\%); 4 of the subjects have amateur pottery throwing experience in real life (21.1\%).
+39 participants were participated in user study 2, 10 males and 9 females, whose age ranged from 8 to 32 years. 8 of the subjects are familiar with VR systems (42.1\%); 2 of the subjects have experience with 3D modeling tools (10.5\%); 4 of the subjects have amateur pottery throwing experience in real life (21.1\%).
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsubsection{Experimental Design}
 
@@ -847,11 +1209,59 @@ Maya & PC & Keyboard and Mouse & No & No & 2D \\
 
 \textbf{T}\textsubscript{2}: Given reference pot models of the same order in \textbf{T}\textsubscript{1}, the subjects need to model these pots using Let's Create! Pottery on an iPad Pro.
 
+%[Task details]
+When doing tasks \textbf{T}\textsubscript{1} and \textbf{T}\textsubscript{2}, a total of six target shapes were presented to subjects in a randomized sequence (Figure \ref{fig:pots}).
+%%% TODO
+
+
+
+
+
+
+
+
+\paragraph{Practice} Each subject was given 15 minutes to get familiar with these systems (5 minutes for each). Subjects can ask questions whenever they need help.
+
+\paragraph{Task 1} After the 15-minute practice of the three systems, each subject need to accomplish 3 tasks:
+
+\textbf{T}\textsubscript{1}: Given a sequence of reference pot models as target shapes, the subjects were asked to create same pots from irregular generated meshes using RealPot. 
+
+\textbf{T}\textsubscript{2}: Given reference pot models of the same order in \textbf{T}\textsubscript{1}, the subjects need to model these pots using Let's Create! Pottery on an iPad Pro.
+
 \textbf{T}\textsubscript{3}: Given reference pot models of the same order in \textbf{T}\textsubscript{1} and \textbf{T}\textsubscript{2}, the subjects need to model these pots using Maya on a PC.
 
 %[Task details]
 When doing tasks \textbf{T}\textsubscript{1} to \textbf{T}\textsubscript{3}, a total of six target shapes were presented to subjects in a randomized sequence (Figure \ref{fig:pots}).
 %%% TODO
+
+%[NASA-TLX]
+\paragraph{Questionnaire 1} After accomplishing each task, the subjects were asked to answer a questionnaire with six questions to measure the six dimensions of NASA-TLX, which includes physical demand, mental demand, temporal demand, effort, performance and frustration. 5 additional questions were asked after they finished all tasks.
+
+%[Some explanations]
+NASA-TLX has been chosen in our research because it is widely used in human factor studies which addressed questions about interface design and evaluation \cite{hart2006nasa}.
+We selected NASA-TLX as a part of our questionnaire to assess user workload in the three systems.
+Since the functionalities are different among the three systems, it is impossible and unfair to compare the interactions.
+We intended to allow our subjects to experience those differences and similarities through these tasks and analyze which types of interactions and results were more attractive to them through our user study questions.
+
+\paragraph{Task 2} After finishing tasks \textbf{T}\textsubscript{1} to \textbf{T}\textsubscript{3}, each subject need to accomplish 3 more tasks:
+
+\textbf{T}\textsubscript{4}: Use RealPot to make a creative pottery model freely.
+
+\textbf{T}\textsubscript{5}: Use Let's Create! Pottery to make a creative pottery model freely.
+
+\textbf{T}\textsubscript{6}: Use Maya to make a creative pottery model freely.
+
+\paragraph{Questionnaire 2} Each subject needs to answer the following questions after finishing tasks \textbf{T}\textsubscript{4} to \textbf{T}\textsubscript{6}:
+
+\textbf{Q}\textsubscript{1}: Rank the three systems according to ease of learning from high to low.
+
+\textbf{Q}\textsubscript{2}: Rank the three systems according to their supports for your imagination and creativity from high to low.
+
+\textbf{Q}\textsubscript{3}: Rank the three systems according to your preference from high to low.
+
+
+
+
 
 
 \subsubsection{Procedure}
@@ -864,48 +1274,63 @@ Hence, we hoped VR familiarity could eliminate "wow-factor" situations.
 
 After the VR exposure phase, participants proceeded through the tasks in a randomized order. There was a training session before each task, in which the experimenter explained how to interact with the given system and the participant was allowed to practice. After the practice session, participants were instructed to shape the clay according to the target shape as quickly as possible while maintaining high accuracy. Afterwards, the participants were given the usability and presence questionnaires.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsubsection{Metrics}
 To evaluate the overall performance of the two systems, we collected metrics related to objective user performance and subjective judgments of usability and presence.
 For user performance, we measured completion time and accuracy.
 The accuracy was the correlation coefficient between the user-created shape data and the target shape data.
 
-For perceptions of presence, we used Slater-Usoh-Steed (SUS) Presence Questionnaire after each trial.
+For perceptions of presence, we used Slater-Usoh-Steed (SUS) Presence Questionnaire after each trial \cite{slater1994depth}.
 To measure the usability of pottery systems, we developed our own usability questionnaire consisting of seven-point Likert-scale items (see Appendix A).
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsubsection{Study Results}
 {\color{blue}
 % time
-For completion times, we performed a one-way ANOVA and the results showed two systems had a significant effect (F(1, 23) = 82.3503, p < 0.0001). 
+For completion times, we performed a one-way ANOVA and the results showed two systems had a significant effect ($F(1, 23) = 82.3503, p < 0.0001$). 
 % accuracy
-For accuracy, we performed a one-way ANOVA and the results showed two systems had a significant effect (F(1, 23) = 82.3503, p < 0.0001). 
+For accuracy, we performed a one-way ANOVA and the results showed two systems had a significant effect ($F(1, 23) = 82.3503, p < 0.0001$). 
 % presence
-For subjective presence questionnaire, we performed a one-way ANOVA and the results showed different haptic models had a significant effect (F(1, 23) = 82.3503, p < 0.0001).
+For subjective presence questionnaire, we performed a one-way ANOVA and the results showed different haptic models had a significant effect ($F(1, 23) = 82.3503, p < 0.0001$).
 % usability
-For subjective usability questionnaire, we performed a one-way ANOVA and the results showed different haptic models had a significant effect (F(1, 23) = 82.3503, p < 0.0001).
+For subjective usability questionnaire, we performed a one-way ANOVA and the results showed different haptic models had a significant effect ($F(1, 23) = 82.3503, p < 0.0001$).
 % relations
 To determine if participants' backgrounds hand any significant effects on our results, we computed Pearson correlation coefficients to assess the relationships between objective metrics and participants' real pottery experience and VR experience.
-
-%[basic introduction]
-%Figure \ref{fig:boxplot} shows the boxplots of completion time and correlation coefficient for each target shape created in \textbf{T}\textsubscript{1}.
-Figure \ref{fig:tlx} shows mean values of the six dimensions of NASA-TLX for \textbf{T}\textsubscript{1}, \textbf{T}\textsubscript{2} and \textbf{T}\textsubscript{3}.
-
-%%%Fig%%% tlx
-\begin{figure*}
-	\includegraphics[width=\textwidth]{fig14.eps}
-	\caption{Mean values of the six dimensions of NASA-TLX.}
-	\label{fig:tlx}
-\end{figure*}
-
-
-
-
-
-
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-///////////////////////////////////////////////////////
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
 
 
 
@@ -929,6 +1354,20 @@ Our system still has its limitations. First, the physical size of the motion con
 Second, the potteries designed by our systems lack colors and textures. Although we focus on deformation in our study, several subjects stated that they wish to paint the pottery after designing the shape of the clay. We intend to add new features related to interactive painting on 3D objects.
 %
 Another limitation of our system is that it cannot adding handles to the pottery. We will introduce more features that allow users to modify the topology of the mesh in order to create more personalized pottery works.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Conclusions}
