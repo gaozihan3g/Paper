@@ -98,6 +98,11 @@ LaViola, J.J., Keefe, D.F.: 3d spatial interaction: applications for art,
   design, and science.
 \newblock In: ACM Siggraph 2011 Courses, p.~1. ACM (2011)
 
+\bibitem{laviola20173d}
+LaViola~Jr, J.J., Kruijff, E., McMahan, R.P., Bowman, D., Poupyrev, I.P.: 3D
+  user interfaces: theory and practice.
+\newblock Addison-Wesley Professional (2017)
+
 \bibitem{mcdonnell2001virtual}
 McDonnell, K.T., Qin, H., Wlodarczyk, R.A.: Virtual clay: A real-time sculpting
   system with haptic toolkits.
@@ -126,12 +131,6 @@ Niehorster, D.C., Li, L., Lappe, M.: The accuracy and precision of position and
 Otsuki, M., Sugihara, K., Toda, A., Shibata, F., Kimura, A.: A brush device
   with visual and haptic feedback for virtual painting of 3d virtual objects.
 \newblock Virtual Reality pp. 1--15 (2017)
-
-\bibitem{oviatt2006human}
-Oviatt, S.: Human-centered design meets cognitive load theory: designing
-  interfaces that help people think.
-\newblock In: Proceedings of the 14th ACM international conference on
-  Multimedia, pp. 871--880. ACM (2006)
 
 \bibitem{Perlin1985An}
 Perlin, K.: An image synthesizer.

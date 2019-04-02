@@ -6,43 +6,43 @@ Database file #1: pottery.bib
 Warning--there's a number but no volume in mcmahan2012evaluating
 You've used 33 entries,
             2945 wiz_defined-function locations,
-            786 strings with 10949 characters,
-and the built_in function-call counts, 17744 in all, are:
-= -- 1470
-> -- 572
-< -- 17
-+ -- 244
-- -- 204
-* -- 1063
-:= -- 2249
-add.period$ -- 46
+            785 strings with 10928 characters,
+and the built_in function-call counts, 17673 in all, are:
+= -- 1450
+> -- 592
+< -- 16
++ -- 252
+- -- 212
+* -- 1065
+:= -- 2251
+add.period$ -- 45
 call.type$ -- 33
-change.case$ -- 230
+change.case$ -- 231
 chr.to.int$ -- 0
 cite$ -- 34
-duplicate$ -- 1535
-empty$ -- 1625
-format.name$ -- 231
-if$ -- 3877
+duplicate$ -- 1525
+empty$ -- 1610
+format.name$ -- 240
+if$ -- 3847
 int.to.chr$ -- 0
 int.to.str$ -- 33
-missing$ -- 333
+missing$ -- 336
 newline$ -- 140
 num.names$ -- 58
-pop$ -- 649
+pop$ -- 657
 preamble$ -- 1
-purify$ -- 168
+purify$ -- 172
 quote$ -- 0
-skip$ -- 516
+skip$ -- 504
 stack$ -- 0
-substring$ -- 918
-swap$ -- 854
-text.length$ -- 17
+substring$ -- 886
+swap$ -- 847
+text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 130
+type$ -- 128
 warning$ -- 1
-while$ -- 124
+while$ -- 121
 width$ -- 35
-write$ -- 337
+write$ -- 335
 (There was 1 warning)
