@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex pottery"] 1550153699 "pottery.aux" "pottery.bbl" "pottery" 1550156496
+["bibtex pottery"] 1555055360 "pottery.aux" "pottery.bbl" "pottery" 1555055361
   "./spmpsci.bst" 1528158767 30130 0182c69465c28ddbb1f8698b9c5c1559 ""
-  "pottery.aux" 1550156482 12171 070640f902209de04aa216a97d205a9f ""
+  "pottery.aux" 1555055361 12387 779cf7921cf03d121f9d31bb06575289 ""
   "pottery.bib" 1549685016 11247 bf2d84ae1962a8e643843434e33503cf ""
   (generated)
-  "pottery.blg"
   "pottery.bbl"
-["pdflatex"] 1550156482 "pottery.tex" "pottery.pdf" "pottery" 1550156496
+  "pottery.blg"
+["pdflatex"] 1555055360 "pottery.tex" "pottery.pdf" "pottery" 1555055361
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1480098698 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1480098698 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -99,6 +99,7 @@
   "fig12.pdf" 1549888088 44558 8ec7755f82833906a15209766d1f57a5 ""
   "fig13.pdf" 1548321552 2983422 6a157ccadf1ec9dbb09919155c4257c7 ""
   "fig14.pdf" 1549888181 40279 ae26052ed6d2334e62061e5c2175a4ac ""
+  "fig15.pdf" 1554791142 83131 62a3e7906bbf0714971718628fd976f5 ""
   "fig2.pdf" 1550107735 40649 23e7ba6150373fc79504129399fcc9b8 ""
   "fig3.pdf" 1545724494 1719031 a876949f653c1e5419a73568e0a4457d ""
   "fig4.pdf" 1528158767 131213 761cf5d018b12312e30f649146989272 ""
@@ -107,12 +108,12 @@
   "fig7.pdf" 1530323307 76427 e23e0b19d1a6359401dea8a6f0a41a78 ""
   "fig8.pdf" 1531485428 62942 ecd87f75625925c949549415b14688e4 ""
   "fig9.pdf" 1528598715 952852 eeafca91e743036c7720677588a1b17e ""
-  "pottery.aux" 1550156482 12171 070640f902209de04aa216a97d205a9f ""
-  "pottery.bbl" 1550153700 7582 72e7dc6ca30b4fa6f09579f57757a301 "bibtex pottery"
-  "pottery.tex" 1550156495 64145 d9fb7e18d202cb50b28ac644a58bdc81 ""
+  "pottery.aux" 1555055361 12387 779cf7921cf03d121f9d31bb06575289 ""
+  "pottery.bbl" 1555055360 7582 72e7dc6ca30b4fa6f09579f57757a301 "bibtex pottery"
+  "pottery.tex" 1555055358 64090 cdf82348201085c3aacded61b730f068 ""
   "svglov3.clo" 1528158767 3696 b98636486931abc143bcf14934850e7b ""
   "svjour3.cls" 1528158767 47679 e70406260d62f66f2e7794a095f721ff ""
   (generated)
   "pottery.aux"
-  "pottery.pdf"
   "pottery.log"
+  "pottery.pdf"
