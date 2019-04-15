@@ -522,7 +522,7 @@ The mechanisms will be described in detail in the following subsections.
 \label{fig:haptic}
 \end{figure*}
 
-{\color{blue}
+
 
 \subsubsection{Friction Force Simulation}
 
@@ -534,8 +534,8 @@ The direction of friction force is the tangent of the rotation, and the magnitud
 F_{f} = \mu \cdot F_{n}
 \end{equation}
 where $\mu$ is the coefficient of friction between clay and hand, and $F_{n}$ is the normal force exerted on the clay surface. According to the equation, the friction force is proportional to the normal force exerted on the clay surface.
-
 %%% to controller
+{\color{blue}
 Since all the mesh editing operations in our system are performed using handheld controllers, the trigger value can be regarded as the input of normal force.
 The trigger value ranges from 0 to 1, which indicates how much has the user pulled the trigger button.
 Thus, the following equation maps the trigger value to the normal force:
@@ -543,20 +543,22 @@ Thus, the following equation maps the trigger value to the normal force:
 \begin{equation}
 F_{n} = \epsilon \cdot F_{max}
 \end{equation}
-where $F_{max}$ is a predefined parameter for maximum normal force that could be applied to the clay and $\epsilon \in [0,1]$ is the analog value of the trigger button.
+where $F_{max}$ is a predefined parameter for maximum normal force that could be applied to the clay and $\epsilon \in [0,1]$ is the analog value of the trigger button.}
 
 
 \subsubsection{Reaction Force Simulation}
-
-In a process of real pottery creation, when a user exerts force to deform the clay by pushing or pulling, in return, the clay exerts reaction force on the hand.
+{\color{blue}
+In a process of real pottery creation, when a user exerts a force to deform the clay by pushing or pulling, in return, the clay exerts a reaction force on the hand.
 %
-Due to the material properties of clay (e.g. plasticity, elasticity, etc.), accurate calculation of reaction forces can be quite complex, which might be an overhead for real-time interaction.
-Therefore, a simplified approximation is made for the reaction force, whose magnitude is based on the radial deformation distance between two consecutive frames:
+Due to the material properties of clay (e.g. plasticity, elasticity, etc.) and many other elements needed to be considered (such as rotation speed, mass of clay, etc.), an accurate calculation of the reaction force can be quite complex, which might be an overhead for real-time interaction.
+%
+In addition, considering that the haptic devices in our system cannot reproduce the force accurately by vibration only, a simplified approximation is made for the reaction force, whose magnitude is based on the radial distance difference between two consecutive frames:
 
 \begin{equation}
 F_{r} = \sigma \cdot |r - r'|
 \end{equation}
-where $\sigma$ is the stiffness parameter of clay; $r$ and $r'$ are the radial distance of the finger in current and previous frame respectively.
+where $\sigma$ is a predefined stiffness parameter of clay; $r$ and $r'$ are the radial distance of the finger in the current and previous frame respectively.
+
 Since we have computed the magnitudes of friction force and reaction force, the resultant force $\mathbf{R}$ can be expressed as a vector:
 
 \begin{equation}
@@ -570,10 +572,9 @@ The total haptic intensity $I$ is based on the magnitude of the resultant force 
 I = \tau \cdot \sqrt{F_{r}^2 + F_{f}^2}
 \end{equation}
 where $\tau$ is a predefined parameter for mapping the force magnitude to vibration intensity.
-By providing haptic feedback based on the vibration intensity $I$, we can implement the haptic feedback based on clay deformation for the motion controllers.
+By providing haptic feedback based on the vibration intensity $I$, we can implement the haptic feedback based on clay deformation for the motion controllers.}
 In addition, our system can provide visual cues on both bubbles, which will be highlighted when touching the clay (Figure \ref{fig:highlight}).
 
-}
 
 %%%Fig%%% Highlight
 \begin{figure}
