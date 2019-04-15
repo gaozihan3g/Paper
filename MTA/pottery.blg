@@ -4,45 +4,45 @@ The top-level auxiliary file: pottery.aux
 The style file: spmpsci.bst
 Database file #1: pottery.bib
 Warning--there's a number but no volume in mcmahan2012evaluating
-You've used 33 entries,
+You've used 35 entries,
             2945 wiz_defined-function locations,
-            785 strings with 10928 characters,
-and the built_in function-call counts, 17673 in all, are:
-= -- 1450
-> -- 592
-< -- 16
-+ -- 252
-- -- 212
-* -- 1065
-:= -- 2251
-add.period$ -- 45
-call.type$ -- 33
-change.case$ -- 231
+            795 strings with 11360 characters,
+and the built_in function-call counts, 18823 in all, are:
+= -- 1542
+> -- 641
+< -- 17
++ -- 273
+- -- 230
+* -- 1139
+:= -- 2405
+add.period$ -- 47
+call.type$ -- 35
+change.case$ -- 246
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 1525
-empty$ -- 1610
-format.name$ -- 240
-if$ -- 3847
+cite$ -- 36
+duplicate$ -- 1624
+empty$ -- 1702
+format.name$ -- 260
+if$ -- 4086
 int.to.chr$ -- 0
-int.to.str$ -- 33
-missing$ -- 336
-newline$ -- 140
-num.names$ -- 58
-pop$ -- 657
+int.to.str$ -- 35
+missing$ -- 360
+newline$ -- 148
+num.names$ -- 62
+pop$ -- 701
 preamble$ -- 1
-purify$ -- 172
+purify$ -- 185
 quote$ -- 0
-skip$ -- 504
+skip$ -- 529
 stack$ -- 0
-substring$ -- 886
-swap$ -- 847
-text.length$ -- 16
+substring$ -- 938
+swap$ -- 905
+text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 128
+type$ -- 136
 warning$ -- 1
-while$ -- 121
-width$ -- 35
-write$ -- 335
+while$ -- 130
+width$ -- 37
+write$ -- 355
 (There was 1 warning)

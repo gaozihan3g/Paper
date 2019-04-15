@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex pottery"] 1555055360 "pottery.aux" "pottery.bbl" "pottery" 1555055361
+["bibtex pottery"] 1555337821 "pottery.aux" "pottery.bbl" "pottery" 1555337829
   "./spmpsci.bst" 1528158767 30130 0182c69465c28ddbb1f8698b9c5c1559 ""
-  "pottery.aux" 1555055361 12387 779cf7921cf03d121f9d31bb06575289 ""
-  "pottery.bib" 1549685016 11247 bf2d84ae1962a8e643843434e33503cf ""
+  "pottery.aux" 1555337821 12480 153d448d85514fec7cdaddf43d4744ec ""
+  "pottery.bib" 1555337805 11841 0ca698102ae2335209098f5290fcfa97 ""
   (generated)
-  "pottery.bbl"
   "pottery.blg"
-["pdflatex"] 1555055360 "pottery.tex" "pottery.pdf" "pottery" 1555055361
+  "pottery.bbl"
+["pdflatex"] 1555337821 "pottery.tex" "pottery.pdf" "pottery" 1555337829
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1480098698 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1480098698 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -108,12 +108,12 @@
   "fig7.pdf" 1530323307 76427 e23e0b19d1a6359401dea8a6f0a41a78 ""
   "fig8.pdf" 1531485428 62942 ecd87f75625925c949549415b14688e4 ""
   "fig9.pdf" 1528598715 952852 eeafca91e743036c7720677588a1b17e ""
-  "pottery.aux" 1555055361 12387 779cf7921cf03d121f9d31bb06575289 ""
-  "pottery.bbl" 1555055360 7582 72e7dc6ca30b4fa6f09579f57757a301 "bibtex pottery"
-  "pottery.tex" 1555055358 64090 cdf82348201085c3aacded61b730f068 ""
+  "pottery.aux" 1555337821 12480 153d448d85514fec7cdaddf43d4744ec ""
+  "pottery.bbl" 1555337821 8052 4d7dc6c37b0488ac5e0294b2d345c6e5 "bibtex pottery"
+  "pottery.tex" 1555337827 64381 4f099d07254e68673a84e6c45607dfb5 ""
   "svglov3.clo" 1528158767 3696 b98636486931abc143bcf14934850e7b ""
   "svjour3.cls" 1528158767 47679 e70406260d62f66f2e7794a095f721ff ""
   (generated)
   "pottery.aux"
-  "pottery.log"
   "pottery.pdf"
+  "pottery.log"

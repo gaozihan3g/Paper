@@ -19,6 +19,11 @@ Autodesk 3ds max.
 Autodesk maya.
 \newblock \urlprefix\url{http://www.autodesk.com/products/maya/overview}
 
+\bibitem{bastug2017toward}
+Bastug, E., Bennis, M., Medard, M., Debbah, M.: Toward interconnected virtual
+  reality: Opportunities, challenges, and enablers.
+\newblock IEEE Communications Magazine \textbf{55}(6), 110--117 (2017)
+
 \bibitem{botsch2010polygon}
 Botsch, M., Kobbelt, L., Pauly, M., Alliez, P., L{\'e}vy, B.: Polygon mesh
   processing.
@@ -179,6 +184,12 @@ Walter, R., Bailly, G., Valkanova, N., M{\"u}ller, J.: Cuenesics: using mid-air
 \newblock In: Proceedings of the 16th international conference on
   Human-computer interaction with mobile devices \& services, pp. 299--308. ACM
   (2014)
+
+\bibitem{wang2018a}
+Wang, T., Zhang, G., Liu, A., Bhuiyan, Z.A., Jin, Q.: A secure iot service
+  architecture with an efficient balance dynamics based on cloud and edge
+  computing.
+\newblock IEEE Internet of Things Journal pp. 1--1 (2018)
 
 \bibitem{wingcrave2010wii}
 Wingcrave, C., Williamson, B., Varcholik, P., Rose, J., Miller, A.,
